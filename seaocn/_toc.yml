@@ -3,7 +3,29 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: markdown
-- file: notebooks
-- file: markdown-notebooks
+parts: 
+- caption: Overview
+  chapters:
+  - file: overview/catalog-listing
+  - file: overview/schedule
+
+- caption: Lectures
+  chapters:
+  - file: lecture/lecture-1
+
+- caption: Exercises
+  chapters:
+  - file: exercise/exercise-1-plotting
+  - file: exercise/exercise-2-fitting
+
+- caption: Resources
+  chapters:
+  - file: resource/git
+  - file: resource/python
+  - file: resource/books
+
+- caption: Basics
+  chapters:
+  - file: content.md 
+  - file: markdown-notebooks.md
+  - file: markdown.md
