@@ -23,7 +23,14 @@ parts:
   - file: resource/git
   - file: resource/python
   - file: resource/books
-  - file: resource/website-build
+
+- caption: JupyterBook coursebook
+  chapters:
+  - file: build-the-book/getting-started
+  - file: build-the-book/jupyter-book
+  - file: build-the-book/github-pages
+  - file: build-the-book/use-of-tokens
+  - file: build-the-book/regenerating-book
 
 - caption: Basics
   chapters:
