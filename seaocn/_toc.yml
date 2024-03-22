@@ -23,6 +23,7 @@ parts:
   - file: resource/git
   - file: resource/python
   - file: resource/books
+  - file: resource/website-build
 
 - caption: Basics
   chapters:
