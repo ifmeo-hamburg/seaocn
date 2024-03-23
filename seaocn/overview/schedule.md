@@ -21,20 +21,44 @@ kernelspec:
 
 ## Dates + Known deviations
 
-- 2 April  
-- 9 April  
-- 16 April  
-- 23 April  
-- 30 April - possible deviation
-- 7 May  
-- 14 May  
+1. 2 April  
+2. 9 April  
+3. 16 April  
+4. 23 April  
+5. 30 April - possible deviation
+6. 7 May  
+7. 14 May  
 - 21 May - No class: Pfingsten
-- 28 May - Lecture cancelled due to Seepraktikum, computer practicals still on
-- 4 June - as planned
-- 11 June - alternate instructor
-- 18 June  
-- 25 June 
-- 2 July
-- 9 July
+8. 28 May - Lecture cancelled due to Seepraktikum, computer practicals still on
+9. 4 June - as planned
+10. 11 June - alternate instructor
+11. 18 June  
+12. 25 June 
+13. 2 July
+14. 9 July
+
+## Topics
+
+```{table} Schedule of topics
+:name: week-topics
+
+| Week | Lecture | Practical |
+|---|---|---|
+| 1 |  | |
+| 2 |  | |
+| 3 |  | |
+| 4 |  | |
+| 5 |  | |
+| 6 |  | |
+| 7 |  | |
+| 8 |  | |
+| 9 |  | |
+| 10 |  | |
+| 11 |  | |
+| 12 |  | |
+| 13 |  | |
+| 14 |  | |
+```
 
 
+Where is this table?
