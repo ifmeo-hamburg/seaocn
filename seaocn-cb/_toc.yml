@@ -8,6 +8,7 @@ parts:
   chapters:
   - file: overview/catalog-listing
   - file: overview/schedule
+  - file: overview/syllabus
 
 - caption: Lectures
   chapters:
