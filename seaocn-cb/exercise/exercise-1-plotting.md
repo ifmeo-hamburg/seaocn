@@ -1,17 +1,4 @@
----
-jupytext:
-  cell_metadata_filter: -all
-  formats: md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.11.5
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
+
 
 # 1. Basics - plotting
 
@@ -58,7 +45,7 @@ Name the file `lab1_plotting.ipynb`
 
 Import necessary packages.  If you are missing any of these packages, please refer to [Resources: Python](../resource/python).
 
-```{code-cell}
+```
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np

@@ -41,7 +41,7 @@ Create an `*.ipynb` containing the commands for this assignment.  Name it `lab-2
 
 The data are in a netCDF file.  netCDF is a common file format for oceanographic and climate data.  They can be handled several ways, but `xarray` has a number of convenient features.
 
-```{code-cell}
+```
 import xarray as xr
 ```
 
