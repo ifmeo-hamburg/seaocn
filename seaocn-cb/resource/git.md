@@ -1,4 +1,4 @@
-# Git
+# Git and Python
 
 ## Git on Windows
 

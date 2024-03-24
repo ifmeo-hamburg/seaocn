@@ -10,14 +10,24 @@ parts:
   - file: overview/schedule
   - file: overview/syllabus
 
-- caption: Lectures
+- caption: Resources
   chapters:
-  - file: lecture/lecture-1
+  - file: lecture/lecture-overview
+    sections:
+    - file: lecture/lecture-1
+    - file: lecture/lecture-cruise-planning
+    - file: lecture/lecture-messmethoden
 
 - caption: Exercises
   chapters:
-  - file: exercise/exercise-1-plotting
+  - file: exercise/exercise-0
+  - file: exercise/exercise-1-basic
   - file: exercise/exercise-2-fitting
+
+- caption: Assignments
+  chapters:
+  - file: assignment/assignment-1-ctd
+
 
 - caption: Resources
   chapters:
@@ -35,6 +45,7 @@ parts:
 
 - caption: Basics
   chapters:
-  - file: content.md 
-  - file: markdown-notebooks.md
-  - file: markdown.md
+  - file: content
+  - file: markdown-notebooks
+  - file: markdown
+  - file: notebooks
