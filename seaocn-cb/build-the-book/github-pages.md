@@ -40,7 +40,7 @@ Turn `coursebook-OzMess/` into a git repository.
 
 Getting authentication problems?
 ```{tip}
-This is where you need to use the access token (see next section: [Use of Tokens](~/build-the-book/use-of-tokens) you've created (*but NOT put anywhere within the repository*)
+This is where you need to use the access token (see next section: [**Use of Tokens**](use-of-tokens.html) you've created (*but NOT put anywhere within the repository*)
 
     git config --global credential.helper '!f() { sleep 1; echo "username=<USER>:token=<TOKEN>"; }; f'
     

@@ -12,8 +12,7 @@ kernelspec:
   language: python
   name: python3
 ---
-
-# Assignment 1
+# Assignment 2 - Gliders
 
 
 ## Lab overview

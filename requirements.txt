@@ -4,3 +4,4 @@ numpy
 pandas
 datetime
 xarray
+scipy

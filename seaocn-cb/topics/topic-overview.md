@@ -55,7 +55,7 @@ Geostrophy, TS anomalies on isopycnals, transports
 :::
 ::::
 <!--Deadline-->
-:::{grid-item-card} Report 1 due
+:::{grid} Report 1 due
 :link: Seasoft
 Repository due the week after
 :::

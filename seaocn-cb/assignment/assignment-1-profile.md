@@ -11,7 +11,7 @@
 
 **Data:** You should use CTD profiles from one of the exercises (at least 1000~m water depth) and available in raw.
 
-**Directions:** Produce a summary report and git repository of your analysis.
+**Directions:** Produce a summary report and git repository of your analysis.  See [Report requirements](../assignment/report-specs) for formatting details.
 
 ----
 ## Guiding questions
