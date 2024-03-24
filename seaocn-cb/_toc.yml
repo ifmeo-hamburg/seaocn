@@ -8,9 +8,6 @@ parts:
   chapters:
   - file: overview/catalog-listing
   - file: overview/syllabus
-
-- caption: Resources
-  chapters:
   - file: lecture/lecture-overview
     sections:
     - file: lecture/lecture-1
@@ -25,7 +22,15 @@ parts:
 
 - caption: Assignments
   chapters:
-  - file: assignment/assignment-1-ctd
+  - file: assignment/assignment-1
+    sections:
+    - file: assignment/assignment-1-moored
+    - file: assignment/assignment-1-profile
+  - file: assignment/assignment-2
+    sections:
+    - file: assignment/assignment-2-geostrophy
+    - file: assignment/assignment-2-toyo
+    - file: assignment/assignment-2-glider
 
 
 - caption: Resources
@@ -34,17 +39,14 @@ parts:
   - file: resource/python
   - file: resource/books
 
-- caption: JupyterBook coursebook
-  chapters:
+- chapters:
   - file: build-the-book/getting-started
-  - file: build-the-book/jupyter-book
-  - file: build-the-book/github-pages
-  - file: build-the-book/use-of-tokens
-  - file: build-the-book/regenerating-book
-
-- caption: Basics
-  chapters:
-  - file: content
-  - file: markdown-notebooks
-  - file: markdown
-  - file: notebooks
+    sections:
+    - file: build-the-book/jupyter-book
+    - file: build-the-book/github-pages
+    - file: build-the-book/use-of-tokens
+    - file: build-the-book/regenerating-book
+    - file: content
+    - file: markdown-notebooks
+    - file: markdown
+    - file: notebooks
