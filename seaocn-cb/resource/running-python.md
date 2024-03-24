@@ -14,6 +14,12 @@ In the terminal window, run
 jupyter notebook
 ```
 
+or
+
+```
+jupyter lab
+```
+
 It may be best if you've navigated to the directory where you'd like to work (or nearby). 
 
 ```{tip}

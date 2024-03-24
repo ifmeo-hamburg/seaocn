@@ -55,7 +55,7 @@ I will post links to websites relevant to the course here, as well as datasets t
 
 ## Expectations for students
 
-You are expected to start the course with a basic understanding of ocean processes - you should have an idea of why we measure salinity, and how density appears in the equations of motion.  This knowledge will be assumed.  Additionally, it is helpful if you already have some experience with a programming language.  We will cover some of this in the course (specifically, Python), but if your Python is relatively weak, then please do your best not to get behind.  It will be very difficult to catch up otherwise.
+You are expected to start the course with a basic understanding of ocean processes - you should have an idea of why we measure salinity, and how density appears in the equations of motion.  This knowledge will be assumed.  Additionally, we expect you already have some experience with a programming language.   We will cover some of this in the course (specifically, Python), but if your Python is relatively weak, then please do your best not to get behind.  It will be very difficult to catch up otherwise.  You may find some additional online resources for working on your python skills.  See for example [Python for Earth Scientists](https://github.com/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb).
 
 
 ## Topics

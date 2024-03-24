@@ -7,7 +7,6 @@ parts:
 - caption: Overview
   chapters:
   - file: overview/catalog-listing
-  - file: overview/schedule
   - file: overview/syllabus
 
 - caption: Resources
