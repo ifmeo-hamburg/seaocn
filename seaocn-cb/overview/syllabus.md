@@ -57,12 +57,15 @@ I will post links to websites relevant to the course here, as well as datasets t
 
 You are expected to start the course with a basic understanding of ocean processes - you should have an idea of why we measure salinity, and how density appears in the equations of motion.  This knowledge will be assumed.  Additionally, we expect you already have some experience with a programming language.   We will cover some of this in the course (specifically, Python), but if your Python is relatively weak, then please do your best not to get behind.  It will be very difficult to catch up otherwise.  You may find some additional online resources for working on your python skills.  See for example [Python for Earth Scientists](https://github.com/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb).
 
+**Participation is expected.** This will take several forms during the course: preparation for discussion topics to be held during class, presentation of figures at the start of the class from the previous week's computer session, and formal (graded) presentations after reports on projects are handed in.  You learn more (and enjoy it more) when you're engaged with the course and the material.
 
 ## Topics
 
+Timing is rough and may slide depending on how much time it takes to introduce and discuss topics.
+
 **Firm dates:**
 - May 21 - no class, Pfingsten
-- May 28 - no lecture (practical only), Seepraktikum conflict
+- May 28 - Seepraktikum conflict (possible change)
 - June 11 - substitute lecture
 
 
@@ -74,12 +77,12 @@ You are expected to start the course with a basic understanding of ocean process
 
 * - Week
   - Topic
-* - Weeks 1-5 (2 Apr - 30 Apr)
-  - **Overview of the AMOC and the CTD**: principles of instrument operation, handling of Seabird instruments, using manufacturer information and software, and 1-dimensional data series (profiles and time series).  Getting started with Git and Python. Cell thermal mass, align CTD problems, salinity spikes, buoyancy frequency, density definitions, filtering, and decorrelation scales.
-* - Weeks 6-9 (7 May - 4 June)
-  - **Overview cruise planning** + CTD data in 2-dimensions: Spatial structure (in x and z) and time variability (in z and t). Gridding data, calculating gradients, transports, overturning, anomalies on isopycnals, comparisons with satellite data, and effects of biases.
+* - Weeks 1-4 
+  - **Overview**: of the AMOC science, measurement equipment, cruise anatomy and introduction to git and python - primarily for 1-dimensional datasets.  The science and research cruise discussion will be broader, to introduce the topics, while in part 2, we will look in more detail.  For working with instruments, we will look more closely and work directly with the manufacturer's software to apply initial corrections.  This will get into the nitty gritty quickly, with the cell thermal mass and alignment problems of modern CTD instruments. Getting started with Git and Python. Cell thermal mass, align CTD problems, salinity spikes, buoyancy frequency, density definitions, filtering, and decorrelation scales.
+* - Weeks 5-8
+  - **Adding dimensions:** For working with data, we will add second dimensions: instead of just depth, we'll look at depth and time (moorings), and instead of just profiles (depth), we'll look at hydrographic sections.  For cruise planning, the added dimension will be considerations of cost and international context (dipclears).  For programming, we'll look into how we need to treat observational data which is incomplete (discrete and coarse resolution in depth - moorings, or in horizontal distance - hydrographic sections).  And will consider how treatment of these gaps affects calculations like gradients, transports, overturning.  
 * - Weeks 10-13 (11 June - 2 July)
-  - **Mooring arrays + gliders**: 3-dimensional CTD data (z, x and t) + high-resolution sections (gliders and to-yos). Transport estimates and trends, reference level choices, horizontal density gradients and potential vorticity.
+  - **Expansion:** The final part of the course has you synthesizing what you've learned in python and cruise planning.  We'll use high-resolution sections (gliders and to-yos) and comparisions between space-time and space-space datasets, evaluating sensitivity of transport estimates to biases and reference level choices, optimal interpolation, horizontal density gradients and potential vorticity.
 * - Weeks 14 (9 July)
   - **Final presentations**
 ```

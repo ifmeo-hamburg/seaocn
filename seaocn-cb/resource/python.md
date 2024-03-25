@@ -24,7 +24,89 @@ Potentially of interest:
 
 ## Installing packages (Mac)
 
-Use pip install.
+We need various packages as above.  For environment management, we use `conda`.  
+
+```{seealso}
+Managing environments with [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+```
+
+Choose a directory where you will work on the python for this course.  Navigate to the directory in a terminal window.
+The basic command is something like `conda create --name <my-env>`  where you replace `<my-env>` with the name of your environment.  Let's call it `seaocn_env`.  But we'll try to install a lot of the necessary pieces at once:
+```
+conda create --channel conda-forge --name seaocn_env xarray gsw python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel
+conda activate seaocn_env
+```
+
+```{note}
+To install an individual package with conda, you can use
+
+    conda install -c conda-forge <package>
+
+```
+
+We need a few more packages that seem to only have `pip` instructions
+```
+pip install pycnv
+pip install git+https://github.com/cioos-siooc/ocean-data-parser.git
+conda env export > environment.yml
+```
+This has created a list of the current environment which you can get from this repository [environment.yml (repository)](https://github.com/ifmeo-hamburg/seaocn/blob/main/environment.yml).  If you download this into your working directory, you can activate the environment:
+```
+conda env create -f environment.yml
+```
+Then before you start working, activate the environment using
+```
+conda activate seaocn_env
+jupyter-lab
+```
+
+Now, when you start `jupyter-lab` you'll see that you can select the environment `seaocn_env`.  Or, when you open an existing python notebook (`*.ipynb` file), in the upper right corner you can select the environment (e.g., `seaocn_env` and tick the box to always open with preferred kernel).
+
+```{note}
+If it's been a while since you installed conda, you can update it with
+
+    conda update -n base -c conda-forge conda
+
+But your conda will tell you when you need to do this
+```
+
+```{note}
+If you want to recreate your environment with conda, after adding a few things, you can do a
+
+    conda deactivate
+    conda remove --name seaocn_env --all
+
+And then start fresh with the `conda create` code above, appending the extra packages in the intial install.
+```
+
+### Problems with jupyter-book and kernels
+
+My jupyter-book didn't know about my environment seaocn_env.  This should *not* be a problem for students, but is a problem when i want to execute this book (the course  notes) which contain packages that aren't in my base installation of python on my computer.
+
+```
+pico $HOME/.jupyter/jupyter_config.json
+```
+and add the lines
+```
+{
+  "CondaKernelSpecManager": {
+    "kernelspec_path": "--user"
+  }
+}
+```
+After saving this, I was able to run
+```
+python -m nb_conda_kernels list
+```
+and it appeared to add my kernels.
+
+Then making the jupter book worked without errors.
+
+
+```{seealso}
+https://fcollonval.medium.com/conda-environments-in-jupyter-ecosystem-without-pain-e9fab3992fb7
+```
+(seaocn_env) 18:20 ~/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH $ python -m nb_conda_kernels list
 
 ## Environments
 
