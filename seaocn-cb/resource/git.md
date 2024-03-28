@@ -1,4 +1,8 @@
-# Git and Python
+# Git for sharing & versioning
+
+[Why use git? (external link)](https://walkingrandomly.com/?p=6653) - This is optional reading.  Worth knowing when you inevitably hit annoying problems around git.
+
+In the meantime, you should also use git because it is required for this course.  Assignments will be submitted by submitting a git repository.
 
 ## Git on Windows
 

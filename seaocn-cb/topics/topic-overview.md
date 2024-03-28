@@ -1,3 +1,6 @@
+---
+:orphan:
+---
 # Course chunks 3 x 4 + 2
 
 The course is designed into three somewhat separate "chunks" of content which each span 4 weeks.  It is possible that some topics will take longer than planned, and that the course will stretch.  No deadlines will be moved forward, however.

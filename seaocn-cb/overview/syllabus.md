@@ -15,6 +15,7 @@ Prof. Eleanor Frajka-Williams
 - Phone: 
 - Office hours: TBD
 
+(course_assistant)=
 Emelie Breunig
 - Office: Bu53 25X
 - e-mail: emelie.breunig@uni-hamburg.de
@@ -59,33 +60,7 @@ You are expected to start the course with a basic understanding of ocean process
 
 **Participation is expected.** This will take several forms during the course: preparation for discussion topics to be held during class, presentation of figures at the start of the class from the previous week's computer session, and formal (graded) presentations after reports on projects are handed in.  You learn more (and enjoy it more) when you're engaged with the course and the material.
 
-## Topics
 
-Timing is rough and may slide depending on how much time it takes to introduce and discuss topics.
-
-**Firm dates:**
-- May 21 - no class, Pfingsten
-- May 28 - Seepraktikum conflict (possible change)
-- June 11 - substitute lecture
-
-
-```{list-table} Schedule of chunks
-:width: 100
-:widths: 30 70
-:header-rows: 1
-:name: tablechunk
-
-* - Week
-  - Topic
-* - Weeks 1-4 
-  - **Overview**: of the AMOC science, measurement equipment, cruise anatomy and introduction to git and python - primarily for 1-dimensional datasets.  The science and research cruise discussion will be broader, to introduce the topics, while in part 2, we will look in more detail.  For working with instruments, we will look more closely and work directly with the manufacturer's software to apply initial corrections.  This will get into the nitty gritty quickly, with the cell thermal mass and alignment problems of modern CTD instruments. Getting started with Git and Python. Cell thermal mass, align CTD problems, salinity spikes, buoyancy frequency, density definitions, filtering, and decorrelation scales.
-* - Weeks 5-8
-  - **Adding dimensions:** For working with data, we will add second dimensions: instead of just depth, we'll look at depth and time (moorings), and instead of just profiles (depth), we'll look at hydrographic sections.  For cruise planning, the added dimension will be considerations of cost and international context (dipclears).  For programming, we'll look into how we need to treat observational data which is incomplete (discrete and coarse resolution in depth - moorings, or in horizontal distance - hydrographic sections).  And will consider how treatment of these gaps affects calculations like gradients, transports, overturning.  
-* - Weeks 10-13 (11 June - 2 July)
-  - **Expansion:** The final part of the course has you synthesizing what you've learned in python and cruise planning.  We'll use high-resolution sections (gliders and to-yos) and comparisions between space-time and space-space datasets, evaluating sensitivity of transport estimates to biases and reference level choices, optimal interpolation, horizontal density gradients and potential vorticity.
-* - Weeks 14 (9 July)
-  - **Final presentations**
-```
 
 
 ## Evaluation
@@ -109,11 +84,11 @@ Unless otherwise specified, assignments (reports) are due **Wednesdays at 23:59*
   - Weight
 * - In-class and participation
   - 10%
-* - Group assignment: Cruise proposal (with appendices)
-  - 20%
-* - Report 1: Data handling w/repository
-  - 30%
-* - Report 2: Data processing w/repository
+* - Group assignment: Cruise planning
+  - 10%
+* - Assignment 1: Python
+  - 40%
+* - Assignment 2: Python
   - 40%
 * - **Total**
   - 100%
@@ -134,7 +109,7 @@ This is a fine line.  You will have some unmarked (ungraded) assignments where y
 If you realise you are not understanding things as well as you could, or are finding yourself lost during practicals, please take note of these opportunities to support your learning:
 
 - **Your peers:** Working together with other people learning the same material is an excellent way to gain a deeper understanding of concepts. I highly recommend exchanging contact information and meeting up to discuss the class or practials.
-- **Lab sessions:** Lab sessions are timetabled as required and led by the course assistant.  Their purpose is to help you work through problems and gain practical experience.
+- **Lab sessions:** Lab sessions are timetabled as required and led by the [course assistant](#course-assistant).  Their purpose is to help you work through problems and gain practical experience.
 - **For clarifications on the assessment:** Please ask the instructor during office hours, or post questions on the course forum (if you can do so without giving away the solution).  For questions and clarifications on formative problems, you may confer with your peers, course assistant, instructor and on the forum.
 - **Errors/typos:** For these and other issues that may be useful for the whole class to be aware of, please use the forum.
 

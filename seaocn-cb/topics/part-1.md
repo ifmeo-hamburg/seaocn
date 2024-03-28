@@ -7,25 +7,25 @@ The course is designed into three somewhat separate "chunks" of content which ea
 :gutter: 3
 
 :::{grid-item-card} Overview
-:link: lecture-1.html
+:link: lecture-overview.html
 Seagoing oceanography + AMOC science (why we care, what it's doing)
+:::
+
+:::{grid-item-card} Science themes
+:link: lecture-science.html
+AMOC + other science (why we care, what we know, what we don't)
+:::
+
+:::{grid-item-card} Equations v. data
+:link: discuss-eqn-data.html
+
+Observable oceanography: from observations what can we calculate?
 :::
 
 :::{grid-item-card} Messmethoden - crash course
 :link: topic-messmethoden.html
 
 What we can measure, how, and how well
-:::
-
-:::{grid-item-card} Anatomy of a cruise
-:link: topic-cruise-anatomy.html
-
-Overview of the process + formalities.
-:::
-
-:::{grid-item-card} Observable oceanography
-:link: topic-observable.html
-Equations we can measure (papers).
 :::
 
 ::::

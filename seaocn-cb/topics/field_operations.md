@@ -1,4 +1,10 @@
-# Cruise planning: Funding & International context
+---
+:orphan:
+---
+# Field Operations
+
+
+## Funding & International context
 
 Beyond just the science and the technical requirements of a cruise, you also need to consider the funding constraints and international context of a cruise.
 

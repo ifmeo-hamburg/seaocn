@@ -1,4 +1,5 @@
-# Assignment 2 - To-yos
+:orphan:
+# Assignment - To-yos
 
 
 **Aim:** The purpose of this assignment is to build some clean, easy-to-use code to work with to-yo data in real-time on a ship.  Here we ignore any data calibration problems, and instead aim for clear figures and well-documented code for easy edits.  

@@ -1,4 +1,6 @@
 ---
+:orphan:
+
 jupytext:
   cell_metadata_filter: -all
   formats: md:myst
@@ -12,7 +14,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Assignment 2 - Gliders
+# Assignment - Gliders
 
 
 ## Lab overview

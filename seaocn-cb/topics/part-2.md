@@ -1,4 +1,6 @@
-
+---
+:orphan:
+---
 
 ## Part 2: Adding dimensions
 

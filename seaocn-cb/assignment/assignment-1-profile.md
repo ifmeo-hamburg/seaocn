@@ -1,4 +1,5 @@
-# Assignment 1 - CTD profiles
+:orphan:
+# Assignment - CTD profiles
 
 
 **Aim:** The purpose of this assignment is to evaluate the sensitivity of CTD profiles (and various derived quantities) to the choices made during Seabird processing for constants applied in align CTD and cell thermal mass correction.

@@ -1,5 +1,4 @@
-:orphan: 
-# Assignment - moored CTDs
+# Assignment 1 - moored CTDs
 
 Two moored CTDs were deployed on the WB2 mooring of the RAPID array at 26.5°N and 76.75°W at 2000m depth in 3800m water depth.  They were deployed in late December/early January 2021 and recovered in early 2023.  This was a trial deployment of an RBR concerto CTD against a microCAT.
 

@@ -8,21 +8,37 @@ parts:
   chapters:
   - file: overview/catalog-listing
   - file: overview/syllabus
+  - file: overview/schedule
  
-- caption: Parts
-  chapters: 
-  - file: topics/part-1
-    sections:
-    - file: topics/lecture-1
-    - file: topics/topic-messmethoden
-    - file: topics/topic-cruise-anatomy
-    - file: topics/topic-observable
-  - file: topics/part-2
+- caption: Topics
+  numbered: true
+  chapters:
+  - file: topics/course_overview
+  - file: topics/scientific_basis
+  - file: topics/equations_v_data
+  - file: topics/instruments_platforms
+  - file: topics/amoc_methods
+  - file: topics/experiment_design
+  - file: topics/sampling_uncertainty
+  - file: topics/cruise_anatomy
+  - file: topics/sensors
+  - file: topics/unidentified
+  - file: topics/good_scientific_practice
+  - file: topics/field_operations
+#- caption: Parts
+#  chapters: 
+#  - file: topics/part-1
+#    sections:
+#    - file: topics/lecture-1
+#    - file: topics/topic-messmethoden
+#    - file: topics/topic-cruise-anatomy
+#    - file: topics/topic-observable
+#  - file: topics/part-2  # Add later
 #    sections:
 #    - file: topics/lecture-amoc-methods
 #    - file: topics/lecture-data-quality
 #    - file: topics/lecture-cruise-context
-  - file: topics/part-3
+#  - file: topics/part-3  # Add later
 #    sections:
 #    - file: topics/lecture-reproducible
 
@@ -38,10 +54,10 @@ parts:
 - caption: Assignments
   chapters:
   - file: assignment/assignment-1
-    sections:
-    - file: assignment/assignment-1-moored
-    - file: assignment/assignment-1-profile
-  - file: assignment/assignment-2
+#    sections:
+#    - file: assignment/assignment-1-moored
+#    - file: assignment/assignment-1-profile
+#  - file: assignment/assignment-2
 #    sections:
 #    - file: assignment/assignment-2-geostrophy
 #    - file: assignment/assignment-2-toyo

@@ -1,3 +1,0 @@
-# Seagoing Oceanography
-
-See slides.
