@@ -1,0 +1,83 @@
+Traceback (most recent call last):
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/eddifying/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+def read_hex_header(file_path: str, encoding = 'latin-1') -> xr.Dataset:
+    ''' Reads a *.HEX file from Seabird into an xarray dataset. '''
+
+    # Read the file
+    with open(file_path, 'r', encoding=encoding) as file:
+        lines = file.readlines()
+
+    # Find the line with column names
+    header_line_index = next((i for i, line in enumerate(lines) if line.startswith('*END*')), None)
+
+    if header_line_index is None:
+        raise ValueError("Line with header end not found in the file.")
+
+    # Extract column names
+    column_names = lines[header_line_index].strip().split()[1:]
+
+    # Extract column units
+    units = [None] + lines[header_line_index + 1].replace('[','').replace(']','').strip().split()[1:]
+
+    # Load data into pandas DataFrame
+    data_start_index = header_line_index + 3
+    data = pd.read_csv(
+        file_path,
+        skiprows=data_start_index,
+        delim_whitespace=True,
+        names=column_names,
+        parse_dates={'Timestamp': ['IntD', 'IntT']},
+        encoding=encoding,
+    )
+
+    # Convert DataFrame to xarray dataset
+    ds = xr.Dataset.from_dataframe(data.set_index('Timestamp'))
+
+    # Assign units to data fields
+    for index, name in enumerate(column_names):
+        if name in ds and units[index]:
+            ds[name].attrs['units'] = units[index]
+
+    # Rename fields
+    ds = ds.rename({
+        'SALIN': 'Salinity',
+        'Temp': 'Temperature',
+        'Cond': 'Conductivity',
+        'Press': 'Pressure',
+        'SOUND': 'SoundVelocity',
+        'SIGMA': 'Sigma',
+        'Datasets': 'Sample',
+    })
+
+    # Ensure 'Timestamp' coordinate is datetime type
+    ds['Timestamp'] = pd.to_datetime(ds['Timestamp'], errors='coerce')
+
+    return ds
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [38;5;28;01mdef[39;00m [38;5;21mread_hex_header[39m(file_path: [38;5;28mstr[39m, encoding [38;5;241m=[39m [38;5;124m'[39m[38;5;124mlatin-1[39m[38;5;124m'[39m) [38;5;241m-[39m[38;5;241m>[39m [43mxr[49m[38;5;241m.[39mDataset:
+[1;32m      2[0m [38;5;250m    [39m[38;5;124;03m''' Reads a *.HEX file from Seabird into an xarray dataset. '''[39;00m
+[1;32m      4[0m     [38;5;66;03m# Read the file[39;00m
+
+[0;31mNameError[0m: name 'xr' is not defined
+

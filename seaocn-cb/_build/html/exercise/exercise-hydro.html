@@ -1,0 +1,737 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 4 - Hydro sections &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-hydro';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignment 1" href="../assignment/assignment-1.html" />
+    <link rel="prev" title="Exercise 3 Profiles" href="exercise-cnv.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v Data (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments &amp; Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/amoc_methods.html">5. AMOC methods (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/experiment_design.html">6. Experiment design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sampling_uncertainty.html">7. Sampling &amp; Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/cruise_anatomy.html">8. Cruise anatomy (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sensors.html">9. Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/unidentified.html">10. Topic (TBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/good_scientific_practice.html">11. Good Scientific Practice (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/field_operations.html">12. Field Operations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise A1 - Git</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-basic.html">Exercise 2 - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-fitting.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 3 Profiles</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 4 - Hydro sections</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assignment/assignment-1.html">Assignment 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../resource/python.html">Python packages</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resource/running-python.html">Running Python (Windows)</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Content in Jupyter Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-hydro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-hydro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 4 - Hydro sections</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 4 - Hydro sections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-hex-files">Handling HEX files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-function-to-parse-header-files">Writing a function to parse header files.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#super-brief-explanation-of-git">Super-brief explanation of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-you-have-python-installed">Check whether you have python installed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-jupyterlab">Installing jupyterlab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-open-this-notebook-in-jupyter-notebook">Now, open this notebook in jupyter notebook.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-an-environment">(optional) setting up an environment</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-4-hydro-sections">
+<h1>Exercise 4 - Hydro sections<a class="headerlink" href="#exercise-4-hydro-sections" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> The aim of this exercise is to get you comfortable plotting and working with matrix (2-dimensional) data.</p>
+<p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Plot 2-dimensional fields with a colorbar</p></li>
+<li><p>Loop through a 2-dimensional matrix to perform a calculation on each profile</p></li>
+</ol>
+<p><strong>Data</strong>: work with hydrographic data from the Weddell Sea.  This is a large dataset.  First make a map of the station locations, then pick a single section to work with.</p>
+<hr>
+<section id="handling-hex-files">
+<h2>Handling HEX files<a class="headerlink" href="#handling-hex-files" title="Permalink to this heading">#</a></h2>
+<p>First use the list of hex files and read them as text to parse the latitude and longitude.  This is contained in the header information.  You can run through the <code class="docutils literal notranslate"><span class="pre">*.hex</span></code> files to find lines that start with <code class="docutils literal notranslate"><span class="pre">NMEA</span> <span class="pre">Latitude</span></code> and <code class="docutils literal notranslate"><span class="pre">NMEA</span> <span class="pre">Longitude</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">Sea</span><span class="o">-</span><span class="n">Bird</span> <span class="n">SBE</span> <span class="mi">9</span> <span class="n">Data</span> <span class="n">File</span><span class="p">:</span>
+<span class="o">*</span> <span class="n">FileName</span> <span class="o">=</span> <span class="n">D</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">JR310</span>\<span class="n">Raw</span> <span class="n">data</span>\<span class="n">JR310_068</span><span class="o">.</span><span class="n">hex</span>
+<span class="o">*</span> <span class="n">Software</span> <span class="n">Version</span> <span class="n">Seasave</span> <span class="n">V</span> <span class="mf">7.22.3</span>
+<span class="o">*</span> <span class="n">Temperature</span> <span class="n">SN</span> <span class="o">=</span> <span class="mi">5043</span>
+<span class="o">*</span> <span class="n">Conductivity</span> <span class="n">SN</span> <span class="o">=</span> <span class="mi">3491</span>
+<span class="o">*</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Bytes</span> <span class="n">Per</span> <span class="n">Scan</span> <span class="o">=</span> <span class="mi">37</span>
+<span class="o">*</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Voltage</span> <span class="n">Words</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">*</span> <span class="n">Number</span> <span class="n">of</span> <span class="n">Scans</span> <span class="n">Averaged</span> <span class="n">by</span> <span class="n">the</span> <span class="n">Deck</span> <span class="n">Unit</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">*</span> <span class="n">System</span> <span class="n">UpLoad</span> <span class="n">Time</span> <span class="o">=</span> <span class="n">Apr</span> <span class="mi">09</span> <span class="mi">2015</span> <span class="mi">19</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">54</span>
+<span class="o">*</span> <span class="n">NMEA</span> <span class="n">Latitude</span> <span class="o">=</span> <span class="mi">60</span> <span class="mf">38.68</span> <span class="n">S</span>
+<span class="o">*</span> <span class="n">NMEA</span> <span class="n">Longitude</span> <span class="o">=</span> <span class="mi">042</span> <span class="mf">05.50</span> <span class="n">W</span>
+<span class="o">*</span> <span class="n">NMEA</span> <span class="n">UTC</span> <span class="p">(</span><span class="n">Time</span><span class="p">)</span> <span class="o">=</span> <span class="n">Apr</span> <span class="mi">09</span> <span class="mi">2015</span> <span class="mi">19</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">52</span>
+<span class="o">*</span> <span class="n">Store</span> <span class="n">Lat</span><span class="o">/</span><span class="n">Lon</span> <span class="n">Data</span> <span class="o">=</span> <span class="n">Append</span> <span class="n">to</span> <span class="n">Every</span> <span class="n">Scan</span>
+<span class="o">**</span> <span class="n">Vessel</span><span class="p">:</span> <span class="n">James</span> <span class="n">Clark</span> <span class="n">Ross</span> 
+<span class="o">**</span> <span class="n">Cruise</span><span class="p">:</span> <span class="n">JR310</span> 
+<span class="o">**</span> <span class="n">Station</span> <span class="n">Number</span><span class="p">:</span>  <span class="mi">68</span>
+<span class="o">**</span> <span class="n">Depth</span> <span class="p">(</span><span class="n">EM122</span><span class="p">):</span>  <span class="mi">3711</span>
+<span class="o">**</span> <span class="n">PSO</span><span class="p">:</span> <span class="n">EPA</span> 
+<span class="o">**</span> <span class="n">Operator</span><span class="p">:</span> <span class="n">RDP</span>
+<span class="o">*</span> <span class="n">System</span> <span class="n">UTC</span> <span class="o">=</span> <span class="n">Apr</span> <span class="mi">09</span> <span class="mi">2015</span> <span class="mi">19</span><span class="p">:</span><span class="mi">55</span><span class="p">:</span><span class="mi">54</span>
+<span class="o">*</span><span class="n">END</span><span class="o">*</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-a-function-to-parse-header-files">
+<h2>Writing a function to parse header files.<a class="headerlink" href="#writing-a-function-to-parse-header-files" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="k">def</span> <span class="nf">read_hex_header</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;latin-1&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Reads a *.HEX file from Seabird into an xarray dataset. &#39;&#39;&#39;</span>
+
+    <span class="c1"># Read the file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="c1"># Find the line with column names</span>
+    <span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;*END*&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">header_line_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Line with header end not found in the file.&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Extract column names</span>
+    <span class="n">column_names</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># Extract column units</span>
+    <span class="n">units</span> <span class="o">=</span> <span class="p">[</span><span class="kc">None</span><span class="p">]</span> <span class="o">+</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># Load data into pandas DataFrame</span>
+    <span class="n">data_start_index</span> <span class="o">=</span> <span class="n">header_line_index</span> <span class="o">+</span> <span class="mi">3</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+        <span class="n">file_path</span><span class="p">,</span>
+        <span class="n">skiprows</span><span class="o">=</span><span class="n">data_start_index</span><span class="p">,</span>
+        <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">names</span><span class="o">=</span><span class="n">column_names</span><span class="p">,</span>
+        <span class="n">parse_dates</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IntD&#39;</span><span class="p">,</span> <span class="s1">&#39;IntT&#39;</span><span class="p">]},</span>
+        <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Convert DataFrame to xarray dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">))</span>
+
+    <span class="c1"># Assign units to data fields</span>
+    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">column_names</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">ds</span> <span class="ow">and</span> <span class="n">units</span><span class="p">[</span><span class="n">index</span><span class="p">]:</span>
+            <span class="n">ds</span><span class="p">[</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s1">&#39;units&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">units</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+    <span class="c1"># Rename fields</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">rename</span><span class="p">({</span>
+        <span class="s1">&#39;SALIN&#39;</span><span class="p">:</span> <span class="s1">&#39;Salinity&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Temp&#39;</span><span class="p">:</span> <span class="s1">&#39;Temperature&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Cond&#39;</span><span class="p">:</span> <span class="s1">&#39;Conductivity&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Press&#39;</span><span class="p">:</span> <span class="s1">&#39;Pressure&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SOUND&#39;</span><span class="p">:</span> <span class="s1">&#39;SoundVelocity&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;SIGMA&#39;</span><span class="p">:</span> <span class="s1">&#39;Sigma&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;Datasets&#39;</span><span class="p">:</span> <span class="s1">&#39;Sample&#39;</span><span class="p">,</span>
+    <span class="p">})</span>
+
+    <span class="c1"># Ensure &#39;Timestamp&#39; coordinate is datetime type</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">ds</span><span class="p">[</span><span class="s1">&#39;Timestamp&#39;</span><span class="p">],</span> <span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="super-brief-explanation-of-git">
+<h1>Super-brief explanation of git<a class="headerlink" href="#super-brief-explanation-of-git" title="Permalink to this heading">#</a></h1>
+<p>Git is keeping track of changes to your files within the local repository (your copy of the course folder on your computer).  When you change a file in the folder, git knows.  How do you know it knows?  If you go into your Github desktop (purple icon, desktop app) and choose the repository you’re working in in the dropdown menu on the left, and you have changed a file, the filename  for the file with changes will appear in a list, and to the right you can preview the changes that have been made (previous commit and current edited version).</p>
+<p>After you’ve been working on a file for a while (a day, an hour, 5 minutes, etc), e.g. a piece of code in your repository on your computer, and you’ve made some important changes, you will want to tell git to save a snapshot of these changes.  To do this you click <strong>commit</strong> in Github desktop.  This will then make git store a version according to the point in time when you clicked commit.  <em>Advanced tip: in the commit message, you can write something useful to describe the changes, like “added a new function to load data from a microcat”.</em>  So far, only your own computer knows about these changes.</p>
+<p>When you want to share these changes with your group, i.e. have these changes show up in the repository on the <a class="reference external" href="http://gitlab.rrz.uni-hamburg.de">gitlab.rrz.uni-hamburg.de</a> location, then you need to <strong>push</strong> the changes.  This is a button to the right in your Github desktop (or top right), where you click.  This will then make the changes appear in the online copy of the repository.</p>
+<p>When your group member has made changes, and you want these changes to appear in your copy of the code on your own computer, then you need to <strong>fetch</strong> these changes from the version on <a class="reference external" href="http://gitlab.rrz.uni-hamburg.de">gitlab.rrz.uni-hamburg.de</a>.  This will not overwrite any of your files.  It will simply add what they have done.</p>
+<p><strong>Note:</strong> For beginner usage, I recommend that you all keep a separate copy of your python code to start with.  If you work on the same piece of code, it’s possible for you to delete something and commit it to your repository (on your own computer), and for someone else to edit the same thing without deleting it and commit it on their own computer.  If you both then push these changes to the repository, or you fetch your colleagues changes from the online repository onto your computer, you will get a <strong>conflict</strong> which needs to be merged manually.</p>
+<p>Read more: <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F</a></p>
+<p>More advanced: It’s best to work inside an environment.  This controls the version of each of the packages that you have installed, so that the code is more likely to run smoothly on another person’s computer.  Some background on <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environments</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="check-whether-you-have-python-installed">
+<h1>Check whether you have python installed<a class="headerlink" href="#check-whether-you-have-python-installed" title="Permalink to this heading">#</a></h1>
+<p>In Mac or Linux, at the command line, type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>For example, mine says</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) 9:34 ~ $ python --version
+Python 3.9.5
+</pre></div>
+</div>
+<section id="using-conda">
+<h2>Using conda<a class="headerlink" href="#using-conda" title="Permalink to this heading">#</a></h2>
+<p>For Mac users, you will probably want <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed on your computer.</p>
+<p>You can get conda here: <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">https://conda.io/projects/conda/en/latest/user-guide/install/index.html</a>.  I would recommend <em>miniconda</em> (Here is the direct link for <a class="reference external" href="https://docs.anaconda.com/free/miniconda/miniconda-install/">installing miniconda</a>).  If you already have Anaconda, that is fine too.</p>
+<p>We will also use jupyter notebooks in this course.</p>
+</section>
+<section id="installing-jupyterlab">
+<h2>Installing jupyterlab<a class="headerlink" href="#installing-jupyterlab" title="Permalink to this heading">#</a></h2>
+<p>You can install jupyterlab with conda</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyterlab=4.0.7 notebook=7.0.6
+</pre></div>
+</div>
+<p>Since we recommend managing your environments, then conda (as above) is the better way to install it.  Otherwise you can use pip: <a class="reference external" href="https://jupyter.org/install">https://jupyter.org/install</a>.</p>
+<p>If you already have Anaconda, then jupyter lab comes by default <a class="reference external" href="https://test-jupyter.readthedocs.io/en/latest/install.html">explained here</a>.</p>
+</section>
+<section id="now-open-this-notebook-in-jupyter-notebook">
+<h2>Now, open this notebook in jupyter notebook.<a class="headerlink" href="#now-open-this-notebook-in-jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<p>Please record for yourself the steps you took to get jupyter running on your computer.</p>
+</section>
+<section id="optional-setting-up-an-environment">
+<h2>(optional) setting up an environment<a class="headerlink" href="#optional-setting-up-an-environment" title="Permalink to this heading">#</a></h2>
+<p>On a Mac, in a terminal window, you will create an environment using a specified version of python.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span> <span class="o">-</span><span class="n">y</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">seaocn_env</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-seaocn_env-py"
+        },
+        kernelOptions: {
+            name: "conda-env-seaocn_env-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise-cnv.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 3 Profiles</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../assignment/assignment-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignment 1</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 4 - Hydro sections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#handling-hex-files">Handling HEX files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-a-function-to-parse-header-files">Writing a function to parse header files.</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#super-brief-explanation-of-git">Super-brief explanation of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-you-have-python-installed">Check whether you have python installed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-jupyterlab">Installing jupyterlab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-open-this-notebook-in-jupyter-notebook">Now, open this notebook in jupyter notebook.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-an-environment">(optional) setting up an environment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
