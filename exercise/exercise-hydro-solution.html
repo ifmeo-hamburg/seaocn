@@ -1,0 +1,1274 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 4 - Hydro sections &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-hydro-solution';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v Data (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments &amp; Platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/amoc_methods.html">5. AMOC methods (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/experiment_design.html">6. Experiment design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sampling_uncertainty.html">7. Sampling &amp; Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/cruise_anatomy.html">8. Cruise anatomy (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sensors.html">9. Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/unidentified.html">10. Topic (TBD)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/good_scientific_practice.html">11. Good Scientific Practice (D)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/field_operations.html">12. Field Operations</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise A1 - Git</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-basic.html">Exercise 2 - Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-fitting.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 3 Profiles</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-hydro.html">Exercise 4 - Hydro sections</a></li>
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assignment/assignment-1.html">Assignment 1</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../resource/python.html">Python packages</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../resource/running-python.html">Running Python (Windows)</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../content.html">Content in Jupyter Book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../markdown.html">Markdown Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks.html">Content with notebooks</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-hydro-solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-hydro-solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 4 - Hydro sections</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 4 - Hydro sections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-in-matlab-format">Load data in matlab format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-course-repository">Clone the course repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#super-brief-explanation-of-git">Super-brief explanation of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-you-have-python-installed">Check whether you have python installed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-jupyterlab">Installing jupyterlab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-open-this-notebook-in-jupyter-notebook">Now, open this notebook in jupyter notebook.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-an-environment">(optional) setting up an environment</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p>:orphan:</p>
+<section class="tex2jax_ignore mathjax_ignore" id="exercise-4-hydro-sections">
+<h1>Exercise 4 - Hydro sections<a class="headerlink" href="#exercise-4-hydro-sections" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> The aim of this exercise is to get you comfortable plotting and working with matrix (2-dimensional) data.</p>
+<p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Plot 2-dimensional fields with a colorbar</p></li>
+<li><p>Loop through a 2-dimensional matrix to perform a calculation on each profile</p></li>
+</ol>
+<p>**Data: work with</p>
+<hr>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="load-data-in-matlab-format">
+<h2>Load data in matlab format<a class="headerlink" href="#load-data-in-matlab-format" title="Permalink to this heading">#</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.loadmat.html">scipy.io.loadmat</a> with install instructions <a class="reference external" href="https://scipy.org/install/">here</a>.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install scipy
+</pre></div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load a matlab data file</span>
+<span class="c1"># scipy.io.loadmat(file_name, mdict=None, appendmat=True, **kwargs)</span>
+<span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">scipy.io</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/wbts_data.mat&#39;</span>
+    <span class="n">data1</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">loadmat</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    
+    <span class="c1"># Split out the variables</span>
+    <span class="n">crs</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;crs&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">stn</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;stn&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">tme_days_since_0000</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;tme&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># But wbts_data which was a Matlab structure is very ugly</span>
+    <span class="c1"># In Matlab, it was a 1 x 777 array of structures where each structure had the fields:</span>
+    <span class="c1"># pr (pressure)</span>
+    <span class="c1"># te (temperature)</span>
+    <span class="c1"># sa (absolute salinity)</span>
+    <span class="c1"># dh (dynamic height)</span>
+    <span class="c1"># ox (oxygen)</span>
+    <span class="c1"># time (in matlab time), 1x1</span>
+    <span class="c1"># stn (station number), 1x1</span>
+    <span class="c1"># lat 1x1</span>
+    <span class="c1"># lon 1x1</span>
+    <span class="n">wbts_data</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="s1">&#39;wbts_data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">wbts_data</span><span class="p">)):</span>
+        <span class="n">pr</span> <span class="o">=</span> <span class="n">wbts_data</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">:]</span>
+    <span class="c1">#    te = wbts_data[0][1][0:]</span>
+    <span class="c1">#    sa = wbts_data[0][2][0:]</span>
+    <span class="c1">#    dh = wbts_data[0][3][0:]</span>
+    <span class="c1">#    ox = wbts_data[0][4][0:]</span>
+    <span class="c1">#    days_since_0000 = wbts_data[0][5][0]</span>
+    <span class="c1">#    stn = wbts_data[0][6][0]</span>
+    <span class="c1">#   lon = wbts_data[0][8][0]</span>
+    <span class="c1">#    lat = wbts_data[0][7][0]</span>
+
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/wbts_data.nc&#39;</span>
+<span class="n">data1</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">data1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:   (lon: 29, pressure: 4146)
+Coordinates:
+  * lon       (lon) float64 -76.73 -76.76 -76.77 -76.76 ... -76.74 -76.75 -76.75
+  * pressure  (pressure) float64 1.0 2.0 3.0 4.0 5.0 6.0 ... nan nan nan nan nan
+Data variables:
+    lat       (lon) float64 ...
+    time      (lon) datetime64[ns] ...
+    temp      (lon, pressure) float64 ...
+    salin     (lon, pressure) float64 ...
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example without a function to parse parts of the header file.</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/JR310_068.hex&#39;</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+<span class="c1"># Find the line with latitude</span>
+<span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;* NMEA Latitude&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Split the line at spaces</span>
+<span class="n">lat_parser</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># Extract the data corresponding to latitude and convert from string to float (decimal number)</span>
+<span class="n">lat_degrees</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat_parser</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">lat_minutes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat_parser</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+<span class="c1"># Adjust the sign for degrees  south</span>
+<span class="k">if</span> <span class="n">lat_parser</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;S&#39;</span><span class="p">:</span>
+    <span class="n">lat_degrees</span> <span class="o">=</span> <span class="o">-</span><span class="n">lat_degrees</span>
+    <span class="n">lat_minutes</span> <span class="o">=</span> <span class="o">-</span><span class="n">lat_minutes</span>
+
+
+<span class="n">lat</span> <span class="o">=</span> <span class="n">lat_degrees</span> <span class="o">+</span> <span class="n">lat_minutes</span><span class="o">/</span><span class="mi">60</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lat</span><span class="p">)</span>
+
+<span class="c1"># Find the line with time</span>
+<span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;* NMEA UTC&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+<span class="c1"># Split the line at spaces</span>
+<span class="n">time_parser</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+<span class="c1"># Pull out the individual time elements</span>
+<span class="n">mo_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">day_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+<span class="n">year_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+<span class="n">HHMMSS_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+<span class="n">mydatestr</span> <span class="o">=</span> <span class="p">[</span><span class="n">year_string</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">mo_string</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">day_string</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">HHMMSS_string</span><span class="p">]</span>
+<span class="c1"># This datestr has the format `2015-Apr-09 19:55:52` </span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">mydatestr</span><span class="p">}</span>
+
+<span class="c1">#</span>
+<span class="c1"># More on reading/parsing date and time formats in pandas:</span>
+<span class="c1"># https://saturncloud.io/blog/how-to-convert-datetime-to-string-with-series-in-pandas/#:~:text=with%20data%20analysis.-,Converting%20datetime%20to%20string%20in%20Pandas,to%20a%20specified%20format%20string.</span>
+<span class="c1">#</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># We write the format here to match the format of the data in the hex file.</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%b-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-60.644666666666666
+                 date
+0 2015-04-09 19:55:52
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">read_hex_header</span><span class="p">(</span><span class="n">file_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">encoding</span> <span class="o">=</span> <span class="s1">&#39;latin-1&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&#39;&#39;&#39; Reads a *.HEX file from Seabird into an xarray dataset. &#39;&#39;&#39;</span>
+
+    <span class="c1"># Read the file</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="n">encoding</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">lines</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
+
+    <span class="c1">#-------</span>
+    <span class="c1"># Find the line with latitude</span>
+    <span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;* NMEA Latitude&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Split the line at spaces</span>
+    <span class="n">lat_parser</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># Extract the data corresponding to latitude and convert from string to float (decimal number)</span>
+    <span class="n">lat_degrees</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat_parser</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">lat_minutes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat_parser</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+    <span class="c1"># Adjust the sign for degrees  south</span>
+    <span class="k">if</span> <span class="n">lat_parser</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;S&#39;</span><span class="p">:</span>
+        <span class="n">lat_degrees</span> <span class="o">=</span> <span class="o">-</span><span class="n">lat_degrees</span>
+        <span class="n">lat_minutes</span> <span class="o">=</span> <span class="o">-</span><span class="n">lat_minutes</span>
+
+    <span class="c1"># Convert to decimal degrees</span>
+    <span class="n">lat</span> <span class="o">=</span> <span class="n">lat_degrees</span> <span class="o">+</span> <span class="n">lat_minutes</span><span class="o">/</span><span class="mi">60</span>
+
+    <span class="c1">#-------</span>
+    <span class="c1"># Find the line with longitude</span>
+    <span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;* NMEA Longitude&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+
+    <span class="c1"># Split the line at spaces</span>
+    <span class="n">lon_parser</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+
+    <span class="c1"># Extract the data corresponding to latitude and convert from string to float (decimal number)</span>
+    <span class="n">lon_degrees</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lon_parser</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+    <span class="n">lon_minutes</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">lon_parser</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+
+    <span class="c1"># Adjust the sign for degrees east</span>
+    <span class="k">if</span> <span class="n">lat_parser</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;W&#39;</span><span class="p">:</span>
+        <span class="n">lon_degrees</span> <span class="o">=</span> <span class="o">-</span><span class="n">lon_degrees</span>
+        <span class="n">lon_minutes</span> <span class="o">=</span> <span class="o">-</span><span class="n">lon_minutes</span>
+
+    <span class="c1"># Convert to decimal degrees</span>
+    <span class="n">lon</span> <span class="o">=</span> <span class="n">lon_degrees</span> <span class="o">+</span> <span class="n">lon_minutes</span><span class="o">/</span><span class="mi">60</span>
+
+    <span class="c1">#-------</span>
+    <span class="c1"># Find the line with time</span>
+    <span class="n">header_line_index</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;* NMEA UTC&#39;</span><span class="p">)),</span> <span class="kc">None</span><span class="p">)</span>
+    
+    <span class="c1"># Split the line at spaces</span>
+    <span class="n">time_parser</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">header_line_index</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()[</span><span class="mi">1</span><span class="p">:]</span>
+    
+    <span class="c1"># Pull out the individual time elements</span>
+    <span class="n">mo_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+    <span class="n">day_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+    <span class="n">year_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+    <span class="n">HHMMSS_string</span> <span class="o">=</span> <span class="n">time_parser</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span>
+    <span class="n">mydatestr</span> <span class="o">=</span> <span class="p">[</span><span class="n">year_string</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">mo_string</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="n">day_string</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="n">HHMMSS_string</span><span class="p">]</span>
+    <span class="c1"># This datestr has the format `2015-Apr-09 19:55:52` </span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">mydatestr</span><span class="p">}</span>
+    
+    <span class="c1">#</span>
+    <span class="c1"># More on reading/parsing date and time formats in pandas:</span>
+    <span class="c1"># https://saturncloud.io/blog/how-to-convert-datetime-to-string-with-series-in-pandas/#:~:text=with%20data%20analysis.-,Converting%20datetime%20to%20string%20in%20Pandas,to%20a%20specified%20format%20string.</span>
+    <span class="c1">#</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="c1"># We write the format here to match the format of the data in the hex file.</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%b-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">,</span><span class="n">errors</span><span class="o">=</span><span class="s1">&#39;coerce&#39;</span><span class="p">)</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lon</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lat</span>
+
+    <span class="c1"># Convert DataFrame to xarray dataset</span>
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="o">.</span><span class="n">from_dataframe</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;date&#39;</span><span class="p">))</span>
+
+    <span class="k">return</span> <span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/JR310_068.hex&#39;</span>
+<span class="n">read_hex_header</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body[data-theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block !important;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-index-name div,
+.xr-index-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data,
+.xr-index-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2,
+.xr-no-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:  (date: 1)
+Coordinates:
+  * date     (date) datetime64[ns] 2015-04-09T19:55:52
+Data variables:
+    lon      (date) float64 42.09
+    lat      (date) float64 -60.64</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-03cd3888-eb70-49bb-b632-dfe02299e3ff' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-03cd3888-eb70-49bb-b632-dfe02299e3ff' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>date</span>: 1</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3b793140-1a2b-4ccd-aaf4-03872a10e996' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3b793140-1a2b-4ccd-aaf4-03872a10e996' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>date</span></div><div class='xr-var-dims'>(date)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2015-04-09T19:55:52</div><input id='attrs-257c2ee6-f6ba-4fd6-bb0c-31393d3a449d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-257c2ee6-f6ba-4fd6-bb0c-31393d3a449d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6d0e7e2a-6a43-4a98-aa86-979b02cfd7ad' class='xr-var-data-in' type='checkbox'><label for='data-6d0e7e2a-6a43-4a98-aa86-979b02cfd7ad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2015-04-09T19:55:52.000000000&#x27;], dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6633c09a-6347-4824-bf19-df1089f4bff4' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6633c09a-6347-4824-bf19-df1089f4bff4' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(date)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>42.09</div><input id='attrs-a4f81c95-b2a3-49eb-a7d1-28edf2fec8aa' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a4f81c95-b2a3-49eb-a7d1-28edf2fec8aa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-25c6a009-f97c-45df-a63c-ea5aa9f87977' class='xr-var-data-in' type='checkbox'><label for='data-25c6a009-f97c-45df-a63c-ea5aa9f87977' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([42.09166667])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(date)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-60.64</div><input id='attrs-3557ae89-353c-4e31-a577-681bb9a5bbfc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3557ae89-353c-4e31-a577-681bb9a5bbfc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d40e2c1d-4099-4595-a722-469845e615a2' class='xr-var-data-in' type='checkbox'><label for='data-d40e2c1d-4099-4595-a722-469845e615a2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-60.64466667])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b92d950d-aa09-402b-bc04-a9cfd3c4f99b' class='xr-section-summary-in' type='checkbox'  ><label for='section-b92d950d-aa09-402b-bc04-a9cfd3c4f99b' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>date</div></div><div class='xr-index-preview'>PandasIndex</div><div></div><input id='index-6e7527b1-dd36-483e-a912-295cf5b5379a' class='xr-index-data-in' type='checkbox'/><label for='index-6e7527b1-dd36-483e-a912-295cf5b5379a' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2015-04-09 19:55:52&#x27;], dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;date&#x27;, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-37ae6691-df42-443e-aa03-50c8915ab78d' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-37ae6691-df42-443e-aa03-50c8915ab78d' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read through all the files to find the locations</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clone-the-course-repository">
+<h2>Clone the course repository<a class="headerlink" href="#clone-the-course-repository" title="Permalink to this heading">#</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The instructions below assume you are using GitHub desktop which is a desktop application for interacting with any online git (i.e., you do not need a github account.)  See also <a class="reference internal" href="../resource/git.html"><span class="doc std std-doc">Resources: Git and Python</span></a> for installation of GitHub desktop.</p>
+</div>
+<p>Once you have the software installed, you will want to first clone the class repository.  The repositories we use will live on the UHH gitlab server: <a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024">https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024</a>. Within this folder, there are several individual ‘repositories’.  You will want to clone each of them.</p>
+<p>Each of these is an individual “repository”:</p>
+<ol class="arabic simple">
+<li><p>Part 1 - Basics - <a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/part-1-basics">https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/part-1-basics</a></p></li>
+</ol>
+<p>You may need to “request access” to the repository.</p>
+<ol class="arabic simple">
+<li><p>Access the <strong>course group gitlab</strong>: [<a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/part-1-basics">https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/part-1-basics</a>) and select a repository.</p></li>
+<li><p>If you are prompted to request access, then do so.  You will need to log in with your B-kennung.</p></li>
+</ol>
+<p>Then you need to clone the repository.  For this, have a</p>
+<ol class="arabic simple">
+<li><p>A browswer window open (edge, chrome, safari, firefox, etc) and navigate to the <strong>group gitlab</strong>.</p></li>
+<li><p>Github desktop (purple)</p></li>
+</ol>
+<p>Decide where on your computer you want these folders to live.  If you don’t specify, the default is something like <code class="docutils literal notranslate"><span class="pre">Documents\GitHub\part-1-basics</span></code>.  You may want to nest it inside a folder that has the slug <code class="docutils literal notranslate"><span class="pre">seaocn</span></code> so you can find these later.</p>
+<p>1a. In Github desktop, select “clone a repository”, and click the “URL” at the right.</p>
+<p>2a.  In the browser window, select the address of the repository you would like to clone first.  Copy this address (starting with https:)</p>
+<p>1b. In Github desktop, past the URL of the repository into the first text box.  The second text box will auto-populate with a location on your computer.  If you’d like to change this from default, use the button to the right to pick where these will live.  Click “ok” or “next”.  <em>Authentication will fail.</em> Kein problem.</p>
+<p>2b. In the browswer window on the chosen repository (must match the one you used in the previous step), click on “settings” at the bottom of the list to the left.  Choose “Access tokens”.  Near the top right, click “Add new token”.  Give it a name (maybe your name).  Choose an expiration date at least 1 month in the future but no more than 12 months into the future.  Select a role “maintainer”.  Scroll down over all the choices and click “create project access token”.  In the green bar that appears, click the “clipboard” button to copy this token.</p>
+<p>1c.  In Github desktop, enter your B-kennung in the top text bar “username”, but for “password” paste the access token that you just copied.  Click “next”.</p>
+<p>You should now have cloned the repository.  Check that the repository (which may be an empty folder) lives on your computer.</p>
+<p><strong>Repeat this step for the other course repositories.</strong></p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="super-brief-explanation-of-git">
+<h1>Super-brief explanation of git<a class="headerlink" href="#super-brief-explanation-of-git" title="Permalink to this heading">#</a></h1>
+<p>Git is keeping track of changes to your files within the local repository (your copy of the course folder on your computer).  When you change a file in the folder, git knows.  How do you know it knows?  If you go into your Github desktop (purple icon, desktop app) and choose the repository you’re working in in the dropdown menu on the left, and you have changed a file, the filename  for the file with changes will appear in a list, and to the right you can preview the changes that have been made (previous commit and current edited version).</p>
+<p>After you’ve been working on a file for a while (a day, an hour, 5 minutes, etc), e.g. a piece of code in your repository on your computer, and you’ve made some important changes, you will want to tell git to save a snapshot of these changes.  To do this you click <strong>commit</strong> in Github desktop.  This will then make git store a version according to the point in time when you clicked commit.  <em>Advanced tip: in the commit message, you can write something useful to describe the changes, like “added a new function to load data from a microcat”.</em>  So far, only your own computer knows about these changes.</p>
+<p>When you want to share these changes with your group, i.e. have these changes show up in the repository on the <a class="reference external" href="http://gitlab.rrz.uni-hamburg.de">gitlab.rrz.uni-hamburg.de</a> location, then you need to <strong>push</strong> the changes.  This is a button to the right in your Github desktop (or top right), where you click.  This will then make the changes appear in the online copy of the repository.</p>
+<p>When your group member has made changes, and you want these changes to appear in your copy of the code on your own computer, then you need to <strong>fetch</strong> these changes from the version on <a class="reference external" href="http://gitlab.rrz.uni-hamburg.de">gitlab.rrz.uni-hamburg.de</a>.  This will not overwrite any of your files.  It will simply add what they have done.</p>
+<p><strong>Note:</strong> For beginner usage, I recommend that you all keep a separate copy of your python code to start with.  If you work on the same piece of code, it’s possible for you to delete something and commit it to your repository (on your own computer), and for someone else to edit the same thing without deleting it and commit it on their own computer.  If you both then push these changes to the repository, or you fetch your colleagues changes from the online repository onto your computer, you will get a <strong>conflict</strong> which needs to be merged manually.</p>
+<p>Read more: <a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F">https://git-scm.com/book/en/v2/Getting-Started-What-is-Git%3F</a></p>
+<p>More advanced: It’s best to work inside an environment.  This controls the version of each of the packages that you have installed, so that the code is more likely to run smoothly on another person’s computer.  Some background on <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environments</a>.</p>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="check-whether-you-have-python-installed">
+<h1>Check whether you have python installed<a class="headerlink" href="#check-whether-you-have-python-installed" title="Permalink to this heading">#</a></h1>
+<p>In Mac or Linux, at the command line, type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">--</span><span class="n">version</span>
+</pre></div>
+</div>
+<p>For example, mine says</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(base) 9:34 ~ $ python --version
+Python 3.9.5
+</pre></div>
+</div>
+<section id="using-conda">
+<h2>Using conda<a class="headerlink" href="#using-conda" title="Permalink to this heading">#</a></h2>
+<p>For Mac users, you will probably want <code class="docutils literal notranslate"><span class="pre">conda</span></code> and <code class="docutils literal notranslate"><span class="pre">pip</span></code> installed on your computer.</p>
+<p>You can get conda here: <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/install/index.html">https://conda.io/projects/conda/en/latest/user-guide/install/index.html</a>.  I would recommend <em>miniconda</em> (Here is the direct link for <a class="reference external" href="https://docs.anaconda.com/free/miniconda/miniconda-install/">installing miniconda</a>).  If you already have Anaconda, that is fine too.</p>
+<p>We will also use jupyter notebooks in this course.</p>
+</section>
+<section id="installing-jupyterlab">
+<h2>Installing jupyterlab<a class="headerlink" href="#installing-jupyterlab" title="Permalink to this heading">#</a></h2>
+<p>You can install jupyterlab with conda</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge jupyterlab=4.0.7 notebook=7.0.6
+</pre></div>
+</div>
+<p>Since we recommend managing your environments, then conda (as above) is the better way to install it.  Otherwise you can use pip: <a class="reference external" href="https://jupyter.org/install">https://jupyter.org/install</a>.</p>
+<p>If you already have Anaconda, then jupyter lab comes by default <a class="reference external" href="https://test-jupyter.readthedocs.io/en/latest/install.html">explained here</a>.</p>
+</section>
+<section id="now-open-this-notebook-in-jupyter-notebook">
+<h2>Now, open this notebook in jupyter notebook.<a class="headerlink" href="#now-open-this-notebook-in-jupyter-notebook" title="Permalink to this heading">#</a></h2>
+<p>Please record for yourself the steps you took to get jupyter running on your computer.</p>
+</section>
+<section id="optional-setting-up-an-environment">
+<h2>(optional) setting up an environment<a class="headerlink" href="#optional-setting-up-an-environment" title="Permalink to this heading">#</a></h2>
+<p>On a Mac, in a terminal window, you will create an environment using a specified version of python.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span> <span class="o">-</span><span class="n">y</span>
+<span class="n">conda</span> <span class="n">activate</span> <span class="n">seaocn_env</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-seaocn_env-py"
+        },
+        kernelOptions: {
+            name: "conda-env-seaocn_env-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 4 - Hydro sections</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-data-in-matlab-format">Load data in matlab format</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clone-the-course-repository">Clone the course repository</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#super-brief-explanation-of-git">Super-brief explanation of git</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#check-whether-you-have-python-installed">Check whether you have python installed</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-conda">Using conda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installing-jupyterlab">Installing jupyterlab</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#now-open-this-notebook-in-jupyter-notebook">Now, open this notebook in jupyter notebook.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-setting-up-an-environment">(optional) setting up an environment</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
