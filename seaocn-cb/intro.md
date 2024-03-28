@@ -5,5 +5,6 @@ In this course, we will go over the fundamentals of oceanographic measurements f
 At the end of the course, you should have a basic familiarity with the onboard processing and treatment of physical oceanographic datasets, so that if you go to sea you will understand approaches to treating and processing data.
 
 
-```{tableofcontents}
-```
+<!--```{tableofcontents}
+```-->
+

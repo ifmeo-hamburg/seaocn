@@ -33,7 +33,7 @@ Managing environments with [conda](https://conda.io/projects/conda/en/latest/use
 Choose a directory where you will work on the python for this course.  Navigate to the directory in a terminal window.
 The basic command is something like `conda create --name <my-env>`  where you replace `<my-env>` with the name of your environment.  Let's call it `seaocn_env`.  But we'll try to install a lot of the necessary pieces at once:
 ```
-conda create --channel conda-forge --name seaocn_env xarray gsw python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel
+conda create --channel conda-forge --name seaocn_env xarray gsw python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels
 conda activate seaocn_env
 ```
 
