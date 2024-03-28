@@ -12,9 +12,6 @@ Additionally, if you haven't already, please read: {cite}`Krause-Tomczak-1995`.
 
 # Instruments & Platforms
 
-
-
-
 Here, we will describe the ocean as a measurement environment, then outline the instruments and platforms available for physical oceanographic observations.
 
 ## Ocean environment
@@ -29,5 +26,5 @@ ships, moorings, gliders, etc.
 
 ## Reading
 
-- For a broad overview of the topic, please see supplementary chapter 16 to {cite}`Talley-etal-2011` which is available as [Chapter 16 (pdf download, 12mb)](https://booksite.elsevier.com/DPO/chapter16.php).
+- After the class, you are *strongly advised* to read supplementary chapter 16 to {cite}`Talley-etal-2011` which is available as [Chapter 16 (pdf download, 12mb)](https://booksite.elsevier.com/DPO/chapter16.php).  This will give you a broader view on the topic than we cover in class.  Focus especially on reading sections that you are not familiar with or that you are particularly interested in.
 
