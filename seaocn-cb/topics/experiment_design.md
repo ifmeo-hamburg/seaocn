@@ -13,15 +13,8 @@ Figure choice:
 (Optional, preferred) select a figure which demonstrates differences in gridding methodologies.
 ```
 
-
 # Experiment design
 
-Beyond just the science and the technical requirements of a cruise, you also need to consider the funding constraints and international context of a cruise.
+Now we're adding one more level.  In [Scientific basis](scientific_basis) we talked about oceanography problems or processes we'd like to investigate. In [Equations v. Data](equations_v_data) we looked at examples of how processes (as viewed in equations) can be quantified from observations (data).  In [Instruments & Platforms](instruments_platforms), we surveyed the equipment that may be available for making physical oceanographic observations.  In [AMOC methods](amoc_methods), we revisited our scientific questions with some observations in mind.  
 
-In different countries:
-
-- US: Ships coordinated by UNOLS and operated by individual institutions
-- UK: Ships owned by the research council, coordinated by the National Oceanography Center, and operated by either the NOC or British Antarctic Survey (RRS SDA)
-- Germany: Application for cruise proposals [Portal deutsche Forschungsschiffe](https://www.portal-forschungsschiffe.de/fahrtvorschlaege-leitfaden.html)
-
-Information regarding [dipclears (LDF)](https://www.ldf.uni-hamburg.de/en/meteor/informationen-meteor.html)
+Here we will expand and consider, what are the guiding ideas when thinking about designing an experiment?  We'll use a few more case studies, and see whether there are guiding principles that can be extracted from the thinking process.  Part of this will be in thinking about "how can the experiment fail?" (and what is a failed experiment).

@@ -71,6 +71,7 @@ parts:
     sections:
     - file: resource/running-python
   - file: resource/books
+  - file: resource/glossary
 
 - chapters:
   - file: build-the-book/getting-started
