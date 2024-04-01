@@ -1,3 +1,7 @@
+# Python
+
+If you don't already have python, you can follow instructions on the [Software Carpentry website](https://carpentries.github.io/workshop-template/install_instructions/#python).  Note that their instructions are based on using Anaconda.  
+
 # Python packages
 
 ## Installing packages (Windows)
