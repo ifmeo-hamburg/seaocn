@@ -5,3 +5,5 @@ pandas
 datetime
 xarray
 scipy
+docutils>=0.8,!=0.18.*,!=0.19.*
+

@@ -1,26 +1,7 @@
 # Schedule (SuSe24)
 
-- Lectures: Tuesdays **08:15 - 09:45** in Bu53 133 
+- Lectures: Tuesdays **08:00 - 09:45** in Bu53 133 <-- To discuss: an 08:15 start.
 - Computer practicals: Tuesdays **10:00 - 11:45** in Bu55 1335 
-
-
-## Dates + Known deviations
-
-1. 2 April  
-2. 9 April  
-3. 16 April  
-4. 23 April  
-5. 30 April - possible deviation
-6. 7 May  
-7. 14 May  
-- 21 May - No class: Pfingsten
-8. 28 May - Lecture cancelled due to Seepraktikum, computer practicals still on
-9. 4 June - as planned
-10. 11 June - alternate instructor
-11. 18 June  
-12. 25 June 
-13. 2 July
-14. 9 July
 
 ## Topics
 
@@ -29,10 +10,10 @@
 
 | Week | Lecture | Practical |
 |---|---|---|
-| 1 | Course overview | Profiles + Git|
+| 1 | [Course overview](topics/course_overview.html) | [Profiles (+ Git)](exercise/exercise-git.html) |
 | 2 | Scientific basis  | Time series |
 | 3 | Equations v Data | Maps + Sections |
-| 4 | Instruments & Platforms | Moored array |
+| 4 | Instruments & Platforms | Transport |
 | 5 | AMOC methods | Optimal interpolation |
 | 6 | Experiment Design | Assignment 1 |
 | 7 | Sampling & Uncertainty  | Assignment 1 |
@@ -46,6 +27,28 @@
 ```
 
 
+## Weeks - dates for 2024, possible deviations
+
+Week 5, 8 and 10 may have deviations from the planned schedule.  This will be announced in advance.
+
+1. 2 April  
+2. 9 April  
+3. 16 April  
+4. 23 April  
+5. 30 April - possible deviation
+6. 7 May  
+7. 14 May  
+- 21 May - No class: Pfingsten
+8. 28 May - possible deviation (2nd week, Seepraktikum)
+9. 4 June - 
+10. 11 June - possible deviation 
+11. 18 June  
+12. 25 June 
+13. 2 July
+14. 9 July
+
+
+<!--
 ## Topics
 
 Timing is rough and may slide depending on how much time it takes to introduce and discuss topics.
@@ -73,3 +76,5 @@ Timing is rough and may slide depending on how much time it takes to introduce a
 * - Weeks 14 (9 July)
   - **Final presentations**
 ```
+
+-->

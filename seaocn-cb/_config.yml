@@ -9,6 +9,11 @@ title                       : seaocn  # The title of the book. Will be placed in
 author                      : Eleanor Frajka-Williams  # The author of the book
 copyright                   : "2024"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
+# Patterns to exclude when building the book
+exclude_patterns            : [_build, .DS_Store]
+
+# Auto-exclude files not in the toc
+#only_build_toc_files        : false
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -47,3 +52,4 @@ parse:
     - linkify
     - dollarmath
     - amsmath
+  myst_url_schemes: [mailto, http, https, ftp]

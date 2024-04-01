@@ -5,10 +5,11 @@
 ###############################################################################
 author = 'Eleanor Frajka-Williams'
 bibtex_bibfiles = ['references.bib']
+bibtex_reference_style = 'author_year'
 comments_config = {'hypothesis': False, 'utterances': False}
 copyright = '2024'
 exclude_patterns = ['**.ipynb_checkpoints', '.DS_Store', 'Thumbs.db', '_build']
-extensions = ['sphinx_togglebutton', 'sphinx_copybutton', 'myst_nb', 'jupyter_book', 'sphinx_thebe', 'sphinx_comments', 'sphinx_external_toc', 'sphinx.ext.intersphinx', 'sphinx_design', 'sphinx_book_theme', 'sphinxcontrib.bibtex', 'sphinx_jupyterbook_latex', 'sphinx_multitoc_numbering']
+extensions = ['sphinx_togglebutton', 'sphinx_copybutton', 'myst_nb', 'jupyter_book', 'sphinx_thebe', 'sphinx_comments', 'sphinx_external_toc', 'sphinx.ext.intersphinx', 'sphinx_design', 'sphinx_book_theme', 'sphinxcontrib.bibtex', 'sphinx_jupyterbook_latex']
 external_toc_exclude_missing = False
 external_toc_path = '_toc.yml'
 html_baseurl = ''
@@ -22,7 +23,7 @@ html_theme_options = {'search_bar_text': 'Search this book...', 'launch_buttons'
 html_title = 'seaocn'
 latex_engine = 'pdflatex'
 myst_enable_extensions = ['colon_fence', 'linkify', 'dollarmath', 'amsmath']
-myst_url_schemes = ['mailto', 'http', 'https']
+myst_url_schemes = ['mailto', 'http', 'https', 'ftp']
 nb_execution_allow_errors = False
 nb_execution_cache_path = ''
 nb_execution_excludepatterns = []

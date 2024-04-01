@@ -1,4 +1,4 @@
-# Exercise A1 - Git 
+# Exercise 0a - Git 
 
 
 **Aim:** The purpose of this exercise is to get you working with git.
@@ -13,8 +13,9 @@
 - Pushed the repository (with your new file and directory) back to the course repository
 - Verified that you can see the changes (with your directory) on the web
 - Edited the `readme.md` including instructions for *you* on how to edit your files and push/fetch them from the repository.
+- Created a `pull` or `merge` request tagged with instructors to let us know it worked.
 
-**Measure of success:** We will see your folder in the course repository with a `readme.md` file that has been populated with notes.
+**Measure of success:** We will receive your `pull` request, including your folder in the course repository with a `readme.md` file that has been populated with notes.
 
 <hr>
 
@@ -110,46 +111,4 @@ You may need to
 
 Go to [https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn) and check that your repository exists.
 
-# Check whether you have python installed
-
-In Mac or Linux, at the command line, type
-```
-python --version
-```
-
-For example, mine says
-```
-(base) 9:34 ~ $ python --version
-Python 3.9.5
-```
-
-## Using conda
-
-For Mac users, you will probably want `conda` and `pip` installed on your computer.
-
-You can get conda here: [https://conda.io/projects/conda/en/latest/user-guide/install/index.html](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).  I would recommend *miniconda* (Here is the direct link for [installing miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)).  If you already have Anaconda, that is fine too.
-
-We will also use jupyter notebooks in this course.
-
-## Installing jupyterlab
-
-You can install jupyterlab with conda
-
-    conda install -c conda-forge jupyterlab=4.0.7 notebook=7.0.6
-
-Since we recommend managing your environments, then conda (as above) is the better way to install it.  Otherwise you can use pip: [https://jupyter.org/install](https://jupyter.org/install).
-
-If you already have Anaconda, then jupyter lab comes by default [explained here](https://test-jupyter.readthedocs.io/en/latest/install.html).
-
-## Now, open this notebook in jupyter notebook.
-
-Please record for yourself the steps you took to get jupyter running on your computer.
-
-## (optional) setting up an environment
-
-On a Mac, in a terminal window, you will create an environment using a specified version of python.
-
-```
-conda create --name seaocn_env python=3.8 -y
-conda activate seaocn_env
-```
+Create a pull request.

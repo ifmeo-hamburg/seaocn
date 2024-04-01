@@ -23,23 +23,23 @@ Emelie Breunig
 
 
 ```{admonition} Greetings!
-This is a new course for SuSe2024, where we are going to try to develop your insight into how to handle observational data using examples which are unique to observations (rather than generic data handling for oceanographic data) and also engage in practical thinking and planning about seagoing research expeditions.
+This is a new course for SuSe2024, where we are going to try to develop your insight into making ocean observations.  Examples used are tailored for observational physical oceanography (rather than generic data handling).  We'll also engage in practical thinking about seagoing research expeditions.
 ```
 
 ## Purpose of the Course
 
-Broadly speaking, the purpose of this course is to teach you to think carefully about making and using *in situ* oceanographic observations.  This course is complementary to the more theoretical or numerical courses you will take, when you learn about what the ocean does according to theory or models.  Here, you think critically about how *measurement principles* affect the data reported by *in situ* oceanographic instruments, and how treatment of incomplete information (a necessity with observations) can affect calculated quantities.
+Broadly speaking, the purpose of this course is to teach you to think carefully about making and using *in situ* oceanographic observations.  This course is complementary to the more theoretical or numerical courses you will take, when you learn about what the ocean does according to theory or models.  Here, you think critically about how and why to run field campaigns, how measurement principles affect the data reported by *in situ* oceanographic instruments, and how treatment of incomplete information (a necessity with observations) can affect calculated quantities.
 
-To develop your intuition, we are taking a practical approach - using data collected from one or another research cruise, which you will then process and perform basic analyses.  For this first version of the course, the focus will be on CTD data as it is the fundamental measurement of physical oceanography and *if you end up participating in a research cruise* you have a high chance of encountering CTD data.  We will align most of the practical work with a case study of measuring the Atlantic meridional overturning circulation (or AMOC).
+To develop your intuition, we are taking a practical approach - using data collected from one or another research cruise, which you will then process and perform basic analyses.  For this first version of the course, the focus will be on CTD data as it is the fundamental measurement of physical oceanography and--if you end up participating in a research cruise--you have a high chance of encountering CTD data.  We will align most of the practical work with observational case studies (t.b.d., but including the Atlantic meridional overturning circulation).
 
 
 ## Course objectives
 
-The overarching objective is that after this course, you will be able to design a seagoing expedition, collect, handle and process *in situ* oceanographic data towards answering a specific research question.
+The overarching objective is that after this course, you will have an understanding of the process of designing a seagoing expedition, and practical experience with collecting, handling and processing *in situ* oceanographic data towards answering a specific research question.
 
 Note however, that we cannot do everything!  
-- Towards designing a seagoing expedition, you will think particularly about how to timetable an expedition to meet your observational needs (but we will spend less time discussing how to decide your observational needs, which would be against a particular research hypothesis or question).  We'll also look at the formal process of writing a proposal for shiptime in the German system, the international requirement for dipclears, considerations of timing, logistics, risks and costs.
-- For collecting, handling and processing data, you'll get a little experience with setting up and downloading a CTD instrument, but more of the focus will be on what you do with the data once it is on a computer in raw format.  This will then include the standard processing and conversion steps, evaluating the data quality (what can go wrong, and how do you identify it in a dataset), and carrying out practical examples of onward processing steps to see how data treatment choices can affect your calculation in the end.
+- Towards designing a seagoing expedition, you will think particularly about how to timetable an expedition to meet your observational needs (but we will spend less time discussing how to decide your observational needs in the first place).  We'll also look at the formal process of applying for shiptime, the international requirement for dipclears, considerations of timing, logistics, risks and costs.
+- For collecting, handling and processing data, you may get some experience setting up and downloading a CTD instrument, but more of the focus will be on what you do with the data once it is on a computer in raw format.  This will then include the standard processing and conversion steps, evaluating the data quality (what can go wrong, and how do you identify it in a dataset), and carrying out practical examples of onward processing steps to see how data treatment choices can affect your calculation in the end.
 
 Three main things I want you to be able to do at the end of this course:
 
@@ -51,12 +51,13 @@ Three main things I want you to be able to do at the end of this course:
 
 
 ## Resources
-**The course Moodle site**
-I will post links to websites relevant to the course here, as well as datasets that you will need for the projects and exercises.  I will also open a [Moodle forum](https://lernen.min.uni-hamburg.de/course/view.php?id=3675#section-0) where you can post questions/comments to each other, or to me and the course assistant.  If a topic or question is of general interest/information, then I prefer you use the moodle forum rather than e-mailing me individually.  **Please check the Moodle for any updates to the schedule.**
+
+Unfortunately, no single online resource will do everything that I'd like.  See the list of online resources we'll use [here](../intro).  This is *subject to change*.
+
 
 ## Expectations for students
 
-You are expected to start the course with a basic understanding of ocean processes - you should have an idea of why we measure salinity, and how density appears in the equations of motion.  This knowledge will be assumed.  Additionally, we expect you already have some experience with a programming language.   We will cover some of this in the course (specifically, Python), but if your Python is relatively weak, then please do your best not to get behind.  It will be very difficult to catch up otherwise.  You may find some additional online resources for working on your python skills.  See for example [Python for Earth Scientists](https://github.com/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb).
+You are expected to have a basic understanding of oceanographic processes at the start of the course.  You should have an idea of why we measure salinity, and how density appears in the equations of motion.  This knowledge will be assumed.  Additionally, we expect you already have experience with a programming language.  The language of this course is **Python**.   We will cover some of this in the course (specifically, Python), but if your Python is relatively weak, then please do your best not to get behind.  It will be very difficult to catch up otherwise.  You may find some additional online resources for working on your python skills.  See for example [Python for Earth Scientists](https://github.com/ltauxe/Python-for-Earth-Science-Students/blob/master/_TableOfContents.ipynb).
 
 **Participation is expected.** This will take several forms during the course: preparation for discussion topics to be held during class, presentation of figures at the start of the class from the previous week's computer session, and formal (graded) presentations after reports on projects are handed in.  You learn more (and enjoy it more) when you're engaged with the course and the material.
 
@@ -65,13 +66,13 @@ You are expected to start the course with a basic understanding of ocean process
 
 ## Evaluation
 
-Unless otherwise specified, assignments (reports) are due **Wednesdays at 23:59**.
+Unless otherwise specified, assignments are due at **23:59**.  The first assignment is anticipated to be assigned in week 6 and due in week 8 or 9.   The second assignment is anticipated to be assigned in week 10 and due in week 12 or 13.
 
 1. The **two projects** form the core assessment of the course: One focusing on data handling and treating instrumental issues and the second including a further calculation of a more complicated dataset, where you will additionally assess how the measurement strategy, and/or  gridding or processing steps affect a final calculation of interest.  You are encouraged to work on these in class and to discuss with classmates during the lab sessions.  However the work graded will be individual.  
 
 2. One **group assignment** to produce the core elements of a cruise proposal.
 
-3. Participation and in-class assignments.  During the course, you may be asked to present work from a previous week's practical exercise.  
+3. Participation and in-class assignments.  During the course, you will be asked to present work from a previous week's practical exercise.  
 
 ## Grading procedures
 
@@ -96,13 +97,13 @@ Unless otherwise specified, assignments (reports) are due **Wednesdays at 23:59*
 
 ## Late assignment policy
 
-The good news is that you can sugmit an assignment up to **5 (five)** days late (with the exception of the group projects).  I will base this on the Moodle timestamp for when the work was submitted. (1 second to 24 hours late = 1 day late.  24:00:01 hours to 48:00:00 hours late is 2 days late.) The bad news is that you will lose 10% each day it is late.  (1 day late = graded score x 90%.  2 days late = graded score x 80%).  Late work makes a class harder to administer.  If you have a good excuse (such as being very sick), you should contact the instructor as soon as is practicable.  
+The good news is that you can sugmit an assignment up to **5 (five)** days late (with the exception of the group projects).  I will base this on the timestamp for when the work was submitted. (1 second to 24 hours late = 1 day late.  24:00:01 hours to 48:00:00 hours late is 2 days late.) The bad news is that you will lose 10% each day it is late.  (1 day late = graded score x 90%.  2 days late = graded score x 80%).  Late work makes a class harder to administer.  If you have a good excuse (such as being very sick), you should contact the instructor as soon as is practicable.  
 
 ## Succeeding in the course
 
 My aim is for you all to be successful in this course, however you will need to put in effort, thought, curiousity, programming time, to make this happen.  You are strongly encouraged to discuss ideas and problems with each other, including discussing approaches for the coding assignments.  Collaboration not only helps get the job done, it teaches you how to explain your ideas to others.  However, for marked assignments, you must write the actual code and report alone. 
 
-This is a fine line.  You will have some unmarked (ungraded) assignments where you can share code snippets with each other and work together more closely.  In these cases, you may have some pieces of code in your repository which are identical to another student's code.  If this is the case, please note the original author(s) of the code as a comment in the code.  If you then reuse this code for the marked assignment, that is acceptable.  If new code is needed for the marked assignment, this should *not* be copied from another student.  Instead, you can discuss approaches together, but should write your code individually.
+This is a fine line.  You will have some unmarked (ungraded) exercises where you can share code snippets with each other and work together closely.  In these cases, you may have some pieces of code in your repository which are identical to another student's code.  If this is the case, please note the original author(s) of the code as a comment in the code.  If you then reuse this code for the marked assignment, that is acceptable.  If new code is needed for the marked assignment, this should *not* be copied from another student.  Instead, you can discuss approaches together, but should write your code individually.
 
 ### Getting help
 

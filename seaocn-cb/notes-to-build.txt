@@ -1,0 +1,2 @@
+(seaocn_env) 15:32 ~/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb $ ghp-import -n -p -f _build/html
+ghp-import -n -p -f _build/html
