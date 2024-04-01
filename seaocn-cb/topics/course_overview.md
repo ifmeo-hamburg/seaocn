@@ -1,7 +1,7 @@
+---
+:orphan:
+---
 # Course overview
-
-
-For the first day of class, we will go over the goals of the course and the tools we will be using.
 
 ```{seealso}
 - The [course syllabus](../overview/syllabus) outlines the course aims.
@@ -9,15 +9,6 @@ For the first day of class, we will go over the goals of the course and the tool
 ```
 
 
-```{admonition} Lab topic - introduction
-We will also introduce Git, which you'll start with during today's lab session.  After the class, please also read:
-- [Academic benefits of using git (external)](https://walkingrandomly.com/?p=6653)
-
-Additional (optional) readings include:
-
-
-```
-
-
-<!--{cite:t}`Wilson2017` - "Good enough practices in scientific computing"-->
-
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbOTg4OTczNTkzXX0=
+-->
