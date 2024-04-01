@@ -1,4 +1,0 @@
----
-:orphan:
----
-# Topic (TBD)

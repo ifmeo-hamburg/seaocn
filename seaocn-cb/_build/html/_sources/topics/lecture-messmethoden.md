@@ -1,5 +1,0 @@
----
-:orphan:
----
-# Instruments & Platforms
-

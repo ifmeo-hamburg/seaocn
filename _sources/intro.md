@@ -8,3 +8,10 @@ At the end of the course, you should have a basic familiarity with the onboard p
 <!--```{tableofcontents}
 ```-->
 
+Useful links:
+
+- [Seaocn jupyterbook (here)](https://ifmeo-hamburg.github.io/seaocn/intro.html) - for python and git, syllabus etc.
+- [Moodle - Seaocn forum](https://lernen.min.uni-hamburg.de/course/view.php?id=3675) - for discussing the course, especially python + git
+- [GitLab at RRZ for exercises](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn) - for working on your exercises (not assignments)
+- GitHub classroom - (to be added), for submitting your assignments
+- [Schedule on Stine](https://www.stine.uni-hamburg.de/scripts/mgrqispi.dll?APPNAME=CampusNet&PRGNAME=COURSEDETAILS&ARGUMENTS=-N127925111045242,-N000475,-N000000000000000,-N388254433552908,-N388254433541909,-N0,-N0)

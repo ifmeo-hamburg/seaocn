@@ -19,13 +19,13 @@ At the end of the course, you should have a basic familiarity with the onboard p
 Formal: “Introduction to Physical Oceanography”
 Recommend: Prior experience with a programming language (Matlab or Python), basic knowledge in maths and statistics.  
 
-**Workload/credit points:** 28h lecture, 28h seminar/tutorial, with additional 32h/32h self-study.  Exam preparation of 60h.  Credit points 6.
+**Workload/credit points:** 28h lecture, 28h seminar/tutorial, with additional 124h of self-study. Credit points 6.
 
 **Exam:** Requirement for registration: Completion of exercises.
 Exam: Usually report and presentation.
 
 **Reference semester:** 2 or 4
 
-**Frequency of offer:** Bi-annually
+**Frequency of offer:** Every other year.
 
 **Literature:** Emery and Thomsen (2014) Data analysis methods in physical oceanography.  Others to be announced in the course.

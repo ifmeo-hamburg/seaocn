@@ -1,6 +1,0 @@
----
-:orphan:
----
-# Sensors
-
-See slides.

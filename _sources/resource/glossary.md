@@ -1,7 +1,11 @@
 # Glossary
+
+We will grow the glossary as we go along.  Please suggest terms to add to the glossary in the [MIN Moodle forum](https://lernen.min.uni-hamburg.de/mod/forum/discuss.php?d=32511).
+
+
 ```{glossary}
 accuracy
-  how well the observationa reproduces a well-defined standard that is usually set by an international group, from {cite}`Talley-etal-2011`, Chapter 6.2.
+  how well the observation reproduces a well-defined standard that is usually set by an international group, from {cite}`Talley-etal-2011`, Chapter 6.2.
 
 bias error
   an offset of the measured values from the true values, from {cite}`Talley-etal-2011`, Chapter 6.2.
