@@ -1,3 +1,6 @@
+---
+:orphan:
+---
 # Assignment 1
 
 

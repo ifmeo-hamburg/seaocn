@@ -1,3 +1,7 @@
+---
+:orphan:
+---
+
 # Report specifications
 
 ## Deadline
