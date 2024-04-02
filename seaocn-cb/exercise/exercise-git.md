@@ -102,7 +102,7 @@ You should do this *on your local computer* or on the UHH computer, *not* in a b
 
 You may need to 
 
-- Request access to the repository.  If so, you will need to log in with your B-kennung.  This will need to be manually approved by e.g. Emelie or Eleanor, so it will take a little time.
+- Request access to the repository.  If so, you will need to log in with your B-kennung, and use the three dots in the upper right to select "request access". This will need to be manually approved by e.g. Emelie or Eleanor, so it will take a little time.
 
 - Generate a personal access token (see above).
 

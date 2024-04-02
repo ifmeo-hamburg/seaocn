@@ -12,14 +12,13 @@ Prof. Eleanor Frajka-Williams
 
 - Office: Bu53 244
 - E-mail: eleanor.frajka@uni-hamburg.de
-- Phone: 
 - Office hours: TBD
 
 (course_assistant)=
 Emelie Breunig
-- Office: Bu53 25X
-- e-mail: emelie.breunig@uni-hamburg.de
+- Office: Bu53 252
 
+Where possible, please use the [Moodle forum](https://lernen.min.uni-hamburg.de/course/view.php?id=3675) instead of e-mail.  I.e., if your question is of broad relevance to the class, and if you can ask it without giving away the solution to an assignment.  You may also be able to answer peers' questions in the forum.
 
 
 ```{admonition} Greetings!

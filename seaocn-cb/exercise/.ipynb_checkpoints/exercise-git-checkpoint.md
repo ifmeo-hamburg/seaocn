@@ -1,4 +1,4 @@
-# Exercise A1 - Git 
+# Exercise 0a - Git 
 
 
 **Aim:** The purpose of this exercise is to get you working with git.
@@ -13,6 +13,9 @@
 - Pushed the repository (with your new file and directory) back to the course repository
 - Verified that you can see the changes (with your directory) on the web
 - Edited the `readme.md` including instructions for *you* on how to edit your files and push/fetch them from the repository.
+- Created a `pull` or `merge` request tagged with instructors to let us know it worked.
+
+**Measure of success:** We will receive your `pull` request, including your folder in the course repository with a `readme.md` file that has been populated with notes.
 
 <hr>
 
@@ -71,6 +74,7 @@ Decide where on your computer you want the repository folder to live.  If you do
 You should now have cloned the repository.  Check that the repository (which may be an empty folder) lives on your computer.  
 
 <hr>
+
 ## Step 3: Make your directory in the repository 
 
 You should do this *on your local computer* or on the UHH computer, *not* in a browser window viewing the respository at gitlab.rrz.uni-hamburg.de.  There, the "remote repository" is located.
@@ -81,7 +85,7 @@ You should do this *on your local computer* or on the UHH computer, *not* in a b
 
     Please name your folder `seaocn-exercises-<Lastname>` where you replace `<Lastname>` with your last name.
 
-    Naming conventions will be *important* in this course.   Here they are particularly important because--to start with--the `.gitignore` file in the directory is initialised with the directory names of the course participants so that you do not always download the changes they make to their course files.
+    Naming conventions will be *important* in this course.   Here they are particularly important because--to start with--the `.gitignore` file in the directory is initialised with the directory names of the course participants so that you do not always download the changes they make to their course files.  
     ```
 
 2. Add a file named `readme.md`.  Here the ending `*.md` means that it is a markdown file, which is a simple formating or "markup" language.  (In contrast, Latex and html are more complicated "markup" language.
@@ -90,13 +94,15 @@ You should do this *on your local computer* or on the UHH computer, *not* in a b
     You will use markdown to add slightly fancier comments in your python notebooks.  To find out more, see [Getting Started with Markdown (external link)](https://www.markdownguide.org/getting-started/).
     ```
     
-    Edit your `readme.md` file to include the location (on your computer) of where the repository files can be found, and instructions for yourself about running git.
+    Edit your `readme.md` file to include the location (on your computer) of where the repository files can be found, and instructions for yourself about running git.  This should be detailed enough that you can find it again as you're working through the files. 
+
+    When you realise there is more information/notes you want to take about how to get git and (later) python running on your computer, make these notes here!
     
 3. Push your local repository to the remote (at gitlab.rrz.uni-hamburg.de).  **Note, this may be the trickiest step.**
 
 You may need to 
 
-- Request access to the repository.  If so, you will need to log in with your B-kennung.  This will need to be manually approved by e.g. Emelie or Eleanor, so it will take a little time.
+- Request access to the repository.  If so, you will need to log in with your B-kennung, and use the three dots in the upper right to select "request access". This will need to be manually approved by e.g. Emelie or Eleanor, so it will take a little time.
 
 - Generate a personal access token (see above).
 
@@ -105,46 +111,4 @@ You may need to
 
 Go to [https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn) and check that your repository exists.
 
-# Check whether you have python installed
-
-In Mac or Linux, at the command line, type
-```
-python --version
-```
-
-For example, mine says
-```
-(base) 9:34 ~ $ python --version
-Python 3.9.5
-```
-
-## Using conda
-
-For Mac users, you will probably want `conda` and `pip` installed on your computer.
-
-You can get conda here: [https://conda.io/projects/conda/en/latest/user-guide/install/index.html](https://conda.io/projects/conda/en/latest/user-guide/install/index.html).  I would recommend *miniconda* (Here is the direct link for [installing miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)).  If you already have Anaconda, that is fine too.
-
-We will also use jupyter notebooks in this course.
-
-## Installing jupyterlab
-
-You can install jupyterlab with conda
-
-    conda install -c conda-forge jupyterlab=4.0.7 notebook=7.0.6
-
-Since we recommend managing your environments, then conda (as above) is the better way to install it.  Otherwise you can use pip: [https://jupyter.org/install](https://jupyter.org/install).
-
-If you already have Anaconda, then jupyter lab comes by default [explained here](https://test-jupyter.readthedocs.io/en/latest/install.html).
-
-## Now, open this notebook in jupyter notebook.
-
-Please record for yourself the steps you took to get jupyter running on your computer.
-
-## (optional) setting up an environment
-
-On a Mac, in a terminal window, you will create an environment using a specified version of python.
-
-```
-conda create --name seaocn_env python=3.8 -y
-conda activate seaocn_env
-```
+Create a pull request.
