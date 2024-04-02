@@ -480,17 +480,10 @@ Python 3.9.5
 <ul class="simple">
 <li><p>To create an environment to use for the work in this course, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> command as:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> \
-<span class="n">matplotlib</span><span class="o">=</span><span class="mf">3.7.3</span> \ 
-<span class="n">pandas</span><span class="o">=</span><span class="mf">1.5.3</span> \ 
-<span class="n">python</span><span class="o">=</span><span class="mf">3.8.19</span> \
-<span class="n">numpy</span><span class="o">=</span><span class="mf">1.24.4</span> \
-<span class="n">xarray</span><span class="o">=</span><span class="mf">2023.1.0</span> \
-<span class="n">gsw</span><span class="o">=</span><span class="mf">3.6.17</span> \
-<span class="n">netCDF4</span><span class="o">=</span><span class="mf">1.6.5</span> \
-<span class="n">jupyterlab</span><span class="o">=</span><span class="mf">4.1.5</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">matplotlib</span><span class="o">=</span><span class="mf">3.7.3</span> <span class="n">pandas</span><span class="o">=</span><span class="mf">1.5.3</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8.19</span> <span class="n">numpy</span><span class="o">=</span><span class="mf">1.24.4</span> <span class="n">xarray</span><span class="o">=</span><span class="mf">2023.1.0</span> <span class="n">gsw</span><span class="o">=</span><span class="mf">3.6.17</span> <span class="n">netCDF4</span><span class="o">=</span><span class="mf">1.6.5</span> <span class="n">jupyterlab</span><span class="o">=</span><span class="mf">4.1.5</span> 
 </pre></div>
 </div>
+<p>Note that you can run the line above <em>without</em> the equals sign “=” and numbers following.  This specifies versions which worked on my computer in 2024 March.  Without the versions, <code class="docutils literal notranslate"><span class="pre">conda</span></code> will attempt to find for you compatible versions of the packages.</p>
 <ul class="simple">
 <li><p>Then activate the environment and install missing packages with pip:</p></li>
 </ul>

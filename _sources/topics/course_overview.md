@@ -1,10 +1,9 @@
----
-:orphan:
----
 # Course overview
 
 
 In today's class, we will give an overview of the course aims, structure and assignments (grading).  We will also get started thinking about the scientific method for observational physical oceanography.
+
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/372901/mod_resource/content/2/course_overview-seaocn.pdf).  *Added 2024 April 02, after lecture.*
 
 
 ```{seealso}
