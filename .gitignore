@@ -1,6 +1,22 @@
-.DS_Store
+# Output directories
 _build/
+data/*.*
+*.nc
+
+# Solution files
 *solutions*
 *solution*
-data/
-_sources/
+
+# Cache files
+*voto_erddap_data_cache/*
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Editors
+.vscode/
+.idea/
+
+# Mac/OSX
+.DS_Store
+
