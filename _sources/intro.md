@@ -8,7 +8,7 @@ At the end of the course, you should have a basic familiarity with the onboard p
 <!--```{tableofcontents}
 ```-->
 
-Useful links:
+Useful links (2024):
 
 - [Seaocn jupyterbook (here)](https://ifmeo-hamburg.github.io/seaocn/intro.html) - for python and git, syllabus etc.
 - [Moodle - Seaocn forum](https://lernen.min.uni-hamburg.de/course/view.php?id=3675) - for discussing the course, especially python + git.  We may also use the Moodle for documents which are available to UHH students but should not be posted publicly on the jupyterbook.
