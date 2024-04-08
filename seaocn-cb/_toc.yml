@@ -31,9 +31,9 @@ parts:
   chapters:
   - file: exercise/exercise-git
   - file: exercise/exercise-python
-#  - file: exercise/exercise-basic
-#  - file: exercise/exercise-fitting
   - file: exercise/exercise-cnv
+  - file: exercise/exercise-tseries
+  - file: exercise/exercise-filter
 #  - file: exercise/exercise-hydro
 
 #- caption: Assignments
