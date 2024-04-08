@@ -5,5 +5,12 @@ pandas
 datetime
 xarray
 scipy
+jupyterlab
+nb_conda
+nb_conda_kernels
+sphinx
+ipykernel
+gsw
+cmocean
 docutils>=0.8,!=0.18.*,!=0.19.*
 

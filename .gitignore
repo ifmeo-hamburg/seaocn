@@ -3,6 +3,7 @@ _build/
 data/*.*
 *.nc
 
+
 # Solution files
 *solutions*
 *solution*
@@ -11,7 +12,7 @@ data/*.*
 *voto_erddap_data_cache/*
 
 # Jupyter Notebook
-.ipynb_checkpoints
+*.ipynb_checkpoints/*
 
 # Editors
 .vscode/
