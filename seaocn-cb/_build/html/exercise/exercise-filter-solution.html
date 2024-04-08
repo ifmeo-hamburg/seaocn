@@ -1,0 +1,1027 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 2\(^+\) Filtering &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-filter-solution';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 1 - Profile data</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/python.html">Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-filter-solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-filter-solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2^+  Filtering</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-some-data-quick-check-what-s-there">Download some data + quick check what’s there</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-the-data">Filter the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-one-year-time-period-to-work-with">Select a one year time period to work with</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-calculate-a-running-averages">Fig. 1 Calculate a running averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-with-windows">Experiment with windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-calculate-moving-averages-with-different-filters">Fig. 2 Calculate moving averages with different filters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-harmonic-optional">Fitting a harmonic (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-regridding-data">Fig. 3 Regridding data</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-filtering">
+<h1>Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering<a class="headerlink" href="#exercise-2-filtering" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> The purpose of this lab is to get you started thinking about frequency content of time series</p>
+<p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Filter data using windows</p></li>
+<li><p>Check that the window used has “good” spectral properties (a good frequency response)</p></li>
+</ol>
+<!--4. Use the functions including: nanmean, detrend, polyfit, polyval, disp, grid, find, isnan, sqrt, and the operators ==, ~ and .^2.-->
+<p><strong>Data:</strong> You will work with a tide gauge time series.</p>
+<p><strong>Directions:</strong> Answer the questions, create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and one figure.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Jonathan Lilly’s course on time series analysis for more about spectra: <a class="reference external" href="https://www.jmlilly.net/course/index.html">https://www.jmlilly.net/course/index.html</a>.</p>
+</div>
+<hr><section id="create-a-notebook-load-the-data">
+<h2>Create a notebook &amp; load the data<a class="headerlink" href="#create-a-notebook-load-the-data" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
+<div class="admonition-file-naming-convention admonition">
+<p class="admonition-title">File naming convention</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+</div>
+</li>
+<li><p>Import necessary packages.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  You may also need</p>
+<p>If you are missing any of these packages, please refer to <a class="reference internal" href="../resource/python.html"><span class="doc std std-doc">Resources: Python</span></a>.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing required packages here</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="c1"># We are going to need some extra packages here</span>
+<span class="kn">import</span> <span class="nn">scipy.signal</span> <span class="k">as</span> <span class="nn">sg</span>  <span class="c1">#Package for signal analysis</span>
+<span class="c1">#from scipy import fft as spfft</span>
+<span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftshift</span> 
+<span class="kn">import</span> <span class="nn">scipy.ndimage</span> <span class="k">as</span> <span class="nn">si</span> <span class="c1">#Another package for signal analysis</span>
+<span class="kn">from</span> <span class="nn">multitaper</span> <span class="kn">import</span> <span class="n">MTSpec</span>  <span class="c1">#using German Prieto&#39;s multitaper package, https://github.com/gaprieto/multitaper</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s2">&quot;figure.figsize&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">6.5</span><span class="p">)</span> <span class="c1">#set default figure size</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.size&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">14</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;serif&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="download-some-data-quick-check-what-s-there">
+<h3>Download some data + quick check what’s there<a class="headerlink" href="#download-some-data-quick-check-what-s-there" title="Permalink to this heading">#</a></h3>
+<p>In the time series exercise, you did some quick and easy filtering by making annual averages.  Now we’ll try something a little more complicated using tide gauge data.</p>
+<ol class="arabic simple">
+<li><p>Pick a tide gauge from the east coast of the USA: <a class="reference external" href="https://www.bodc.ac.uk/data/hosted_data_systems/sea_level/international/north_atlantic/#Duck">https://www.bodc.ac.uk/data/hosted_data_systems/sea_level/international/north_atlantic/#Duck</a> and download the data in <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> format.</p></li>
+<li><p>Put the file in your <code class="docutils literal notranslate"><span class="pre">data/</span></code> directory.</p></li>
+<li><p>Load the data using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> into something called <code class="docutils literal notranslate"><span class="pre">td</span></code>.</p></li>
+<li><p>Squeeze the data in <code class="docutils literal notranslate"><span class="pre">xarray</span></code> to remove extra dimensions of your data variable.</p></li>
+<li><p>Print the data to see what is in there.</p></li>
+<li><p>Make a simple plot of your data variable <code class="docutils literal notranslate"><span class="pre">sea_level_1</span></code> against time.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Where are your data</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;w9006.nc&#39;</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="n">filename</span>
+
+<span class="c1"># Load the data</span>
+<span class="n">td</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="n">td</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+
+<span class="c1"># Quick plot data</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">td</span><span class="o">.</span><span class="n">sea_level_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:209,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">209</span>     <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/lru_cache.py:55,</span> in <span class="ni">LRUCache.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">55</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;934b0116-91c4-4776-8e77-c4e58d28a68c&#39;]
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">7</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">fname</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="n">filename</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># Load the data</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">td</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">td</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">td</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="n">decode_cf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">541</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span>     <span class="n">backend_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:578,</span> in <span class="ni">NetCDF4BackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, format, clobber, diskless, persist, lock, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="k">def</span> <span class="nf">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">autoclose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="n">filename_or_obj</span> <span class="o">=</span> <span class="n">_normalize_path</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">578</span>     <span class="n">store</span> <span class="o">=</span> <span class="n">NetCDF4DataStore</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="n">diskless</span><span class="o">=</span><span class="n">diskless</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>         <span class="n">persist</span><span class="o">=</span><span class="n">persist</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span>         <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="n">autoclose</span><span class="o">=</span><span class="n">autoclose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>     <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:382,</span> in <span class="ni">NetCDF4DataStore.open</span><span class="nt">(cls, filename, mode, format, group, clobber, diskless, persist, lock, lock_maker, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">,</span> <span class="n">diskless</span><span class="o">=</span><span class="n">diskless</span><span class="p">,</span> <span class="n">persist</span><span class="o">=</span><span class="n">persist</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="n">manager</span> <span class="o">=</span> <span class="n">CachingFileManager</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">netCDF4</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">382</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">manager</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span> <span class="n">autoclose</span><span class="o">=</span><span class="n">autoclose</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:329,</span> in <span class="ni">NetCDF4DataStore.__init__</span><span class="nt">(self, manager, group, mode, lock, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span> <span class="o">=</span> <span class="n">group</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+<span class="ne">--&gt; </span><span class="mi">329</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">data_model</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filepath</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_remote</span> <span class="o">=</span> <span class="n">is_remote_uri</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">)</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:391,</span> in <span class="ni">NetCDF4DataStore.ds</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">def</span> <span class="nf">ds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">391</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_acquire</span><span class="p">()</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:385,</span> in <span class="ni">NetCDF4DataStore._acquire</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="k">def</span> <span class="nf">_acquire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">385</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">acquire_context</span><span class="p">(</span><span class="n">needs_lock</span><span class="p">)</span> <span class="k">as</span> <span class="n">root</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="n">ds</span> <span class="o">=</span> <span class="n">_nc4_require_group</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/contextlib.py:113,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:197,</span> in <span class="ni">CachingFileManager.acquire_context</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">def</span> <span class="nf">acquire_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Context manager for acquiring a file.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="n">file</span><span class="p">,</span> <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_acquire_with_cache_info</span><span class="p">(</span><span class="n">needs_lock</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span>         <span class="k">yield</span> <span class="n">file</span>
+
+<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:215,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+<span class="ne">--&gt; </span><span class="mi">215</span> <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_opener</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">==</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># ensure file doesn&#39;t get overridden when opened again</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2469,</span> in <span class="ni">netCDF4._netCDF4.Dataset.__init__</span><span class="nt">()</span>
+
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2028,</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="filter-the-data">
+<h2>Filter the data<a class="headerlink" href="#filter-the-data" title="Permalink to this heading">#</a></h2>
+<section id="select-a-one-year-time-period-to-work-with">
+<h3>Select a one year time period to work with<a class="headerlink" href="#select-a-one-year-time-period-to-work-with" title="Permalink to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Pick a year that looks filled in.  I.e., straight lines between big blocks of color are probably because there’s not data.</p></li>
+<li><p>Take a look at the attributes to try to verify that your year has no gaps</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/indexing.html">https://docs.xarray.dev/en/stable/user-guide/indexing.html</a></p>
+</div>
+</li>
+<li><p>Subselect the data using the <code class="docutils literal notranslate"><span class="pre">.loc</span></code> command.  For example, if you would like to extract the month of January in 1995, you would do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">td_jan95</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1995-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;1995-01-31T23:59:59&quot;</span><span class="p">))]</span>
+<span class="c1">#td_1995 = td_1995.drop_vars([&quot;woce_date&quot;,&quot;woce_time&quot;,&quot;sea_level_quality_flag_1&quot;])</span>
+
+<span class="c1">#print(td_jan95)</span>
+<span class="n">td_1995</span> <span class="o">=</span> <span class="n">td</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="nb">dict</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1995-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;1995-12-31T23:59:59&quot;</span><span class="p">))]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-1-calculate-a-running-averages">
+<h3>Fig. 1 Calculate a running averages<a class="headerlink" href="#fig-1-calculate-a-running-averages" title="Permalink to this heading">#</a></h3>
+<p>You will use <code class="docutils literal notranslate"><span class="pre">xarray.DataArray.rolling()</span></code></p>
+<ol class="arabic simple">
+<li><p>From your one year period, plot a two week period.</p></li>
+<li><p>Calculate a rolling average (moving average) over 5 hours from your dataset, and add this to your plot in red.</p></li>
+<li><p>Recalculate this using the option <code class="docutils literal notranslate"><span class="pre">center=True</span></code>, and add this to your plot in green.</p></li>
+<li><p>Plot your figure and name it fig1 using the file naming convention.</p></li>
+</ol>
+<p>What is the difference between using <code class="docutils literal notranslate"><span class="pre">center=False</span></code> or <code class="docutils literal notranslate"><span class="pre">True</span></code>?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot one month</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="p">)</span>
+<span class="n">xlim</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">14</span><span class="p">)]</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">autofmt_xdate</span><span class="p">()</span>
+
+<span class="c1"># Add appropriate x- and y-axis labels (with units)</span>
+
+<span class="c1"># Calculate a moving average</span>
+<span class="n">sla5noctr</span> <span class="o">=</span> <span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sla5</span> <span class="o">=</span> <span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">sla5noctr</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">sla5</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f93dc9ab820&gt;]
+</pre></div>
+</div>
+<img alt="../_images/f6c1931a78fd929b6ee9fe5284a01d88a849d0e95de87dd1ee91ff2d242f04df.png" src="../_images/f6c1931a78fd929b6ee9fe5284a01d88a849d0e95de87dd1ee91ff2d242f04df.png" />
+</div>
+</div>
+</section>
+<section id="experiment-with-windows">
+<h3>Experiment with windows<a class="headerlink" href="#experiment-with-windows" title="Permalink to this heading">#</a></h3>
+<p>Let’s try removing the tides.  Most tides that we normally think about are diurnal or semi-diurnal, so let’s smooth the data with a 1-day filter.</p>
+<ol class="arabic simple">
+<li><p>Using the same dataset, now smooth with 24 hours.  Adjust y-axis limits to the nearest 0.1 m.  Did we get out all the wobbles?</p></li>
+</ol>
+<!--no-->
+<ol class="arabic" start="2">
+<li><p>Create a window.  When we are using a default rolling average, it is a rectangular or “boxcar” window (where “boxcar” refers to a train car that looks like a container on a container ship).   Note that when importing packages above, we imported <code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code> as <code class="docutils literal notranslate"><span class="pre">sg</span></code>.</p>
+<p><em>Personal favourite: Tukey</em>.  When you use it on a dataset, it looks a lot like a boxcar, but less jaggedy, and the spectral properties (frequency response) are good.  You can take a quick look at the “frequency response” for different windows by clicking the function in the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> documentation.  If the side lobes drop away quickly and smoothly (to low decibels) from the center peak, this is better.</p>
+</li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Window types in <code class="docutils literal notranslate"><span class="pre">scipy</span></code>: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.windows.html#module-scipy.signal.windows">https://docs.scipy.org/doc/scipy/reference/signal.windows.html#module-scipy.signal.windows</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a few window types.</span>
+<span class="n">myboxcar</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">boxcar</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">myhanning</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">hann</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">mytukey</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">tukey</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">myparzen</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">parzen</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myboxcar</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myhanning</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mytukeywin</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">myparzen</span><span class="p">)</span>
+
+<span class="n">wins</span> <span class="o">=</span> <span class="p">[</span><span class="n">myboxcar</span><span class="p">,</span> <span class="n">myhanning</span><span class="p">,</span> <span class="n">mytukey</span><span class="p">,</span> <span class="n">myparzen</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">window</span> <span class="ow">in</span> <span class="n">wins</span><span class="p">:</span>
+    <span class="n">A</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">window</span><span class="p">,</span> <span class="mi">2048</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="o">/</span><span class="mf">2.0</span><span class="p">)</span>
+    <span class="n">freq</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fftshift</span><span class="p">(</span><span class="n">A</span> <span class="o">/</span> <span class="nb">abs</span><span class="p">(</span><span class="n">A</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">())))</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">freq</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+    <span class="n">axs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">axis</span><span class="p">([</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mi">120</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/t1/z5bp59k95119nw35yqv699t40000gn/T/ipykernel_11744/2598423311.py:18: RuntimeWarning: divide by zero encountered in log10
+  response = 20 * np.log10(np.abs(fftshift(A / abs(A).max())))
+</pre></div>
+</div>
+<img alt="../_images/d92f69d594e6dffe03a8abacb3d19df84ca09d74f3f1301be9d9423e94239e4b.png" src="../_images/d92f69d594e6dffe03a8abacb3d19df84ca09d74f3f1301be9d9423e94239e4b.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="fig-2-calculate-moving-averages-with-different-filters">
+<h2>Fig. 2 Calculate moving averages with different filters<a class="headerlink" href="#fig-2-calculate-moving-averages-with-different-filters" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Recalculate your moving averages using two types of filters.  One of these should be a boxcar, and the other is your choice.</p></li>
+<li><p>Plot the two filtered time series and the original data on a new set of axes, and zoom in to a 2-week period for better visibility.</p></li>
+<li><p>Export this figure as fig2.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate a 1-day moving mean-average using a tukey filter.</span>
+<span class="c1"># https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.rolling.html</span>
+<span class="c1">#td_1995 = td_1995.drop_vars([&quot;latitude&quot;, &quot;longitude&quot;])</span>
+<span class="n">sla_df</span> <span class="o">=</span> <span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="o">.</span><span class="n">to_dataframe</span><span class="p">()</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">sla_df</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sla_df</span><span class="p">)</span>
+<span class="c1"># Pandas, unlike xarray, doesn&#39;t have the time linked to the data as the dimension.  </span>
+<span class="c1"># Here you need to specify the window length in the number of data points.  Since our data are hourly, a 24-hour window</span>
+<span class="c1"># is 24.</span>
+<span class="n">sla_df24tukey</span> <span class="o">=</span> <span class="n">sla_df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">48</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">win_type</span><span class="o">=</span><span class="s1">&#39;tukey&#39;</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">sla_df24box</span> <span class="o">=</span> <span class="n">sla_df</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="n">center</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">win_type</span><span class="o">=</span><span class="s1">&#39;boxcar&#39;</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">sla_df24box</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">td_1995</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="n">sla_df24tukey</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="n">xlim</span><span class="p">)</span>
+<span class="c1">#ax.set_ylim([1.2, 1.5])</span>
+
+<span class="c1"># Look back at your window.  Why is the result with the Tukey window still bumpier than the result with the boxcar?</span>
+<span class="c1"># What length Tukey window would you need to use in order to have the flat center part of the Tukey at least 24-hours?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                               sea_level_1
+time                                      
+1995-01-01 00:00:00.000000000        1.917
+1995-01-01 01:00:00.000107520        1.704
+1995-01-01 02:00:00.000214528        1.442
+1995-01-01 03:00:00.000000000        1.198
+1995-01-01 04:00:00.000429056        0.957
+...                                    ...
+1995-12-31 19:00:00.001716736        1.582
+1995-12-31 19:59:59.998283264        1.667
+1995-12-31 21:00:00.000000000        1.693
+1995-12-31 22:00:00.001716736        1.546
+1995-12-31 22:59:59.998283264        1.388
+
+[8760 rows x 1 columns]
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(9131.0, 9144.0)
+</pre></div>
+</div>
+<img alt="../_images/1a632e45c8daecb782f5c3cea327f18dfa33fd26e448826faf410845c7446116.png" src="../_images/1a632e45c8daecb782f5c3cea327f18dfa33fd26e448826faf410845c7446116.png" />
+</div>
+</div>
+</section>
+<section id="fitting-a-harmonic-optional">
+<h2>Fitting a harmonic (optional)<a class="headerlink" href="#fitting-a-harmonic-optional" title="Permalink to this heading">#</a></h2>
+<p>More typically, to remove tides, the tidal constituents can be removed using a harmonic fit, followed by e.g. a 40-hour filter.  For a boxcar, this would be a 40-hour boxcar.  For a tukey, it would be something longer.</p>
+<p><strong>Explore:</strong> See whether you can fit a harmonic to your tidal time series.  What are the major tidal constituents?</p>
+<ul class="simple">
+<li><p>Some packages exist to help with this: e.g., <a class="github reference external" href="https://github.com/moflaher/ttide_py">moflaher/ttide_py</a></p></li>
+</ul>
+<p><strong>Explore:</strong> Go a little deeper into time series analysis by considering spectra. Spectra can immediately help you identify dominant frequencies in  your time series, whether they are seasonal (a 365-day cycle) or tidal (12- or 12.4-hr).  An example notebook can be found here: <a class="reference external" href="https://www.jmlilly.net/course/labs/html/SpectralAnalysis-Python.html">https://www.jmlilly.net/course/labs/html/SpectralAnalysis-Python.html</a> from Jonathan Lilly’s time series analysis <a class="reference external" href="https://www.jmlilly.net/course/index.html">course</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here (optional)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-3-regridding-data">
+<h2>Fig. 3 Regridding data<a class="headerlink" href="#fig-3-regridding-data" title="Permalink to this heading">#</a></h2>
+<p>Now suppose you need to compare your tidal time series with a daily temperature record (for example).  You want to calculate a linear regression, but the lengths of the time grids are different.  You have some options.</p>
+<ol class="arabic simple">
+<li><p>Average your data into 1 day averages.  Try this using the methods from the previous exercise.</p></li>
+<li><p>Subsample your data into the value nearest to noon each day.</p></li>
+<li><p>Linearly interpolate your data onto the time dimension of the temperature record.</p></li>
+</ol>
+<p>Try these methods and consider what the differences might mean.</p>
+<ol class="arabic simple" start="4">
+<li><p>For the purpose of this exercise, simply create these new time series and plot a week or a month’s worth of data with all three time series on the same plot.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Has this removed the diurnal cycle?</span>
+<span class="n">cv</span> <span class="o">=</span> <span class="n">td_1995</span><span class="o">.</span><span class="n">sea_level_1</span><span class="o">.</span><span class="n">values</span>
+<span class="n">cv2</span> <span class="o">=</span> <span class="n">sla_df24box</span>
+<span class="n">cv3</span> <span class="o">=</span> <span class="n">sla_df24tukey</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">cv</span><span class="o">-</span><span class="n">cv</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">cv2</span><span class="o">-</span><span class="n">cv2</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">fft</span><span class="p">(</span><span class="n">cv3</span><span class="o">-</span><span class="n">cv3</span><span class="o">.</span><span class="n">mean</span><span class="p">()))</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f93b7d4cfd0&gt;]
+</pre></div>
+</div>
+<img alt="../_images/e652f1589be96414a7b42af59a7dd44ada596aecc3fe43ca4daa748f1e273fdf.png" src="../_images/e652f1589be96414a7b42af59a7dd44ada596aecc3fe43ca4daa748f1e273fdf.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">24</span>
+<span class="n">f</span><span class="p">,</span> <span class="n">S</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">periodogram</span><span class="p">(</span><span class="n">cv</span><span class="o">-</span><span class="n">cv</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span> <span class="c1">#fs = sampling frequency (cyclic)</span>
+<span class="n">f2</span><span class="p">,</span> <span class="n">S2</span> <span class="o">=</span> <span class="n">sg</span><span class="o">.</span><span class="n">periodogram</span><span class="p">(</span><span class="n">cv2</span><span class="o">-</span><span class="n">cv2</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">fs</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span> <span class="c1">#fs = sampling frequency (cyclic)</span>
+<span class="n">omega</span> <span class="o">=</span> <span class="n">f</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1">#convert cyclic frequency to radian frequency</span>
+<span class="n">omega2</span> <span class="o">=</span> <span class="n">f2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span> <span class="n">omega</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)],</span><span class="n">S</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">omega</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span><span class="c1">#plot positive side</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">semilogy</span><span class="p">(</span> <span class="n">omega2</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">omega2</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)],</span><span class="n">S2</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">omega2</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">)],</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span><span class="c1">#plot positive side</span>
+<span class="c1">#ax.semilogy(-omega[np.where(omega&lt;=0)],S[np.where(omega&lt;=0)],linewidth=0.75)#plot negative side</span>
+<span class="c1">#ax.autoscale(enable=True, tight=True)</span>
+<span class="c1">#ax.set_ylim(1e-2, 1e3)</span>
+<span class="c1">#fig.tight_layout()</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;Origina&#39;</span><span class="p">,</span><span class="s1">&#39;24 hour filter&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Frequency (radians/day)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Power Spectral Density (cm$^2$/s$^2$ days)&#39;</span><span class="p">)</span>
+<span class="c1">#plt.title(&#39;Periodogram Rotary Spectral Estimate&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Power Spectral Density (cm$^2$/s$^2$ days)&#39;)
+</pre></div>
+</div>
+<img alt="../_images/f1231230968bca41790566567874863c497e5a7a87cb378dac24f9dc3623cea6.png" src="../_images/f1231230968bca41790566567874863c497e5a7a87cb378dac24f9dc3623cea6.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv2</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.],
+       [0.],
+       [0.],
+       ...,
+       [0.],
+       [0.],
+       [0.]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-env-seaocn_env-py"
+        },
+        kernelOptions: {
+            name: "conda-env-seaocn_env-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-some-data-quick-check-what-s-there">Download some data + quick check what’s there</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filter-the-data">Filter the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-one-year-time-period-to-work-with">Select a one year time period to work with</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-calculate-a-running-averages">Fig. 1 Calculate a running averages</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#experiment-with-windows">Experiment with windows</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-calculate-moving-averages-with-different-filters">Fig. 2 Calculate moving averages with different filters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-harmonic-optional">Fitting a harmonic (optional)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-regridding-data">Fig. 3 Regridding data</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
