@@ -1,0 +1,50 @@
+Traceback (most recent call last):
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import scipy.signal as sg  #Package for signal analysis
+import scipy.ndimage as si #Another package for signal analysis
+#from scipy.interpolate import interp1d  #for converting cell to grid-centered coordinates
+#from scipy import stats    #Used for 2D binned statistics
+#from mpl_toolkits.axes_grid1 import make_axes_locatable #For plotting interior colobars
+#import cartopy.crs as ccrs
+
+from multitaper import MTSpec  #using German Prieto's multitaper package, https://github.com/gaprieto/multitaper
+from scipy import fft as spfft
+from scipy.fft import fft 
+from scipy.stats import chi2
+from scipy.special import digamma
+
+plt.rcParams["figure.figsize"] = (10,6.5) #set default figure size
+plt.rcParams['font.size'] = 14
+plt.rcParams['font.family'] = 'serif'
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[15], line 8[0m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mndimage[39;00m [38;5;28;01mas[39;00m [38;5;21;01msi[39;00m [38;5;66;03m#Another package for signal analysis[39;00m
+[1;32m      3[0m [38;5;66;03m#from scipy.interpolate import interp1d  #for converting cell to grid-centered coordinates[39;00m
+[1;32m      4[0m [38;5;66;03m#from scipy import stats    #Used for 2D binned statistics[39;00m
+[1;32m      5[0m [38;5;66;03m#from mpl_toolkits.axes_grid1 import make_axes_locatable #For plotting interior colobars[39;00m
+[1;32m      6[0m [38;5;66;03m#import cartopy.crs as ccrs[39;00m
+[0;32m----> 8[0m [38;5;28;01mfrom[39;00m [38;5;21;01mmultitaper[39;00m [38;5;28;01mimport[39;00m MTSpec  [38;5;66;03m#using German Prieto's multitaper package, https://github.com/gaprieto/multitaper[39;00m
+[1;32m      9[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m [38;5;28;01mimport[39;00m fft [38;5;28;01mas[39;00m spfft
+[1;32m     10[0m [38;5;28;01mfrom[39;00m [38;5;21;01mscipy[39;00m[38;5;21;01m.[39;00m[38;5;21;01mfft[39;00m [38;5;28;01mimport[39;00m fft 
+
+[0;31mModuleNotFoundError[0m: No module named 'multitaper'
+
