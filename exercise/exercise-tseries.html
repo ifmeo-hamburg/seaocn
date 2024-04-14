@@ -181,6 +181,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
@@ -192,6 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2  Time series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -420,6 +424,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-plot-an-annual-cycle">Fig 2. Plot an annual cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-trend-updating-fig-1">Fitting a trend - updating Fig. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-residual">Look at the residual -</a></li>
 </ul>
             </nav>
         </div>
@@ -453,8 +458,8 @@ document.write(`
 <li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
 <div class="admonition-file-naming-convention admonition">
 <p class="admonition-title">File naming convention</p>
-<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
-<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
 </div>
 </li>
 <li><p>Import necessary packages.</p>
@@ -478,7 +483,7 @@ document.write(`
 <p>Go to the <a class="reference external" href="https://climexp.knmi.nl/start.cgi">KNMI climate explorer</a> and download a time series of monthly sea surface temperature since 1850.</p>
 <ol class="arabic simple">
 <li><p>Click “Monthly Observations” on the right</p></li>
-<li><p>Choose temperature from “Berkeley 1 deg”</p></li>
+<li><p>Choose temperature from “Berkeley 1 deg”.  This is a gridded and filled sea surface temperature product.</p></li>
 <li><p>Select a latitude and longitude in the ocean. Enter a range into the latitude which is 1 degree wide.  Note that for the southern hemisphere, you should use negative values.  For degrees west you should use “negative degrees east”.</p></li>
 <li><p>After entering values in the 2 latititude and 2 longitude boxes, click the choice “subset of the field” after make.</p></li>
 <li><p>Click the button “Make time series”.</p></li>
@@ -616,6 +621,7 @@ document.write(`
 </div>
 </div>
 </div>
+<p><em>Thought exercise:</em> Try changing the axes limits to zoom in on different parts of the data.  Can you describe the data overall?  Various periodicities, tendencies or other wobbles?</p>
 </section>
 </section>
 <section id="explore-the-data">
@@ -752,6 +758,22 @@ document.write(`
 </div>
 </div>
 </section>
+<section id="look-at-the-residual">
+<h2>Look at the residual -<a class="headerlink" href="#look-at-the-residual" title="Permalink to this heading">#</a></h2>
+<p><strong>Come back to this python notebook after the lab <code class="docutils literal notranslate"><span class="pre">exercise-filter</span></code>.</strong></p>
+<p>Subtract the values for the trend or polynomial that you fit (whichever looked better by eye) from your original data.  This is the residual.</p>
+<p>Plot the residual.</p>
+<p><strong>After</strong> the second lab <code class="docutils literal notranslate"><span class="pre">exercise-filter.ipynb</span></code> you can come back here and apply a filter (whatever seems best) to the residual.</p>
+<p>Describe the variability that you see.</p>
+<p>Make a figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -763,16 +785,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-seaocn_env-py"
+            mode: "conda-root-py"
         },
         kernelOptions: {
-            name: "conda-env-seaocn_env-py",
+            name: "conda-root-py",
             path: "./exercise"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+    <script>kernelName = 'conda-root-py'</script>
 
                 </article>
               
@@ -832,6 +854,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-plot-an-annual-cycle">Fig 2. Plot an annual cycle</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-trend-updating-fig-1">Fitting a trend - updating Fig. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-residual">Look at the residual -</a></li>
 </ul>
   </nav></div>
 

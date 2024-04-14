@@ -67,7 +67,7 @@ You can get conda here: [https://conda.io/projects/conda/en/latest/user-guide/in
 
 - To create an environment to use for the work in this course, use the `conda create` command as:
 ```
-conda create --channel conda-forge --name seaocn_env matplotlib=3.7.3 pandas=1.5.3 python=3.8.19 numpy=1.24.4 xarray=2023.1.0 gsw=3.6.17 netCDF4=1.6.5 jupyterlab=4.1.5 
+conda create --channel conda-forge --name seaocn_env matplotlib pandas python numpy xarray gsw netCDF4 jupyterlab scipy cmocean erddapy argopy tqdm 
 ```
 Note that you can run the line above *without* the equals sign "=" and numbers following.  This specifies versions which worked on my computer in 2024 March.  Without the versions, `conda` will attempt to find for you compatible versions of the packages.
 

@@ -68,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-filter';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Git for sharing &amp; versioning" href="../resource/git.html" />
+    <link rel="next" title="Exercise 3 - Exploring map projections" href="exercise-map.html" />
     <link rel="prev" title="Exercise 2 Time series" href="exercise-tseries.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -181,6 +181,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
@@ -192,6 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -450,8 +454,8 @@ document.write(`
 <li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
 <div class="admonition-file-naming-convention admonition">
 <p class="admonition-title">File naming convention</p>
-<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
-<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
 </div>
 </li>
 <li><p>Import necessary packages.</p>
@@ -509,17 +513,17 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:209,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:209,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
 <span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">209</span>     <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_key</span><span class="p">]</span>
 <span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/lru_cache.py:55,</span> in <span class="ni">LRUCache.__getitem__</span><span class="nt">(self, key)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/lru_cache.py:55,</span> in <span class="ni">LRUCache.__getitem__</span><span class="nt">(self, key)</span>
 <span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
 <span class="ne">---&gt; </span><span class="mi">55</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;4d50bb64-f0c5-4751-9c93-9676408c7dfa&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;bf777eaa-e46f-4bae-beac-4acd7327761f&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -534,7 +538,7 @@ document.write(`
 <span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Quick plot data</span>
 <span class="g g-Whitespace">     </span><span class="mi">12</span> <span class="c1">#plt.plot(td.time,td.sea_level_1)</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
 <span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="n">decode_cf</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
@@ -556,7 +560,7 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">return</span> <span class="n">ds</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:578,</span> in <span class="ni">NetCDF4BackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, format, clobber, diskless, persist, lock, autoclose)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:578,</span> in <span class="ni">NetCDF4BackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, format, clobber, diskless, persist, lock, autoclose)</span>
 <span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="k">def</span> <span class="nf">open_dataset</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="bp">self</span><span class="p">,</span>
 <span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
@@ -578,7 +582,7 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">591</span>     <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:382,</span> in <span class="ni">NetCDF4DataStore.open</span><span class="nt">(cls, filename, mode, format, group, clobber, diskless, persist, lock, lock_maker, autoclose)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:382,</span> in <span class="ni">NetCDF4DataStore.open</span><span class="nt">(cls, filename, mode, format, group, clobber, diskless, persist, lock, lock_maker, autoclose)</span>
 <span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
 <span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">,</span> <span class="n">diskless</span><span class="o">=</span><span class="n">diskless</span><span class="p">,</span> <span class="n">persist</span><span class="o">=</span><span class="n">persist</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span>
 <span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="p">)</span>
@@ -587,32 +591,32 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">382</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">manager</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span> <span class="n">autoclose</span><span class="o">=</span><span class="n">autoclose</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:329,</span> in <span class="ni">NetCDF4DataStore.__init__</span><span class="nt">(self, manager, group, mode, lock, autoclose)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:329,</span> in <span class="ni">NetCDF4DataStore.__init__</span><span class="nt">(self, manager, group, mode, lock, autoclose)</span>
 <span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span> <span class="o">=</span> <span class="n">group</span>
 <span class="g g-Whitespace">    </span><span class="mi">328</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
 <span class="ne">--&gt; </span><span class="mi">329</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">data_model</span>
 <span class="g g-Whitespace">    </span><span class="mi">330</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filepath</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_remote</span> <span class="o">=</span> <span class="n">is_remote_uri</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">)</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:391,</span> in <span class="ni">NetCDF4DataStore.ds</span><span class="nt">(self)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:391,</span> in <span class="ni">NetCDF4DataStore.ds</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="nd">@property</span>
 <span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">def</span> <span class="nf">ds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">391</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_acquire</span><span class="p">()</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:385,</span> in <span class="ni">NetCDF4DataStore._acquire</span><span class="nt">(self, needs_lock)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:385,</span> in <span class="ni">NetCDF4DataStore._acquire</span><span class="nt">(self, needs_lock)</span>
 <span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="k">def</span> <span class="nf">_acquire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="ne">--&gt; </span><span class="mi">385</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">acquire_context</span><span class="p">(</span><span class="n">needs_lock</span><span class="p">)</span> <span class="k">as</span> <span class="n">root</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="n">ds</span> <span class="o">=</span> <span class="n">_nc4_require_group</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="k">return</span> <span class="n">ds</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/contextlib.py:113,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/contextlib.py:113,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
 <span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
 <span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="k">try</span><span class="p">:</span>
 <span class="ne">--&gt; </span><span class="mi">113</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
 <span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:197,</span> in <span class="ni">CachingFileManager.acquire_context</span><span class="nt">(self, needs_lock)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:197,</span> in <span class="ni">CachingFileManager.acquire_context</span><span class="nt">(self, needs_lock)</span>
 <span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
 <span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">def</span> <span class="nf">acquire_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">196</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Context manager for acquiring a file.&quot;&quot;&quot;</span>
@@ -620,7 +624,7 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="k">try</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">199</span>         <span class="k">yield</span> <span class="n">file</span>
 
-<span class="nn">File ~/opt/miniconda3/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:215,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:215,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
 <span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
 <span class="ne">--&gt; </span><span class="mi">215</span> <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_opener</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -628,9 +632,9 @@ document.write(`
 <span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># ensure file doesn&#39;t get overridden when opened again</span>
 <span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
 
-<span class="nn">File src/netCDF4/_netCDF4.pyx:2469,</span> in <span class="ni">netCDF4._netCDF4.Dataset.__init__</span><span class="nt">()</span>
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2464,</span> in <span class="ni">netCDF4._netCDF4.Dataset.__init__</span><span class="nt">()</span>
 
-<span class="nn">File src/netCDF4/_netCDF4.pyx:2028,</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2027,</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
 
 <span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;
 </pre></div>
@@ -725,7 +729,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/t1/z5bp59k95119nw35yqv699t40000gn/T/ipykernel_14267/1134310159.py:21: RuntimeWarning: divide by zero encountered in log10
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/t1/z5bp59k95119nw35yqv699t40000gn/T/ipykernel_28737/1134310159.py:21: RuntimeWarning: divide by zero encountered in log10
   response = 20 * np.log10(np.abs(fftshift(A / abs(A).max())))
 </pre></div>
 </div>
@@ -813,16 +817,16 @@ print(sla_df)
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-seaocn_env-py"
+            mode: "conda-root-py"
         },
         kernelOptions: {
-            name: "conda-env-seaocn_env-py",
+            name: "conda-root-py",
             path: "./exercise"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+    <script>kernelName = 'conda-root-py'</script>
 
                 </article>
               
@@ -844,11 +848,11 @@ print(sla_df)
       </div>
     </a>
     <a class="right-next"
-       href="../resource/git.html"
+       href="exercise-map.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Git for sharing &amp; versioning</p>
+        <p class="prev-next-title">Exercise 3 - Exploring map projections</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

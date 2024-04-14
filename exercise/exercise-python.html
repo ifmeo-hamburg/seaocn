@@ -179,6 +179,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
@@ -190,6 +192,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -482,7 +486,7 @@ Python 3.9.5
 <ul class="simple">
 <li><p>To create an environment to use for the work in this course, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> command as:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">matplotlib</span><span class="o">=</span><span class="mf">3.7.3</span> <span class="n">pandas</span><span class="o">=</span><span class="mf">1.5.3</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8.19</span> <span class="n">numpy</span><span class="o">=</span><span class="mf">1.24.4</span> <span class="n">xarray</span><span class="o">=</span><span class="mf">2023.1.0</span> <span class="n">gsw</span><span class="o">=</span><span class="mf">3.6.17</span> <span class="n">netCDF4</span><span class="o">=</span><span class="mf">1.6.5</span> <span class="n">jupyterlab</span><span class="o">=</span><span class="mf">4.1.5</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">matplotlib</span> <span class="n">pandas</span> <span class="n">python</span> <span class="n">numpy</span> <span class="n">xarray</span> <span class="n">gsw</span> <span class="n">netCDF4</span> <span class="n">jupyterlab</span> <span class="n">scipy</span> <span class="n">cmocean</span> <span class="n">erddapy</span> <span class="n">argopy</span> <span class="n">tqdm</span> 
 </pre></div>
 </div>
 <p>Note that you can run the line above <em>without</em> the equals sign “=” and numbers following.  This specifies versions which worked on my computer in 2024 March.  Without the versions, <code class="docutils literal notranslate"><span class="pre">conda</span></code> will attempt to find for you compatible versions of the packages.</p>

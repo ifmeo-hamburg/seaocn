@@ -15,18 +15,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# Update the code below for your data
-file_path = '../data/'
-filename = 'w9006.nc'
-fname = file_path + filename
+# Your code here
+myyear = 1979
+filepath = '../data/'
+fpre = ['lhtfl', 'nswrs', 'nlwrs', 'shtfl']
+fpost = '.sfc.gauss.' + str(myyear) + '.nc'
 
-# Load the data
-td = xr.open_dataset(fname)
-td = td.squeeze()
-#print(td)
+flux_components = {}
+for i in range(len(fpre)):
+    fname = filepath + fpre[i] + fpost
 
-# Quick plot data
-#plt.plot(td.time,td.sea_level_1)
+    flux_components[fpre[i]] = xr.open_dataset(fname)
+
+d1 = flux_components['lhtfl']
+d2 = d1.sel(time=slice("1979-01-01T00:00:00"))
+
+print(type(flux_components))
+
 ------------------
 
 
@@ -42,20 +47,17 @@ File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/back
 [0;32m---> 55[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     56[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'bf777eaa-e46f-4bae-beac-4acd7327761f']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'a3368b5b-adfd-481f-b278-f29781b722a5']
 
 During handling of the above exception, another exception occurred:
 
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[2], line 7[0m
-[1;32m      4[0m fname [38;5;241m=[39m file_path [38;5;241m+[39m filename
-[1;32m      6[0m [38;5;66;03m# Load the data[39;00m
-[0;32m----> 7[0m td [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_dataset[49m[43m([49m[43mfname[49m[43m)[49m
-[1;32m      8[0m td [38;5;241m=[39m td[38;5;241m.[39msqueeze()
-[1;32m      9[0m [38;5;66;03m#print(td)[39;00m
-[1;32m     10[0m 
-[1;32m     11[0m [38;5;66;03m# Quick plot data[39;00m
-[1;32m     12[0m [38;5;66;03m#plt.plot(td.time,td.sea_level_1)[39;00m
+Cell [0;32mIn[2], line 11[0m
+[1;32m      8[0m [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m [38;5;28mrange[39m([38;5;28mlen[39m(fpre)):
+[1;32m      9[0m     fname [38;5;241m=[39m filepath [38;5;241m+[39m fpre[i] [38;5;241m+[39m fpost
+[0;32m---> 11[0m     flux_components[fpre[i]] [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mopen_dataset[49m[43m([49m[43mfname[49m[43m)[49m
+[1;32m     13[0m d1 [38;5;241m=[39m flux_components[[38;5;124m'[39m[38;5;124mlhtfl[39m[38;5;124m'[39m]
+[1;32m     14[0m d2 [38;5;241m=[39m d1[38;5;241m.[39msel(time[38;5;241m=[39m[38;5;28mslice[39m([38;5;124m"[39m[38;5;124m1979-01-01T00:00:00[39m[38;5;124m"[39m))
 
 File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541[0m, in [0;36mopen_dataset[0;34m(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)[0m
 [1;32m    529[0m decoders [38;5;241m=[39m _resolve_decoders_kwargs(
@@ -155,5 +157,5 @@ File [0;32msrc/netCDF4/_netCDF4.pyx:2464[0m, in [0;36mnetCDF4._netCDF4.Datase
 
 File [0;32msrc/netCDF4/_netCDF4.pyx:2027[0m, in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc'
 

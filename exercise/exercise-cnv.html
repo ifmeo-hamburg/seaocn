@@ -181,6 +181,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
@@ -192,6 +194,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -765,7 +769,7 @@ b(z) = -g\frac{\rho(z)}{\rho_0}
 <p>Try and plot both ways on the same axes.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The convention in oceanography is that the N<span class="math notranslate nohighlight">\(^2\)</span> axis is a log10 axis.</p>
+<p>The convention in oceanography is that the N<span class="math notranslate nohighlight">\(^2\)</span> axis is a log10 axis.  Do you have a noisy plot?  (Optional:) The way we calculate buoyancy frequency in practice is to use one of a few possible techniques to smooth the data.</p>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>Export your figure.</p></li>
@@ -844,16 +848,16 @@ h = \int_{p_r}^p\frac{dp}{-\rho g}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "conda-env-seaocn_env-py"
+            mode: "conda-root-py"
         },
         kernelOptions: {
-            name: "conda-env-seaocn_env-py",
+            name: "conda-root-py",
             path: "./exercise"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'conda-env-seaocn_env-py'</script>
+    <script>kernelName = 'conda-root-py'</script>
 
                 </article>
               
