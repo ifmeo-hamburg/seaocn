@@ -34,6 +34,7 @@ parts:
   - file: exercise/exercise-cnv
   - file: exercise/exercise-tseries
   - file: exercise/exercise-filter
+  - file: exercise/exercise-map
 #  - file: exercise/exercise-hydro
 
 #- caption: Assignments

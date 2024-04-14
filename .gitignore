@@ -5,14 +5,12 @@ data/*.*
 */_build/*
 
 # Solution files
-*solutions*
-*solution*
 
 # Cache files
 *voto_erddap_data_cache/*
 
 # Jupyter Notebook
-*.ipynb_checkpoints/*
+seaocn-cb/exercise/.ipynb_checkpoints/*
 
 # Editors
 .vscode/
