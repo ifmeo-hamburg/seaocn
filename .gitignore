@@ -2,7 +2,7 @@
 _build/
 data/*.*
 *.nc
-
+*/_build/*
 
 # Solution files
 *solutions*
