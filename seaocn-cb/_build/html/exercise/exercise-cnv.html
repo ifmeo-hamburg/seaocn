@@ -1,0 +1,994 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 1 - Profile data &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-cnv';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 2a Time series" href="exercise-tseries.html" />
+    <link rel="prev" title="Exercise 0b - Python" href="exercise-python.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 1 - Profile data</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2a  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3a - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/python.html">Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-cnv.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-cnv.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 1 - Profile data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1 - Profile data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook">Create a notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">Import necessary packages.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pycnv">Using pycnv</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data-with-pycnv">Load the data with pycnv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#display-parameters">Display parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-make-a-profile-plot">Fig. 1 Make a profile plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-standard-parameters">Plot standard parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-that-pycnv-already-did-the-teos-10-conversion-to-sa-for-you-using-gsw">Note that pycnv already did the TEOS-10 conversion to SA for you using gsw</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-netcdf-and-load-with-xarray">Convert to netCDF and load with <code class="docutils literal notranslate"><span class="pre">xarray</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-data-in-xarray">Work with data in xarray</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-teos-10-parameters">Calculate TEOS-10 parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-these-data-to-your-xarray-data-array">Add these data to your xarray data array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-an-xr-da-to-netcdf-file">Save an xr.da to *.netCDF file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-repeat-the-profile-plot">Fig 2. Repeat the profile plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-make-a-t-s-diagram">Fig 3. Make a T-S diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-the-plots">Clean up the plots</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-calculations">Further calculations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-buoyancy-frequency">Calculate buoyancy frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-buoyancy-frequency">Fig 4. Plot buoyancy frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-dynamic-height">Calculate dynamic height</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-plot-dynamic-height">Fig 5. Plot dynamic height</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-1-profile-data">
+<h1>Exercise 1 - Profile data<a class="headerlink" href="#exercise-1-profile-data" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> To work with vertical profile data and make some standard calculations.</p>
+<p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Calculate buoyancy frequency</p></li>
+<li><p>Calculate dynamic height</p></li>
+<li><p>Gain basic familiarity with Python <code class="docutils literal notranslate"><span class="pre">xarray</span></code> data arrays, and reading and writing <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> files using <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.</p></li>
+</ol>
+<!--4. Use the functions including: nanmean, detrend, polyfit, polyval, disp, grid, find, isnan, sqrt, and the operators ==, ~ and .^2.-->
+<p><strong>Data:</strong> You will work with the CNV files from the MSM121 cruise off of 47°N.</p>
+<p><strong>Directions:</strong> Answer the questions, create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and 5 figures.  <em>Make sure you follow the file naming convention.</em></p>
+<p><strong>Measure of success:</strong> You will have created a python notebook, a netCDF file (<em>not</em> added to the git repository) and the 5 figures exported as <code class="docutils literal notranslate"><span class="pre">*.png</span></code> format into your folder; these will be “commited” and “pushed” to the shared repository, and viewable by everyone.  Additionally, copy your 2 best figures to the <code class="docutils literal notranslate"><span class="pre">shared_figures/</span></code> folder for discussion.</p>
+<hr><section id="create-a-notebook">
+<h2>Create a notebook<a class="headerlink" href="#create-a-notebook" title="Permalink to this heading">#</a></h2>
+<p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
+<div class="admonition-file-naming-convention admonition">
+<p class="admonition-title">File naming convention</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+</div>
+<section id="import-necessary-packages">
+<h3>Import necessary packages.<a class="headerlink" href="#import-necessary-packages" title="Permalink to this heading">#</a></h3>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  You may also need</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">gsw</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
+<p>Here you have two options (there may be more) for working with <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> files.  They are <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> and <code class="docutils literal notranslate"><span class="pre">seabird</span></code>, as</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/pycnv/">pycnv (link)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/castelao/seabird">seabird (link)</a></p></li>
+</ul>
+<p>You may try either of these.  Note that <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> will create its own data type which you will need to conver to <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  <code class="docutils literal notranslate"><span class="pre">seabird</span></code> can be used to create a netCDF file (<code class="docutils literal notranslate"><span class="pre">*.nc</span></code>) which is a format that <code class="docutils literal notranslate"><span class="pre">xarray</span></code> can handle.</p>
+<p>Both of these packages are designed to run on <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> files.  Normally, the data will first need to be converted from <code class="docutils literal notranslate"><span class="pre">*.hex</span></code> to <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> using the Seabird processing.  There is a “wrapper” written to call Seabird processing from within python, but it does require the Seabird software to already be installed on the computer (therefore the computer needs to be running Windows).  See <a class="reference external" href="https://github.com/HakaiInstitute/seabird-processing">Seabird-processing (link)</a>.</p>
+<p>If you are missing any of the packages that you decide you need, please refer to <a class="reference internal" href="../resource/python.html"><span class="doc std std-doc">Resources: Python</span></a>.</p>
+<p>For processing directly from <code class="docutils literal notranslate"><span class="pre">*.hex</span></code>, there is some python code available <a class="reference external" href="https://github.com/jklymak/SeaCat/tree/master/python">here</a> by Jody Klymak.  It was written for a specific set of SeaCat files, and so may not be generalised to all the possible (especially header) formats for Seabird instruments.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing required packages here</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="using-pycnv">
+<h1>Using pycnv<a class="headerlink" href="#using-pycnv" title="Permalink to this heading">#</a></h1>
+<section id="load-the-data-with-pycnv">
+<h2>Load the data with pycnv<a class="headerlink" href="#load-the-data-with-pycnv" title="Permalink to this heading">#</a></h2>
+<p>The data are in a <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> file.  This is text file in the format from the Seabird Electronics manufacturer.  The package <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> has been developed to read Seabird data into python, but <em>functionality is limited</em>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You will want to convert the pycnv format to xarray for later labs.</p>
+</div>
+<p>For data located in the directory <code class="docutils literal notranslate"><span class="pre">msm121_profiles</span></code>, you need to provide the filename with full path as an input to <code class="docutils literal notranslate"><span class="pre">pycnv</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">file_path1</span> <span class="o">=</span> <span class="s1">&#39;../msm121_profiles/MSM121_015_1db.cnv&#39;</span>
+<span class="n">cnv1</span> <span class="o">=</span> <span class="n">pycnv</span><span class="o">.</span><span class="n">pycnv</span><span class="p">(</span><span class="n">file_path1</span><span class="p">)</span>
+
+<span class="c1"># Print some info to the screen</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Test if we are in the Baltic Sea (usage of different equation of state): &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">cnv1</span><span class="o">.</span><span class="n">baltic</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Position of cast is: Longitude:&#39;</span><span class="p">,</span> <span class="n">cnv1</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span><span class="s1">&#39;Latitude:&#39;</span><span class="p">,</span><span class="n">cnv1</span><span class="o">.</span><span class="n">lat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Time of cast was:&#39;</span><span class="p">,</span> <span class="n">cnv1</span><span class="o">.</span><span class="n">date</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of sensor entries (len(cnv.data.keys())):&#39;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">cnv1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Names of sensor entries (cnv.data.keys()):&#39;</span><span class="p">,</span><span class="n">cnv1</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Write your version of this code below.  If successful, you’ll see output like</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>INFO:pycnv: Opening file: ../msm121_profiles/MSM121_015_1db.cnv
+Test if we are in the Baltic Sea (usage of different equation of state): False
+Position of cast is: Longitude: nan Latitude: nan
+Time of cast was: 2024-03-12 13:06:47+00:00
+Number of sensor entries (len(cnv.data.keys())): 8
+Names of sensor entries (cnv.data.keys()): dict_keys([&#39;scan&#39;, &#39;timeK&#39;, &#39;tv290C&#39;, &#39;cond0mS/cm&#39;, &#39;sal00&#39;, &#39;prdM&#39;, &#39;p&#39;, &#39;flag&#39;])
+</pre></div>
+</div>
+<p>Note that the <code class="docutils literal notranslate"><span class="pre">dict_keys</span></code> tells you what your variable names were in the file, and gives you an idea of how to access them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading the data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="display-parameters">
+<h2>Display parameters<a class="headerlink" href="#display-parameters" title="Permalink to this heading">#</a></h2>
+<p>You can see in the example code previously or here:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>key0 = list(cnv1.data.keys())[0]
+data0 = cnv1.data[key0]
+print(cnv1.data)
+</pre></div>
+</div>
+<p>various ways to interact with the <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> data type.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try printing to see what is in your data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-1-make-a-profile-plot">
+<h2>Fig. 1 Make a profile plot<a class="headerlink" href="#fig-1-make-a-profile-plot" title="Permalink to this heading">#</a></h2>
+<section id="plot-standard-parameters">
+<h3>Plot standard parameters<a class="headerlink" href="#plot-standard-parameters" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pl.figure(1)
+pl.clf()
+pl.subplot(1,2,1)
+</pre></div>
+</div>
+</section>
+<section id="note-that-pycnv-already-did-the-teos-10-conversion-to-sa-for-you-using-gsw">
+<h3>Note that pycnv already did the TEOS-10 conversion to SA for you using gsw<a class="headerlink" href="#note-that-pycnv-already-did-the-teos-10-conversion-to-sa-for-you-using-gsw" title="Permalink to this heading">#</a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pl.plot(cnv.SA,cnv.p)
+pl.xlabel(&#39;Absolute salinity [&#39; + cnv.SA_unit + &#39;]&#39;)
+pl.ylabel(&#39;Pressure [&#39; + cnv.p_unit + &#39;]&#39;)
+pl.gca().invert_yaxis()  # Question: What happens if you comment out this line?
+</pre></div>
+</div>
+<p>Modify your plot:</p>
+<ol class="arabic simple">
+<li><p>Add grid lines</p></li>
+<li><p>Limit the top of the plot to the surface (p=0)</p></li>
+<li><p>Add a second plot for temperature, to the right of the salinity plot</p></li>
+<li><p>Add a title to your figure, perhaps the station number, latitude and longitude</p></li>
+<li><p>Print the figure to a <code class="docutils literal notranslate"><span class="pre">*.png</span></code> file in the subdirectory <code class="docutils literal notranslate"><span class="pre">figures/</span></code></p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Naming convention should be <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;_&lt;Lastname&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make your plot</span>
+</pre></div>
+</div>
+</div>
+</div>
+<hr>
+</section>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="convert-to-netcdf-and-load-with-xarray">
+<h1>Convert to netCDF and load with <code class="docutils literal notranslate"><span class="pre">xarray</span></code><a class="headerlink" href="#convert-to-netcdf-and-load-with-xarray" title="Permalink to this heading">#</a></h1>
+<ul>
+<li><p>First, on your computer (after installing the <a class="reference external" href="https://github.com/castelao/seabird">seabird (link)</a> package, run it on one <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> file to create a <code class="docutils literal notranslate"><span class="pre">*.nc</span></code> file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">seabird</span> <span class="n">cnv2nc</span> <span class="n">MSM121_054_1db</span><span class="o">.</span><span class="n">cnv</span>
+</pre></div>
+</div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xarray</span></code> is a python package commonly used for ocean and climate science.  While you could continue working with the <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> format, it will become a hindrance later.</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Read the docs: <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.DataArray.html">xarray.DataArray</a></p>
+</div>
+<div class="admonition-alternative admonition">
+<p class="admonition-title">Alternative</p>
+<p>You can instead convert your <code class="docutils literal notranslate"><span class="pre">pycnv</span></code> format data into an <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataArray, but I suspect this may be slightly more complicated.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load your *.nc file</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="work-with-data-in-xarray">
+<h2>Work with data in xarray<a class="headerlink" href="#work-with-data-in-xarray" title="Permalink to this heading">#</a></h2>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command to see what is in your data array.  A data array is a bit like a file folder, with different variable types in it.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The <a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/index.html">xarray user guide (external)</a>, especially for this lab on</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/data-structures.html">Data structures</a></p></li>
+<li><p><a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/indexing.html">Indexing and selecting data</a></p></li>
+</ul>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Print your data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-teos-10-parameters">
+<h2>Calculate TEOS-10 parameters<a class="headerlink" href="#calculate-teos-10-parameters" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Calculate absolute salinity and conservative temperature</p></li>
+<li><p>Repeat for both primary and secondary channels</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate TEOS-10 parameters</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-these-data-to-your-xarray-data-array">
+<h2>Add these data to your xarray data array<a class="headerlink" href="#add-these-data-to-your-xarray-data-array" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Name them ‘SA’ and ‘CT’ for absolute salinity and conservative temperature</p></li>
+<li><p>And ‘SA2’ and ‘CT2’ for secondary</p></li>
+</ul>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Some functions to get you started reading the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> docs: <a class="reference external" href="https://docs.xarray.dev/en/latest/generated/xarray.Dataset.assign.html">https://docs.xarray.dev/en/latest/generated/xarray.Dataset.assign.html</a></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add additional data fields</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="save-an-xr-da-to-netcdf-file">
+<h2>Save an xr.da to *.netCDF file<a class="headerlink" href="#save-an-xr-da-to-netcdf-file" title="Permalink to this heading">#</a></h2>
+<p>Now that your data are in <code class="docutils literal notranslate"><span class="pre">xarray.DataArray</span></code> format, you can use tools within <code class="docutils literal notranslate"><span class="pre">xarray</span></code> to write a netCDF file.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Function help for <a class="reference external" href="https://docs.xarray.dev/en/latest/generated/xarray.Dataset.to_netcdf.html">xarray.Dataset.to_netcdf</a></p>
+</div>
+<hr>
+</section>
+<section id="fig-2-repeat-the-profile-plot">
+<h2>Fig 2. Repeat the profile plot<a class="headerlink" href="#fig-2-repeat-the-profile-plot" title="Permalink to this heading">#</a></h2>
+<p>As above, but with the data in <code class="docutils literal notranslate"><span class="pre">xarray</span></code> format.</p>
+<p>Modify your plot:</p>
+<ol class="arabic simple">
+<li><p>Add grid lines</p></li>
+<li><p>Limit the top of the plot to the surface (p=0)</p></li>
+<li><p>Add a second plot for temperature, to the right of the salinity plot</p></li>
+<li><p>Add a title to your figure, perhaps the station number, latitude and longitude</p></li>
+<li><p>Export the figure using the figure naming convention, to the subfolder <code class="docutils literal notranslate"><span class="pre">figures/</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the data</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-3-make-a-t-s-diagram">
+<h2>Fig 3. Make a T-S diagram<a class="headerlink" href="#fig-3-make-a-t-s-diagram" title="Permalink to this heading">#</a></h2>
+<p>A T-S diagram has salinity on the x-axis and temperature on the y-axis, and contours of density (sigma_0) added.</p>
+<p>Modify your plot by</p>
+<ol class="arabic simple">
+<li><p>Add contours of potential density</p>
+<ul class="simple">
+<li><p>Hint, you will need to create a vector of temperature and salinity spanning at least the ranges in the profile</p></li>
+<li><p>You will then need to use these gridded vectors to calculate potential density using the gsw toolbox</p></li>
+</ul>
+</li>
+<li><p>Add contour labels for the density</p></li>
+<li><p>Add a title</p></li>
+<li><p>Export the figure using the figure-naming convention, to the subfolder <code class="docutils literal notranslate"><span class="pre">figures/</span></code></p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot a T-S diagram</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="clean-up-the-plots">
+<h2>Clean up the plots<a class="headerlink" href="#clean-up-the-plots" title="Permalink to this heading">#</a></h2>
+<p>Go back and clean up the plots if needed. This means, add a legend, axes labels, fix the time axis annotations if needed, and fix the fontsize to be legible even if the figure is small.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In future exercises, you will be expected to clean up all plots without reminders.  All plots should have axes labelled (with units!), legible font size (bigger than you think) and appropriate axis ranges.  Legends should be used whenever more than one quantity is plotted.</p>
+</div>
+<ul class="simple">
+<li><p>Re-export the figures with the same names as before.</p></li>
+</ul>
+<hr></section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="further-calculations">
+<h1>Further calculations<a class="headerlink" href="#further-calculations" title="Permalink to this heading">#</a></h1>
+<section id="calculate-buoyancy-frequency">
+<h2>Calculate buoyancy frequency<a class="headerlink" href="#calculate-buoyancy-frequency" title="Permalink to this heading">#</a></h2>
+<p>Buoyancy frequency is a measure of how strongly a vertical profile is stratified.  It is calculated as</p>
+<div class="math notranslate nohighlight">
+\[
+N^2 = \partial b/\partial z
+\]</div>
+<p>where buoyancy <span class="math notranslate nohighlight">\(b\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+b(z) = -g\frac{\rho(z)}{\rho_0}
+\]</div>
+<p>and <span class="math notranslate nohighlight">\(g\)</span> is gravitational acceleration, <span class="math notranslate nohighlight">\(\rho(z)\)</span> the profile of density, and <span class="math notranslate nohighlight">\(\rho_0\)</span> a background mean value of density.  (The exact value of <span class="math notranslate nohighlight">\(\rho_0\)</span> doesn’t matter much.  Something like 1023 or 1025 kg/m<span class="math notranslate nohighlight">\(^3\)</span> will do fine.)</p>
+<p>You can do this two ways.</p>
+<ol class="arabic simple">
+<li><p>Calculate density using the Gibb’s seawater toolbox <a class="reference external" href="https://teos-10.github.io/GSW-Python/density.html">GSW density</a>, and</p></li>
+<li><p>Use the GSW function for buoyancy frequency under <a class="reference external" href="https://teos-10.github.io/GSW-Python/stability.html">GSW stability</a>.</p></li>
+</ol>
+</section>
+<section id="fig-4-plot-buoyancy-frequency">
+<h2>Fig 4. Plot buoyancy frequency<a class="headerlink" href="#fig-4-plot-buoyancy-frequency" title="Permalink to this heading">#</a></h2>
+<p>Try and plot both ways on the same axes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The convention in oceanography is that the N<span class="math notranslate nohighlight">\(^2\)</span> axis is a log10 axis.  Do you have a noisy plot?  (Optional:) The way we calculate buoyancy frequency in practice is to use one of a few possible techniques to smooth the data.</p>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Export your figure.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate buoyancy frequency</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot buoyancy frequency</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="calculate-dynamic-height">
+<h2>Calculate dynamic height<a class="headerlink" href="#calculate-dynamic-height" title="Permalink to this heading">#</a></h2>
+<p>Small variations in seawater density affect both ocean circulation and sea level.  According to the hydrostatic approximation, the vertical gradient of pressure is a function of density <span class="math notranslate nohighlight">\(\rho\)</span> and gravitational acceleration <span class="math notranslate nohighlight">\(g\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial p}{\partial z} = -\rho g
+\]</div>
+<p>if we want to integrate to find the height of the surface above a profile of given density, we can calculate</p>
+<div class="math notranslate nohighlight">
+\[
+h = \int_{p_r}^p\frac{dp}{-\rho g}
+\]</div>
+<p>which has units of meters.</p>
+<p>Dynamic height is a similar quantity, but accounts for gravity already (has units of m<span class="math notranslate nohighlight">\(^2\)</span>/s<span class="math notranslate nohighlight">\(^s\)</span> and is used in the geostrophic velocity/transport calculation.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>See dynamic height calculations in the <a class="reference external" href="https://teos-10.github.io/GSW-Python/geostrophy.html">GSW toolbox</a></p>
+</div>
+</section>
+<section id="fig-5-plot-dynamic-height">
+<h2>Fig 5. Plot dynamic height<a class="headerlink" href="#fig-5-plot-dynamic-height" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Plot dynamic height against depth or pressure</p></li>
+<li><p>In a separate plot in the same figure, convert dynamic height to steric height (units of m) and plot it.</p></li>
+<li><p>Extra (optional): Calculate dynamic height manually by using the specific volume anomaly.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate dynamic height</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate steric height</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot dynamic height + steric height</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-root-py"
+        },
+        kernelOptions: {
+            name: "conda-root-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-root-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise-python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 0b - Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercise-tseries.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 2a  Time series</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercise 1 - Profile data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook">Create a notebook</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#import-necessary-packages">Import necessary packages.</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#using-pycnv">Using pycnv</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data-with-pycnv">Load the data with pycnv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#display-parameters">Display parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-make-a-profile-plot">Fig. 1 Make a profile plot</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-standard-parameters">Plot standard parameters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-that-pycnv-already-did-the-teos-10-conversion-to-sa-for-you-using-gsw">Note that pycnv already did the TEOS-10 conversion to SA for you using gsw</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-to-netcdf-and-load-with-xarray">Convert to netCDF and load with <code class="docutils literal notranslate"><span class="pre">xarray</span></code></a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#work-with-data-in-xarray">Work with data in xarray</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-teos-10-parameters">Calculate TEOS-10 parameters</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#add-these-data-to-your-xarray-data-array">Add these data to your xarray data array</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#save-an-xr-da-to-netcdf-file">Save an xr.da to *.netCDF file</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-repeat-the-profile-plot">Fig 2. Repeat the profile plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-make-a-t-s-diagram">Fig 3. Make a T-S diagram</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clean-up-the-plots">Clean up the plots</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#further-calculations">Further calculations</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-buoyancy-frequency">Calculate buoyancy frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-buoyancy-frequency">Fig 4. Plot buoyancy frequency</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calculate-dynamic-height">Calculate dynamic height</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-plot-dynamic-height">Fig 5. Plot dynamic height</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

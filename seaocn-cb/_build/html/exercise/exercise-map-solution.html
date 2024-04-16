@@ -1,0 +1,1026 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Python - Making a map &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-map-solution';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 1 - Profile data</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2a  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3a - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/python.html">Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-map-solution.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-map-solution.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Python - Making a map</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data">Downloading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-all-variables-into-a-single-dictionary">Loading all variables into a single <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-into-a-single-xarray-dataset">Merge into a single xarray dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-plot-with-matplotlib">Fig 1. Plot with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-seasonal-average">Make a seasonal average</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-using-cartopy">Fig 2. Using <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-using-pygmt">Fig 3. Using <code class="docutils literal notranslate"><span class="pre">pyGMT</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="python-making-a-map">
+<h1>Python - Making a map<a class="headerlink" href="#python-making-a-map" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> To create a map of data from reanalysis heat fluxes.</p>
+<p><strong>Data:</strong> You will need to download files from <a class="reference external" href="https://www.cen.uni-hamburg.de/en/icdc/data/atmosphere/reanalysis-atmosphere/ncep.html">ICDC</a>.  We will be using NCEP Reanalysis heat fluxes at the ocean surface, and you will need one snapshot of sensible heat flux, latex heat flux, net shortwave and net longwave radiation flux.</p>
+<p><strong>Directions:</strong> Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and 3 figures: once using Matplotlib, once using cartopy and once using pyGMT.</p>
+<hr><section id="create-a-notebook-load-the-data">
+<h2>Create a notebook &amp; load the data<a class="headerlink" href="#create-a-notebook-load-the-data" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file and rename it, e.g., <code class="docutils literal notranslate"><span class="pre">computing-regoz-4-&lt;Lastname&gt;.ipynb</span></code></p></li>
+<li><p>Import necessary packages.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  You may also need</p>
+<p>If you are missing any of these packages, please refer to <a class="reference internal" href="../resource/python.html"><span class="doc std std-doc">Resources: Python</span></a>.</p>
+</li>
+<li><p>Download some data.  First decide what year you’d like to work with; anything from 1948 to 2023 is fine.  Then navigate to each of the 4 components of surface heat fluxes on the ICDC page <a class="reference external" href="https://icdc.cen.uni-hamburg.de/thredds-int/catalog/dataicdc/reanalyses/ncep_reanalysis1/DATA/sensible_heat_flux/catalog.html">https://icdc.cen.uni-hamburg.de/thredds-int/catalog/dataicdc/reanalyses/ncep_reanalysis1/DATA/sensible_heat_flux/catalog.html</a>.  Download one of each file for your chosen year.  Note that these files are about 30 mb each.</p></li>
+<li><p>Make a basic exploration. How big are the data?  What are the coordinates?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+
+<span class="c1"># Some extra colormaps</span>
+<span class="kn">import</span> <span class="nn">cmocean</span>
+
+<span class="c1"># Fancy but non-intuitive</span>
+<span class="kn">import</span> <span class="nn">pygmt</span>
+
+<span class="c1"># Cartopy</span>
+<span class="kn">import</span> <span class="nn">cartopy</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.mpl.ticker</span> <span class="k">as</span> <span class="nn">cticker</span>
+<span class="kn">from</span> <span class="nn">cartopy.mpl.ticker</span> <span class="kn">import</span> <span class="n">LatitudeFormatter</span><span class="p">,</span> <span class="n">LongitudeFormatter</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="downloading-data">
+<h3>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this heading">#</a></h3>
+<ul>
+<li><p>To make the code easier to change, we’ll recommend building the filename out of components.  This gives you the possibility later of downloading a different year and only updating part of the code.</p>
+<p>This will give us a filename once we contenate together the various pieces:</p>
+</li>
+<li><p>Now you can do this one after another, where you call each of the 4 choices in <code class="docutils literal notranslate"><span class="pre">fpre</span></code> separately as <code class="docutils literal notranslate"><span class="pre">fpre[0]</span></code>, <code class="docutils literal notranslate"><span class="pre">fpre[1]</span></code>, and so on.  Or you can use a loop.</p>
+<p>In python, one of the basic loop types is a <code class="docutils literal notranslate"><span class="pre">for-do</span></code> loop.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>About for-do loops: <a class="reference external" href="https://www.w3schools.com/python/python_for_loops.asp">https://www.w3schools.com/python/python_for_loops.asp</a></p>
+</div>
+<p>Here, we’ll use a loop that goes through a simple vector which has the length the same as the length of <code class="docutils literal notranslate"><span class="pre">fpre</span></code>.  First check what is the length of <code class="docutils literal notranslate"><span class="pre">fpre</span></code>?</p>
+<p>It should be 4.  If it’s not, then go back and edit where you define the list <code class="docutils literal notranslate"><span class="pre">fpre</span></code>.   Verify that it is indeed of type <code class="docutils literal notranslate"><span class="pre">list</span></code> by doing</p>
+</li>
+<li><p>Now construct your for-do loop which builds the different variable names</p>
+<p>Check that it is correctly producing the name of a file.</p>
+</li>
+<li><p>Load the data.  If you had a single filename correctly named in the string <code class="docutils literal notranslate"><span class="pre">fname</span></code>, then you could use <code class="docutils literal notranslate"><span class="pre">xr.open_dataset(fname)</span></code>.  For example</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">myyear</span> <span class="o">=</span> <span class="mi">1979</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span>
+<span class="n">fpre</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">,</span> <span class="s1">&#39;nswrs&#39;</span><span class="p">,</span> <span class="s1">&#39;nlwrs&#39;</span><span class="p">,</span> <span class="s1">&#39;shtfl&#39;</span><span class="p">]</span>
+<span class="n">fpost</span> <span class="o">=</span> <span class="s1">&#39;.sfc.gauss.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myyear</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.nc&#39;</span>
+
+<span class="n">flux_components</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpre</span><span class="p">)):</span>
+    <span class="n">fname</span> <span class="o">=</span> <span class="n">filepath</span> <span class="o">+</span> <span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">fpost</span>
+
+    <span class="n">flux_components</span><span class="p">[</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="n">flux_components</span><span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">]</span>
+<span class="n">d2</span> <span class="o">=</span> <span class="n">d1</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1979-01-01T00:00:00&quot;</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">flux_components</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:209,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">209</span>     <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">_key</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">210</span> <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/lru_cache.py:55,</span> in <span class="ni">LRUCache.__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lock</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">55</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;c2994fef-e4e1-4919-a5eb-816b660472b1&#39;]
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">11</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpre</span><span class="p">)):</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>     <span class="n">fname</span> <span class="o">=</span> <span class="n">filepath</span> <span class="o">+</span> <span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">fpost</span>
+<span class="ne">---&gt; </span><span class="mi">11</span>     <span class="n">flux_components</span><span class="p">[</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">d1</span> <span class="o">=</span> <span class="n">flux_components</span><span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">]</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="n">d2</span> <span class="o">=</span> <span class="n">d1</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="s2">&quot;1979-01-01T00:00:00&quot;</span><span class="p">))</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="n">decode_cf</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">541</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">546</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">547</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">548</span>     <span class="n">backend_ds</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:578,</span> in <span class="ni">NetCDF4BackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, format, clobber, diskless, persist, lock, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">557</span> <span class="k">def</span> <span class="nf">open_dataset</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">558</span>     <span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">559</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="n">autoclose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span> <span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">577</span>     <span class="n">filename_or_obj</span> <span class="o">=</span> <span class="n">_normalize_path</span><span class="p">(</span><span class="n">filename_or_obj</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">578</span>     <span class="n">store</span> <span class="o">=</span> <span class="n">NetCDF4DataStore</span><span class="o">.</span><span class="n">open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">579</span>         <span class="n">filename_or_obj</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">580</span>         <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span>         <span class="nb">format</span><span class="o">=</span><span class="nb">format</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span>         <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">583</span>         <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span>         <span class="n">diskless</span><span class="o">=</span><span class="n">diskless</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">585</span>         <span class="n">persist</span><span class="o">=</span><span class="n">persist</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">586</span>         <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">587</span>         <span class="n">autoclose</span><span class="o">=</span><span class="n">autoclose</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">588</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">590</span>     <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">591</span>     <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:382,</span> in <span class="ni">NetCDF4DataStore.open</span><span class="nt">(cls, filename, mode, format, group, clobber, diskless, persist, lock, lock_maker, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">376</span> <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">377</span>     <span class="n">clobber</span><span class="o">=</span><span class="n">clobber</span><span class="p">,</span> <span class="n">diskless</span><span class="o">=</span><span class="n">diskless</span><span class="p">,</span> <span class="n">persist</span><span class="o">=</span><span class="n">persist</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="nb">format</span>
+<span class="g g-Whitespace">    </span><span class="mi">378</span> <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">379</span> <span class="n">manager</span> <span class="o">=</span> <span class="n">CachingFileManager</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">380</span>     <span class="n">netCDF4</span><span class="o">.</span><span class="n">Dataset</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">kwargs</span><span class="o">=</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">381</span> <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">382</span> <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="n">manager</span><span class="p">,</span> <span class="n">group</span><span class="o">=</span><span class="n">group</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span> <span class="n">lock</span><span class="o">=</span><span class="n">lock</span><span class="p">,</span> <span class="n">autoclose</span><span class="o">=</span><span class="n">autoclose</span><span class="p">)</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:329,</span> in <span class="ni">NetCDF4DataStore.__init__</span><span class="nt">(self, manager, group, mode, lock, autoclose)</span>
+<span class="g g-Whitespace">    </span><span class="mi">327</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span> <span class="o">=</span> <span class="n">group</span>
+<span class="g g-Whitespace">    </span><span class="mi">328</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="n">mode</span>
+<span class="ne">--&gt; </span><span class="mi">329</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">data_model</span>
+<span class="g g-Whitespace">    </span><span class="mi">330</span> <span class="bp">self</span><span class="o">.</span><span class="n">_filename</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">ds</span><span class="o">.</span><span class="n">filepath</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">331</span> <span class="bp">self</span><span class="o">.</span><span class="n">is_remote</span> <span class="o">=</span> <span class="n">is_remote_uri</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_filename</span><span class="p">)</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:391,</span> in <span class="ni">NetCDF4DataStore.ds</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">389</span> <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">390</span> <span class="k">def</span> <span class="nf">ds</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">391</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_acquire</span><span class="p">()</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:385,</span> in <span class="ni">NetCDF4DataStore._acquire</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span> <span class="k">def</span> <span class="nf">_acquire</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">385</span>     <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_manager</span><span class="o">.</span><span class="n">acquire_context</span><span class="p">(</span><span class="n">needs_lock</span><span class="p">)</span> <span class="k">as</span> <span class="n">root</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">386</span>         <span class="n">ds</span> <span class="o">=</span> <span class="n">_nc4_require_group</span><span class="p">(</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_group</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>     <span class="k">return</span> <span class="n">ds</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/contextlib.py:113,</span> in <span class="ni">_GeneratorContextManager.__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">args</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">kwds</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">func</span>
+<span class="g g-Whitespace">    </span><span class="mi">112</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">113</span>     <span class="k">return</span> <span class="nb">next</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">gen</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span> <span class="k">except</span> <span class="ne">StopIteration</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">&quot;generator didn&#39;t yield&quot;</span><span class="p">)</span> <span class="kn">from</span> <span class="kc">None</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:197,</span> in <span class="ni">CachingFileManager.acquire_context</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">194</span> <span class="nd">@contextlib</span><span class="o">.</span><span class="n">contextmanager</span>
+<span class="g g-Whitespace">    </span><span class="mi">195</span> <span class="k">def</span> <span class="nf">acquire_context</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">needs_lock</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">196</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Context manager for acquiring a file.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">197</span>     <span class="n">file</span><span class="p">,</span> <span class="n">cached</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_acquire_with_cache_info</span><span class="p">(</span><span class="n">needs_lock</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">198</span>     <span class="k">try</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">199</span>         <span class="k">yield</span> <span class="n">file</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/file_manager.py:215,</span> in <span class="ni">CachingFileManager._acquire_with_cache_info</span><span class="nt">(self, needs_lock)</span>
+<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="n">kwargs</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">214</span>     <span class="n">kwargs</span><span class="p">[</span><span class="s2">&quot;mode&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span>
+<span class="ne">--&gt; </span><span class="mi">215</span> <span class="n">file</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_opener</span><span class="p">(</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">==</span> <span class="s2">&quot;w&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>     <span class="c1"># ensure file doesn&#39;t get overridden when opened again</span>
+<span class="g g-Whitespace">    </span><span class="mi">218</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_mode</span> <span class="o">=</span> <span class="s2">&quot;a&quot;</span>
+
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2464,</span> in <span class="ni">netCDF4._netCDF4.Dataset.__init__</span><span class="nt">()</span>
+
+<span class="nn">File src/netCDF4/_netCDF4.pyx:2027,</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="loading-all-variables-into-a-single-dictionary">
+<h3>Loading all variables into a single <code class="docutils literal notranslate"><span class="pre">dictionary</span></code><a class="headerlink" href="#loading-all-variables-into-a-single-dictionary" title="Permalink to this heading">#</a></h3>
+<p>Python has a variable type called a “dictionary” which is used to store “key - value” pairs.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Python dictionary: <a class="reference external" href="https://www.w3schools.com/python/python_dictionaries.asp">https://www.w3schools.com/python/python_dictionaries.asp</a></p>
+</div>
+<p>In the simple website example in the “seealso”, these are pairs of strings, or numbers, or arrays.  In our case here, we can create a dictionary of xarray datasets.</p>
+<p>In your code above, replace the left side of the equation where you load the dataset (i.e., where you use the command <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code>) with</p>
+<p>Once you have done this, you can check out the data within the dictionary using the following commands.</p>
+<p>The first one, <code class="docutils literal notranslate"><span class="pre">print(flux_components['lhtfl'].lhtfl.shape)</span></code> will tell you how big the dataset of latent heat flux is (x, y and z directions).</p>
+<p>The second looks more like an xarray dataset that you’re familiar with (<code class="docutils literal notranslate"><span class="pre">print(flux_components['lhtfl']</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Figure out how big the datasets are</span>
+<span class="n">flux_components</span><span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">lhtfl</span><span class="o">.</span><span class="n">shape</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flux_components</span><span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
+Dimensions:  (lat: 94, lon: 192, time: 1460)
+Coordinates:
+  * lat      (lat) float32 88.54 86.65 84.75 82.85 ... -84.75 -86.65 -88.54
+  * lon      (lon) float32 0.0 1.875 3.75 5.625 7.5 ... 352.5 354.4 356.2 358.1
+  * time     (time) datetime64[ns] 1979-01-01 ... 1979-12-31T18:00:00
+Data variables:
+    lhtfl    (time, lat, lon) float32 ...
+Attributes:
+    Conventions:  COARDS
+    title:        4x daily NMC reanalysis (1979)
+    description:  Data is from NMC initialized reanalysis\n(4x/day).  It cons...
+    platform:     Model
+    references:   http://www.esrl.noaa.gov/psd/data/gridded/data.ncep.reanaly...
+    history:      created 95/03/13 by Hoop (netCDF2.3)\nConverted to chunked,...
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="merge-into-a-single-xarray-dataset">
+<h3>Merge into a single xarray dataset<a class="headerlink" href="#merge-into-a-single-xarray-dataset" title="Permalink to this heading">#</a></h3>
+<p>The dictionary of xarray datasets was kind of useful, but with xarray we don’t need to bother using a dictionary to store the data.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Use the command <code class="docutils literal notranslate"><span class="pre">xr.merge</span></code> to combine the similar datatypes (same coordinates, same dimensions, but different variables: latent, sensible heat flux, and shortwave and longwave radiation).</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Merge the datasets using xr.merged</span>
+<span class="n">all_flux</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="c1"># Your code here</span>
+    <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_flux</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Merge the datasets using xr.merged</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">all_flux</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="c1"># Your code here</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">all_flux</span><span class="p">)</span>
+
+<span class="ne">TypeError</span>: merge() missing 1 required positional argument: &#39;objects&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-1-plot-with-matplotlib">
+<h3>Fig 1. Plot with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code><a class="headerlink" href="#fig-1-plot-with-matplotlib" title="Permalink to this heading">#</a></h3>
+<p>Add some code to the cell below in order to plot four fields (sensible, latent, shortwave and longwave)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the fields</span>
+<span class="c1"># choose the index of the snapshot to show</span>
+<span class="n">itime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="c1">#data1 = flux_components[&#39;lhtfl&#39;]</span>
+<span class="c1">#map1 = data1.lhtfl[itime,:,:]</span>
+<span class="n">map1</span> <span class="o">=</span> <span class="n">all_flux</span><span class="o">.</span><span class="n">lhtfl</span><span class="p">[</span><span class="n">itime</span><span class="p">,:,:]</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">data1</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">map1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Latent heat flux&#39;</span><span class="p">)</span>
+<span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Latitude&#39;</span><span class="p">)</span>
+
+<span class="c1"># Cumbersome date time to string</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">data1</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">itime</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y.%m.</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">values</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">&#39;NCEP Reanalysis </span><span class="se">\n</span><span class="s1">&#39;</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;matplotlib_test.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">itime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1">#data1 = flux_components[&#39;lhtfl&#39;]</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1">#map1 = data1.lhtfl[itime,:,:]</span>
+<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">map1</span> <span class="o">=</span> <span class="n">all_flux</span><span class="o">.</span><span class="n">lhtfl</span><span class="p">[</span><span class="n">itime</span><span class="p">,:,:]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="n">axs</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">data1</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">map1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;all_flux&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="make-a-seasonal-average">
+<h2>Make a seasonal average<a class="headerlink" href="#make-a-seasonal-average" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Average the 4 heat flux terms for January - February - March (winter) of your given year.</p></li>
+</ol>
+<ul class="simple">
+<li><p>You will want to use the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> mean() function, but also subselecting your data for a particular time range.</p></li>
+<li><p>See also <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.mean.html">https://docs.xarray.dev/en/stable/generated/xarray.Dataset.mean.html</a></p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Make a new figure with the seasonal average.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Repeat this, but make an average over a full year</span>
+<span class="n">data2</span> <span class="o">=</span> <span class="n">flux_components</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Repeat this, but make an average over a full year</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">data2</span> <span class="o">=</span> <span class="n">flux_components</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+
+<span class="ne">AttributeError</span>: &#39;dict&#39; object has no attribute &#39;mean&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-2-using-cartopy">
+<h2>Fig 2. Using <code class="docutils literal notranslate"><span class="pre">cartopy</span></code><a class="headerlink" href="#fig-2-using-cartopy" title="Permalink to this heading">#</a></h2>
+<p>Add some coastlines to the maps, and maybe switch up your map projection.</p>
+<p>Alternatively, you may prefer <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://geohackweek.github.io/visualization/03-cartopy/">https://geohackweek.github.io/visualization/03-cartopy/</a></p>
+</div>
+<p>Available map projections: <a class="reference external" href="https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html">https://scitools.org.uk/cartopy/docs/v0.15/crs/projections.html</a></p>
+<p>The code below only partially works.  The y-axis labels are broken, and it currently plots the daily snapshot rather than the annual mean.  Try to update the plot to fix the y axis labels and to move the top row of figures closer to the bottom row.</p>
+<ul class="simple">
+<li><p>Explore how to fix the labels on Cartopy maps: <a class="reference external" href="https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/tick_labels.html">https://scitools.org.uk/cartopy/docs/latest/gallery/gridlines_and_labels/tick_labels.html</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set some parameters for the map</span>
+<span class="n">nrows</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">ncols</span><span class="o">=</span><span class="mi">2</span>
+<span class="n">itime</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">myprojection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">AlbersEqualArea</span><span class="p">()</span>
+<span class="n">myprojection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">()</span>
+<span class="n">myprojection</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+
+<span class="c1"># Initialise the map with the projection above</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="n">nrows</span><span class="p">,</span><span class="n">ncols</span><span class="o">=</span><span class="n">ncols</span><span class="p">,</span>
+                        <span class="n">subplot_kw</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;projection&#39;</span><span class="p">:</span> <span class="n">myprojection</span><span class="p">},</span>
+                        <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mf">8.5</span><span class="p">))</span>
+
+<span class="c1"># axs is a 2 dimensional array of `GeoAxes`.  </span>
+<span class="c1"># We will flatten it into a 1-D array.</span>
+<span class="c1"># This helps when plotting using a for-loop.</span>
+<span class="n">axs</span><span class="o">=</span><span class="n">axs</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+
+<span class="c1"># Loop through fluxes</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpre</span><span class="p">)):</span>
+    <span class="c1"># Select the flux to load</span>
+    <span class="n">data1</span> <span class="o">=</span> <span class="n">flux_components</span><span class="p">[</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>
+    <span class="n">map1</span> <span class="o">=</span> <span class="n">data1</span><span class="p">[</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]][</span><span class="n">itime</span><span class="p">,:,:]</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">data1</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">data1</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">map1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlBu&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">cartopy</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>               <span class="c1"># plot some data on them</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>                        <span class="c1"># label it</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">COASTLINE</span><span class="p">)</span>
+
+    <span class="c1"># Longitude labels</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">180</span><span class="p">,</span><span class="mi">181</span><span class="p">,</span><span class="mi">90</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">cartopy</span><span class="o">.</span><span class="n">crs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lon_formatter</span> <span class="o">=</span> <span class="n">cticker</span><span class="o">.</span><span class="n">LongitudeFormatter</span><span class="p">()</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">lon_formatter</span><span class="p">)</span>
+
+    <span class="c1"># Latitude labels</span>
+    <span class="n">axs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span><span class="mi">91</span><span class="p">,</span><span class="mi">30</span><span class="p">),</span> <span class="n">crs</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">Mercator</span><span class="p">())</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;fig3-cartopy-lastname.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/58adf3d4415f4172e66a15557191f26a740a96cf8e9db7b5f58e6477a66df871.png" src="../_images/58adf3d4415f4172e66a15557191f26a740a96cf8e9db7b5f58e6477a66df871.png" />
+</div>
+</div>
+<section id="fig-3-using-pygmt">
+<h3>Fig 3. Using <code class="docutils literal notranslate"><span class="pre">pyGMT</span></code><a class="headerlink" href="#fig-3-using-pygmt" title="Permalink to this heading">#</a></h3>
+<p>PyGMT is especially good for geophysical quantities (and geophysics).</p>
+<p>However, the formatting language looks a little different than matplotlib.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>PyGMT tutorials: <a class="reference external" href="https://www.pygmt.org/latest/tutorials/index.html">https://www.pygmt.org/latest/tutorials/index.html</a></p>
+</div>
+<ul class="simple">
+<li><p>Projections availble: <a class="reference external" href="https://www.pygmt.org/dev/projections/index.html">https://www.pygmt.org/dev/projections/index.html</a></p></li>
+<li><p>Colormaps available: <a class="reference external" href="https://docs.generic-mapping-tools.org/6.5/reference/cpts.html">https://docs.generic-mapping-tools.org/6.5/reference/cpts.html</a></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="k">with</span> <span class="n">pygmt</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">FONT_ANNOT_PRIMARY</span><span class="o">=</span><span class="s2">&quot;20p,Helvetica,blue&quot;</span><span class="p">,</span> <span class="n">FONT_LABEL</span><span class="o">=</span><span class="s2">&quot;15p,Helvetica,red&quot;</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="n">nrows</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">ncols</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>  <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="s2">&quot;30c&quot;</span><span class="p">,</span> <span class="s2">&quot;22c&quot;</span><span class="p">),</span> <span class="n">sharex</span><span class="o">=</span><span class="s2">&quot;b&quot;</span><span class="p">,</span><span class="n">sharey</span><span class="o">=</span><span class="s2">&quot;l&quot;</span><span class="p">,</span> <span class="n">margins</span><span class="o">=</span><span class="s2">&quot;1c&quot;</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpre</span><span class="p">)):</span>
+            <span class="n">fname</span> <span class="o">=</span> <span class="n">filepath</span> <span class="o">+</span> <span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">fpost</span>
+            <span class="n">grid</span> <span class="o">=</span> <span class="n">fname</span> <span class="o">+</span> <span class="s1">&#39;?&#39;</span> <span class="o">+</span> <span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+            
+            <span class="k">with</span> <span class="n">fig</span><span class="o">.</span><span class="n">set_panel</span><span class="p">(</span><span class="n">panel</span><span class="o">=</span><span class="n">i</span><span class="p">):</span>  <span class="c1"># sets the current panel</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">basemap</span><span class="p">(</span>
+                    <span class="n">region</span><span class="o">=</span><span class="s2">&quot;g&quot;</span><span class="p">,</span>
+                    <span class="n">projection</span><span class="o">=</span><span class="s2">&quot;Cyl_stere/150/-20/?&quot;</span><span class="p">,</span>
+                    <span class="n">frame</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;WSne+t&#39;</span><span class="o">+</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s2">&quot;xa90&quot;</span><span class="p">,</span> <span class="s2">&quot;ya30&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">grdimage</span><span class="p">(</span>
+                    <span class="n">grid</span><span class="o">=</span><span class="n">grid</span><span class="p">,</span>
+                    <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;no_green&#39;</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">fig</span><span class="o">.</span><span class="n">coast</span><span class="p">(</span><span class="n">shorelines</span><span class="o">=</span><span class="s2">&quot;1/0.5p,black&quot;</span><span class="p">)</span>
+                <span class="c1">#fig.colorbar(frame=[&#39;x+l&#39; +fpre[i], &quot;y+lW/m@+2@+&quot;])</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;pygmt_test.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>grdimage [WARNING]: The step size of coordinate (Latitude [degrees_north]) in grid ../data/lhtfl.sfc.gauss.1979.nc is not constant.
+grdimage [WARNING]: GMT will use a constant step size of -1.90413; the original ranges from -1.9048 to -1.8889.
+grdimage [WARNING]: The y-coordinates and range attribute are in conflict; must rely on coordinates only
+grdimage [WARNING]: Guessing of registration in conflict between x and y, using gridline
+grdimage [WARNING]: The step size of coordinate (Latitude [degrees_north]) in grid ../data/nswrs.sfc.gauss.1979.nc is not constant.
+grdimage [WARNING]: GMT will use a constant step size of -1.90413; the original ranges from -1.9048 to -1.8889.
+grdimage [WARNING]: The y-coordinates and range attribute are in conflict; must rely on coordinates only
+grdimage [WARNING]: Guessing of registration in conflict between x and y, using gridline
+grdimage [WARNING]: The step size of coordinate (Latitude [degrees_north]) in grid ../data/nlwrs.sfc.gauss.1979.nc is not constant.
+grdimage [WARNING]: GMT will use a constant step size of -1.90413; the original ranges from -1.9048 to -1.8889.
+grdimage [WARNING]: The y-coordinates and range attribute are in conflict; must rely on coordinates only
+grdimage [WARNING]: Guessing of registration in conflict between x and y, using gridline
+grdimage [WARNING]: The step size of coordinate (Latitude [degrees_north]) in grid ../data/shtfl.sfc.gauss.1979.nc is not constant.
+grdimage [WARNING]: GMT will use a constant step size of -1.90413; the original ranges from -1.9048 to -1.8889.
+grdimage [WARNING]: The y-coordinates and range attribute are in conflict; must rely on coordinates only
+grdimage [WARNING]: Guessing of registration in conflict between x and y, using gridline
+</pre></div>
+</div>
+<img alt="../_images/bc918e9c3e39a200e6bf80647eaa98beb67a6889cf8324cd877baaaeaceb3f35.png" src="../_images/bc918e9c3e39a200e6bf80647eaa98beb67a6889cf8324cd877baaaeaceb3f35.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-root-py"
+        },
+        kernelOptions: {
+            name: "conda-root-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-root-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#downloading-data">Downloading data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#loading-all-variables-into-a-single-dictionary">Loading all variables into a single <code class="docutils literal notranslate"><span class="pre">dictionary</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#merge-into-a-single-xarray-dataset">Merge into a single xarray dataset</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-plot-with-matplotlib">Fig 1. Plot with <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#make-a-seasonal-average">Make a seasonal average</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-using-cartopy">Fig 2. Using <code class="docutils literal notranslate"><span class="pre">cartopy</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-using-pygmt">Fig 3. Using <code class="docutils literal notranslate"><span class="pre">pyGMT</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
