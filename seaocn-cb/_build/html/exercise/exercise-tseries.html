@@ -1,0 +1,912 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Exercise 2a Time series &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-tseries';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Exercise 2b Filtering" href="exercise-filter.html" />
+    <link rel="prev" title="Exercise 1 - Profile data" href="exercise-cnv.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 1 - Profile data</a></li>
+
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2a  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/python.html">Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/exercise-tseries.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/exercise-tseries.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Exercise 2a  Time series</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-some-data">Download some data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-with-time-format">Errors with time format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-plot-the-time-series">Fig 1. Plot the time series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-dimensionality">Fixing dimensionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-try-your-plotting">Re-try your plotting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-plot-an-annual-cycle">Fig 2. Plot an annual cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-trend-updating-fig-1">Fitting a trend - updating Fig. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-residual">Look at the residual -</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2a-time-series">
+<h1>Exercise 2a  Time series<a class="headerlink" href="#exercise-2a-time-series" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> The purpose of this lab is to get you started with elementary time series analysis: fitting a trend and a polynomial to a time series.</p>
+<p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
+<ol class="arabic simple">
+<li><p>Calculate a linear trend given a time series, and determine its slope and y-offset.</p></li>
+<li><p>Calculate a polynomial fit to the time series, and determine the acceleration.</p></li>
+<li><p>Gain basic familiarity with Python <code class="docutils literal notranslate"><span class="pre">xarray</span></code> data arrays, and familiarity with indices and NaNs.</p></li>
+</ol>
+<!--4. Use the functions including: nanmean, detrend, polyfit, polyval, disp, grid, find, isnan, sqrt, and the operators ==, ~ and .^2.-->
+<p><strong>Data:</strong> You will work with a time series of monthly sea surface temperature.</p>
+<p><strong>Directions:</strong> Answer the questions, create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and two figures which you’ll add to the <code class="docutils literal notranslate"><span class="pre">shared_figures/</span></code> folder.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>Xarray docs: <a class="reference external" href="https://docs.xarray.dev/en/latest/user-guide/time-series.html">https://docs.xarray.dev/en/latest/user-guide/time-series.html</a></p>
+</div>
+<hr><section id="create-a-notebook-load-the-data">
+<h2>Create a notebook &amp; load the data<a class="headerlink" href="#create-a-notebook-load-the-data" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
+<div class="admonition-file-naming-convention admonition">
+<p class="admonition-title">File naming convention</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+</div>
+</li>
+<li><p>Import necessary packages.</p>
+<p>For example, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  You may also need</p>
+<p>If you are missing any of these packages, please refer to <a class="reference internal" href="../resource/python.html"><span class="doc std std-doc">Resources: Python</span></a>.</p>
+</li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Importing required packages here</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="download-some-data">
+<h3>Download some data<a class="headerlink" href="#download-some-data" title="Permalink to this heading">#</a></h3>
+<p>Go to the <a class="reference external" href="https://climexp.knmi.nl/start.cgi">KNMI climate explorer</a> and download a time series of monthly sea surface temperature since 1850.</p>
+<ol class="arabic simple">
+<li><p>Click “Monthly Observations” on the right</p></li>
+<li><p>Choose temperature from “Berkeley 1 deg”.  This is a gridded and filled sea surface temperature product.</p></li>
+<li><p>Select a latitude and longitude in the ocean. Enter a range into the latitude which is 1 degree wide.  Note that for the southern hemisphere, you should use negative values.  For degrees west you should use “negative degrees east”.</p></li>
+<li><p>After entering values in the 2 latititude and 2 longitude boxes, click the choice “subset of the field” after make.</p></li>
+<li><p>Click the button “Make time series”.</p></li>
+<li><p>Scroll to the bottom of the page, and find the line “If you <em>really</em> want to get it here, <data file name> is available as a netcdf file.  Click the link with “netcdf file” to download your data.</p></li>
+<li><p>Put the data into the <code class="docutils literal notranslate"><span class="pre">data/</span></code> folder on your computer.  This should be accessible from the location of your python exercises.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;../data/&#39;</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;TAVG_landocean_LatLong1_-51--50E_30-31N.nc&#39;</span>
+
+<span class="c1"># To concatenate two strings in python, you use the &#39;+&#39; symbol</span>
+<span class="n">fname</span> <span class="o">=</span> <span class="n">file_path</span> <span class="o">+</span> <span class="n">filename</span>
+<span class="c1"># Try a `print` on your new variable to see what it is</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>../data/TAVG_landocean_LatLong1_-51--50E_30-31N.nc
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-the-data">
+<h3>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h3>
+<p>The data are in a netCDF file.  As before, we will use <code class="docutils literal notranslate"><span class="pre">xarray</span></code> to handle the dataset.  Make sure you have included <code class="docutils literal notranslate"><span class="pre">xarray</span></code> in your cell above importing packages.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loading the data</span>
+<span class="c1">#  --&gt; Uncomment this line.  Note that it will throw an error.  After troubleshooting the error, you can comment it back out again.</span>
+<span class="c1">#sst1 = xr.open_dataset(fname)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="errors-with-time-format">
+<h3>Errors with time format<a class="headerlink" href="#errors-with-time-format" title="Permalink to this heading">#</a></h3>
+<p>One of the things that can cause a headache in python is time formatting, and we see this here.</p>
+<p>Depending on your installation, <code class="docutils literal notranslate"><span class="pre">xarray</span></code> cannot decode the time format which, from the error message, we see is in units of “months since 1850-01-01”.  The error message itself recommends a (temporary) fix by using <code class="docutils literal notranslate"><span class="pre">decode_times=False</span></code>.</p>
+<ol class="arabic">
+<li><p>Try loading the data using this hint.</p></li>
+<li><p>Note the format of the time - it’s now integers counting from 0 to something like 2077, which doesn’t look like “time”</p></li>
+<li><p>Create a time vector representing the time (you may need to refer back to your error message above to see what the time should be).</p>
+<p>Some examples to help you get started.</p>
+</li>
+<li><p>Replace your coordinate in the <code class="docutils literal notranslate"><span class="pre">xarray</span></code> structure with  your new time object.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="fig-1-plot-the-time-series">
+<h2>Fig 1. Plot the time series<a class="headerlink" href="#fig-1-plot-the-time-series" title="Permalink to this heading">#</a></h2>
+<p>Plot your sea surface temperature against time.</p>
+<p>A simple tutorial from <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> for making a plot: <a class="reference external" href="https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py">https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py</a></p>
+<p>Replot the time series.  Try adding a grid using <code class="docutils literal notranslate"><span class="pre">plt.grid()</span></code>.  Now try adding only horizontal grid lines.  Try reformating the x-axis labels.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Making a time series plot</span>
+<span class="c1"># --&gt; The following line will throw an error.  Try to troubleshoot the error.</span>
+
+<span class="c1"># plt.plot(sst1.time, sst1.temperature, linewidth=2.0)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above code should generate an error for you, i.e. python says it can’t compute what you’ve asked it to for some reason.  The last line of the error may look something like:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>ValueError: x and y can be no greater than 2D, but have shapes (2078,) and (2078, 1, 1)
+</pre></div>
+</div>
+<section id="errors">
+<h3>Errors<a class="headerlink" href="#errors" title="Permalink to this heading">#</a></h3>
+<p>Try reading the error message you got from the previous line.  It is trying to tell you that there is a problem with plotting your data variable <code class="docutils literal notranslate"><span class="pre">temperature</span></code> because it is 3-dimensional (in this case, its “shape” is (2064,1,1) meaning that the number of rows is 2064, the number of columns is 1 and the number of elements in the 3rd dimension is also 1.</p>
+<p>As humans, we might see this as 1-dimensional, but python has a problem with it.</p>
+</section>
+<section id="fixing-dimensionality">
+<h3>Fixing dimensionality<a class="headerlink" href="#fixing-dimensionality" title="Permalink to this heading">#</a></h3>
+<p>There are two ways to deal with this problem.</p>
+<ol class="arabic" start="0">
+<li><p>Verify the size of your data that is causing the problem.</p></li>
+<li><p>Since the time series is really something like 2078 long, and the 2nd and 3rd dimensions are not needed, we can do this by using the indexing</p>
+<p><code class="docutils literal notranslate"><span class="pre">tanom</span> <span class="pre">=</span> <span class="pre">sst1.temperature[:,0,0]</span></code></p>
+<p>This says we want all the data from the variable “temperature” in the first dimension (“all” is given by the colon “:” by itself, and the first element in the second dimension (given by 0) and the first element in the third dimension (given by the second zero).  <em>Note: in python, indexing (referring to a location in a vector or matrix) starts counting at zero, so the first element in a sequence has an index of 0, the second element has an index of 1, and so on.</em></p>
+</li>
+<li><p>An alternative option using <code class="docutils literal notranslate"><span class="pre">xarray</span></code> functionality:  In the case of our sea surface tempearture dataset, since we’ve chosen a 1x1 degree region, the latitude and longitude dimensions are singular (length 1), and the only dimension we want to retain (the “time” dimension) is length 2064, we can use a funny little function for <code class="docutils literal notranslate"><span class="pre">xarray</span></code> called:</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">xr</span><span class="o">.</span><span class="n">DataArray</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will take our dataset and squeeze out (remove) the extra dimensions.</p>
+<p>Try both of these options, and then use the <code class="docutils literal notranslate"><span class="pre">print</span></code> commands to see what resulted.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+
+<span class="c1"># Try option 1 below</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---- Option 1: ----&#39;</span><span class="p">)</span>
+
+<span class="c1"># Try option 2 below</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;---- Option 2: ----&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>---- Option 1: ----
+---- Option 2: ----
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="re-try-your-plotting">
+<h3>Re-try your plotting<a class="headerlink" href="#re-try-your-plotting" title="Permalink to this heading">#</a></h3>
+<p>Note that if this still doesn’t work, it is possible that your data are not actually 1-dimensional.  You can see this if you check the “shape” of your data. When choosing a dataset to download from KNMI climate explorer, verify that the longitude and latitude ranges were each only 1 degree wide.  Check the size of your data variable again:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>print(sst1.temperature.shape)
+</pre></div>
+</div>
+<p>The first number in brackets can be <span class="math notranslate nohighlight">\(&gt;1\)</span> but the other two should be <span class="math notranslate nohighlight">\(=1\)</span>.  If the second or third dimensions are <span class="math notranslate nohighlight">\(&gt;1\)</span>, then this is probably where you asked KNMI climate explorer for SSTs in a region that was larger than 1 degree latitude or 1 degree longitude.  Go back and redownload your data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Thought exercise:</em> Try changing the axes limits to zoom in on different parts of the data.  Can you describe the data overall?  Various periodicities, tendencies or other wobbles?</p>
+</section>
+</section>
+<section id="explore-the-data">
+<h2>Explore the data<a class="headerlink" href="#explore-the-data" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>What is the mean of the data?</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/computation.html">xarray: Computation</a></p>
+</div>
+</li>
+<li><p>What is the first temperature? the minumum temperature?</p></li>
+<li><p>What is the last temperature value?  the maximum temperature?</p></li>
+<li><p>How many years long is the record?</p>
+<p>Some sample code to get you started (see also: <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">https://numpy.org/doc/stable/reference/arrays.datetime.html</a>)</p>
+<p>This is an example for the time in days, but you need to do this in years, so take a look at the documentation to figure out how to do this in years instead.</p>
+</li>
+<li><p>How quickly is SST rising? <em>Calculate this using your first, last and time span of the data.</em></p></li>
+<li><p>What is the average SST in the last year of the dataset?  In the first year? Re-estimate how quickly SST is rising using these annually averaged values.</p></li>
+</ol>
+<p><strong>Experiment with printing your answer to the screen.</strong></p>
+<p>or</p>
+<p>Recall what the ‘+’ does between two strings.  (We saw this above when we were working with the file path and name.)</p>
+<ol class="arabic simple" start="7">
+<li><p>Now note that your numbers previously calculated had a lot of significant digits.  Suppose the temperature dataset is only accurate to 0.01 deg C.  Use the <code class="docutils literal notranslate"><span class="pre">.round()</span></code> function to round everything to 2 digits past the decimal place.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When should you bundle the whole string of commands together, and when should you break it into steps?  There are a few considerations here.</p>
+<ol class="arabic simple">
+<li><p>Will I use a computed value again?  If so, then you probably want to save it as something (as in the example of computing tmean and then printing its values.</p></li>
+<li><p>Which option is better for readability?  If the computation is long and complex, it may be hard to keep track of what is happening where and when, which can often lead to errors.  In this case, separating it out is also useful.</p></li>
+<li><p>If you only need it once, and the calculation is fairly straightforward (like here, the calculation of the mean or median, and only for display purposes) then your code will overall be more compact if you put it in the same line as the print command.</p></li>
+</ol>
+</div>
+<ol class="arabic simple" start="8">
+<li><p>Plot a histogram of the data.  Use <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.hist</span></code> with 100 bins.  Do the data look normally distributed?  I.e., is the histogram roughly a gaussian?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code: Mean and median</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code: Calculating the time difference from end to beginning</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code: Averaing first year / last year</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a histogram of the first year&#39;s sst</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fig-2-plot-an-annual-cycle">
+<h2>Fig 2. Plot an annual cycle<a class="headerlink" href="#fig-2-plot-an-annual-cycle" title="Permalink to this heading">#</a></h2>
+<p>Here we will use some useful functions in xarray for handling time series data.  See <a class="reference external" href="https://docs.xarray.dev/en/stable/user-guide/time-series.html">xarray: Time series data</a>.</p>
+<ol class="arabic">
+<li><p>Calculate monthly averages.  As an example, something like</p></li>
+<li><p>Plot the seasonal cycle, calculated as monthly averages, in a new figure.  Add appropriate annotations.</p></li>
+<li><p>Next step: Estimate a standard error (SE) for the mean of each monthly value, where the standard error is</p>
+<div class="math notranslate nohighlight">
+\[SE = \frac{\sigma}{\sqrt{N}}\]</div>
+<p>with <span class="math notranslate nohighlight">\(\sigma\)</span> the standard deviation and <span class="math notranslate nohighlight">\(N\)</span> the number of values.  A quick-and-dirty estimate would have, for January, that <span class="math notranslate nohighlight">\(\sigma\)</span> is the standard deviation of January values, and <span class="math notranslate nohighlight">\(N\)</span> the number of years of measurements.  This is fine for a first estimate.  However, notice from your earlier time series plot that there are some gaps in the data record , especially prior to 1920.  So this means that the number of years is not equal to 2063 (length of the time series) divided by 12 months.  <em>Recall that the standard error calculation assumes a few things: that your measurements are independent (this is not quite true here) and that your data are normally distributed.  Check your histogram above to see whether the data are normal.</em></p>
+</li>
+<li><p>Then try plotting the annual cycle with the annual cycle + standard error and the annual cycle - standard error for each month.  Now you will have 3 lines on your plot.</p></li>
+<li><p>Instead of plotting these as lines, try shading.</p>
+<p>See the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot.fill_between</span></code> command.  Experiment with the optional argument <code class="docutils literal notranslate"><span class="pre">alpha</span></code>.  Try giving <code class="docutils literal notranslate"><span class="pre">alpha=.8</span></code> or <code class="docutils literal notranslate"><span class="pre">alpha=.3</span></code>.</p>
+</li>
+</ol>
+<ol class="arabic simple" start="6">
+<li><p>Export this figure as figure 2, using the file naming convention.  Make sure your figure has appropriate annotations.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate an annual cycle</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="fitting-a-trend-updating-fig-1">
+<h2>Fitting a trend - updating Fig. 1<a class="headerlink" href="#fitting-a-trend-updating-fig-1" title="Permalink to this heading">#</a></h2>
+<p>Find a line of best fit to the original data.</p>
+<ol class="arabic">
+<li><p>Calculate an annually-averaged time series.  This is similar to what you did above for averaging the months, but instead you’ll average across years.  Use the <code class="docutils literal notranslate"><span class="pre">.median()</span></code> instead of <code class="docutils literal notranslate"><span class="pre">.mean()</span></code>.</p></li>
+<li><p>Plot your new time series</p></li>
+<li><p>Fit a first degree polynomial (linear regression).  Recall that a 1st order polynomial has the form</p>
+<div class="math notranslate nohighlight">
+\[Ax + B\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the slope.  Read how to use the function <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.Dataset.polyfit.html">xarray.Dataset.polyfit</a>.  You should use the time dimension as your coordinate along which to fit the 1st degree polynomial (a line).</p>
+</li>
+<li><p>What is the slope of the line?  What are the units on the slope?</p></li>
+<li><p>Convert this to units of degrees/year.</p></li>
+</ol>
+<p><em>Question for thought:</em> How does this compare to the slope you calculated above when looking at the maximum and minimum of the time series, and time series length?</p>
+<ol class="arabic" start="4">
+<li><p>Using your linear regression, what temperature would you predict in 1960?  Use the function <a class="reference external" href="https://docs.xarray.dev/en/stable/generated/xarray.polyval.html#xarray.polyval">xarray.polyval</a> to compute this.</p></li>
+<li><p>What was the observed value in 1960?  Use <code class="docutils literal notranslate"><span class="pre">xarray</span></code> functions to extract the year of 1960 and calculate an average over that year.</p></li>
+<li><p>Add the line of best fit to your original plot of the full dataset (or replot here).</p></li>
+<li><p>Now fit a polynomial of degree 2 (a quadratic).  A second degree polynomial has the form</p>
+<div class="math notranslate nohighlight">
+\[Ax^2 + Bx + C\]</div>
+<p>where <span class="math notranslate nohighlight">\(A\)</span> is the acceleration.  What are the units on <span class="math notranslate nohighlight">\(A\)</span>?</p>
+</li>
+<li><p>Add this polynomial as a third curve on your plot.</p></li>
+<li><p><strong>Clean up the plot.</strong>  This means, add a legend, axes labels, fix the time axis annotations if needed, and fix the fontsize to be legible even if the figure is small.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In future exercises, you will be expected to clean up all plots without reminders.  All plots should have axes labelled (with units!), legible font size (bigger than you think) and appropriate axis ranges.  Legends should be used whenever more than one quantity is plotted.</p>
+</div>
+<ol class="arabic simple" start="10">
+<li><p>Save the figure as a new version of your figure 1, <em>overwriting</em> the previous version.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="look-at-the-residual">
+<h2>Look at the residual -<a class="headerlink" href="#look-at-the-residual" title="Permalink to this heading">#</a></h2>
+<p><strong>Come back to this python notebook after the lab <code class="docutils literal notranslate"><span class="pre">exercise-filter</span></code>.</strong></p>
+<p>Subtract the values for the trend or polynomial that you fit (whichever looked better by eye) from your original data.  This is the residual.</p>
+<p>Plot the residual.</p>
+<p><strong>After</strong> the second lab <code class="docutils literal notranslate"><span class="pre">exercise-filter.ipynb</span></code> you can come back here and apply a filter (whatever seems best) to the residual.</p>
+<p>Describe the variability that you see.</p>
+<p>Make a figure.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Your code here</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-root-py"
+        },
+        kernelOptions: {
+            name: "conda-root-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-root-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise-cnv.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 1 - Profile data</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exercise-filter.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercise 2b  Filtering</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-notebook-load-the-data">Create a notebook &amp; load the data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#download-some-data">Download some data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">Load the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors-with-time-format">Errors with time format</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-plot-the-time-series">Fig 1. Plot the time series</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#errors">Errors</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fixing-dimensionality">Fixing dimensionality</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#re-try-your-plotting">Re-try your plotting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explore-the-data">Explore the data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-plot-an-annual-cycle">Fig 2. Plot an annual cycle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fitting-a-trend-updating-fig-1">Fitting a trend - updating Fig. 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#look-at-the-residual">Look at the residual -</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
