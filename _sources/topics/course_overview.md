@@ -3,7 +3,10 @@
 
 In today's class, we will give an overview of the course aims, structure and assignments (grading).  We will also get started thinking about the scientific method for observational physical oceanography.
 
-PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/372901/mod_resource/content/2/course_overview-seaocn.pdf).  *Added 2024 April 02, after lecture.*
+```{margin} Moodle link
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/372901/mod_resource/content/2/course_overview-seaocn.pdf).  
+*Added 2 April*
+```
 
 What we did today:
 - Lecture and discussion as per the slides above including "voting" on topics of interest.
@@ -44,6 +47,8 @@ After the lab, additional recommended (optional) readings include:
 For additional help with Git, please see:
 - Software carpentry's [Version Control with Git](https://swcarpentry.github.io/git-novice/) - Software carpentry is a great resource for learning basic research computing.  You can also explore some of their other resources [here](https://software-carpentry.org/lessons/index.html).
 - The Turing Way's "Guide for Reproducible Research" with the chapter on [Version Control](https://book.the-turing-way.org/reproducible-research/vcs), including their brief [Checklist](https://book.the-turing-way.org/reproducible-research/vcs/vcs-checklist) at the end.  If when reading the checklist, there are terms you don't understand, go back to the full chapter.
+
+See [Ex0a](../exercise/exercise-git.md), [Ex0b](../exercise/exercise-python.md) and [Ex1](../exercise/exercise-cnv.ipynb).
 ```
 
 

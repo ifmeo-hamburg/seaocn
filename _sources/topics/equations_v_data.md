@@ -1,7 +1,16 @@
 
 ```{admonition} Preparation (before class)
-This is the week when you need to prepare a slide with a figure which uses observations and equations together.  These should be added to the `shared_paper/` folder in the gitlab.
+**For 19 April:** This is the week when you need to prepare a slide with a figure which uses observations and equations together.  These should be added to the `shared_paper/` folder in the gitlab. 
+
+Note: This was for 16 April, but only received 6 submissions.
 ```
+
+```{admonition} Preparation (before class)
+**For 23 April:** We will start the class by discussing map projections that you created during exercise 3.
+
+- **Read** {cite:t}`Krause-Tomczak-1995` before class.
+```
+
 
 # Equations v data
 
@@ -9,7 +18,12 @@ We will discuss what kinds of data can be recorded in order to enable further ca
 
 This should be based on what students bring to class.
 
+```{margin} Gitlab link
+[shared_papers/](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_papers?ref_type=heads)
+```
 
-```{admonition} Lab topic - introduction
-We will continue with the ideas left off last time, in thinking about number of degrees of freedom of a time series.
+```{admonition} Lab topic - Transport 
+You will use data from hydrographic sections to compute geostrophic transport.  
+
+See [Ex4](../exercise/exercise-geostrophy.ipynb). You may find it useful to read {cite:t}`Bryden-etal-2005` (or references therein about computing geostrophic transports from sections).
 ```

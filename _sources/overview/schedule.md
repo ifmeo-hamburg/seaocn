@@ -1,6 +1,6 @@
 # Schedule (SuSe24)
 
-- Lectures: Tuesdays **08:00 - 09:45** in Bu53 133 <-- To discuss: an 08:15 start.
+- Lectures: Tuesdays **08:15 - 09:45** in Bu53 133 
 - Computer practicals: Tuesdays **10:00 - 11:45** in Bu55 1335 
 
 ## Topics
@@ -10,11 +10,11 @@
 
 | Week | Lecture | Practical |
 |---|---|---|
-| 1 | [Course overview](topics/course_overview.html) | [Profiles (+ Git)](exercise/exercise-git.html) |
-| 2 | Scientific basis  | Time series |
-| 3 | Equations v Data | Maps + Sections |
-| 4 | Instruments & Platforms | Transport |
-| 5 | AMOC methods | Optimal interpolation |
+| 1 | [Course overview](../topics/course_overview.md) | Profiles (+ Git) [Ex0a](../exercise/exercise-git.md) [Ex0b](../exercise/exercise-python.md) [Ex1](../exercise/exercise-cnv.ipynb)|
+| 2 | [Scientific basis](../topics/scientific_basis.md)  | Time series [Ex2a](../exercise/exercise-tseries.ipynb) [Ex2b](../exercise/exercise-filter.ipynb)|
+| 3 | [Instruments & Platforms](../topics/instruments_platforms.md) | Maps [Ex3](../exercise/exercise-map.ipynb) |
+| 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
+| 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation |
 | 6 | Experiment Design | Assignment 1 |
 | 7 | Sampling & Uncertainty  | Assignment 1 |
 | 8 | Cruise anatomy | Assignment 1 |

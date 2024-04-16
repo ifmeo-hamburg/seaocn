@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile 2.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -67,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Setting up a jupyter book" href="../build-the-book/getting-started.html" />
-    <link rel="prev" title="Books + Reading" href="books.html" />
+    <link rel="prev" title="Running Python (Windows)" href="running-python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -179,8 +180,8 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">3. Equations v data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">4. Instruments and platforms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">4. Equations v data</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -197,11 +198,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="books.html">Books + Reading</a></li>
 <li class="toctree-l1"><a class="reference internal" href="git.html">Git for sharing &amp; versioning</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="python.html">Python</a></li>
 
-<li class="toctree-l1"><a class="reference internal" href="books.html">Books + Reading</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Glossary</a></li>
 </ul>
 <ul class="nav bd-sidenav">
@@ -413,17 +414,17 @@ document.write(`
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading">#</a></h1>
 <p>We will grow the glossary as we go along.  Please suggest terms to add to the glossary in the <a class="reference external" href="https://lernen.min.uni-hamburg.de/mod/forum/discuss.php?d=32511">MIN Moodle forum</a>.</p>
 <dl class="simple glossary">
-<dt id="term-accuracy">accuracy<a class="headerlink" href="#term-accuracy" title="Permalink to this term">#</a></dt><dd><p>how well the observation reproduces a well-defined standard that is usually set by an international group, from <span id="id1">[<a class="reference internal" href="books.html#id7" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
+<dt id="term-accuracy">accuracy<a class="headerlink" href="#term-accuracy" title="Permalink to this term">#</a></dt><dd><p>how well the observation reproduces a well-defined standard that is usually set by an international group, from <span id="id1">[<a class="reference internal" href="books%202.html#id12" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
 </dd>
-<dt id="term-bias-error">bias error<a class="headerlink" href="#term-bias-error" title="Permalink to this term">#</a></dt><dd><p>an offset of the measured values from the true values, from <span id="id2">[<a class="reference internal" href="books.html#id7" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
+<dt id="term-bias-error">bias error<a class="headerlink" href="#term-bias-error" title="Permalink to this term">#</a></dt><dd><p>an offset of the measured values from the true values, from <span id="id2">[<a class="reference internal" href="books%202.html#id12" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
 </dd>
-<dt id="term-error">error<a class="headerlink" href="#term-error" title="Permalink to this term">#</a></dt><dd><p>the difference between a measurement result and the value of the measurand, from <span id="id3">[<a class="reference internal" href="books.html#id4" title="E. R. Cohen. Error and uncertainty in physical measurements. In Modeling Complex Data for Creating Information. Data and Knowledge in a Changing World. Springer, Berlin, Heidelberg, 1996. doi:10.1007/978-3-642-80199-0_8.">Cohen, 1996</a>]</span>.</p>
+<dt id="term-error">error<a class="headerlink" href="#term-error" title="Permalink to this term">#</a></dt><dd><p>the difference between a measurement result and the value of the measurand, from <span id="id3">[<a class="reference internal" href="books%202.html#id4" title="E. R. Cohen. Error and uncertainty in physical measurements. In Modeling Complex Data for Creating Information. Data and Knowledge in a Changing World. Springer, Berlin, Heidelberg, 1996. doi:10.1007/978-3-642-80199-0_8.">Cohen, 1996</a>]</span>.</p>
 </dd>
-<dt id="term-precision">precision<a class="headerlink" href="#term-precision" title="Permalink to this term">#</a></dt><dd><p>the repeatability of an observation using a given instrument or observing system, from <span id="id4">[<a class="reference internal" href="books.html#id7" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
+<dt id="term-precision">precision<a class="headerlink" href="#term-precision" title="Permalink to this term">#</a></dt><dd><p>the repeatability of an observation using a given instrument or observing system, from <span id="id4">[<a class="reference internal" href="books%202.html#id12" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
 </dd>
-<dt id="term-random-error">random error<a class="headerlink" href="#term-random-error" title="Permalink to this term">#</a></dt><dd><p>see <span id="id5">[<a class="reference internal" href="books.html#id7" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
+<dt id="term-random-error">random error<a class="headerlink" href="#term-random-error" title="Permalink to this term">#</a></dt><dd><p>see <span id="id5">[<a class="reference internal" href="books%202.html#id12" title="Lynne D. Talley, George L. Pickard, William J. Emery, and James H. Swift. Descriptive Physical Oceanography: An Introduction. Elsevier, Boston, 2011. ISBN 9780080939117. URL: http://talleylab.ucsd.edu/ltalley/DPO/.">Talley <em>et al.</em>, 2011</a>]</span>, Chapter 6.2.</p>
 </dd>
-<dt id="term-uncertainty">uncertainty<a class="headerlink" href="#term-uncertainty" title="Permalink to this term">#</a></dt><dd><p>the reliability of the assertion that the stated measurement result represents the value of the measurand, or more specifically “a parameter, associated with the result of the measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand” from <span id="id6">[<a class="reference internal" href="books.html#id4" title="E. R. Cohen. Error and uncertainty in physical measurements. In Modeling Complex Data for Creating Information. Data and Knowledge in a Changing World. Springer, Berlin, Heidelberg, 1996. doi:10.1007/978-3-642-80199-0_8.">Cohen, 1996</a>]</span>.</p>
+<dt id="term-uncertainty">uncertainty<a class="headerlink" href="#term-uncertainty" title="Permalink to this term">#</a></dt><dd><p>the reliability of the assertion that the stated measurement result represents the value of the measurand, or more specifically “a parameter, associated with the result of the measurement, that characterizes the dispersion of the values that could reasonably be attributed to the measurand” from <span id="id6">[<a class="reference internal" href="books%202.html#id4" title="E. R. Cohen. Error and uncertainty in physical measurements. In Modeling Complex Data for Creating Information. Data and Knowledge in a Changing World. Springer, Berlin, Heidelberg, 1996. doi:10.1007/978-3-642-80199-0_8.">Cohen, 1996</a>]</span>.</p>
 </dd>
 </dl>
 </section>
@@ -459,12 +460,12 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="books.html"
+       href="running-python.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Books + Reading</p>
+        <p class="prev-next-title">Running Python (Windows)</p>
       </div>
     </a>
     <a class="right-next"

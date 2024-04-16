@@ -7,7 +7,9 @@ Name the figure `Ex<A>-<Lastname>.png` where you replace `<A>` with the exercise
 
 # Scientific basis
 
-
+```{margin} Moodle link
+PDF of slides [here](https://lernen.min.uni-hamburg.de/mod/resource/view.php?id=184368).  
+```
 
 We will introduce 2 (maybe 3) projects which have a field component.  These will be used as case studies during the course to help focus the topics.
 
@@ -16,8 +18,11 @@ We will introduce 2 (maybe 3) projects which have a field component.  These will
 - Convection in the Labrador Sea
 
 
+
 ```{admonition} Lab topic - introduction
 We will also introduce the lab topic of [time series](ex-timeseries).  In the lab you'll be calculating basic statistics like mean, histogram, median, standard deviation.  For a review of these concepts, see
 - {cite}`Talley-etal-2011` chapter 6 "Data analysis concepts and observational methods", especially sections 6.3 "Observational error", and 6.3 "Basic statistical concepts", and 6.5.3 "Spectral analysis" and 6.5.4 "Filtering".
 - {cite}`Emery-Thomson-2004` chapter 3 - note that earlier and later editions are also fine to use.
+
+See [Ex2a](../exercise/exercise-tseries.ipynb) and [Ex2b](../exercise/exercise-filter.ipynb).
 ```
