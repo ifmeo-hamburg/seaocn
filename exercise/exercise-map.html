@@ -449,6 +449,13 @@ document.write(`
 </li>
 <li><p>Import necessary packages.</p>
 <p>For example, <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy</span></code> and <code class="docutils literal notranslate"><span class="pre">xarray</span></code>.  You may also need</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+</pre></div>
+</div>
 <p>If you are missing any of these packages, please refer to <a class="reference internal" href="../resource/python.html"><span class="doc std std-doc">Resources: Python</span></a>.</p>
 </li>
 </ol>
@@ -466,13 +473,6 @@ document.write(`
 
 <span class="c1"># Fancy but non-intuitive</span>
 <span class="kn">import</span> <span class="nn">pygmt</span>
-
-<span class="c1"># Cartopy</span>
-<span class="kn">import</span> <span class="nn">cartopy</span>
-<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy.mpl.ticker</span> <span class="k">as</span> <span class="nn">cticker</span>
-<span class="kn">from</span> <span class="nn">cartopy.mpl.ticker</span> <span class="kn">import</span> <span class="n">LatitudeFormatter</span><span class="p">,</span> <span class="n">LongitudeFormatter</span>
 </pre></div>
 </div>
 </div>
@@ -500,7 +500,16 @@ document.write(`
 <h3>Using loops<a class="headerlink" href="#using-loops" title="Permalink to this heading">#</a></h3>
 <ol class="arabic" start="5">
 <li><p><strong>Concatenate to build file names</strong> To make the code easier to change, we’ll recommend building the filename out of components.  This gives you the possibility later of downloading a different year and only updating part of the code.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">myyear</span> <span class="o">=</span> <span class="mi">2001</span>
+<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;data/&#39;</span> <span class="c1"># If you have a file folder containing data</span>
+<span class="n">fpre</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lhtfl&#39;</span><span class="p">,</span> <span class="s1">&#39;nswrs&#39;</span><span class="p">]</span>  <span class="c1"># Add to this all the names of the variables</span>
+<span class="n">fpost</span> <span class="o">=</span> <span class="s1">&#39;.sfc.gauss.&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">myyear</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;.nc&#39;</span>
+</pre></div>
+</div>
 <p>This will give us a filename once we contenate together the various pieces:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fname</span> <span class="o">=</span> <span class="n">filepath</span> <span class="o">+</span> <span class="n">fpre</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">fpost</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>Learn about loops.</strong> Now you could load these one after another on separate lines.   Or you can use a loop.</p>
 <p>In python, one of the basic loop types is a <code class="docutils literal notranslate"><span class="pre">for-do</span></code> loop.</p>
@@ -509,12 +518,21 @@ document.write(`
 <p>About for-do loops: <a class="reference external" href="https://www.w3schools.com/python/python_for_loops.asp">https://www.w3schools.com/python/python_for_loops.asp</a></p>
 </div>
 <p>Here, we’ll use a loop that goes through a simple vector which has the length the same as the length of <code class="docutils literal notranslate"><span class="pre">fpre</span></code>.  First check what is the length of <code class="docutils literal notranslate"><span class="pre">fpre</span></code>?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">fpre</span><span class="p">))</span>
+</pre></div>
+</div>
 <p>It should be 4.  If it’s not, then go back and edit where you define the list <code class="docutils literal notranslate"><span class="pre">fpre</span></code>.   Verify that it is indeed of type <code class="docutils literal notranslate"><span class="pre">list</span></code> by doing</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">fpre</span><span class="p">))</span>
+</pre></div>
+</div>
 </li>
 <li><p><strong>Write a loop to build filenames</strong> Now construct your for-do loop which builds the different variable names</p>
 <p>Check that it is correctly producing the name of a file.</p>
 </li>
 <li><p><strong>Add a line to the loop to load the data.</strong>  If you had a single filename correctly named in the string <code class="docutils literal notranslate"><span class="pre">fname</span></code>, then you could use <code class="docutils literal notranslate"><span class="pre">xr.open_dataset(fname)</span></code>.  For example</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mydata</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>This line needs to be inside the loop (i.e., indented to the same indentation as the line <code class="docutils literal notranslate"><span class="pre">fname</span> <span class="pre">=</span> <span class="pre">filepath...</span></code>.</p>
 </li>
 </ol>
@@ -539,6 +557,9 @@ document.write(`
 </div>
 <p>In the simple website example in the “seealso”, these are pairs of strings, or numbers, or arrays.  In our case here, we can create a dictionary of xarray datasets.</p>
 <p>In your code above, replace the left side of the equation where you load the dataset (i.e., where you use the command <code class="docutils literal notranslate"><span class="pre">xr.open_dataset</span></code>) with</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">flux_components</span><span class="p">[</span><span class="n">fpre</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
+</pre></div>
+</div>
 <p>Once you have done this, you can check out the data within the dictionary using the following commands.</p>
 <p>The first one, <code class="docutils literal notranslate"><span class="pre">print(flux_components['lhtfl'].lhtfl.shape)</span></code> will tell you how big the dataset of latent heat flux is (x, y and z directions).</p>
 <p>The second looks more like an xarray dataset that you’re familiar with (<code class="docutils literal notranslate"><span class="pre">print(flux_components['lhtfl']</span></code>).</p>
@@ -597,6 +618,9 @@ document.write(`
 <ol class="arabic">
 <li><p>Now we’re going to use some of the fancier features of the xarray data construction.  We’d like to make an average over <strong>1 January through 31 March for your chosen year</strong>.   Since we’ve stored the data all in a single <code class="docutils literal notranslate"><span class="pre">xarray</span></code> dataset, we can calculate the mean with one line of code.</p>
 <p>An annual average would be computed as:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ann_flux</span> <span class="o">=</span> <span class="n">all_flux</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="n">keep_attrs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
 </li>
 <li><p>What happens if you don’t include the <code class="docutils literal notranslate"><span class="pre">keep_attrs=True</span></code> option?  Try deleting it and see what changes.</p></li>
 <li><p>How can you tell Python to only average over a certain time range, or specified months?</p></li>
