@@ -15,8 +15,8 @@ parts:
   chapters:
   - file: topics/course_overview
   - file: topics/scientific_basis
-  - file: topics/equations_v_data
   - file: topics/instruments_platforms
+  - file: topics/equations_v_data
 #  - file: topics/amoc_methods
 #  - file: topics/experiment_design
 #  - file: topics/sampling_uncertainty
@@ -53,11 +53,11 @@ parts:
 
 - caption: Resources
   chapters:
+  - file: resource/books
   - file: resource/git
   - file: resource/python
     sections:
     - file: resource/running-python
-  - file: resource/books
   - file: resource/glossary
 
 - chapters:
