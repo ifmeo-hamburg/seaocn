@@ -19,3 +19,15 @@ seaocn-cb/exercise/.ipynb_checkpoints/*
 # Mac/OSX
 .DS_Store
 
+# Mac doubled files
+*2.md
+*2.yml
+*2.ipynb
+*2.pyc
+*2.nc
+*2.png
+*2.bib
+*2.pdf
+*2.py
+*2.txt
+*2.css
