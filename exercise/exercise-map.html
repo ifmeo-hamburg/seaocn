@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 3 - Exploring map projections &#8212; seaocn</title>
+    <title>Exercise 3a - Exploring map projections &#8212; seaocn</title>
   
   
   
@@ -66,8 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-map';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 3\(^+\) Slopes &amp; Integrals" href="exercise-geostrophy.html" />
-    <link rel="prev" title="Exercise 2\(^+\) Filtering" href="exercise-filter.html" />
+    <link rel="next" title="Exercise 4 - Slopes &amp; Integrals" href="exercise-geostrophy.html" />
+    <link rel="prev" title="Exercise 2b Filtering" href="exercise-filter.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,10 +190,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 3 - Exploring map projections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2a  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 3a - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -397,7 +397,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 3 - Exploring map projections</h1>
+    <h1>Exercise 3a - Exploring map projections</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -432,8 +432,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3-exploring-map-projections">
-<h1>Exercise 3 - Exploring map projections<a class="headerlink" href="#exercise-3-exploring-map-projections" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-3a-exploring-map-projections">
+<h1>Exercise 3a - Exploring map projections<a class="headerlink" href="#exercise-3a-exploring-map-projections" title="Permalink to this heading">#</a></h1>
 <p><strong>Aim:</strong> To create a map of data from reanalysis heat fluxes.</p>
 <p><strong>Data:</strong> You will need to download files from <a class="reference external" href="https://www.cen.uni-hamburg.de/en/icdc/data/atmosphere/reanalysis-atmosphere/ncep.html">ICDC</a>.  We will be using NCEP Reanalysis heat fluxes at the ocean surface, and you will need one snapshot of sensible heat flux, latex heat flux, net shortwave and net longwave radiation flux.</p>
 <p><strong>Directions:</strong> Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and 4 figures: once of heat flux components using <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and one with the net heat flux, and the next two figures using <code class="docutils literal notranslate"><span class="pre">pyGMT</span></code> to plot net heat flux with two different projections.</p>
@@ -480,7 +480,7 @@ document.write(`
 <section id="downloading-data">
 <h3>Downloading data<a class="headerlink" href="#downloading-data" title="Permalink to this heading">#</a></h3>
 <ol class="arabic" start="3">
-<li><p>Download some data.  First decide what year you’d like to work with; anything from 1948 to 2023 is fine.  Then navigate to each of the 4 components of surface heat fluxes on the ICDC page <a class="reference external" href="https://icdc.cen.uni-hamburg.de/thredds-int/catalog/dataicdc/reanalyses/ncep_reanalysis1/DATA/sensible_heat_flux/catalog.html">https://icdc.cen.uni-hamburg.de/thredds-int/catalog/dataicdc/reanalyses/ncep_reanalysis1/DATA/sensible_heat_flux/catalog.html</a>.  Download <strong>one of each file</strong> for your chosen year.  Note that these files are about 30 mb each.</p>
+<li><p>Download some data.  First decide what year you’d like to work with; anything from 1948 to 2023 is fine.  Then navigate to each of the 4 components of surface heat fluxes on the ICDC page <a class="reference external" href="https://www.cen.uni-hamburg.de/en/icdc/data/atmosphere/reanalysis-atmosphere/ncep.html">https://www.cen.uni-hamburg.de/en/icdc/data/atmosphere/reanalysis-atmosphere/ncep.html</a>. And choose “Access NCEP data via OPeNDAP”.  Download <strong>one of each heat flux file</strong> for your chosen year.  Note that these files are about 30 mb each.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Double check when you commit that these files are not getting committed to the gitlab repository.</p>
@@ -775,7 +775,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</p>
+        <p class="prev-next-title">Exercise 2b  Filtering</p>
       </div>
     </a>
     <a class="right-next"
@@ -783,7 +783,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</p>
+        <p class="prev-next-title">Exercise 4 -  Slopes &amp; Integrals</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

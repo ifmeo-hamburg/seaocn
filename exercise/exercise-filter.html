@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Exercise 2\(^+\) Filtering &#8212; seaocn</title>
+    <title>Exercise 2b Filtering &#8212; seaocn</title>
   
   
   
@@ -63,13 +63,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-filter';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 3 - Exploring map projections" href="exercise-map.html" />
-    <link rel="prev" title="Exercise 2 Time series" href="exercise-tseries.html" />
+    <link rel="next" title="Exercise 3a - Exploring map projections" href="exercise-map.html" />
+    <link rel="prev" title="Exercise 2a Time series" href="exercise-tseries.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -192,10 +190,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2  Time series</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
-<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 3<span class="math notranslate nohighlight">\(^+\)</span>  Slopes &amp; Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2a  Time series</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3a - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -399,7 +397,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Exercise 2^+  Filtering</h1>
+    <h1>Exercise 2b  Filtering</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -433,8 +431,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2-filtering">
-<h1>Exercise 2<span class="math notranslate nohighlight">\(^+\)</span>  Filtering<a class="headerlink" href="#exercise-2-filtering" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="exercise-2b-filtering">
+<h1>Exercise 2b  Filtering<a class="headerlink" href="#exercise-2b-filtering" title="Permalink to this heading">#</a></h1>
 <p><strong>Aim:</strong> The purpose of this lab is to get you started thinking about frequency content of time series</p>
 <p><strong>Learning outcomes:</strong> At the end of this lab, you will be able to:</p>
 <ol class="arabic simple">
@@ -523,7 +521,7 @@ document.write(`
 <span class="ne">---&gt; </span><span class="mi">55</span>     <span class="n">value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
 <span class="g g-Whitespace">     </span><span class="mi">56</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_cache</span><span class="o">.</span><span class="n">move_to_end</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
 
-<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;bf777eaa-e46f-4bae-beac-4acd7327761f&#39;]
+<span class="ne">KeyError</span>: [&lt;class &#39;netCDF4._netCDF4.Dataset&#39;&gt;, (&#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;,), &#39;r&#39;, ((&#39;clobber&#39;, True), (&#39;diskless&#39;, False), (&#39;format&#39;, &#39;NETCDF4&#39;), (&#39;persist&#39;, False)), &#39;b48f535d-f9c6-44c6-a9bf-5c8dcef85f51&#39;]
 
 <span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
 
@@ -636,7 +634,7 @@ document.write(`
 
 <span class="nn">File src/netCDF4/_netCDF4.pyx:2027,</span> in <span class="ni">netCDF4._netCDF4._ensure_nc_success</span><span class="nt">()</span>
 
-<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/w9006.nc&#39;
 </pre></div>
 </div>
 </div>
@@ -844,7 +842,7 @@ print(sla_df)
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Exercise 2  Time series</p>
+        <p class="prev-next-title">Exercise 2a  Time series</p>
       </div>
     </a>
     <a class="right-next"
@@ -852,7 +850,7 @@ print(sla_df)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 3 - Exploring map projections</p>
+        <p class="prev-next-title">Exercise 3a - Exploring map projections</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

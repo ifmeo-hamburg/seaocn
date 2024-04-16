@@ -47,7 +47,7 @@ File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/back
 [0;32m---> 55[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     56[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'a3368b5b-adfd-481f-b278-f29781b722a5']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'c2994fef-e4e1-4919-a5eb-816b660472b1']
 
 During handling of the above exception, another exception occurred:
 
@@ -157,5 +157,5 @@ File [0;32msrc/netCDF4/_netCDF4.pyx:2464[0m, in [0;36mnetCDF4._netCDF4.Datase
 
 File [0;32msrc/netCDF4/_netCDF4.pyx:2027[0m, in [0;36mnetCDF4._netCDF4._ensure_nc_success[0;34m()[0m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: '/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/lhtfl.sfc.gauss.1979.nc'
 
