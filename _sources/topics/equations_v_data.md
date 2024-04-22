@@ -5,10 +5,8 @@
 Note: This was for 16 April, but only received 6 submissions.
 ```
 
-```{admonition} Preparation (before class)
-**For 23 April:** We will start the class by discussing map projections that you created during exercise 3.
-
-- **Read** {cite:t}`Krause-Tomczak-1995` before class.
+```{admonition} Preparation (before computer practical)
+- **Read** {cite:t}`Krause-Tomczak-1995` before completing your mapping exercise.
 ```
 
 
@@ -27,3 +25,10 @@ You will use data from hydrographic sections to compute geostrophic transport.
 
 See [Ex4](../exercise/exercise-geostrophy.ipynb). You may find it useful to read {cite:t}`Bryden-etal-2005` (or references therein about computing geostrophic transports from sections).
 ```
+
+```{warning} 
+**For 30 April:** We will start the class by discussing map projections that you created during exercise 3.
+
+You should have read {cite:t}`Krause-Tomczak-1995` before the computer practical on Apr 23, and prepared figures for the `shared_figure/` folder from [exercise 3 - maps](../exercise/exercise-map.ipynb).
+```
+
