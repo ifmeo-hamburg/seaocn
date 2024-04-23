@@ -1,6 +1,6 @@
 
 ```{margin} Moodle link
-PDF of Cole [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407962/mod_folder/content/0/Cole_etal_2009-phoc-2008jpo3937.1.pdf?forcedownload=1\)
+PDF of Cole [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407962/mod_folder/content/0/Cole_etal_2009-phoc-2008jpo3937.1.pdf?forcedownload=1)\
 PDF of Girton [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407962/mod_folder/content/0/Girton_etal_2006-phoc-jpo2969.1.pdf?forcedownload=1)\
 PDF of Hosegood [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407962/mod_folder/content/0/Hosegood_etal_2008-phoc-2008jpo3843.1.pdf?forcedownload=1)\
 *Added 23 April*

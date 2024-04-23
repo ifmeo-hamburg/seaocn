@@ -18,14 +18,16 @@ PDF of Krause [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407209/mod
 
 # Equations v data
 
+```{margin} Moodle link
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf) \
+*Added 23 April*
+```
+
 We will discuss what kinds of data can be recorded in order to enable further calculations with the data after the fact.
 
 This should be based on what students bring to class.
 
-```{margin} Moodle link
-PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf)\ 
-*Added 23 April*
-```
+
 
 ## Lecture session - what we did
 
