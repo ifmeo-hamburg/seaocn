@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'topics/amoc_methods';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 0a - Git" href="../exercise/exercise-git.html" />
+    <link rel="next" title="6. Experiment design" href="experiment_design.html" />
     <link rel="prev" title="4. Equations v data" href="equations_v_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -183,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equations_v_data.html">4. Equations v data</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">5. AMOC Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="experiment_design.html">6. Experiment design</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -411,17 +412,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div class="admonition-preparation-before-class admonition">
+  <aside class="margin sidebar">
+<p class="sidebar-title">Gitlab Link</p>
+<p>Check that you’ve uploaded here: <a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_figures?ref_type=heads">shared_figures/</a></p>
+</aside>
+<div class="admonition-preparation-before-class admonition">
 <p class="admonition-title">Preparation (before class)</p>
 <p><strong>For 29 April:</strong>
 Please prepare 2 figures from <a class="reference internal" href="../exercise/exercise-geostrophy.html"><span class="doc std std-doc">Ex4</span></a> and move to the <code class="docutils literal notranslate"><span class="pre">shared_figures/</span></code> folder of the <a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_figures?ref_type=heads">gitlab repository</a></p>
 </div>
+<aside class="margin sidebar">
+<p class="sidebar-title">Moodle link</p>
+<p>PDF of FW 2023 <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/407992/mod_folder/content/0/Frajka-Williams-2023-Should%20AMOC%20observations%20continue-%20how%20and%20why-.pdf?forcedownload=1">here</a><br />
+PDF of Marotzke 2023 <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/407992/mod_folder/content/0/marotzke-2023-from-theory-to-rapid-amoc-observations-a-personal-voyage-of-discovery.pdf?forcedownload=1">here</a><br />
+PDF of FW et al. 2019 <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/407992/mod_folder/content/0/Frajka-Williams-2019-Atlantic%20Meridional%20Overturning%20Circulation-%20Observed%20Transport%20and%20Variability_1.pdf?forcedownload=1">here</a><br />
+PDF of McCarthy et al. 2015 <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/407992/mod_folder/content/0/McCarthy-2015-Measuring%20the%20Atlantic%20Meridional%20Overturning%20Circulation%20at%2026%C2%B0N.pdf?forcedownload=1">here</a><br />
+<em>Added 23 April</em></p>
+</aside>
 <div class="admonition-recommended-reading-before-class admonition">
 <p class="admonition-title">Recommended reading (before class)</p>
 <p>Read <span id="id1">Frajka-Williams <em>et al.</em> [<a class="reference internal" href="../resource/books%202.html#id8" title="E. Frajka-Williams, N. Foukal, and G. Danabasoglu. Should amoc observations continue: how and why? Philosophical Transactions of the Royal Society, 381(2262):20220195, 2023. doi:10.1098/rsta.2022.0195.">2023</a>]</span> - on AMOC measurements and sources of uncertainty/choices (medium detail).</p>
 <p>And (optional) your choice of</p>
 <ul class="simple">
-<li><p><span id="id2">Marotzke [<a class="reference internal" href="../resource/books%202.html#id12" title="Jochem Marotzke. From theory to RAPID AMOC observations: a personal voyage of discovery. Philosophical Transactions of the Royal Society, 381(2262):20220192, 2023. doi:10.1098/rsta.2022.0192.">2023</a>]</span></p></li>
+<li><p><span id="id2">Marotzke [<a class="reference internal" href="../resource/books%202.html#id12" title="Jochem Marotzke. From theory to RAPID AMOC observations: a personal voyage of discovery. Philosophical Transactions of the Royal Society, 381(2262):20220192, 2023. doi:10.1098/rsta.2022.0192.">2023</a>]</span> - how we started making continous AMOC measurements.</p></li>
 <li><p><span id="id3">Frajka-Williams <em>et al.</em> [<a class="reference internal" href="../resource/books%202.html#id9" title="E. Frajka-Williams, Isabelle J. Ansorge, Johanna Baehr, Harry L. Bryden, Maria Paz Chidichimo, Stuart A. Cunningham, Gokhan Danabasoglu, Shenfu Dong, Kathleen A. Donohue, Shane Elipot, Patrick Heimbach, N. Penny Holliday, Rebecca Hummels, Laura C. Jackson, Johannes Karstensen, Matthias Lankhorst, Isabela A. Le Bras, M. Susan Lozier, Elaine L. McDonagh, Christopher S. Meinen, Herle Mercier, Bengamin I. Moat, Renellys C. Perez, Christopher G. Piecuch, Monika Rhein, Meric A. Srokosz, Keven E. Trenberth, Sheldon Bacon, Gael Forget, Gustavo Goni, Dagmar Kieke, Jannes Koelling, Tarron Lamont, Gerard D. McCarthy, Christian Mertens, Uwe Send, David A. Smeed, Sabrina Speich, Marcel van den Berg, Denis Volkov, and Chris Wilson. Oceanobs19: Atlantic meridional overturning circulation: Observed transports and variability. Frontiers in Marine Science, 6:260, 2019. doi:10.3389/fmars.2019.00260.">2019</a>]</span> - on how the AMOC is measured across the Atlantic (light detail).</p></li>
 <li><p><span id="id4">McCarthy <em>et al.</em> [<a class="reference internal" href="../resource/books%202.html#id13" title="G. D. McCarthy, D. A. Smeed, W. E. Johns, E. Frajka-Williams, B. I. Moat, D. Rayner, M. O. Baringer, C. S. Meinen, and H. L. Bryden. Measuring the Atlantic meridional overturning circulation at 26°N. Progress in Oceanography, 130:91–111, 2015. doi:10.1016/j.pocean.2014.10.006.">2015</a>]</span> - on how the AMOC is computed at 26°N (detailed).
 before class.</p></li>
@@ -477,11 +490,11 @@ before class.</p></li>
       </div>
     </a>
     <a class="right-next"
-       href="../exercise/exercise-git.html"
+       href="experiment_design.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 0a - Git</p>
+        <p class="prev-next-title"><span class="section-number">6. </span>Experiment design</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

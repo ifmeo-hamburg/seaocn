@@ -1,10 +1,17 @@
 
+```{margin} Gitlab link
+[shared_papers/](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_papers?ref_type=heads)
+```
 ```{admonition} Preparation (before class)
 **For 19 April:** This is the week when you need to prepare a slide with a figure which uses observations and equations together.  These should be added to the `shared_paper/` folder in the gitlab. 
 
 Note: This was for 16 April, but only received 6 submissions.
 ```
 
+```{margin} Moodle link
+PDF of Krause [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407209/mod_resource/content/1/8-1_krause.pdf)\
+*Added 16 April*
+```
 ```{admonition} Preparation (before computer practical)
 - **Read** {cite:t}`Krause-Tomczak-1995` before completing your mapping exercise.
 ```
@@ -16,7 +23,7 @@ We will discuss what kinds of data can be recorded in order to enable further ca
 This should be based on what students bring to class.
 
 ```{margin} Moodle link
-PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf). 
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf)\ 
 *Added 23 April*
 ```
 
@@ -44,10 +51,11 @@ Discussions were focused on identifying (first 3) and then thinking about (4) - 
 
     - What choices needed to be made in the: sampling strategy, processing steps, calculations (discretization, gap-filling, filtering)?
 
-```{margin} Gitlab link
-[shared_papers/](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_papers?ref_type=heads)
-```
 
+```{margin} Moodle link
+PDF of Bryden [here](https://lernen.min.uni-hamburg.de/mod/resource/view.php?id=185751)
+*Added 23 April*
+```
 ```{admonition} Lab topic - Transport 
 You will use data from hydrographic sections to compute geostrophic transport.  
 
@@ -55,8 +63,8 @@ See [Ex4](../exercise/exercise-geostrophy.ipynb). You may find it useful to read
 ```
 
 ```{warning} 
-**For 30 April:** Changed on 23 April: Please *read* the paper on map projections, and we will briefly discuss the paper.  We have otherwise made the second (pyGMT) part of exercise 3 optional.  
+~~**For 30 April:** You should have read {cite:t}`Krause-Tomczak-1995` before the computer practical on Apr 23, and prepared figures for the `shared_figure/` folder from [exercise 3 - maps](../exercise/exercise-map.ipynb).~~
 
-You should have read {cite:t}`Krause-Tomczak-1995` before the computer practical on Apr 23, and prepared figures for the `shared_figure/` folder from [exercise 3 - maps](../exercise/exercise-map.ipynb).
+**On 23 April:** We made the *pyGMT* part of Exercise 3 optional.  Note: ONLY the pyGMT part.  You should still be able to make filled-in color maps, and I am hoping that if you don't use pyGMT, then you have some ability to use `cartopy`.  If not, then I recommend still working through `pyGMT` in your own time.  Next week, we will discuss figures for those of whom they are available, and also the reading (see above, Krause paper).
 ```
 
