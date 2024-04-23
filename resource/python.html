@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">4. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/amoc_methods.html">5. AMOC Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -416,6 +417,7 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adcp-data">ADCP data</a></li>
 </ul>
 </li>
 </ul>
@@ -449,13 +451,14 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference external" href="https://pypi.org/project/gsw/">Gibbs Seawater Toolbox (GSW)</a> - see installation instructions here</p></li>
 <li><p><a class="reference external" href="https://docs.xarray.dev/en/latest/getting-started-guide/installing.html#instructions">xarray</a> - see installation for xarray and necessary other packages (dask, netCDF4, bottleneck).  This is a <em>very useful</em> data format/package for netcdf files (many ocean/climate datasets).</p></li>
-<li><p><a class="reference external" href="https://pypi.org/project/pycnv/">pycnv</a> - for importing Seabird format <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> datafiles</p></li>
+<li><p><a class="reference external" href="https://www.pygmt.org/latest/install.html">pyGMT</a> - a plotting package (like <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> and <code class="docutils literal notranslate"><span class="pre">cartopy</span></code>.  Please note, installation is <em>recommended</em> via a package/environment manager like <code class="docutils literal notranslate"><span class="pre">conda</span></code>.  If you are using <code class="docutils literal notranslate"><span class="pre">pip</span></code> to install, then read the troubleshooting section below as well.</p></li>
 </ul>
 <p>You may also need:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://pandas.pydata.org">pandas</a> - simpler than xarray.  Avoid, but may be needed.</p></li>
 <li><p><a class="reference external" href="https://numpy.org/install/">numpy</a> - multi-dimensional arrays</p></li>
 <li><p><a class="reference external" href="https://matplotlib.org/stable/users/getting_started/">matplotlib</a> - plotting tools, similar to Matlab style</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pycnv/">pycnv</a> - for importing Seabird format <code class="docutils literal notranslate"><span class="pre">*.cnv</span></code> datafiles</p></li>
 </ul>
 <p>Potentially of interest:</p>
 <ul class="simple">
@@ -464,14 +467,14 @@ document.write(`
 </section>
 <section id="installing-packages-mac">
 <h2>Installing packages (Mac)<a class="headerlink" href="#installing-packages-mac" title="Permalink to this heading">#</a></h2>
-<p>We need various packages as above.  For environment management, we use <code class="docutils literal notranslate"><span class="pre">conda</span></code>.</p>
+<p>We need various packages as above.  For environment management, we use <code class="docutils literal notranslate"><span class="pre">conda</span></code> or <code class="docutils literal notranslate"><span class="pre">mamba</span></code>, and their lightweight forms: <code class="docutils literal notranslate"><span class="pre">miniconda</span></code> and <code class="docutils literal notranslate"><span class="pre">micromamba</span></code>.  Some students also use <code class="docutils literal notranslate"><span class="pre">pipenv</span></code>, which you can explore on your own e.g. <a class="reference external" href="https://docs.python-guide.org/dev/virtualenvs/">here</a>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>Managing environments with <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda</a></p>
+<p>Managing environments with <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda</a> or <a class="reference external" href="https://mamba.readthedocs.io/en/latest/user_guide/mamba.html">mamba</a>.</p>
 </div>
 <p>Choose a directory where you will work on the python for this course.  Navigate to the directory in a terminal window.
 The basic command is something like <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span> <span class="pre">--name</span> <span class="pre">&lt;my-env&gt;</span></code>  where you replace <code class="docutils literal notranslate"><span class="pre">&lt;my-env&gt;</span></code> with the name of your environment.  Let’s call it <code class="docutils literal notranslate"><span class="pre">seaocn_env</span></code>.  But we’ll try to install a lot of the necessary pieces at once:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">xarray</span> <span class="n">gsw</span> <span class="n">python</span> <span class="n">pandas</span> <span class="n">gsw</span> <span class="n">dask</span> <span class="n">netCDF4</span> <span class="n">bottleneck</span> <span class="n">numpy</span> <span class="n">matplotlib</span> <span class="n">jupyterlab</span> <span class="n">nb_conda</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">ipykernel</span> <span class="n">nb_conda_kernels</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">xarray</span> <span class="n">gsw</span> <span class="n">python</span> <span class="n">pandas</span> <span class="n">gsw</span> <span class="n">dask</span> <span class="n">netCDF4</span> <span class="n">bottleneck</span> <span class="n">numpy</span> <span class="n">matplotlib</span> <span class="n">jupyterlab</span> <span class="n">nb_conda</span> <span class="n">jupyter</span><span class="o">-</span><span class="n">book</span> <span class="n">ipykernel</span> <span class="n">nb_conda_kernels</span> <span class="n">pygmt</span> <span class="n">cartopy</span> <span class="n">scipy</span>
 <span class="n">conda</span> <span class="n">activate</span> <span class="n">seaocn_env</span>
 </pre></div>
 </div>
@@ -545,6 +548,11 @@ conda remove --name seaocn_env --all
 <section id="environments">
 <h2>Environments<a class="headerlink" href="#environments" title="Permalink to this heading">#</a></h2>
 <p>More advanced: It’s best to work inside an environment.  This controls the version of each of the packages that you have installed, so that the code is more likely to run smoothly on another person’s computer.  Some background on <a class="reference external" href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">conda environments</a>.</p>
+</section>
+<section id="adcp-data">
+<h2>ADCP data<a class="headerlink" href="#adcp-data" title="Permalink to this heading">#</a></h2>
+<p><em>This is a stub:</em> Likely looking package for handling <code class="docutils literal notranslate"><span class="pre">*.000</span></code> ADCP data files.
+<a class="reference external" href="https://github.com/IOS-OSD-DPG/pycurrents_ADCP_processing/">pycurrents_ADCP_processing</a>.</p>
 </section>
 <div class="toctree-wrapper compound">
 </div>
@@ -621,6 +629,7 @@ conda remove --name seaocn_env --all
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#environments">Environments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adcp-data">ADCP data</a></li>
 </ul>
 </li>
 </ul>

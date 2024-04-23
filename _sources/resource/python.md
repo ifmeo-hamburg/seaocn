@@ -16,28 +16,29 @@ Some packages you will need:
 
 - [Gibbs Seawater Toolbox (GSW)](https://pypi.org/project/gsw/) - see installation instructions here
 - [xarray](https://docs.xarray.dev/en/latest/getting-started-guide/installing.html#instructions) - see installation for xarray and necessary other packages (dask, netCDF4, bottleneck).  This is a *very useful* data format/package for netcdf files (many ocean/climate datasets).
-- [pycnv](https://pypi.org/project/pycnv/) - for importing Seabird format `*.cnv` datafiles
+- [pyGMT](https://www.pygmt.org/latest/install.html) - a plotting package (like `matplotlib` and `cartopy`.  Please note, installation is *recommended* via a package/environment manager like `conda`.  If you are using `pip` to install, then read the troubleshooting section below as well.
 
 You may also need:
 - [pandas](https://pandas.pydata.org) - simpler than xarray.  Avoid, but may be needed.  
 - [numpy](https://numpy.org/install/) - multi-dimensional arrays
 - [matplotlib](https://matplotlib.org/stable/users/getting_started/) - plotting tools, similar to Matlab style
+- [pycnv](https://pypi.org/project/pycnv/) - for importing Seabird format `*.cnv` datafiles
 
 Potentially of interest:
 - [ocean data parser](https://github.com/cioos-siooc/ocean-data-parser) - but only has pip install instructions [here](https://cioos-siooc.github.io/ocean-data-parser/dev/get_started/installation/).  If you've been using conda and you'd like to use pip instead, you can use conda to install pip.  See some info [here](https://stackoverflow.com/questions/19042389/conda-installing-upgrading-directly-from-github)
 
 ## Installing packages (Mac)
 
-We need various packages as above.  For environment management, we use `conda`.  
+We need various packages as above.  For environment management, we use `conda` or `mamba`, and their lightweight forms: `miniconda` and `micromamba`.  Some students also use `pipenv`, which you can explore on your own e.g. [here](https://docs.python-guide.org/dev/virtualenvs/).
 
 ```{seealso}
-Managing environments with [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+Managing environments with [conda](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html) or [mamba](https://mamba.readthedocs.io/en/latest/user_guide/mamba.html).
 ```
 
 Choose a directory where you will work on the python for this course.  Navigate to the directory in a terminal window.
 The basic command is something like `conda create --name <my-env>`  where you replace `<my-env>` with the name of your environment.  Let's call it `seaocn_env`.  But we'll try to install a lot of the necessary pieces at once:
 ```
-conda create --channel conda-forge --name seaocn_env xarray gsw python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels
+conda create --channel conda-forge --name seaocn_env xarray gsw python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels pygmt cartopy scipy
 conda activate seaocn_env
 ```
 
@@ -116,3 +117,7 @@ https://fcollonval.medium.com/conda-environments-in-jupyter-ecosystem-without-pa
 
 More advanced: It's best to work inside an environment.  This controls the version of each of the packages that you have installed, so that the code is more likely to run smoothly on another person's computer.  Some background on [conda environments](https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html).
 
+## ADCP data
+
+*This is a stub:* Likely looking package for handling `*.000` ADCP data files.
+[pycurrents_ADCP_processing](https://github.com/IOS-OSD-DPG/pycurrents_ADCP_processing/).

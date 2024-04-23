@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">4. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/amoc_methods.html">5. AMOC Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="current nav bd-sidenav">
@@ -487,10 +488,11 @@ Python 3.9.5
 <ul class="simple">
 <li><p>To create an environment to use for the work in this course, use the <code class="docutils literal notranslate"><span class="pre">conda</span> <span class="pre">create</span></code> command as:</p></li>
 </ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">matplotlib</span> <span class="n">pandas</span> <span class="n">python</span> <span class="n">numpy</span> <span class="n">xarray</span> <span class="n">gsw</span> <span class="n">netCDF4</span> <span class="n">jupyterlab</span> <span class="n">scipy</span> <span class="n">cmocean</span> <span class="n">erddapy</span> <span class="n">argopy</span> <span class="n">tqdm</span> 
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">channel</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">name</span> <span class="n">seaocn_env</span> <span class="n">python</span> <span class="n">pandas</span> <span class="n">numpy</span> <span class="n">xarray</span> <span class="n">dask</span> <span class="n">netCDF4</span> <span class="n">bottleneck</span> <span class="n">scipy</span> <span class="n">matplotlib</span> <span class="n">cartopy</span> <span class="n">cmocean</span> <span class="n">pygmt</span> <span class="n">gsw</span> <span class="n">jupyterlab</span> <span class="n">nb_conda</span> <span class="n">ipykernel</span> <span class="n">nb_conda_kernels</span> <span class="n">erddapy</span> <span class="n">argopy</span> <span class="n">tqdm</span>
 </pre></div>
 </div>
-<p>Note that you can run the line above <em>without</em> the equals sign “=” and numbers following.  This specifies versions which worked on my computer in 2024 March.  Without the versions, <code class="docutils literal notranslate"><span class="pre">conda</span></code> will attempt to find for you compatible versions of the packages.</p>
+<!--conda create --channel conda-forge --name seaocn_env xarray python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels pygmt cartopy scipy cmocean erddapy argopy tqdm-->
+<p>Note that it can be advantages to install all your packages at once since <code class="docutils literal notranslate"><span class="pre">conda</span></code> (or <code class="docutils literal notranslate"><span class="pre">mamba</span></code>) need to cross-check packages for compatibility upon installation.</p>
 <ul class="simple">
 <li><p>Then activate the environment and install missing packages with pip:</p></li>
 </ul>

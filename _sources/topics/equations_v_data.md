@@ -9,12 +9,40 @@ Note: This was for 16 April, but only received 6 submissions.
 - **Read** {cite:t}`Krause-Tomczak-1995` before completing your mapping exercise.
 ```
 
-
 # Equations v data
 
 We will discuss what kinds of data can be recorded in order to enable further calculations with the data after the fact.
 
 This should be based on what students bring to class.
+
+```{margin} Moodle link
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf). 
+*Added 23 April*
+```
+
+## Lecture session - what we did
+
+After a brief discussion about teaching vs learning, and the reasoning behind what we're doing here (to start you the students thinking about how we set up field programs or analysis plans based on the desired endpoint), we went through the slides submitted by everyone on a paper, then reduced the list to 3 papers to discuss in groups of 3-4 students.  These were
+
+- Flexas et al. using the Omega equation
+
+- Hansen et al. (2023) estimating transports with in situ and altimetry
+
+- Bilo + Johns (202X) tracing the spread of LSW  using PV from Argo data.
+
+Discussions were focused on identifying (first 3) and then thinking about (4) - the choices and decisions being made in order to get towards answering the question, designing the field program and computing the main figure.
+
+1. What is the question or problem being solved?  What do they want to know about the ocean?  Why use observations (as opposed to some other tool)?
+
+2. What data are being used?  What type/parameter, what is the resolution (time, horizontal space, vertical) and what was the thinking behind the sampling strategy?
+
+3. What's the main figure that demonstrates the take home message, or the new information about the ocean?
+
+4. What had to be done to get to this main figure?  
+
+    - What were the requirements of the data (need to be "quasi-synoptic", need to be high vertical resolution, need to resolve tidal variations, need a certain minimum horizontal resolution, need high accuracy to measure small changes)?
+
+    - What choices needed to be made in the: sampling strategy, processing steps, calculations (discretization, gap-filling, filtering)?
 
 ```{margin} Gitlab link
 [shared_papers/](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_papers?ref_type=heads)
@@ -27,7 +55,7 @@ See [Ex4](../exercise/exercise-geostrophy.ipynb). You may find it useful to read
 ```
 
 ```{warning} 
-**For 30 April:** We will start the class by discussing map projections that you created during exercise 3.
+**For 30 April:** Changed on 23 April: Please *read* the paper on map projections, and we will briefly discuss the paper.  We have otherwise made the second (pyGMT) part of exercise 3 optional.  
 
 You should have read {cite:t}`Krause-Tomczak-1995` before the computer practical on Apr 23, and prepared figures for the `shared_figure/` folder from [exercise 3 - maps](../exercise/exercise-map.ipynb).
 ```

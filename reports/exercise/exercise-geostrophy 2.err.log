@@ -37,7 +37,7 @@ File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/back
 [0;32m---> 55[0m     value [38;5;241m=[39m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_cache[49m[43m[[49m[43mkey[49m[43m][49m
 [1;32m     56[0m     [38;5;28mself[39m[38;5;241m.[39m_cache[38;5;241m.[39mmove_to_end(key)
 
-[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/740H20200119_ctd.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), '53611e6a-b5cf-4421-a517-cd6c40863de7']
+[0;31mKeyError[0m: [<class 'netCDF4._netCDF4.Dataset'>, ('/Users/eddifying/Library/Mobile Documents/com~apple~CloudDocs/Work/oldwork3/teaching/SeaOcn-UHH/coursebook_seaocn/seaocn-cb/data/740H20200119_ctd.nc',), 'r', (('clobber', True), ('diskless', False), ('format', 'NETCDF4'), ('persist', False)), 'f1f9948e-d75a-4911-aec5-4037d5161988']
 
 During handling of the above exception, another exception occurred:
 

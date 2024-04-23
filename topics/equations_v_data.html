@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'topics/equations_v_data';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Exercise 0a - Git" href="../exercise/exercise-git.html" />
+    <link rel="next" title="5. AMOC Methods" href="amoc_methods.html" />
     <link rel="prev" title="3. Instruments and platforms (change week)" href="instruments_platforms.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -182,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="scientific_basis.html">2. Scientific basis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">4. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="amoc_methods.html">5. AMOC Methods</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -385,7 +386,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -401,6 +404,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-session-what-we-did">4.1. Lecture session - what we did</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -418,7 +429,7 @@ document.write(`
 <div class="admonition-preparation-before-computer-practical admonition">
 <p class="admonition-title">Preparation (before computer practical)</p>
 <ul class="simple">
-<li><p><strong>Read</strong> <span id="id1">Krause and Tomczak [<a class="reference internal" href="../resource/books%202.html#id14" title="Gunther Krause and Matthias Tomczak. Do marine scientists have a scientific view of the earth? Oceanography, 1995. URL: https://tos.org/oceanography/article/do-marine-scientists-have-a-scientific-view-of-the-earth, doi:10.5670/oceanog.1995.26.">1995</a>]</span> before completing your mapping exercise.</p></li>
+<li><p><strong>Read</strong> <span id="id1">Krause and Tomczak [<a class="reference internal" href="../resource/books%202.html#id17" title="Gunther Krause and Matthias Tomczak. Do marine scientists have a scientific view of the earth? Oceanography, 1995. URL: https://tos.org/oceanography/article/do-marine-scientists-have-a-scientific-view-of-the-earth, doi:10.5670/oceanog.1995.26.">1995</a>]</span> before completing your mapping exercise.</p></li>
 </ul>
 </div>
 <section class="tex2jax_ignore mathjax_ignore" id="equations-v-data">
@@ -426,19 +437,45 @@ document.write(`
 <p>We will discuss what kinds of data can be recorded in order to enable further calculations with the data after the fact.</p>
 <p>This should be based on what students bring to class.</p>
 <aside class="margin sidebar">
+<p class="sidebar-title">Moodle link</p>
+<p>PDF of slides <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/407853/mod_resource/content/2/equations_v_data-seaocn.pdf">here</a>.
+<em>Added 23 April</em></p>
+</aside>
+<section id="lecture-session-what-we-did">
+<h2><span class="section-number">4.1. </span>Lecture session - what we did<a class="headerlink" href="#lecture-session-what-we-did" title="Permalink to this heading">#</a></h2>
+<p>After a brief discussion about teaching vs learning, and the reasoning behind what we’re doing here (to start you the students thinking about how we set up field programs or analysis plans based on the desired endpoint), we went through the slides submitted by everyone on a paper, then reduced the list to 3 papers to discuss in groups of 3-4 students.  These were</p>
+<ul class="simple">
+<li><p>Flexas et al. using the Omega equation</p></li>
+<li><p>Hansen et al. (2023) estimating transports with in situ and altimetry</p></li>
+<li><p>Bilo + Johns (202X) tracing the spread of LSW  using PV from Argo data.</p></li>
+</ul>
+<p>Discussions were focused on identifying (first 3) and then thinking about (4) - the choices and decisions being made in order to get towards answering the question, designing the field program and computing the main figure.</p>
+<ol class="arabic simple">
+<li><p>What is the question or problem being solved?  What do they want to know about the ocean?  Why use observations (as opposed to some other tool)?</p></li>
+<li><p>What data are being used?  What type/parameter, what is the resolution (time, horizontal space, vertical) and what was the thinking behind the sampling strategy?</p></li>
+<li><p>What’s the main figure that demonstrates the take home message, or the new information about the ocean?</p></li>
+<li><p>What had to be done to get to this main figure?</p>
+<ul class="simple">
+<li><p>What were the requirements of the data (need to be “quasi-synoptic”, need to be high vertical resolution, need to resolve tidal variations, need a certain minimum horizontal resolution, need high accuracy to measure small changes)?</p></li>
+<li><p>What choices needed to be made in the: sampling strategy, processing steps, calculations (discretization, gap-filling, filtering)?</p></li>
+</ul>
+</li>
+</ol>
+<aside class="margin sidebar">
 <p class="sidebar-title">Gitlab link</p>
 <p><a class="reference external" href="https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_papers?ref_type=heads">shared_papers/</a></p>
 </aside>
 <div class="admonition-lab-topic-transport admonition">
 <p class="admonition-title">Lab topic - Transport </p>
 <p>You will use data from hydrographic sections to compute geostrophic transport.</p>
-<p>See <a class="reference internal" href="../exercise/exercise-geostrophy.html"><span class="doc std std-doc">Ex4</span></a>. You may find it useful to read <span id="id2">Bryden <em>et al.</em> [<a class="reference internal" href="../resource/books%202.html#id9" title="Harry L. Bryden, Hannah R. Longworth, and Stuart A. Cunningham. Slowing of the Atlantic meridional overturning circulation at 25°N. Nature, 438:655–657, 2005. doi:10.1038/nature04385.">2005</a>]</span> (or references therein about computing geostrophic transports from sections).</p>
+<p>See <a class="reference internal" href="../exercise/exercise-geostrophy.html"><span class="doc std std-doc">Ex4</span></a>. You may find it useful to read <span id="id2">Bryden <em>et al.</em> [<a class="reference internal" href="../resource/books%202.html#id4" title="Harry L. Bryden, Hannah R. Longworth, and Stuart A. Cunningham. Slowing of the Atlantic meridional overturning circulation at 25°N. Nature, 438:655–657, 2005. doi:10.1038/nature04385.">2005</a>]</span> (or references therein about computing geostrophic transports from sections).</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>For 30 April:</strong> We will start the class by discussing map projections that you created during exercise 3.</p>
-<p>You should have read <span id="id3">Krause and Tomczak [<a class="reference internal" href="../resource/books%202.html#id14" title="Gunther Krause and Matthias Tomczak. Do marine scientists have a scientific view of the earth? Oceanography, 1995. URL: https://tos.org/oceanography/article/do-marine-scientists-have-a-scientific-view-of-the-earth, doi:10.5670/oceanog.1995.26.">1995</a>]</span> before the computer practical on Apr 23, and prepared figures for the <code class="docutils literal notranslate"><span class="pre">shared_figure/</span></code> folder from <a class="reference internal" href="../exercise/exercise-map.html"><span class="doc std std-doc">exercise 3 - maps</span></a>.</p>
+<p><strong>For 30 April:</strong> Changed on 23 April: Please <em>read</em> the paper on map projections, and we will briefly discuss the paper.  We have otherwise made the second (pyGMT) part of exercise 3 optional.</p>
+<p>You should have read <span id="id3">Krause and Tomczak [<a class="reference internal" href="../resource/books%202.html#id17" title="Gunther Krause and Matthias Tomczak. Do marine scientists have a scientific view of the earth? Oceanography, 1995. URL: https://tos.org/oceanography/article/do-marine-scientists-have-a-scientific-view-of-the-earth, doi:10.5670/oceanog.1995.26.">1995</a>]</span> before the computer practical on Apr 23, and prepared figures for the <code class="docutils literal notranslate"><span class="pre">shared_figure/</span></code> folder from <a class="reference internal" href="../exercise/exercise-map.html"><span class="doc std std-doc">exercise 3 - maps</span></a>.</p>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -481,11 +518,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="../exercise/exercise-git.html"
+       href="amoc_methods.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Exercise 0a - Git</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>AMOC Methods</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -495,6 +532,20 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-session-what-we-did">4.1. Lecture session - what we did</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

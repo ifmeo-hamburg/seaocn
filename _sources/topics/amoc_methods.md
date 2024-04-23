@@ -4,14 +4,14 @@
 Please prepare 2 figures from [Ex4](../exercise/exercise-geostrophy.ipynb) and move to the `shared_figures/` folder of the [gitlab repository](https://gitlab.rrz.uni-hamburg.de/ifmeo/teaching/IfM_SeaOcean/uhh-seaocean-2024/exercises-seaocn/-/tree/main/shared_figures?ref_type=heads)
 ```
 
-```{admonition} Preparation (before class)
-Read one of
-- {cite:t}`Marotzke-2023` 
-- {cite:t}`FrajkaWilliams-etal-2023`
-- {cite:t}`FrajkaWilliams-etal-2019`
-- {cite:t}`McCarthy-etal-2015`
+```{admonition} Recommended reading (before class)
+Read {cite:t}`FrajkaWilliams-etal-2023` - on AMOC measurements and sources of uncertainty/choices (medium detail).
 
-before class
+And (optional) your choice of
+- {cite:t}`Marotzke-2023` 
+- {cite:t}`FrajkaWilliams-etal-2019` - on how the AMOC is measured across the Atlantic (light detail).
+- {cite:t}`McCarthy-etal-2015` - on how the AMOC is computed at 26°N (detailed).
+before class.
 ```
 
 

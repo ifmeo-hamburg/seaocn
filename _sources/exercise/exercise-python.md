@@ -67,9 +67,10 @@ You can get conda here: [https://conda.io/projects/conda/en/latest/user-guide/in
 
 - To create an environment to use for the work in this course, use the `conda create` command as:
 ```
-conda create --channel conda-forge --name seaocn_env matplotlib pandas python numpy xarray gsw netCDF4 jupyterlab scipy cmocean erddapy argopy tqdm 
+conda create --channel conda-forge --name seaocn_env python pandas numpy xarray dask netCDF4 bottleneck scipy matplotlib cartopy cmocean pygmt gsw jupyterlab nb_conda ipykernel nb_conda_kernels erddapy argopy tqdm
 ```
-Note that you can run the line above *without* the equals sign "=" and numbers following.  This specifies versions which worked on my computer in 2024 March.  Without the versions, `conda` will attempt to find for you compatible versions of the packages.
+<!--conda create --channel conda-forge --name seaocn_env xarray python pandas gsw dask netCDF4 bottleneck numpy matplotlib jupyterlab nb_conda jupyter-book ipykernel nb_conda_kernels pygmt cartopy scipy cmocean erddapy argopy tqdm-->
+Note that it can be advantages to install all your packages at once since `conda` (or `mamba`) need to cross-check packages for compatibility upon installation.
 
 - Then activate the environment and install missing packages with pip:
 ```
