@@ -424,14 +424,14 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-data-to-xarray">Convert data to <code class="docutils literal notranslate"><span class="pre">xarray</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-missingdimensionserror">Error: <code class="docutils literal notranslate"><span class="pre">MissingDimensionsError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-locations">Plot data locations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-data-locations">Fig. 1 - Data locations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-data-locations">Fig 1. Data locations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-clip-to-a-region-and-plot">Fig 2. Clip to a region and plot</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-mean-any-obvious-latitudinal-dependence">Remove mean &amp; any obvious latitudinal dependence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-compute-latitudinal-temperature-dependence">Fig. 3 Compute latitudinal temperature dependence</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-compute-latitudinal-temperature-dependence">Fig 3. Compute latitudinal temperature dependence</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-plot-the-process-of-fitting-a-line">Now plot the process of fitting a line</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-remove-outliers-larger-than-3-standard-deviations">(Optional) Remove outliers larger than 3 standard deviations</a></li>
 </ul>
@@ -455,8 +455,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-error-estimate">The error estimate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-the-mean-and-periodic-signals">Removing the mean and periodic signals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-optimal-interpolation">Run the optimal interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-the-mapped-data">Fig 4 Plot the mapped data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot">Fig 5 - Add back in your mean and latitudinal dependence + plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-the-mapped-data">Fig 4. Plot the mapped data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot">Fig 5. Add back in your mean and latitudinal dependence + plot</a></li>
 </ul>
 </li>
 </ul>
@@ -477,6 +477,7 @@ document.write(`
 <p><strong>Data:</strong> Data from early Argo profiles in the North Atlantic, provided in a <code class="docutils literal notranslate"><span class="pre">*.mat</span></code> file.</p>
 <p><strong>Directions:</strong> Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> and figures of the mapped data.</p>
 <p><strong>Demo:</strong> Since this is a more-involved calculation, most of the code has been provided for you below.  There are a few places where you need to make edits/tweaks and choices.  Some of these are indicated by the ellipses <code class="docutils literal notranslate"><span class="pre">...</span></code>.  Others simply say in the text <code class="docutils literal notranslate"><span class="pre">Try</span> <span class="pre">this</span></code>.</p>
+<p><strong>This exercise is based on one from a course by <a class="reference external" href="http://staff.washington.edu/kellyapl/Research.html">Kathie Kelly</a> in 2008.</strong></p>
 <hr>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
@@ -716,16 +717,11 @@ timestamps = pd.to_datetime(datenums-719529, unit=’D’)</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Argo profile locations&#39;)
-</pre></div>
-</div>
-<img alt="../_images/4019a835ba6c4ff900f64da114295e4bd26c90dc6ac2d24b7f5c9ba6e0af4701.png" src="../_images/4019a835ba6c4ff900f64da114295e4bd26c90dc6ac2d24b7f5c9ba6e0af4701.png" />
-</div>
 </div>
 </section>
+</section>
 <section id="fig-1-data-locations">
-<h3>Fig. 1 - Data locations<a class="headerlink" href="#fig-1-data-locations" title="Permalink to this heading">#</a></h3>
+<h2>Fig 1. Data locations<a class="headerlink" href="#fig-1-data-locations" title="Permalink to this heading">#</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">minlat</span> <span class="o">=</span> <span class="mi">40</span>
 <span class="n">maxlat</span> <span class="o">=</span> <span class="mi">50</span>
 <span class="n">minlon</span> <span class="o">=</span> <span class="mi">320</span>
@@ -773,19 +769,7 @@ timestamps = pd.to_datetime(datenums-719529, unit=’D’)</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.DataArray &#39;tprof&#39; (time: 1019)&gt;
-array([20.98333295, 19.66957312, 20.17708576, ...,  7.73461412,
-        8.22999978, 11.18670421])
-Coordinates:
-  * time     (time) float64 7.316e+05 7.316e+05 ... 7.317e+05 7.317e+05
-    pres     uint8 10
-</pre></div>
 </div>
-<img alt="../_images/8dc85f748f30d34ddcaa34c76d8b0ad14b942c08981d504d1d6fec04aa9fead0.png" src="../_images/8dc85f748f30d34ddcaa34c76d8b0ad14b942c08981d504d1d6fec04aa9fead0.png" />
-</div>
-</div>
-</section>
 </section>
 <section id="fig-2-clip-to-a-region-and-plot">
 <h2>Fig 2. Clip to a region and plot<a class="headerlink" href="#fig-2-clip-to-a-region-and-plot" title="Permalink to this heading">#</a></h2>
@@ -836,21 +820,6 @@ Coordinates:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
-Dimensions:     (time: 306, pres: 6)
-Coordinates:
-  * time        (time) float64 7.316e+05 7.316e+05 ... 7.317e+05 7.318e+05
-  * pres        (pres) uint8 10 20 30 40 50 60
-Data variables:
-    tprof       (time, pres) float64 15.19 15.19 15.19 15.19 ... 13.4 13.4 13.4
-    latd        (time) float64 40.3 41.32 41.22 42.56 ... 49.54 49.49 49.86
-    lond        (time) float64 336.5 325.7 326.4 321.2 ... 334.8 335.4 336.6
-    timestamps  (time) datetime64[ns] 2003-01-29T01:04:48.000003584 ... 2003-...
-</pre></div>
-</div>
-<img alt="../_images/33ef10b8c33574ae6583c0721c71d052da857ead784628b7ce8734237537fff4.png" src="../_images/33ef10b8c33574ae6583c0721c71d052da857ead784628b7ce8734237537fff4.png" />
-</div>
 </div>
 <section id="remove-mean-any-obvious-latitudinal-dependence">
 <h3>Remove mean &amp; any obvious latitudinal dependence<a class="headerlink" href="#remove-mean-any-obvious-latitudinal-dependence" title="Permalink to this heading">#</a></h3>
@@ -873,17 +842,11 @@ Data variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1680d78b0&gt;]
-</pre></div>
-</div>
-<img alt="../_images/e882fe28d75bb7c9742c46cca942820320a0dcc33ff5e85a18e7baf9db40c781.png" src="../_images/e882fe28d75bb7c9742c46cca942820320a0dcc33ff5e85a18e7baf9db40c781.png" />
-</div>
 </div>
 </section>
 </section>
 <section id="fig-3-compute-latitudinal-temperature-dependence">
-<h2>Fig. 3 Compute latitudinal temperature dependence<a class="headerlink" href="#fig-3-compute-latitudinal-temperature-dependence" title="Permalink to this heading">#</a></h2>
+<h2>Fig 3. Compute latitudinal temperature dependence<a class="headerlink" href="#fig-3-compute-latitudinal-temperature-dependence" title="Permalink to this heading">#</a></h2>
 <p>Recall from <a class="reference internal" href="exercise-tseries.html"><span class="doc std std-doc">exercise 2a tseries</span></a> how to fit a 1-degree polynomial.</p>
 <ol class="arabic">
 <li><p>Extract data from one pressure level.  Note that the second dimension or axis of the <code class="docutils literal notranslate"><span class="pre">tprof</span></code> dataArray is not unit-length.  Pick one depth surface to use for the later exercises.  Call this vector <code class="docutils literal notranslate"><span class="pre">temp1</span></code> for consistency with later code examples.</p></li>
@@ -942,21 +905,6 @@ Data variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
-Dimensions:     (time: 306, pres: 6)
-Coordinates:
-  * time        (time) float64 7.316e+05 7.316e+05 ... 7.317e+05 7.318e+05
-  * pres        (pres) uint8 10 20 30 40 50 60
-Data variables:
-    tprof       (time, pres) float64 15.19 15.19 15.19 -1.295 ... 2.29 13.4 13.4
-    latd        (time) float64 40.3 41.32 41.22 42.56 ... 49.54 49.49 49.86
-    lond        (time) float64 336.5 325.7 326.4 321.2 ... 334.8 335.4 336.6
-    timestamps  (time) datetime64[ns] 2003-01-29T01:04:48.000003584 ... 2003-...
-    temp_anom   (time) float64 -1.295 0.2814 0.2603 1.461 ... 1.909 1.968 2.29
-</pre></div>
-</div>
-</div>
 </div>
 <section id="now-plot-the-process-of-fitting-a-line">
 <h3>Now plot the process of fitting a line<a class="headerlink" href="#now-plot-the-process-of-fitting-a-line" title="Permalink to this heading">#</a></h3>
@@ -982,9 +930,6 @@ Data variables:
 <span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">&quot;figures/ex5fig3-Example-data_locations-seaocn.png&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/a7ed6a924ebbbe7375f95cb226cfd8d7ff4611b74ebc856c16b4003b8fca9366.png" src="../_images/a7ed6a924ebbbe7375f95cb226cfd8d7ff4611b74ebc856c16b4003b8fca9366.png" />
 </div>
 </div>
 </section>
@@ -1024,11 +969,6 @@ Data variables:
 <span class="n">mq</span> <span class="o">=</span> <span class="n">argo_reg</span><span class="o">.</span><span class="n">temp_anom</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Removed &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mq</span><span class="o">-</span><span class="n">mp</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; values out of a total of &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">mq</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; (&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">(</span><span class="mi">100</span><span class="o">*</span><span class="p">(</span><span class="n">mq</span><span class="o">-</span><span class="n">mp</span><span class="p">)</span><span class="o">/</span><span class="n">mq</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">% o</span><span class="s1">f data points removed)&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Removed 0 values out of a total of 306 (0.0% of data points removed)
 </pre></div>
 </div>
 </div>
@@ -1130,18 +1070,6 @@ Data variables:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
-Dimensions:    (index: 46056)
-Coordinates:
-  * index      (index) float64 0.0 1.0 2.0 3.0 ... 4.605e+04 4.605e+04 4.606e+04
-Data variables:
-    time_diff  (index) float64 3.649 16.83 19.35 6.861 ... 0.078 23.07 22.99
-    distance   (index) float64 912.9 854.7 1.295e+03 ... 42.67 137.8 100.1
-    temp_diff  (index) float64 -1.576 -1.555 -2.756 ... -0.05855 -0.381 -0.3224
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -1192,11 +1120,6 @@ S = \frac{1}{2}&lt;(T_1-T_2)^2&gt;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>numpy.ndarray
-</pre></div>
-</div>
-</div>
 </div>
 <section id="bin-the-structure-function-as-a-function-of-distance">
 <h3>Bin the structure function as a function of distance<a class="headerlink" href="#bin-the-structure-function-as-a-function-of-distance" title="Permalink to this heading">#</a></h3>
@@ -1235,11 +1158,6 @@ S = \frac{1}{2}&lt;(T_1-T_2)^2&gt;
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>899.892683260923
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1252,12 +1170,6 @@ S = \frac{1}{2}&lt;(T_1-T_2)^2&gt;
 <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$T_</span><span class="si">{rms}</span><span class="s1">^2$ [deg C^2]&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$T_{rms}^2$ [deg C^2]&#39;)
-</pre></div>
-</div>
-<img alt="../_images/dda9c29e43bc4a08311f0e3bacec4f7c966f54048c7cd00c7856c1cc5dd88deb.png" src="../_images/dda9c29e43bc4a08311f0e3bacec4f7c966f54048c7cd00c7856c1cc5dd88deb.png" />
 </div>
 </div>
 </section>
@@ -1324,25 +1236,6 @@ cov=var_{signal}*\exp(-ds^2/L_s^2-dt/L_t)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">83</span><span class="p">],</span> <span class="n">line</span> <span class="mi">15</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="n">covx</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="n">var_sig2</span> <span class="o">=</span> <span class="mf">.9</span>
-<span class="ne">---&gt; </span><span class="mi">15</span> <span class="n">covx</span> <span class="o">=</span> <span class="n">my_covar_x</span><span class="p">(</span><span class="n">var_sig2</span><span class="p">,</span> <span class="n">ds</span><span class="p">,</span> <span class="n">Ls</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span> <span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">18</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds</span><span class="p">,</span><span class="n">cov_ds</span><span class="p">)</span>
-
-<span class="nn">Cell In[83], line 9,</span> in <span class="ni">my_covar_x</span><span class="nt">(var_signal, ds, Ls)</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="k">def</span> <span class="nf">my_covar_x</span><span class="p">(</span><span class="n">var_signal</span><span class="p">,</span><span class="n">ds</span><span class="p">,</span><span class="n">Ls</span><span class="p">):</span>
-<span class="ne">----&gt; </span><span class="mi">9</span>     <span class="n">covx</span> <span class="o">=</span> <span class="n">var_signal</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">ds</span><span class="o">/</span><span class="n">Ls</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>     <span class="k">return</span> <span class="n">covx</span>
-
-<span class="ne">TypeError</span>: unsupported operand type(s) for /: &#39;float&#39; and &#39;ellipsis&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -1382,15 +1275,6 @@ cov=var_{signal}*\exp(-ds^2/L_s^2-dt/L_t)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>49.96475363383023
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;$T_{rms}^2$ [deg C^2]&#39;)
-</pre></div>
-</div>
-<img alt="../_images/58460761e060251d3649bbe1df271991173405cea831352161c84d69e083d562.png" src="../_images/58460761e060251d3649bbe1df271991173405cea831352161c84d69e083d562.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1416,12 +1300,6 @@ cov=var_{signal}*\exp(-ds^2/L_s^2-dt/L_t)
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;For Lt = 80days&#39;)
-</pre></div>
-</div>
-<img alt="../_images/df168d51bf3c54528174e65ceca4ed652a8b85e1728c756d70d9e8807e6975ad.png" src="../_images/df168d51bf3c54528174e65ceca4ed652a8b85e1728c756d70d9e8807e6975ad.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1438,7 +1316,7 @@ cov=var_{signal}*\exp(-ds^2/L_s^2-dt/L_t)
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="optimal-interpolation">
 <h1>Optimal interpolation<a class="headerlink" href="#optimal-interpolation" title="Permalink to this heading">#</a></h1>
-<p>Optimal interpolation (or “objective mapping,” as it is frequently called in oceanography, or “kriging” in geophysics) is a procedure for obtaining a map from observations that has the minimum squared error, based on the statistics of the field to be mapped (Bretherton et al, 1976). The unique aspect of this procedure is the error map that accompanies the map of the desired variable.</p>
+<p>Optimal interpolation (or “objective mapping,” as it is frequently called in oceanography, or “kriging” in geophysics) is a procedure for obtaining a map from observations that has the minimum squared error, based on the statistics of the field to be mapped <span id="id3">Bretherton <em>et al.</em> [<a class="reference internal" href="../resource/books.html#id4" title="F. P. Bretherton, R. E. Davis, and C. B. Fandry. A technique for objective analysis and design of oceanographic experiments applied to MODE-73. Deep-Sea Res., 23:559–582, 1976.">1976</a>]</span>. The unique aspect of this procedure is the error map that accompanies the map of the desired variable.</p>
 <p>Why compute an objective map?</p>
 <ul class="simple">
 <li><p>to get a gridded field from irregularly spaced data (for data assimilation or for forcing a model)</p></li>
@@ -1705,7 +1583,7 @@ z = \frac{D^Td_T}{N}
 </div>
 </section>
 <section id="fig-4-plot-the-mapped-data">
-<h2>Fig 4 Plot the mapped data<a class="headerlink" href="#fig-4-plot-the-mapped-data" title="Permalink to this heading">#</a></h2>
+<h2>Fig 4. Plot the mapped data<a class="headerlink" href="#fig-4-plot-the-mapped-data" title="Permalink to this heading">#</a></h2>
 <p>For one of the depth surfaces, plot the mapped data and error estimate.  Basic code is below.  Update for a better projection (e.g. Mercator).</p>
 <p>Be sure to annotate your figure with the choice of <span class="math notranslate nohighlight">\(L_s\)</span>, <span class="math notranslate nohighlight">\(L_t\)</span> and the depth/pressure surface that you are mapping.</p>
 <div class="cell docutils container">
@@ -1728,16 +1606,10 @@ z = \frac{D^Td_T}{N}
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Latitude [$^\\circ$N]&#39;)
-</pre></div>
-</div>
-<img alt="../_images/9dbddabe2d462e825ef63140ec4562a98f366b67b713e356659a19e4ba5260fc.png" src="../_images/9dbddabe2d462e825ef63140ec4562a98f366b67b713e356659a19e4ba5260fc.png" />
-</div>
 </div>
 </section>
 <section id="fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot">
-<h2>Fig 5 - Add back in your mean and latitudinal dependence + plot<a class="headerlink" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot" title="Permalink to this heading">#</a></h2>
+<h2>Fig 5. Add back in your mean and latitudinal dependence + plot<a class="headerlink" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot" title="Permalink to this heading">#</a></h2>
 <p>Note that for the mapped data, you need to do this using your <code class="docutils literal notranslate"><span class="pre">xgrid</span></code> or <code class="docutils literal notranslate"><span class="pre">ygrid</span></code> and with the polynomial fit you identified above.</p>
 <p>Plot the mapped data and save as Fig 5.</p>
 </section>
@@ -1813,14 +1685,14 @@ z = \frac{D^Td_T}{N}
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convert-data-to-xarray">Convert data to <code class="docutils literal notranslate"><span class="pre">xarray</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#error-missingdimensionserror">Error: <code class="docutils literal notranslate"><span class="pre">MissingDimensionsError</span></code></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-data-locations">Plot data locations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-data-locations">Fig. 1 - Data locations</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-1-data-locations">Fig 1. Data locations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-2-clip-to-a-region-and-plot">Fig 2. Clip to a region and plot</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-mean-any-obvious-latitudinal-dependence">Remove mean &amp; any obvious latitudinal dependence</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-compute-latitudinal-temperature-dependence">Fig. 3 Compute latitudinal temperature dependence</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-3-compute-latitudinal-temperature-dependence">Fig 3. Compute latitudinal temperature dependence</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#now-plot-the-process-of-fitting-a-line">Now plot the process of fitting a line</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#optional-remove-outliers-larger-than-3-standard-deviations">(Optional) Remove outliers larger than 3 standard deviations</a></li>
 </ul>
@@ -1844,8 +1716,8 @@ z = \frac{D^Td_T}{N}
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-error-estimate">The error estimate</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-the-mean-and-periodic-signals">Removing the mean and periodic signals</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#run-the-optimal-interpolation">Run the optimal interpolation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-the-mapped-data">Fig 4 Plot the mapped data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot">Fig 5 - Add back in your mean and latitudinal dependence + plot</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-4-plot-the-mapped-data">Fig 4. Plot the mapped data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fig-5-add-back-in-your-mean-and-latitudinal-dependence-plot">Fig 5. Add back in your mean and latitudinal dependence + plot</a></li>
 </ul>
 </li>
 </ul>

@@ -1,9 +1,8 @@
----
-:orphan:
----
 # Assignments
 
-For SuSe24, you will have a choice of assignments.  There should be two people working on each topic, however the work is individual - not group.  You may discuss approaches with others; you may share code for loading datasets; you should decide your own analyses (can be in discussion) and write the code for the analysis yourself.
+<span style="color:red">Please temporarily disregard as this is re-evaluated for 2024</span>
+
+For SuSe24, you will have a choice of assignments.  There should be two people working on each topic, however the work is **individual** - *not group*.  You may discuss approaches with others; you may share code for loading datasets; you should decide your own analyses (can be in discussion) and write the code for the analysis yourself.
 
 **Assignment 1:** You *must* turn in working code in a repository, along with the generated figures and a report.  The code should only need to be adjusted by specifying a different path for the input datasets.  Your report should include a section for *future work*.
 
