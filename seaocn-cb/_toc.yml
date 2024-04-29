@@ -36,6 +36,7 @@ parts:
   - file: exercise/exercise-filter
   - file: exercise/exercise-map 
   - file: exercise/exercise-geostrophy
+  - file: exercise/exercise-optimal-demo
 #  - file: exercise/exercise-hydro
 
 - caption: Assignments
