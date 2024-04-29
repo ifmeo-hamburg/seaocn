@@ -35,7 +35,6 @@
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/myfile 2.css" />
     <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
@@ -69,7 +68,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-geostrophy';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Books + Reading" href="../resource/books.html" />
+    <link rel="next" title="Exercise 5 (demo) - Optimal interpolation" href="exercise-optimal-demo.html" />
     <link rel="prev" title="Exercise 3 - Exploring map projections" href="exercise-map.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -199,6 +198,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 4 -  Slopes &amp; Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-optimal-demo.html">Exercise 5 (demo) - Optimal interpolation</a></li>
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assignment/assignment-1.html">Assignments</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
 <ul class="nav bd-sidenav">
@@ -451,7 +456,7 @@ be determined as</p>
 <li><p>Create an <code class="docutils literal notranslate"><span class="pre">*.ipynb</span></code> containing the commands for this assignment, or copy this file.</p>
 <div class="admonition-file-naming-convention admonition">
 <p class="admonition-title">File naming convention</p>
-<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
+<p>Name your python notebook something useful <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;-&lt;slug&gt;-&lt;Lastname&gt;-seaocn.ipynb</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number and <code class="docutils literal notranslate"><span class="pre">&lt;slug&gt;</span></code> with the short slug to name the topic, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
 <p>Figures should be named something like <code class="docutils literal notranslate"><span class="pre">ex&lt;X&gt;fig&lt;Y&gt;-&lt;Lastname&gt;-&lt;slug&gt;-seaocn.png</span></code> where you replace <code class="docutils literal notranslate"><span class="pre">&lt;X&gt;</span></code> with the exercise number, <code class="docutils literal notranslate"><span class="pre">&lt;Y&gt;</span></code> with the figure number, and <code class="docutils literal notranslate"><span class="pre">&lt;Lastname&gt;</span></code> with your last name.</p>
 </div>
 </li>
@@ -564,7 +569,8 @@ be determined as</p>
 <p>where <span class="math notranslate nohighlight">\(\Phi\)</span> is the dynamic height anomaly and <span class="math notranslate nohighlight">\(\delta\)</span> is the specific volume anomaly (sometimes also denoted by <span class="math notranslate nohighlight">\(\alpha\)</span>).  Between different locations or stations, we calculate geostrophic velocity.  Using the <code class="docutils literal notranslate"><span class="pre">gsw</span></code> toolbox, this is executed as,</p>
 <p>This creates a velocity profile at the mid-point location between the two original stations, where the velocity is zero at the level-of-no-motion (at <span class="math notranslate nohighlight">\(p_{ref}\)</span>).  In equations, this is estimating:</p>
 <div class="math notranslate nohighlight">
-\[f(v-v_{ref}) = g\frac{d\Phi}{dx}\ .\]</div>
+\[f(v-v_{ref}) = \frac{d\Phi}{dx}\ .\]</div>
+<p><span style="color: red;">fixed 24 Apr</span></p>
 <ol class="arabic simple">
 <li><p>Extract the profiles of absolute salinity and conservative temperature closest to the longitudes
 76.75<span class="math notranslate nohighlight">\(^\circ\)</span>W and 76.5<span class="math notranslate nohighlight">\(^\circ\)</span>W. Call them station 1 and station 2, respectively.</p></li>
@@ -655,11 +661,11 @@ can be calculated using <code class="docutils literal notranslate"><span class="
       </div>
     </a>
     <a class="right-next"
-       href="../resource/books.html"
+       href="exercise-optimal-demo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Books + Reading</p>
+        <p class="prev-next-title">Exercise 5 (demo) - Optimal interpolation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -1,0 +1,84 @@
+Traceback (most recent call last):
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/eddifying/micromamba/envs/seaocn_env/lib/python3.8/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# Your code here.  
+
+# Note that several of the below commands produce output, but youll only see the latest output print to the screen.
+# If you want to see the output of the others, encase it with `print(...)`
+type(tprof)
+np.shape(tprof)
+type(latd)
+np.shape(time)
+
+# Now squeeze
+time = time.squeeze()
+pres0 = ...
+latd = ...
+lond = ...
+np.shape(time)
+np.shape(pres0)
+
+# Now create a data array for each of `tprof`, `latd`, `lond`, and `timestamps`.  Use the coordinate `time` and dimensions `time` and `pres0`.
+data_xr = xr.DataArray(name = 'tprof', data = tprof,
+                       coords={'time': time, 'pres': pres0},
+                       dims = ["time", "pres"])
+data_xr2 = ...
+
+data_xr3 = ...
+
+data_xr4 = ...
+
+argo_med = xr.merge([data_xr,data_xr2,data_xr3,data_xr4])
+
+print(argo_med)
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[5], line 19[0m
+[1;32m     16[0m np[38;5;241m.[39mshape(pres0)
+[1;32m     18[0m [38;5;66;03m# Now create a data array for each of `tprof`, `latd`, `lond`, and `timestamps`.  Use the coordinate `time` and dimensions `time` and `pres0`.[39;00m
+[0;32m---> 19[0m data_xr [38;5;241m=[39m [43mxr[49m[38;5;241;43m.[39;49m[43mDataArray[49m[43m([49m[43mname[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mtprof[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[43mdata[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43mtprof[49m[43m,[49m
+[1;32m     20[0m [43m                       [49m[43mcoords[49m[38;5;241;43m=[39;49m[43m{[49m[38;5;124;43m'[39;49m[38;5;124;43mtime[39;49m[38;5;124;43m'[39;49m[43m:[49m[43m [49m[43mtime[49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43mpres[39;49m[38;5;124;43m'[39;49m[43m:[49m[43m [49m[43mpres0[49m[43m}[49m[43m,[49m
+[1;32m     21[0m [43m                       [49m[43mdims[49m[43m [49m[38;5;241;43m=[39;49m[43m [49m[43m[[49m[38;5;124;43m"[39;49m[38;5;124;43mtime[39;49m[38;5;124;43m"[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43mpres[39;49m[38;5;124;43m"[39;49m[43m][49m[43m)[49m
+[1;32m     22[0m data_xr2 [38;5;241m=[39m [38;5;241m.[39m[38;5;241m.[39m[38;5;241m.[39m
+[1;32m     24[0m data_xr3 [38;5;241m=[39m [38;5;241m.[39m[38;5;241m.[39m[38;5;241m.[39m
+
+File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/core/dataarray.py:428[0m, in [0;36mDataArray.__init__[0;34m(self, data, coords, dims, name, attrs, indexes, fastpath)[0m
+[1;32m    426[0m data [38;5;241m=[39m _check_data_shape(data, coords, dims)
+[1;32m    427[0m data [38;5;241m=[39m as_compatible_data(data)
+[0;32m--> 428[0m coords, dims [38;5;241m=[39m [43m_infer_coords_and_dims[49m[43m([49m[43mdata[49m[38;5;241;43m.[39;49m[43mshape[49m[43m,[49m[43m [49m[43mcoords[49m[43m,[49m[43m [49m[43mdims[49m[43m)[49m
+[1;32m    429[0m variable [38;5;241m=[39m Variable(dims, data, attrs, fastpath[38;5;241m=[39m[38;5;28;01mTrue[39;00m)
+[1;32m    430[0m indexes, coords [38;5;241m=[39m _create_indexes_from_coords(coords)
+
+File [0;32m~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/core/dataarray.py:180[0m, in [0;36m_infer_coords_and_dims[0;34m(shape, coords, dims)[0m
+[1;32m    173[0m             [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    174[0m                 [38;5;124mf[39m[38;5;124m"[39m[38;5;124mconflicting sizes for dimension [39m[38;5;132;01m{[39;00md[38;5;132;01m!r}[39;00m[38;5;124m: [39m[38;5;124m"[39m
+[1;32m    175[0m                 [38;5;124mf[39m[38;5;124m"[39m[38;5;124mlength [39m[38;5;132;01m{[39;00msizes[d][38;5;132;01m}[39;00m[38;5;124m on the data but length [39m[38;5;132;01m{[39;00ms[38;5;132;01m}[39;00m[38;5;124m on [39m[38;5;124m"[39m
+[1;32m    176[0m                 [38;5;124mf[39m[38;5;124m"[39m[38;5;124mcoordinate [39m[38;5;132;01m{[39;00mk[38;5;132;01m!r}[39;00m[38;5;124m"[39m
+[1;32m    177[0m             )
+[1;32m    179[0m     [38;5;28;01mif[39;00m k [38;5;129;01min[39;00m sizes [38;5;129;01mand[39;00m v[38;5;241m.[39mshape [38;5;241m!=[39m (sizes[k],):
+[0;32m--> 180[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    181[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mcoordinate [39m[38;5;132;01m{[39;00mk[38;5;132;01m!r}[39;00m[38;5;124m is a DataArray dimension, but [39m[38;5;124m"[39m
+[1;32m    182[0m             [38;5;124mf[39m[38;5;124m"[39m[38;5;124mit has shape [39m[38;5;132;01m{[39;00mv[38;5;241m.[39mshape[38;5;132;01m!r}[39;00m[38;5;124m rather than expected shape [39m[38;5;132;01m{[39;00msizes[k][38;5;132;01m!r}[39;00m[38;5;124m [39m[38;5;124m"[39m
+[1;32m    183[0m             [38;5;124m"[39m[38;5;124mmatching the dimension size[39m[38;5;124m"[39m
+[1;32m    184[0m         )
+[1;32m    186[0m [38;5;28;01mreturn[39;00m new_coords, dims
+
+[0;31mValueError[0m: coordinate 'pres' is a DataArray dimension, but it has shape () rather than expected shape 6 matching the dimension size
+
