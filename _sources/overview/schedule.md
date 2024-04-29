@@ -14,7 +14,7 @@
 | 2 | [Scientific basis](../topics/scientific_basis.md)  | Time series [Ex2a](../exercise/exercise-tseries.ipynb) [Ex2b](../exercise/exercise-filter.ipynb)|
 | 3 | [Instruments & Platforms](../topics/instruments_platforms.md) | Maps [Ex3](../exercise/exercise-map.ipynb) |
 | 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
-| 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation |
+| 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation [Ex5](../exercise/exercise-optimal-demo.ipynb) |
 | 6 | [Experiment Design](../topics/experiment_design.md) | Assignment 1 |
 | 7 | Sampling & Uncertainty  | Assignment 1 |
 | 8 | Cruise anatomy | Assignment 1 |
