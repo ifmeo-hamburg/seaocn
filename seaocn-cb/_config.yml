@@ -52,4 +52,5 @@ parse:
     - linkify
     - dollarmath
     - amsmath
+    - strikethrough
   myst_url_schemes: [mailto, http, https, ftp]

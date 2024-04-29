@@ -17,8 +17,8 @@ parts:
   - file: topics/scientific_basis
   - file: topics/instruments_platforms
   - file: topics/equations_v_data
-#  - file: topics/amoc_methods
-#  - file: topics/experiment_design
+  - file: topics/amoc_methods
+  - file: topics/experiment_design
 #  - file: topics/sampling_uncertainty
 #  - file: topics/cruise_anatomy
 #  - file: topics/sensors
@@ -38,9 +38,9 @@ parts:
   - file: exercise/exercise-geostrophy
 #  - file: exercise/exercise-hydro
 
-#- caption: Assignments
-#  chapters:
-#  - file: assignment/assignment-1
+- caption: Assignments
+  chapters:
+  - file: assignment/assignment-1
 #    sections:
 #    - file: assignment/assignment-1-moored
 #    - file: assignment/assignment-1-profile

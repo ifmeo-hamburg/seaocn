@@ -6,7 +6,7 @@
 # Instruments and platforms (*change week*)
 
 ```{margin} Moodle link
-PDF of slides [here](https://lernen.min.uni-hamburg.de/mod/resource/view.php?id=185190). 
+PDF of slides [here](https://lernen.min.uni-hamburg.de/mod/resource/view.php?id=185190)\ 
 *Added 16 April*
 ```
 
