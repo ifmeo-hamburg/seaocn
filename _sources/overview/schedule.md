@@ -15,10 +15,10 @@
 | 3 | [Instruments & Platforms](../topics/instruments_platforms.md) | Maps [Ex3](../exercise/exercise-map.ipynb) |
 | 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
 | 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation [Ex5](../exercise/exercise-optimal-demo.ipynb) |
-| 6 | [Experiment Design](../topics/experiment_design.md) | Assignment 1 |
-| 7 | Sampling & Uncertainty  | Assignment 1 |
+| 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) |
+| 7 |  Sensors | Assignment 1 |
 | 8 | Cruise anatomy | Assignment 1 |
-| 9 | Sensors | CTD processing |
+| 9 | Sampling & Uncertainty | CTD processing |
 | 10 | Topic (TBD) | Assignment 2 |
 | 11 | Good Scientific Practice | Assignment 2 |
 | 12 | Field Operations  | Assignment 2 |
