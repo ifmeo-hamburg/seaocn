@@ -13,5 +13,6 @@ More to be added.
 References used in this coursebook.
 
 ```{bibliography}
-
 ```
+
+<hr>
