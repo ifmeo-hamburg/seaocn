@@ -26,6 +26,11 @@ before class.
 
 # AMOC Methods
 
+```{margin} Moodle link
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/408777/mod_resource/content/1/amoc_methods-seaocn.pdf)\ 
+*Added 29 April*
+```
+
 We will discuss how to measure the AMOC.
 
 

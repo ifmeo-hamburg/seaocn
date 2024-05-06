@@ -35,13 +35,13 @@ Week 5, 8 and 10 may have deviations from the planned schedule.  This will be an
 2. 9 April  
 3. 16 April  
 4. 23 April  
-5. 30 April - possible deviation
+5. 30 April - possible deviation (no deviation)
 6. 7 May  
 7. 14 May  
 - 21 May - No class: Pfingsten
-8. 28 May - possible deviation (2nd week, Seepraktikum)
+8. 28 May - possible deviation (2nd week, Seepraktikum).  Eleanor not available - alternate instructor.
 9. 4 June - 
-10. 11 June - possible deviation 
+10. 11 June - possible deviation.  Eleanor/Emelie not available - alternate instructor.
 11. 18 June  
 12. 25 June 
 13. 2 July
