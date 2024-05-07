@@ -14,7 +14,7 @@ Using the thermal wind equation, we can estimate the vertical shear in meridiona
 
 4. You will need a metric or metrics over which to evaluate.  Recommended: the transport of the Antilles Current (see {cite:t}`Meinen-etal-2019`) or deep western boundary current (see {cite:t}`Johns-etal-2008`).   
 
-5. Vary the choice of geostrophic reference level according to choices in the published literature for 26°N region.  (See e.g., {cite:t}`Bryden-etal-2005` or Atkinson et al.2011 or Johnson et al. 2008).  Evaluate the effect of your choice on the metric.
+5. Vary the choice of geostrophic reference level according to choices in the published literature for 26°N region.  (See e.g., {cite:t}`Bryden-etal-2005` or {cite:t}`Atkinson-etal-2012` or {cite:t}`Johnson-etal-2008`).  Evaluate the effect of your choice on the metric.
 
 
 
