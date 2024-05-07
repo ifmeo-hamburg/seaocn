@@ -27,7 +27,7 @@ Correct dropouts, quantify bias.  Assess subsampling + *in situ* cals.
 
 :::{grid-item-card} 
 :link: assignment-1-geostrophy.html
-(D) Geostrophy
+(B) Geostrophy
 ^^^
 Evaluating effect of salinity error and/or ref level choice on geostrophic transport.
 
@@ -37,6 +37,12 @@ Quantify sensitivity of transport estimates to error & choices.
 
 ::::
 
+```{note}
+Assignment A "Moored CTD": Katja, Quentin, Simon, Georg, Yves, Anagha
+
+Assignment B "Geostrophy": Mikhail, Leonie, Isabelle, David, Julian, Till
+```
+
 <!--
 **Assignment 2:** You will work on a *different* assignment than you did for assignment 1, from the same list.  You will receive the submitted assignments from the two students who worked on the project.  You will also turn in a repository, generated figures and a report.  You may re-use any code from the students' work on the assignment.  You will be assessed on the quality and completeness of  your final report; improvements relative to assignment 1 will be considered.  I.e., if the problem is answered (and answered well) by the first assignment - then please discuss with Eleanor alternate/additional checks to carry out for redoing it in assignment 2.  Or, if the problem was very difficult, and the assignment 1 submissions only got partway through, then your assignment 2 will be to complete the assessment of the dataset/methodology.
 
@@ -44,3 +50,4 @@ Again, for assignment 2 the work is individual - not group.  You may discuss app
 
 **Note:** The list of choices for Assignment 2 may be reduced.  This may happen, for example, if one of the assignments is deemed intractable in the time alloted.  You should plan to spend about 30 hours on each assignment.  *However*, this is assuming that you have kept up with the exercises in weeks 1-6.
 -->
+
