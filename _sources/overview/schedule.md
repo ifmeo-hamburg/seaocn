@@ -16,7 +16,7 @@
 | 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
 | 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation [Ex5](../exercise/exercise-optimal-demo.ipynb) |
 | 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) |
-| 7 |  Sensors | Assignment 1 |
+| 7 |  [Sensors](../topics/sensors.md) | Assignment 1 [Ex6](../exercise/exercise-ctd-align.ipynb) |
 | 8 | Cruise anatomy | Assignment 1 |
 | 9 | Sampling & Uncertainty | CTD processing |
 | 10 | Topic (TBD) | Assignment 2 |
@@ -40,7 +40,7 @@ Week 5, 8 and 10 may have deviations from the planned schedule.  This will be an
 7. 14 May  
 - 21 May - No class: Pfingsten
 8. 28 May - possible deviation (2nd week, Seepraktikum).  Eleanor not available - alternate instructor.
-9. 4 June - 
+9. 4 June - possible deviation.  Emelie not available.
 10. 11 June - possible deviation.  Eleanor/Emelie not available - alternate instructor.
 11. 18 June  
 12. 25 June 
