@@ -205,6 +205,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 7 (demo) - Gliders in the Baltic</a></li>
 
 
+
+
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -430,21 +434,23 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">0. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#got-an-error">Got an error?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-metadata">Load the metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-data-with-issues">5. Specific data with issues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
 </ul>
@@ -589,151 +595,169 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                   | 0/207 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/207 [00:00&lt;02:05,  1.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/207 [00:00&lt;01:10,  2.91it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                          | 2/207 [00:01&lt;01:48,  1.89it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                          | 2/207 [00:00&lt;01:24,  2.43it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▌                                          | 3/207 [00:01&lt;01:58,  1.72it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▌                                          | 3/207 [00:01&lt;01:24,  2.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▊                                          | 4/207 [00:02&lt;01:40,  2.01it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▊                                          | 4/207 [00:01&lt;01:22,  2.46it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                          | 5/207 [00:03&lt;02:18,  1.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                          | 5/207 [00:02&lt;01:38,  2.05it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▏                                         | 6/207 [00:04&lt;02:36,  1.29it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▏                                         | 6/207 [00:03&lt;02:09,  1.55it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▍                                         | 7/207 [00:05&lt;03:07,  1.07it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▍                                         | 7/207 [00:04&lt;02:39,  1.25it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▋                                         | 8/207 [00:05&lt;02:32,  1.31it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▋                                         | 8/207 [00:04&lt;02:13,  1.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▊                                         | 9/207 [00:08&lt;04:21,  1.32s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▊                                         | 9/207 [00:05&lt;02:39,  1.24it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                        | 10/207 [00:09&lt;04:40,  1.42s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                        | 10/207 [00:06&lt;02:49,  1.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▏                                       | 11/207 [00:11&lt;05:09,  1.58s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▏                                       | 11/207 [00:08&lt;03:48,  1.16s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▍                                       | 12/207 [00:12&lt;04:24,  1.35s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▍                                       | 12/207 [00:09&lt;03:32,  1.09s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▋                                       | 13/207 [00:13&lt;03:21,  1.04s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▋                                       | 13/207 [00:09&lt;02:44,  1.18it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|██▊                                       | 14/207 [00:13&lt;02:46,  1.16it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|██▊                                       | 14/207 [00:10&lt;02:19,  1.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███                                       | 15/207 [00:13&lt;02:19,  1.38it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███                                       | 15/207 [00:10&lt;02:01,  1.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▏                                      | 16/207 [00:14&lt;02:00,  1.59it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▏                                      | 16/207 [00:11&lt;01:48,  1.76it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▍                                      | 17/207 [00:14&lt;01:35,  1.99it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▍                                      | 17/207 [00:11&lt;01:28,  2.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▋                                      | 18/207 [00:14&lt;01:34,  2.01it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▋                                      | 18/207 [00:11&lt;01:26,  2.18it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▊                                      | 19/207 [00:15&lt;01:26,  2.17it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▊                                      | 19/207 [00:12&lt;01:22,  2.28it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████                                      | 20/207 [00:15&lt;01:20,  2.32it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████                                      | 20/207 [00:12&lt;01:18,  2.38it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████▎                                     | 21/207 [00:16&lt;01:21,  2.28it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████▎                                     | 21/207 [00:13&lt;01:19,  2.34it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▍                                     | 22/207 [00:16&lt;01:21,  2.27it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▍                                     | 22/207 [00:13&lt;01:20,  2.29it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▋                                     | 23/207 [00:17&lt;01:25,  2.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▋                                     | 23/207 [00:13&lt;01:24,  2.18it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|████▊                                     | 24/207 [00:17&lt;01:21,  2.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|████▊                                     | 24/207 [00:14&lt;01:19,  2.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████                                     | 25/207 [00:17&lt;01:13,  2.46it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████                                     | 25/207 [00:14&lt;01:12,  2.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▎                                    | 26/207 [00:18&lt;01:08,  2.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▎                                    | 26/207 [00:14&lt;01:07,  2.68it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▍                                    | 27/207 [00:18&lt;01:03,  2.81it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▍                                    | 27/207 [00:15&lt;01:02,  2.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▋                                    | 28/207 [00:18&lt;01:01,  2.92it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▋                                    | 28/207 [00:15&lt;00:59,  3.03it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▉                                    | 29/207 [00:19&lt;01:10,  2.51it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▉                                    | 29/207 [00:16&lt;01:06,  2.66it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|██████                                    | 30/207 [00:19&lt;01:17,  2.29it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|██████                                    | 30/207 [00:16&lt;01:10,  2.51it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▎                                   | 31/207 [00:20&lt;01:10,  2.50it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▎                                   | 31/207 [00:16&lt;01:05,  2.67it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▍                                   | 32/207 [00:20&lt;01:13,  2.39it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▍                                   | 32/207 [00:17&lt;01:08,  2.55it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▋                                   | 33/207 [00:20&lt;01:05,  2.64it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▋                                   | 33/207 [00:17&lt;01:01,  2.85it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▉                                   | 34/207 [00:21&lt;01:04,  2.68it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▉                                   | 34/207 [00:17&lt;01:01,  2.79it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████                                   | 35/207 [00:21&lt;01:06,  2.58it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████                                   | 35/207 [00:18&lt;01:04,  2.65it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████▎                                  | 36/207 [00:22&lt;01:08,  2.51it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████▎                                  | 36/207 [00:18&lt;01:05,  2.61it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▌                                  | 37/207 [00:22&lt;01:21,  2.08it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▌                                  | 37/207 [00:19&lt;01:18,  2.16it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▋                                  | 38/207 [00:23&lt;01:15,  2.23it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▋                                  | 38/207 [00:19&lt;01:14,  2.26it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████▉                                  | 39/207 [00:23&lt;01:12,  2.33it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████▉                                  | 39/207 [00:20&lt;01:10,  2.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|████████                                  | 40/207 [00:23&lt;01:09,  2.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|████████                                  | 40/207 [00:20&lt;01:06,  2.52it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▎                                 | 41/207 [00:24&lt;01:04,  2.56it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▎                                 | 41/207 [00:20&lt;01:00,  2.73it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▌                                 | 42/207 [00:24&lt;01:05,  2.52it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▌                                 | 42/207 [00:21&lt;01:04,  2.57it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▋                                 | 43/207 [00:25&lt;01:07,  2.43it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▋                                 | 43/207 [00:21&lt;01:12,  2.26it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▉                                 | 44/207 [00:25&lt;00:58,  2.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▉                                 | 44/207 [00:22&lt;01:03,  2.58it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▏                                | 45/207 [00:25&lt;01:00,  2.70it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▏                                | 45/207 [00:22&lt;01:04,  2.50it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▎                                | 46/207 [00:26&lt;01:02,  2.57it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▎                                | 46/207 [00:22&lt;01:06,  2.41it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▌                                | 47/207 [00:26&lt;01:03,  2.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▌                                | 47/207 [00:23&lt;01:06,  2.42it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▋                                | 48/207 [00:26&lt;01:03,  2.49it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▋                                | 48/207 [00:23&lt;01:06,  2.40it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▋                                | 48/207 [00:29&lt;01:39,  1.60it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|█████████▉                                | 49/207 [00:26&lt;03:09,  1.20s/it]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████▏                               | 50/207 [00:27&lt;02:28,  1.05it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▎                               | 51/207 [00:27&lt;01:59,  1.31it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▌                               | 52/207 [00:27&lt;01:35,  1.63it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▊                               | 53/207 [00:28&lt;01:26,  1.78it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▉                               | 54/207 [00:29&lt;01:40,  1.52it/s]
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▉                               | 54/207 [00:29&lt;01:24,  1.80it/s]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -930,48 +954,40 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <span class="g g-Whitespace">    </span><span class="mi">211</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">h11</span><span class="o">.</span><span class="n">Data</span><span class="p">):</span>
 <span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="k">yield</span> <span class="nb">bytes</span><span class="p">(</span><span class="n">event</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:221,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">219</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">220</span>     <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">({</span><span class="n">h11</span><span class="o">.</span><span class="n">RemoteProtocolError</span><span class="p">:</span> <span class="n">RemoteProtocolError</span><span class="p">}):</span>
-<span class="ne">--&gt; </span><span class="mi">221</span>         <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">next_event</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">224</span>         <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>             <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="p">)</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/h11/_connection.py:471,</span> in <span class="ni">Connection.next_event</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">469</span> <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_next_receive_event</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">470</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="n">NEED_DATA</span><span class="p">,</span> <span class="n">PAUSED</span><span class="p">]:</span>
-<span class="ne">--&gt; </span><span class="mi">471</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_process_event</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">their_role</span><span class="p">,</span> <span class="n">cast</span><span class="p">(</span><span class="n">Event</span><span class="p">,</span> <span class="n">event</span><span class="p">))</span>
-<span class="g g-Whitespace">    </span><span class="mi">472</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">NEED_DATA</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">473</span>     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_receive_buffer</span><span class="p">)</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">_max_incomplete_event_size</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">474</span>         <span class="c1"># 431 is &quot;Request header fields too large&quot; which is pretty</span>
-<span class="g g-Whitespace">    </span><span class="mi">475</span>         <span class="c1"># much the only situation where we can get here</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/h11/_connection.py:272,</span> in <span class="ni">Connection._process_event</span><span class="nt">(self, role, event)</span>
-<span class="g g-Whitespace">    </span><span class="mi">270</span> <span class="k">if</span> <span class="n">role</span> <span class="ow">is</span> <span class="n">SERVER</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">271</span>     <span class="n">server_switch_event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_server_switch_event</span><span class="p">(</span><span class="n">event</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">272</span> <span class="bp">self</span><span class="o">.</span><span class="n">_cstate</span><span class="o">.</span><span class="n">process_event</span><span class="p">(</span><span class="n">role</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">event</span><span class="p">),</span> <span class="n">server_switch_event</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">274</span> <span class="c1"># Then perform the updates triggered by it.</span>
-<span class="g g-Whitespace">    </span><span class="mi">276</span> <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">event</span><span class="p">)</span> <span class="ow">is</span> <span class="n">Request</span><span class="p">:</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/h11/_state.py:299,</span> in <span class="ni">ConnectionState.process_event</span><span class="nt">(self, role, event_type, server_switch_event)</span>
-<span class="g g-Whitespace">    </span><span class="mi">297</span>     <span class="k">assert</span> <span class="n">role</span> <span class="ow">is</span> <span class="n">CLIENT</span>
-<span class="g g-Whitespace">    </span><span class="mi">298</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_fire_event_triggered_transitions</span><span class="p">(</span><span class="n">SERVER</span><span class="p">,</span> <span class="p">(</span><span class="n">Request</span><span class="p">,</span> <span class="n">CLIENT</span><span class="p">))</span>
-<span class="ne">--&gt; </span><span class="mi">299</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fire_state_triggered_transitions</span><span class="p">()</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/h11/_state.py:321,</span> in <span class="ni">ConnectionState._fire_state_triggered_transitions</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">318</span> <span class="k">def</span> <span class="nf">_fire_state_triggered_transitions</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">319</span>     <span class="c1"># We apply these rules repeatedly until converging on a fixed point</span>
-<span class="g g-Whitespace">    </span><span class="mi">320</span>     <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">321</span>         <span class="n">start_states</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">states</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">323</span>         <span class="c1"># It could happen that both these special-case transitions are</span>
-<span class="g g-Whitespace">    </span><span class="mi">324</span>         <span class="c1"># enabled at the same time:</span>
-<span class="g g-Whitespace">    </span><span class="mi">325</span>         <span class="c1">#</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:224,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">next_event</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">224</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># If we feed this case through h11 we&#39;ll raise an exception like:</span>
+<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="c1">#</span>
+<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="c1">#     httpcore.RemoteProtocolError: can&#39;t handle event type</span>
    <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">334</span>         <span class="c1"># request, in which case the client will go back to DONE and then</span>
-<span class="g g-Whitespace">    </span><span class="mi">335</span>         <span class="c1"># from there to MUST_CLOSE.</span>
-<span class="g g-Whitespace">    </span><span class="mi">336</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pending_switch_proposals</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="c1"># perspective. Instead we handle this case distinctly and treat</span>
+<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="c1"># it as a ConnectError.</span>
+<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">their_state</span> <span class="o">==</span> <span class="n">h11</span><span class="o">.</span><span class="n">SEND_RESPONSE</span><span class="p">:</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_backends/sync.py:126,</span> in <span class="ni">SyncStream.read</span><span class="nt">(self, max_bytes, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">(</span><span class="n">exc_map</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">max_bytes</span><span class="p">)</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1259,</span> in <span class="ni">SSLSocket.recv</span><span class="nt">(self, buflen, flags)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1256</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1257</span>             <span class="s2">&quot;non-zero flags not allowed in calls to recv() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
+<span class="g g-Whitespace">   </span><span class="mi">1258</span>             <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buflen</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1260</span> <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1261</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">buflen</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
+
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1134,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">else</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1134</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1135</span> <span class="k">except</span> <span class="n">SSLError</span> <span class="k">as</span> <span class="n">x</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1136</span>     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">SSL_ERROR_EOF</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppress_ragged_eofs</span><span class="p">:</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -984,10 +1000,11 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </div>
 <p>We just downloaded information on all the datasets (but not the data!) so that now we can just find the specific datasets we want based on specific criteria.</p>
 </section>
-<section id="download-the-glider-data">
-<h2>1. Download the glider data<a class="headerlink" href="#download-the-glider-data" title="Permalink to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="download-the-glider-data">
+<h1>1. Download the glider data<a class="headerlink" href="#download-the-glider-data" title="Permalink to this heading">#</a></h1>
 <section id="aland-sea-data">
-<h3>Åland sea data<a class="headerlink" href="#aland-sea-data" title="Permalink to this heading">#</a></h3>
+<h2>Åland sea data<a class="headerlink" href="#aland-sea-data" title="Permalink to this heading">#</a></h2>
 <p>Åland Sea or the Sea of Åland is between Sweden and Finland.  It’s a narrow strait with  stratification and  currents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1055,7 +1072,6 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </div>
 </div>
 </div>
-</section>
 <section id="inspect-the-data">
 <h3>Inspect the data<a class="headerlink" href="#inspect-the-data" title="Permalink to this heading">#</a></h3>
 <p>To start with, let’s take a look at our data.  We can do this by simply printing to the screen once we know which dataset we’re looking for.</p>
@@ -1155,8 +1171,9 @@ nrt_SEA076_M24
 </div>
 </div>
 </section>
-<section id="baltic-inflow">
-<h2>2. Baltic inflow<a class="headerlink" href="#baltic-inflow" title="Permalink to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="baltic-inflow">
+<h1>2. Baltic inflow<a class="headerlink" href="#baltic-inflow" title="Permalink to this heading">#</a></h1>
 <p>What are Baltic Inflows?</p>
 <p>The deep water in the Baltic Proper is renewed during specific conditions: when salt water from the Kattegat flows through the Belt and the Sound, and fills in turn the deep areas of the Arkona Basin, the Bornholm Basin, the Eastern Gotland Basin and the western Gotland Basin. They manifest as bottom gravity currents.</p>
 <p>The Baltic Sea is a very enclosed sea characterized by brakish waters, and salt water only enters through the narrow Danish straits. Water masses change in the upper layers and interlayer, but not near the bottom. The deep waters of the Baltic sea are anoxic. When large amounts of salty water from the North Sea enters the Baltic, this salty and dense oxygen-rich water can replace the anoxic deep water. Such events are called Major Baltic Inflows (MBI) which are a necessary phenomena as they allow oxygen to be replenished in the deepest parts of the Baltic.</p>
@@ -1231,12 +1248,12 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 <section id="info">
-<h3>Info<a class="headerlink" href="#info" title="Permalink to this heading">#</a></h3>
+<h2>Info<a class="headerlink" href="#info" title="Permalink to this heading">#</a></h2>
 <p>There are issues with some of the oxygen data and more info can be found here <a class="reference external" href="https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf">https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf</a></p>
 </section>
 </section>
-<section id="hans-storm">
-<h2>3. Hans storm<a class="headerlink" href="#hans-storm" title="Permalink to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="hans-storm">
+<h1>3. Hans storm<a class="headerlink" href="#hans-storm" title="Permalink to this heading">#</a></h1>
 <p><a class="reference external" href="https://www.krisinformation.se/en/hazards-and-risks/disasters-and-incidents/2023/storm-hans">https://www.krisinformation.se/en/hazards-and-risks/disasters-and-incidents/2023/storm-hans</a></p>
 <p><a class="reference external" href="https://www.theguardian.com/world/2023/aug/08/storm-hans-causes-havoc-in-norway-with-heaviest-rain-in-25-years-forecast">https://www.theguardian.com/world/2023/aug/08/storm-hans-causes-havoc-in-norway-with-heaviest-rain-in-25-years-forecast</a></p>
 <p><a class="reference external" href="https://www.su.se/department-of-geological-sciences/news/hans-is-the-perfect-storm-globalwarming-contributed-1.664948">https://www.su.se/department-of-geological-sciences/news/hans-is-the-perfect-storm-globalwarming-contributed-1.664948</a></p>
@@ -1400,8 +1417,8 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </section>
-<section id="spring-blooms">
-<h2>4. Spring blooms<a class="headerlink" href="#spring-blooms" title="Permalink to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="spring-blooms">
+<h1>4. Spring blooms<a class="headerlink" href="#spring-blooms" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Bornholm&#39;</span><span class="p">,</span><span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">,</span><span class="n">rectangle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1410,7 +1427,7 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 <section id="id1">
-<h3>Info<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
+<h2>Info<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>There are issues with some of the oxygen data and more info can be found here <a class="reference external" href="https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf">https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1426,7 +1443,6 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </div>
-</section>
 </section>
 <section id="specific-data-with-issues">
 <h2>5. Specific data with issues<a class="headerlink" href="#specific-data-with-issues" title="Permalink to this heading">#</a></h2>
@@ -1576,21 +1592,23 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">0. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#got-an-error">Got an error?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-metadata">Load the metadata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-data-with-issues">5. Specific data with issues</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
 </ul>
