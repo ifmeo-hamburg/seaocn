@@ -206,9 +206,6 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-
-
-
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -431,28 +428,22 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-this-python-notebook">Structure of this python notebook:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">0. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">1. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#got-an-error">Got an error?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-metadata">Load the metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-metadata-first">2. Load metadata first</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-glider-data">3. Download glider data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-aland-sea-data">a. Åland sea data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-data-with-issues">5. Specific data with issues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-baltic-inflow">b. Baltic inflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-hans-storm">c. Hans storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-spring-blooms">d. Spring blooms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-specific-data-with-issues">e. Specific data with issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-raw-data">Note on Raw data</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
@@ -527,7 +518,7 @@ document.write(`
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="erddap-how-to-access-data">
-<h1>0. ERDDAP-How to access data<a class="headerlink" href="#erddap-how-to-access-data" title="Permalink to this heading">#</a></h1>
+<h1>1. ERDDAP-How to access data<a class="headerlink" href="#erddap-how-to-access-data" title="Permalink to this heading">#</a></h1>
 <p>We need some functions in order to download data from ERDDAP.  You will get these from <code class="docutils literal notranslate"><span class="pre">erddap_demo</span></code> which can be found here: <a class="github reference external" href="https://github.com/voto-ocean-knowledge/erddap_demo">voto-ocean-knowledge/erddap_demo</a></p>
 <p>Use git clone to get this on your computer and the adjust the path in order to import all the functions OR just download the one file <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> from the repository.</p>
 <div class="admonition-warning admonition">
@@ -555,8 +546,8 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <p>If you got an error trying to <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">utils</span></code> (or after renaming, <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">erddaputils</span></code>) it may be because the file is not available on your “path”.  The “path” is all the places that python will search for the file.  Update your path using <code class="docutils literal notranslate"><span class="pre">sys.path.append</span></code> OR move <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> (or <code class="docutils literal notranslate"><span class="pre">erddaputils.py</span></code>) to your working directory.  Or, if you haven’t already renamed <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> from this github package, then try renaming it since your python may be trying to load a <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> from somewhere else.</p>
 <p>Note that when you copy it, you will want the actual code (if you open <code class="docutils literal notranslate"><span class="pre">utils.py</span></code> it should look like python code).  If you have a bunch of stuff that looks like HTML (i.e., lines that start with <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> and end with <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>) then you haven’t copied the raw file when you downloaded it from the git repository, so try the download again.</p>
 <hr></section>
-<section id="load-the-metadata">
-<h2>Load the metadata<a class="headerlink" href="#load-the-metadata" title="Permalink to this heading">#</a></h2>
+<section id="load-metadata-first">
+<h2>2. Load metadata first<a class="headerlink" href="#load-metadata-first" title="Permalink to this heading">#</a></h2>
 <p>In the next section, we will download the metadata for the VOTO data to find datasets we’re interested in.  Even though we are only downloading meta data, this still takes a while (2-5 minutes).  Wait until the pink progress bar has completed before continuing.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -595,169 +586,10 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                   | 0/207 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/207 [00:00&lt;01:10,  2.91it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/207 [00:01&lt;06:20,  1.85s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                          | 2/207 [00:00&lt;01:24,  2.43it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▌                                          | 3/207 [00:01&lt;01:24,  2.41it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▊                                          | 4/207 [00:01&lt;01:22,  2.46it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                          | 5/207 [00:02&lt;01:38,  2.05it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▏                                         | 6/207 [00:03&lt;02:09,  1.55it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▍                                         | 7/207 [00:04&lt;02:39,  1.25it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▋                                         | 8/207 [00:04&lt;02:13,  1.50it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▊                                         | 9/207 [00:05&lt;02:39,  1.24it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                        | 10/207 [00:06&lt;02:49,  1.16it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▏                                       | 11/207 [00:08&lt;03:48,  1.16s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▍                                       | 12/207 [00:09&lt;03:32,  1.09s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▋                                       | 13/207 [00:09&lt;02:44,  1.18it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|██▊                                       | 14/207 [00:10&lt;02:19,  1.38it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███                                       | 15/207 [00:10&lt;02:01,  1.57it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▏                                      | 16/207 [00:11&lt;01:48,  1.76it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▍                                      | 17/207 [00:11&lt;01:28,  2.16it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▋                                      | 18/207 [00:11&lt;01:26,  2.18it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▊                                      | 19/207 [00:12&lt;01:22,  2.28it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████                                      | 20/207 [00:12&lt;01:18,  2.38it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████▎                                     | 21/207 [00:13&lt;01:19,  2.34it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▍                                     | 22/207 [00:13&lt;01:20,  2.29it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▋                                     | 23/207 [00:13&lt;01:24,  2.18it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|████▊                                     | 24/207 [00:14&lt;01:19,  2.30it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████                                     | 25/207 [00:14&lt;01:12,  2.50it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▎                                    | 26/207 [00:14&lt;01:07,  2.68it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▍                                    | 27/207 [00:15&lt;01:02,  2.87it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▋                                    | 28/207 [00:15&lt;00:59,  3.03it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▉                                    | 29/207 [00:16&lt;01:06,  2.66it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|██████                                    | 30/207 [00:16&lt;01:10,  2.51it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▎                                   | 31/207 [00:16&lt;01:05,  2.67it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▍                                   | 32/207 [00:17&lt;01:08,  2.55it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▋                                   | 33/207 [00:17&lt;01:01,  2.85it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▉                                   | 34/207 [00:17&lt;01:01,  2.79it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████                                   | 35/207 [00:18&lt;01:04,  2.65it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████▎                                  | 36/207 [00:18&lt;01:05,  2.61it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▌                                  | 37/207 [00:19&lt;01:18,  2.16it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▋                                  | 38/207 [00:19&lt;01:14,  2.26it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████▉                                  | 39/207 [00:20&lt;01:10,  2.40it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|████████                                  | 40/207 [00:20&lt;01:06,  2.52it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▎                                 | 41/207 [00:20&lt;01:00,  2.73it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▌                                 | 42/207 [00:21&lt;01:04,  2.57it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▋                                 | 43/207 [00:21&lt;01:12,  2.26it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▉                                 | 44/207 [00:22&lt;01:03,  2.58it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▏                                | 45/207 [00:22&lt;01:04,  2.50it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▎                                | 46/207 [00:22&lt;01:06,  2.41it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▌                                | 47/207 [00:23&lt;01:06,  2.42it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▋                                | 48/207 [00:23&lt;01:06,  2.40it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|█████████▉                                | 49/207 [00:26&lt;03:09,  1.20s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████▏                               | 50/207 [00:27&lt;02:28,  1.05it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▎                               | 51/207 [00:27&lt;01:59,  1.31it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▌                               | 52/207 [00:27&lt;01:35,  1.63it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▊                               | 53/207 [00:28&lt;01:26,  1.78it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▉                               | 54/207 [00:29&lt;01:40,  1.52it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▉                               | 54/207 [00:29&lt;01:24,  1.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                        | 1/207 [00:29&lt;1:42:58, 29.99s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -1001,10 +833,10 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <p>We just downloaded information on all the datasets (but not the data!) so that now we can just find the specific datasets we want based on specific criteria.</p>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="download-the-glider-data">
-<h1>1. Download the glider data<a class="headerlink" href="#download-the-glider-data" title="Permalink to this heading">#</a></h1>
-<section id="aland-sea-data">
-<h2>Åland sea data<a class="headerlink" href="#aland-sea-data" title="Permalink to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="download-glider-data">
+<h1>3. Download glider data<a class="headerlink" href="#download-glider-data" title="Permalink to this heading">#</a></h1>
+<section id="a-aland-sea-data">
+<h2>a. Åland sea data<a class="headerlink" href="#a-aland-sea-data" title="Permalink to this heading">#</a></h2>
 <p>Åland Sea or the Sea of Åland is between Sweden and Finland.  It’s a narrow strait with  stratification and  currents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1018,11 +850,6 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 5 datasets in Åland: [&#39;nrt_SEA076_M21&#39;, &#39;nrt_SEA076_M24&#39;, &#39;nrt_SEA077_M29&#39;, &#39;nrt_SEA056_M68&#39;, &#39;nrt_SEA078_M24&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <p><strong>Near-real time vs delayed-mode data</strong></p>
 <p>In this exercise, we will only use near-real time (NRT) data and not delayed mode as it would be way slower otherwise.</p>
@@ -1033,41 +860,6 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Download the glider dataset using the optional argument `nrt_only=True`</span>
 <span class="n">ds_nrt</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">download_glider_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">nrt_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/5 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA076_M21
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|██████████████████████▍                                                                                         | 1/5 [00:01&lt;00:05,  1.27s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA076_M24
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 40%|████████████████████████████████████████████▊                                                                   | 2/5 [00:02&lt;00:04,  1.49s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M29
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 60%|███████████████████████████████████████████████████████████████████▏                                            | 3/5 [00:04&lt;00:02,  1.37s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA056_M68
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 80%|█████████████████████████████████████████████████████████████████████████████████████████▌                      | 4/5 [00:05&lt;00:01,  1.23s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA078_M24
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 5/5 [00:06&lt;00:00,  1.34s/it]
 </pre></div>
 </div>
 </div>
@@ -1111,9 +903,8 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </div>
 </div>
 </section>
-</section>
 <section id="concatenate-datasets">
-<h2>Concatenate datasets<a class="headerlink" href="#concatenate-datasets" title="Permalink to this heading">#</a></h2>
+<h3>Concatenate datasets<a class="headerlink" href="#concatenate-datasets" title="Permalink to this heading">#</a></h3>
 <p>From above, we see that there were five missions of gliders to the Åland Sea.  Rather than dealing with them separately, let’s put them all together in a single xarray DataArray.  We are going to use datasets 0 and 1 only:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">choose_name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;nrt_SEA076_M21&#39;</span><span class="p">,</span> <span class="s1">&#39;nrt_SEA076_M24&#39;</span><span class="p">]</span>
 </pre></div>
@@ -1124,12 +915,6 @@ Observations portal VOTO <a class="reference external" href="https://observation
 
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">choose_name</span><span class="p">)):</span>        
     <span class="nb">print</span><span class="p">(</span><span class="n">choose_name</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nrt_SEA076_M21
-nrt_SEA076_M24
 </pre></div>
 </div>
 </div>
@@ -1152,28 +937,11 @@ nrt_SEA076_M24
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">full_data</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Cycle through each of the glider datasets listed in `name`</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
-<span class="nn">      6     # For each dataset, append it to the data</span> in <span class="ni">full_data </span><span class="nt">(starts empty, and grows)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">full_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_nrt</span><span class="p">[</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_vars</span><span class="p">([</span><span class="s2">&quot;backscatter_raw&quot;</span><span class="p">,</span><span class="s2">&quot;backscatter_scaled&quot;</span><span class="p">,</span><span class="s2">&quot;particulate_backscatter&quot;</span><span class="p">,</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>                                                 <span class="s2">&quot;phycocyanin&quot;</span><span class="p">,</span><span class="s2">&quot;phycocyanin_raw&quot;</span><span class="p">,</span><span class="s2">&quot;cdom&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_qc&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_raw&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_raw_qc&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span>                                                <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Concatenate datasets together along the time dimension</span>
-
-<span class="ne">NameError</span>: name &#39;name&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="baltic-inflow">
-<h1>2. Baltic inflow<a class="headerlink" href="#baltic-inflow" title="Permalink to this heading">#</a></h1>
+<section id="b-baltic-inflow">
+<h2>b. Baltic inflow<a class="headerlink" href="#b-baltic-inflow" title="Permalink to this heading">#</a></h2>
 <p>What are Baltic Inflows?</p>
 <p>The deep water in the Baltic Proper is renewed during specific conditions: when salt water from the Kattegat flows through the Belt and the Sound, and fills in turn the deep areas of the Arkona Basin, the Bornholm Basin, the Eastern Gotland Basin and the western Gotland Basin. They manifest as bottom gravity currents.</p>
 <p>The Baltic Sea is a very enclosed sea characterized by brakish waters, and salt water only enters through the narrow Danish straits. Water masses change in the upper layers and interlayer, but not near the bottom. The deep waters of the Baltic sea are anoxic. When large amounts of salty water from the North Sea enters the Baltic, this salty and dense oxygen-rich water can replace the anoxic deep water. Such events are called Major Baltic Inflows (MBI) which are a necessary phenomena as they allow oxygen to be replenished in the deepest parts of the Baltic.</p>
@@ -1247,13 +1015,11 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </div>
-<section id="info">
-<h2>Info<a class="headerlink" href="#info" title="Permalink to this heading">#</a></h2>
+<p><strong>Info</strong></p>
 <p>There are issues with some of the oxygen data and more info can be found here <a class="reference external" href="https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf">https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf</a></p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="hans-storm">
-<h1>3. Hans storm<a class="headerlink" href="#hans-storm" title="Permalink to this heading">#</a></h1>
+<section id="c-hans-storm">
+<h2>c. Hans storm<a class="headerlink" href="#c-hans-storm" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.krisinformation.se/en/hazards-and-risks/disasters-and-incidents/2023/storm-hans">https://www.krisinformation.se/en/hazards-and-risks/disasters-and-incidents/2023/storm-hans</a></p>
 <p><a class="reference external" href="https://www.theguardian.com/world/2023/aug/08/storm-hans-causes-havoc-in-norway-with-heaviest-rain-in-25-years-forecast">https://www.theguardian.com/world/2023/aug/08/storm-hans-causes-havoc-in-norway-with-heaviest-rain-in-25-years-forecast</a></p>
 <p><a class="reference external" href="https://www.su.se/department-of-geological-sciences/news/hans-is-the-perfect-storm-globalwarming-contributed-1.664948">https://www.su.se/department-of-geological-sciences/news/hans-is-the-perfect-storm-globalwarming-contributed-1.664948</a></p>
@@ -1417,8 +1183,8 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="spring-blooms">
-<h1>4. Spring blooms<a class="headerlink" href="#spring-blooms" title="Permalink to this heading">#</a></h1>
+<section id="d-spring-blooms">
+<h2>d. Spring blooms<a class="headerlink" href="#d-spring-blooms" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Bornholm&#39;</span><span class="p">,</span><span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">,</span><span class="n">rectangle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
@@ -1426,8 +1192,7 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </div>
-<section id="id1">
-<h2>Info<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p><strong>Info</strong></p>
 <p>There are issues with some of the oxygen data and more info can be found here <a class="reference external" href="https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf">https://observations.voiceoftheocean.org/static/img/reports/Quality_Issue_1_AROD.pdf</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1444,8 +1209,8 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </section>
-<section id="specific-data-with-issues">
-<h2>5. Specific data with issues<a class="headerlink" href="#specific-data-with-issues" title="Permalink to this heading">#</a></h2>
+<section id="e-specific-data-with-issues">
+<h2>e. Specific data with issues<a class="headerlink" href="#e-specific-data-with-issues" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SEA070 with pumped SeaBird CTD</span>
@@ -1496,8 +1261,9 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </div>
 </div>
 </section>
-<section id="this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">
-<h2>This is all raw data and many adjustments have to be applied and various issues soruces should be considered<a class="headerlink" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered" title="Permalink to this heading">#</a></h2>
+<section id="note-on-raw-data">
+<h2>Note on Raw data<a class="headerlink" href="#note-on-raw-data" title="Permalink to this heading">#</a></h2>
+<p>These are all raw data and many adjustments have to be applied and various issues/sources should be considered.  These include:</p>
 <ul class="simple">
 <li><p>Thermal hysteresis</p></li>
 <li><p>Quenching corrections</p></li>
@@ -1506,7 +1272,7 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 <li><p>Outliers</p></li>
 <li><p>Sensor failure</p></li>
 <li><p>Specific sensor issues (FLBBPC issues, FLBBCD issues, AROD and CODA issues)</p></li>
-<li></li>
+<li><p>other?</p></li>
 </ul>
 </section>
 </section>
@@ -1589,28 +1355,22 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#structure-of-this-python-notebook">Structure of this python notebook:</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">0. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#erddap-how-to-access-data">1. ERDDAP-How to access data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#got-an-error">Got an error?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-metadata">Load the metadata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-metadata-first">2. Load metadata first</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-the-glider-data">1. Download the glider data</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aland-sea-data">Åland sea data</a><ul class="nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#download-glider-data">3. Download glider data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-aland-sea-data">a. Åland sea data</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inspect-the-data">Inspect the data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenate-datasets">Concatenate datasets</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#baltic-inflow">2. Baltic inflow</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#info">Info</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hans-storm">3. Hans storm</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#spring-blooms">4. Spring blooms</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Info</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-data-with-issues">5. Specific data with issues</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#b-baltic-inflow">b. Baltic inflow</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#c-hans-storm">c. Hans storm</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-spring-blooms">d. Spring blooms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#e-specific-data-with-issues">e. Specific data with issues</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-on-raw-data">Note on Raw data</a></li>
 </ul>
 </li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
