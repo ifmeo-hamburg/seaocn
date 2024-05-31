@@ -18,7 +18,7 @@
 | 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) |
 | 7 |  [Sensors](../topics/sensors.md) | Assignment 1 (CTD processing [Ex6](../exercise/exercise-ctd-align.ipynb)) |
 | 8 | ~~Cruise anatomy~~ | Assignment 1 |
-| 9 | Cruise anatomy + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
+| 9 | Cruise anatomy + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) <span style="color:red">A1: due 7 June</span>|
 | 10 | AMOC methods 2 (Simon) | Assignment 2 |
 | 11 | Sampling & Uncertainty | Assignment 2 |
 | 12 | Good Scientific Practice  | Assignment 2 |
@@ -39,13 +39,13 @@ Week 5, 8 and 10 may have deviations from the planned schedule.  This will be an
 6. 7 May  
 7. 14 May  
 - 21 May - No class: Pfingsten
-8. 28 May - possible deviation (2nd week, Seepraktikum).  Eleanor not available - alternate instructor.
-9. 4 June - possible deviation.  Emelie not available.
-10. 11 June - possible deviation.  Eleanor/Emelie not available - alternate instructor.
+8. 28 May - possible deviation (2nd week, Seepraktikum).  Eleanor not available - no alternate instructor.
+9. 4 June - ~~possible deviation~~.  Emelie not available / Eleanor at exercises.
+10. 11 June - possible deviation.  Eleanor/Emelie not available - alternate instructor: Simon Wett.
 11. 18 June  
 12. 25 June 
 13. 2 July
-14. 9 July
+14. 9 July - possible deviation.  Eleanor not available.
 
 
 <!--
