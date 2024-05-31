@@ -16,14 +16,14 @@
 | 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
 | 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation [Ex5](../exercise/exercise-optimal-demo.ipynb) |
 | 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) |
-| 7 |  [Sensors](../topics/sensors.md) | Assignment 1 [Ex6](../exercise/exercise-ctd-align.ipynb) |
-| 8 | Cruise anatomy | Assignment 1 |
-| 9 | Sampling & Uncertainty | CTD processing |
-| 10 | Topic (TBD) | Assignment 2 |
-| 11 | Good Scientific Practice | Assignment 2 |
-| 12 | Field Operations  | Assignment 2 |
-| 13 | Topic (TBD) | Student presentations |
-| 14 | Topic (TBD) | Student presentations |
+| 7 |  [Sensors](../topics/sensors.md) | Assignment 1 (CTD processing [Ex6](../exercise/exercise-ctd-align.ipynb)) |
+| 8 | ~~Cruise anatomy~~ | Assignment 1 |
+| 9 | Cruise anatomy + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
+| 10 | AMOC methods 2 (Simon) | Assignment 2 |
+| 11 | Sampling & Uncertainty | Assignment 2 |
+| 12 | Good Scientific Practice  | Assignment 2 |
+| 13 | Field Operations | Student presentations |
+| 14 | Topic TBD  | Student presentations |
 ```
 
 

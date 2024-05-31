@@ -1,6 +1,6 @@
 # Assignments
 
-<span style="color:red">Due 3 June</span>
+<span style="color:red">~~Due 3 June~~ Due 7 June (Friday) </span>
 
 For SuSe24, you will have a choice of assignments.  Half the class will work on one problem, half on the other.  However the work is **individual** - *not group*.  You may discuss approaches with others; you may share code for loading datasets; you should decide your own analyses (can be in discussion) and write the code for the analysis yourself.
 

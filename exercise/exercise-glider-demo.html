@@ -68,6 +68,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/exercise-glider-demo';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Assignments" href="../assignment/assignment-1.html" />
+    <link rel="prev" title="Exercise 6 - CTD Alignment" href="exercise-ctd-align.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -186,7 +188,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../topics/sensors.html">7. Sensors</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 1 - Profile data</a></li>
@@ -200,6 +202,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="exercise-optimal-demo.html">Exercise 5 (demo) - Optimal interpolation</a></li>
 
 <li class="toctree-l1"><a class="reference internal" href="exercise-ctd-align.html">Exercise 6 - CTD Alignment</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Exercise 6 (demo) - Gliders in the Baltic</a></li>
+
+
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
 <ul class="nav bd-sidenav">
@@ -444,6 +449,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
 </ul>
 
             </nav>
@@ -458,10 +464,10 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="exercise-6-demo-gliders-in-the-baltic">
 <h1>Exercise 6 (demo) - Gliders in the Baltic<a class="headerlink" href="#exercise-6-demo-gliders-in-the-baltic" title="Permalink to this heading">#</a></h1>
-<p><strong>Aim:</strong> To look at a new dataset and assess whether you think there may be any problems.</p>
+<p><strong>Aim:</strong> To see a different platform in action, collecting CTD (and other data). The example dataset chosen here also has some “issues”, so you can also see whether you can find a way to plot the data to display the issue.</p>
 <!--**Learning outcomes:** Using what you've learned so far, you will apply this knowledge to a new dataset that you haven't previously encountered.  You will be able to apply your knowledge of sensor response, ocean-knowing-measurements, and python to articulate (and quantify) a possible issue with a dataset.  You will also see an example of how data can be loaded from the internet directly into python.-->
 <p><strong>Data:</strong> You will work with data from <a class="reference external" href="https://voiceoftheocean.org">Voice of the Ocean (VOTO)</a> collected in the Baltic Sea.</p>
-<p><strong>Directions:</strong> Run the python code step by step, and use it to</p>
+<p><strong>Directions:</strong> Run the python code step by step, and use it to download some data, make some starter plots, and then add some additional plots at the end yourself.</p>
 <!--**Measure of success:** You will have created a python notebook, a netCDF file (*not* added to the git repository) and the 5 figures exported as `*.png` format into your folder; these will be "commited" and "pushed" to the shared repository, and viewable by everyone.  Additionally, copy your 2 best figures to the `shared_figures/` folder for discussion.  -->
 <hr><section id="update-your-environment">
 <h2>Update your environment<a class="headerlink" href="#update-your-environment" title="Permalink to this heading">#</a></h2>
@@ -560,7 +566,7 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>found 516 datasets
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>found 521 datasets
 </pre></div>
 </div>
 </div>
@@ -580,172 +586,76 @@ Observations portal VOTO <a class="reference external" href="https://observation
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                   | 0/204 [00:00&lt;?, ?it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                   | 0/207 [00:00&lt;?, ?it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/204 [00:00&lt;01:16,  2.65it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|▏                                          | 1/207 [00:00&lt;01:50,  1.87it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                          | 2/204 [00:00&lt;01:27,  2.30it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▍                                          | 2/207 [00:01&lt;02:13,  1.54it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▋                                          | 3/204 [00:01&lt;01:23,  2.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1%|▌                                          | 3/207 [00:01&lt;02:09,  1.58it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▊                                          | 4/204 [00:01&lt;01:19,  2.53it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|▊                                          | 4/207 [00:02&lt;01:56,  1.75it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                          | 5/204 [00:02&lt;01:41,  1.96it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  2%|█                                          | 5/207 [00:03&lt;02:11,  1.53it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▎                                         | 6/204 [00:03&lt;02:08,  1.54it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▏                                         | 6/207 [00:07&lt;06:00,  1.79s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▍                                         | 7/204 [00:04&lt;02:41,  1.22it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  3%|█▍                                         | 7/207 [00:11&lt;08:22,  2.51s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▋                                         | 8/204 [00:04&lt;02:18,  1.42it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▋                                         | 8/207 [00:12&lt;06:44,  2.03s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▉                                         | 9/204 [00:06&lt;02:51,  1.13it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  4%|█▊                                         | 9/207 [00:15&lt;08:14,  2.50s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                        | 10/204 [00:07&lt;02:58,  1.09it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██                                        | 10/207 [00:17&lt;07:25,  2.26s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▎                                       | 11/204 [00:08&lt;03:51,  1.20s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  5%|██▏                                       | 11/207 [00:20&lt;08:37,  2.64s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▍                                       | 12/204 [00:09&lt;03:23,  1.06s/it]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▍                                       | 12/207 [00:22&lt;07:28,  2.30s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▋                                       | 13/204 [00:10&lt;02:37,  1.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██▋                                       | 13/207 [00:22&lt;05:32,  1.71s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|██▉                                       | 14/204 [00:10&lt;02:14,  1.41it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|██▊                                       | 14/207 [00:23&lt;04:33,  1.42s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███                                       | 15/204 [00:10&lt;01:55,  1.63it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  7%|███                                       | 15/207 [00:24&lt;03:45,  1.18s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▎                                      | 16/204 [00:11&lt;01:44,  1.79it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▏                                      | 16/207 [00:24&lt;03:05,  1.03it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▌                                      | 17/204 [00:11&lt;01:25,  2.19it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  8%|███▍                                      | 17/207 [00:24&lt;02:20,  1.35it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▋                                      | 18/204 [00:11&lt;01:26,  2.15it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▋                                      | 18/207 [00:25&lt;02:25,  1.30it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▉                                      | 19/204 [00:12&lt;01:22,  2.24it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  9%|███▊                                      | 19/207 [00:26&lt;02:21,  1.33it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████                                      | 20/204 [00:12&lt;01:18,  2.35it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████                                      | 20/207 [00:28&lt;03:10,  1.02s/it]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████▎                                     | 21/204 [00:13&lt;01:20,  2.28it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 10%|████▎                                     | 21/207 [00:28&lt;03:03,  1.01it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▌                                     | 22/204 [00:13&lt;01:22,  2.21it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▍                                     | 22/207 [00:29&lt;02:59,  1.03it/s]
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▋                                     | 23/204 [00:14&lt;01:26,  2.09it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|████▉                                     | 24/204 [00:14&lt;01:17,  2.31it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████▏                                    | 25/204 [00:14&lt;01:11,  2.49it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▎                                    | 26/204 [00:15&lt;01:07,  2.63it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 13%|█████▌                                    | 27/204 [00:15&lt;01:03,  2.78it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▊                                    | 28/204 [00:15&lt;01:01,  2.86it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 14%|█████▉                                    | 29/204 [00:16&lt;01:09,  2.54it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▏                                   | 30/204 [00:16&lt;01:15,  2.30it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 15%|██████▍                                   | 31/204 [00:17&lt;01:10,  2.45it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▌                                   | 32/204 [00:17&lt;01:12,  2.36it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|██████▊                                   | 33/204 [00:18&lt;01:06,  2.58it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████                                   | 34/204 [00:18&lt;01:04,  2.64it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 17%|███████▏                                  | 35/204 [00:18&lt;01:08,  2.48it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▍                                  | 36/204 [00:19&lt;01:09,  2.43it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 18%|███████▌                                  | 37/204 [00:19&lt;01:21,  2.06it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|███████▊                                  | 38/204 [00:20&lt;01:15,  2.21it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|████████                                  | 39/204 [00:20&lt;01:10,  2.34it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▏                                 | 40/204 [00:21&lt;01:06,  2.45it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 20%|████████▍                                 | 41/204 [00:21&lt;01:02,  2.61it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▋                                 | 42/204 [00:21&lt;01:05,  2.48it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|████████▊                                 | 43/204 [00:22&lt;01:07,  2.39it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████                                 | 44/204 [00:22&lt;01:00,  2.66it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|█████████▎                                | 45/204 [00:22&lt;01:02,  2.55it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▍                                | 46/204 [00:23&lt;01:03,  2.49it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 23%|█████████▋                                | 47/204 [00:23&lt;01:04,  2.43it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|█████████▉                                | 48/204 [00:24&lt;01:05,  2.40it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 24%|██████████                                | 49/204 [00:27&lt;03:02,  1.18s/it]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▎                               | 50/204 [00:27&lt;02:24,  1.06it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▌                               | 51/204 [00:27&lt;01:55,  1.33it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|██████████▋                               | 52/204 [00:28&lt;01:32,  1.64it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|██████████▉                               | 53/204 [00:28&lt;01:23,  1.82it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████                               | 54/204 [00:29&lt;01:34,  1.58it/s]
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|███████████                               | 54/204 [00:29&lt;01:23,  1.80it/s]
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████▍                                     | 22/207 [00:29&lt;04:12,  1.36s/it]
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
@@ -945,77 +855,74 @@ Observations portal VOTO <a class="reference external" href="https://observation
 <span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="c1"># In this case we clear the connection and try again.</span>
 <span class="g g-Whitespace">    </span><span class="mi">204</span>     <span class="n">pool_request</span><span class="o">.</span><span class="n">clear_connection</span><span class="p">()</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/connection.py:101,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/connection.py:99,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_connect_failed</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="k">raise</span> <span class="n">exc</span>
-<span class="ne">--&gt; </span><span class="mi">101</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">99</span>     <span class="k">raise</span> <span class="n">exc</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span><span class="o">.</span><span class="n">handle_request</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:143,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span><span class="s2">&quot;response_closed&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">142</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_response_closed</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">143</span> <span class="k">raise</span> <span class="n">exc</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/connection.py:76,</span> in <span class="ni">HTTPConnection.handle_request</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> <span class="k">with</span> <span class="bp">self</span><span class="o">.</span><span class="n">_request_lock</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connection</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">76</span>         <span class="n">stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_connect</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">78</span>         <span class="n">ssl_object</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">get_extra_info</span><span class="p">(</span><span class="s2">&quot;ssl_object&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span>         <span class="n">http2_negotiated</span> <span class="o">=</span> <span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span>             <span class="n">ssl_object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">81</span>             <span class="ow">and</span> <span class="n">ssl_object</span><span class="o">.</span><span class="n">selected_alpn_protocol</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;h2&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>         <span class="p">)</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:113,</span> in <span class="ni">HTTP11Connection.handle_request</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">102</span>     <span class="k">pass</span>
-<span class="g g-Whitespace">    </span><span class="mi">104</span> <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">105</span>     <span class="s2">&quot;receive_response_headers&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span>     <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">110</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">111</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">112</span>         <span class="n">trailing_data</span><span class="p">,</span>
-<span class="ne">--&gt; </span><span class="mi">113</span>     <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_response_headers</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="n">trace</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">115</span>         <span class="n">http_version</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">116</span>         <span class="n">status</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">117</span>         <span class="n">reason_phrase</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="n">headers</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">119</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">121</span> <span class="n">network_stream</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/connection.py:154,</span> in <span class="ni">HTTPConnection._connect</span><span class="nt">(self, request)</span>
+<span class="g g-Whitespace">    </span><span class="mi">147</span>     <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">    </span><span class="mi">148</span>         <span class="s2">&quot;ssl_context&quot;</span><span class="p">:</span> <span class="n">ssl_context</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">149</span>         <span class="s2">&quot;server_hostname&quot;</span><span class="p">:</span> <span class="n">sni_hostname</span>
+<span class="g g-Whitespace">    </span><span class="mi">150</span>         <span class="ow">or</span> <span class="bp">self</span><span class="o">.</span><span class="n">_origin</span><span class="o">.</span><span class="n">host</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">    </span><span class="mi">151</span>         <span class="s2">&quot;timeout&quot;</span><span class="p">:</span> <span class="n">timeout</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">152</span>     <span class="p">}</span>
+<span class="g g-Whitespace">    </span><span class="mi">153</span>     <span class="k">with</span> <span class="n">Trace</span><span class="p">(</span><span class="s2">&quot;start_tls&quot;</span><span class="p">,</span> <span class="n">logger</span><span class="p">,</span> <span class="n">request</span><span class="p">,</span> <span class="n">kwargs</span><span class="p">)</span> <span class="k">as</span> <span class="n">trace</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">154</span>         <span class="n">stream</span> <span class="o">=</span> <span class="n">stream</span><span class="o">.</span><span class="n">start_tls</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">155</span>         <span class="n">trace</span><span class="o">.</span><span class="n">return_value</span> <span class="o">=</span> <span class="n">stream</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span> <span class="k">return</span> <span class="n">stream</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:186,</span> in <span class="ni">HTTP11Connection._receive_response_headers</span><span class="nt">(self, request)</span>
-<span class="g g-Whitespace">    </span><span class="mi">183</span> <span class="n">timeout</span> <span class="o">=</span> <span class="n">timeouts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;read&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">185</span> <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">186</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_receive_event</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">187</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="n">h11</span><span class="o">.</span><span class="n">Response</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">188</span>         <span class="k">break</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_backends/sync.py:163,</span> in <span class="ni">SyncStream.start_tls</span><span class="nt">(self, ssl_context, server_hostname, timeout)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>         <span class="n">sock</span> <span class="o">=</span> <span class="n">ssl_context</span><span class="o">.</span><span class="n">wrap_socket</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">164</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="p">,</span> <span class="n">server_hostname</span><span class="o">=</span><span class="n">server_hostname</span>
+<span class="g g-Whitespace">    </span><span class="mi">165</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">166</span> <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>  <span class="c1"># pragma: nocover</span>
+<span class="g g-Whitespace">    </span><span class="mi">167</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_sync/http11.py:224,</span> in <span class="ni">HTTP11Connection._receive_event</span><span class="nt">(self, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">221</span>     <span class="n">event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">next_event</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">223</span> <span class="k">if</span> <span class="n">event</span> <span class="ow">is</span> <span class="n">h11</span><span class="o">.</span><span class="n">NEED_DATA</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">224</span>     <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_network_stream</span><span class="o">.</span><span class="n">read</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">225</span>         <span class="bp">self</span><span class="o">.</span><span class="n">READ_NUM_BYTES</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span>
-<span class="g g-Whitespace">    </span><span class="mi">226</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">228</span>     <span class="c1"># If we feed this case through h11 we&#39;ll raise an exception like:</span>
-<span class="g g-Whitespace">    </span><span class="mi">229</span>     <span class="c1">#</span>
-<span class="g g-Whitespace">    </span><span class="mi">230</span>     <span class="c1">#     httpcore.RemoteProtocolError: can&#39;t handle event type</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">234</span>     <span class="c1"># perspective. Instead we handle this case distinctly and treat</span>
-<span class="g g-Whitespace">    </span><span class="mi">235</span>     <span class="c1"># it as a ConnectError.</span>
-<span class="g g-Whitespace">    </span><span class="mi">236</span>     <span class="k">if</span> <span class="n">data</span> <span class="o">==</span> <span class="sa">b</span><span class="s2">&quot;&quot;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_h11_state</span><span class="o">.</span><span class="n">their_state</span> <span class="o">==</span> <span class="n">h11</span><span class="o">.</span><span class="n">SEND_RESPONSE</span><span class="p">:</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:500,</span> in <span class="ni">SSLContext.wrap_socket</span><span class="nt">(self, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, session)</span>
+<span class="g g-Whitespace">    </span><span class="mi">494</span> <span class="k">def</span> <span class="nf">wrap_socket</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sock</span><span class="p">,</span> <span class="n">server_side</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">495</span>                 <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">496</span>                 <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">497</span>                 <span class="n">server_hostname</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">498</span>     <span class="c1"># SSLSocket class handles server_hostname encoding before it calls</span>
+<span class="g g-Whitespace">    </span><span class="mi">499</span>     <span class="c1"># ctx._wrap_socket()</span>
+<span class="ne">--&gt; </span><span class="mi">500</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">sslsocket_class</span><span class="o">.</span><span class="n">_create</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">501</span>         <span class="n">sock</span><span class="o">=</span><span class="n">sock</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">502</span>         <span class="n">server_side</span><span class="o">=</span><span class="n">server_side</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">503</span>         <span class="n">do_handshake_on_connect</span><span class="o">=</span><span class="n">do_handshake_on_connect</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">504</span>         <span class="n">suppress_ragged_eofs</span><span class="o">=</span><span class="n">suppress_ragged_eofs</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">505</span>         <span class="n">server_hostname</span><span class="o">=</span><span class="n">server_hostname</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">506</span>         <span class="n">context</span><span class="o">=</span><span class="bp">self</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span>         <span class="n">session</span><span class="o">=</span><span class="n">session</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span>     <span class="p">)</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/httpcore/_backends/sync.py:126,</span> in <span class="ni">SyncStream.read</span><span class="nt">(self, max_bytes, timeout)</span>
-<span class="g g-Whitespace">    </span><span class="mi">124</span> <span class="k">with</span> <span class="n">map_exceptions</span><span class="p">(</span><span class="n">exc_map</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">126</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">max_bytes</span><span class="p">)</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1073,</span> in <span class="ni">SSLSocket._create</span><span class="nt">(cls, sock, server_side, do_handshake_on_connect, suppress_ragged_eofs, server_hostname, context, session)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1070</span>         <span class="k">if</span> <span class="n">timeout</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1071</span>             <span class="c1"># non-blocking</span>
+<span class="g g-Whitespace">   </span><span class="mi">1072</span>             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;do_handshake_on_connect should not be specified for non-blocking sockets&quot;</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1073</span>         <span class="bp">self</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1074</span> <span class="k">except</span> <span class="p">(</span><span class="ne">OSError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">):</span>
+<span class="g g-Whitespace">   </span><span class="mi">1075</span>     <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1259,</span> in <span class="ni">SSLSocket.recv</span><span class="nt">(self, buflen, flags)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1255</span>     <span class="k">if</span> <span class="n">flags</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1256</span>         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1257</span>             <span class="s2">&quot;non-zero flags not allowed in calls to recv() on </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span>
-<span class="g g-Whitespace">   </span><span class="mi">1258</span>             <span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
-<span class="ne">-&gt; </span><span class="mi">1259</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">buflen</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1260</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1261</span>     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="n">buflen</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1134,</span> in <span class="ni">SSLSocket.read</span><span class="nt">(self, len, buffer)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1132</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">buffer</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1133</span>     <span class="k">else</span><span class="p">:</span>
-<span class="ne">-&gt; </span><span class="mi">1134</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">len</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1135</span> <span class="k">except</span> <span class="n">SSLError</span> <span class="k">as</span> <span class="n">x</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1136</span>     <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">args</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">SSL_ERROR_EOF</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppress_ragged_eofs</span><span class="p">:</span>
+<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/ssl.py:1342,</span> in <span class="ni">SSLSocket.do_handshake</span><span class="nt">(self, block)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1340</span>     <span class="k">if</span> <span class="n">timeout</span> <span class="o">==</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">block</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1341</span>         <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1342</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_sslobj</span><span class="o">.</span><span class="n">do_handshake</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">1343</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1344</span>     <span class="bp">self</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
 
 <span class="ne">KeyboardInterrupt</span>: 
 </pre></div>
@@ -1181,41 +1088,19 @@ nrt_SEA076_M24
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;xarray.Dataset&gt;
-Dimensions:                        (time: 244115)
-Coordinates:
-    latitude                       (time) float64 60.01 60.01 ... 60.01 60.01
-    longitude                      (time) float64 19.69 19.69 ... 19.68 19.68
-  * time                           (time) datetime64[ns] 2023-11-17T12:25:02....
-    depth                          (time) float64 0.08757 0.08608 ... 1.741
-Data variables: (12/52)
-    ad2cp_beam1_cell_number1       (time) float32 nan nan nan ... 0.13 -0.04
-    ad2cp_beam2_cell_number1       (time) float32 nan nan nan ... 0.08 -0.15
-    ad2cp_beam3_cell_number1       (time) float32 nan nan nan ... -0.14 0.04
-    ad2cp_beam4_cell_number1       (time) float32 nan nan nan ... 0.03 -0.13
-    ad2cp_heading                  (time) float32 nan nan nan ... 195.1 177.1
-    ad2cp_pitch                    (time) float32 nan nan nan ... -60.9 -61.7
-    ...                             ...
-    security_level                 (time) float32 0.0 0.0 0.0 ... 0.0 0.0 0.0
-    temperature                    (time) float32 1.635 1.654 1.644 ... 2.38 nan
-    temperature_oxygen             (time) float32 3.375 3.483 ... 2.376 2.38
-    temperature_qc                 (time) float32 1.0 1.0 1.0 ... 1.0 1.0 1.0
-    vertical_distance_to_seafloor  (time) float32 nan nan nan ... nan nan nan
-    voltage                        (time) float32 29.2 29.2 29.2 ... 24.2 24.2
-Attributes: (12/76)
-    acknowledgement:               This study used data collected and made fr...
-    AD2CP:                         {&#39;calibration_date&#39;: &#39;2023-08-16&#39;, &#39;factor...
-    basin:                         Åland Sea
-    cdm_data_type:                 TimeSeries
-    cdm_timeseries_variables:      profile_index
-    comment:                       deployment and recovery in Gotland
-    ...                            ...
-    title:                         Fibbla76-20231117T1225
-    total_dives:                   207.0
-    transmission_system:           IRIDIUM
-    variables:                     time\nlatitude\nlongitude\nnav_state\nhead...
-    Westernmost_Easting:           19.290116666666666
-    wmo_id:                        6801665
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">full_data</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Cycle through each of the glider datasets listed in `name`</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">name</span><span class="p">)):</span>
+<span class="nn">      6     # For each dataset, append it to the data</span> in <span class="ni">full_data </span><span class="nt">(starts empty, and grows)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">full_data</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_nrt</span><span class="p">[</span><span class="n">name</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">.</span><span class="n">drop_vars</span><span class="p">([</span><span class="s2">&quot;backscatter_raw&quot;</span><span class="p">,</span><span class="s2">&quot;backscatter_scaled&quot;</span><span class="p">,</span><span class="s2">&quot;particulate_backscatter&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>                                                 <span class="s2">&quot;phycocyanin&quot;</span><span class="p">,</span><span class="s2">&quot;phycocyanin_raw&quot;</span><span class="p">,</span><span class="s2">&quot;cdom&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_qc&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_raw&quot;</span><span class="p">,</span><span class="s2">&quot;cdom_raw_qc&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span>                                                <span class="n">errors</span><span class="o">=</span><span class="s2">&quot;ignore&quot;</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="c1"># Concatenate datasets together along the time dimension</span>
+
+<span class="ne">NameError</span>: name &#39;name&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1247,68 +1132,10 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 8 datasets in Bornholm: [&#39;nrt_SEA068_M30&#39;, &#39;nrt_SEA063_M69&#39;, &#39;nrt_SEA063_M71&#39;, &#39;nrt_SEA063_M72&#39;, &#39;nrt_SEA067_M51&#39;, &#39;nrt_SEA067_M53&#39;, &#39;nrt_SEA067_M55&#39;, &#39;nrt_SEA067_M56&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_nrt</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">download_glider_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">nrt_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/8 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA068_M30
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|██████████████                                                                                                  | 1/8 [00:00&lt;00:03,  1.89it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M69
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|████████████████████████████                                                                                    | 2/8 [00:01&lt;00:03,  1.91it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M71
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|██████████████████████████████████████████                                                                      | 3/8 [00:01&lt;00:02,  2.04it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M72
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|████████████████████████████████████████████████████████                                                        | 4/8 [00:01&lt;00:01,  2.06it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M51
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|██████████████████████████████████████████████████████████████████████                                          | 5/8 [00:02&lt;00:01,  2.07it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M53
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|████████████████████████████████████████████████████████████████████████████████████                            | 6/8 [00:02&lt;00:00,  2.10it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M55
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 88%|██████████████████████████████████████████████████████████████████████████████████████████████████              | 7/8 [00:03&lt;00:00,  2.16it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M56
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 8/8 [00:03&lt;00:00,  2.10it/s]
 </pre></div>
 </div>
 </div>
@@ -1353,15 +1180,6 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;)]
-</pre></div>
-</div>
-<img alt="../_images/a7667df2118c416304747057e496da0de68e4b3cefd6cd4a3d211c5e10787440.png" src="../_images/a7667df2118c416304747057e496da0de68e4b3cefd6cd4a3d211c5e10787440.png" />
-</div>
 </div>
 <section id="info">
 <h3>Info<a class="headerlink" href="#info" title="Permalink to this heading">#</a></h3>
@@ -1387,74 +1205,10 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found 9 datasets between July 1st 2023 and September 1st 2023: [&#39;nrt_SEA069_M15&#39;, &#39;nrt_SEA063_M62&#39;, &#39;nrt_SEA063_M63&#39;, &#39;nrt_SEA044_M83&#39;, &#39;nrt_SEA044_M84&#39;, &#39;nrt_SEA044_M85&#39;, &#39;nrt_SEA067_M46&#39;, &#39;nrt_SEA077_M24&#39;, &#39;nrt_SEA078_M14&#39;]
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_nrt</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">download_glider_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">nrt_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/9 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M15
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████████████▍                                                                                                   | 1/9 [00:00&lt;00:03,  2.35it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M62
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|████████████████████████▉                                                                                       | 2/9 [00:00&lt;00:03,  2.25it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M63
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|█████████████████████████████████████▎                                                                          | 3/9 [00:01&lt;00:02,  2.23it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M83
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|█████████████████████████████████████████████████▊                                                              | 4/9 [00:01&lt;00:02,  2.17it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M84
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████████████████████████████████████▏                                                 | 5/9 [00:02&lt;00:01,  2.15it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M85
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████████████████████████████████████████████████████████████████████████▋                                     | 6/9 [00:02&lt;00:01,  2.11it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M46
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 78%|███████████████████████████████████████████████████████████████████████████████████████                         | 7/9 [00:03&lt;00:00,  2.18it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M24
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|███████████████████████████████████████████████████████████████████████████████████████████████████▌            | 8/9 [00:04&lt;00:00,  1.62it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA078_M14
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:07&lt;00:00,  1.23it/s]
 </pre></div>
 </div>
 </div>
@@ -1479,108 +1233,10 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Glider</th>
-      <th>Location</th>
-      <th>Mission</th>
-      <th>Start_Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td>SEA063</td>
-      <td>Bornholm Basin</td>
-      <td>62</td>
-      <td>2023-07-08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>SEA044</td>
-      <td>Skagerrak, Kattegat</td>
-      <td>83</td>
-      <td>2023-07-10</td>
-    </tr>
-    <tr>
-      <th>0</th>
-      <td>SEA069</td>
-      <td>Bornholm Basin</td>
-      <td>15</td>
-      <td>2023-07-26</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>SEA067</td>
-      <td>Bornholm Basin</td>
-      <td>46</td>
-      <td>2023-07-26</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>SEA077</td>
-      <td>Eastern Gotland Basin, Northern Baltic Proper</td>
-      <td>24</td>
-      <td>2023-07-28</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>SEA078</td>
-      <td>Western Gotland Basin</td>
-      <td>14</td>
-      <td>2023-07-28</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>SEA044</td>
-      <td>Skagerrak, Kattegat</td>
-      <td>84</td>
-      <td>2023-08-04</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>SEA063</td>
-      <td>Bornholm Basin</td>
-      <td>63</td>
-      <td>2023-08-11</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>SEA044</td>
-      <td>Skagerrak, Kattegat</td>
-      <td>85</td>
-      <td>2023-08-23</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;We have data from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">Location</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span><span class="si">}</span><span class="s1"> different sites during this period: </span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">Location</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>We have data from 4 different sites during this period: [&#39;Bornholm Basin&#39; &#39;Skagerrak, Kattegat&#39;
- &#39;Eastern Gotland Basin, Northern Baltic Proper&#39; &#39;Western Gotland Basin&#39;]
 </pre></div>
 </div>
 </div>
@@ -1664,33 +1320,12 @@ The last  comparable one was over 5 years ago. The inflow corresponds to 1.6 Gt 
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 4/4 [00:00&lt;00:00, 78.14it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M15
-Downloading nrt_SEA063_M62
-Downloading nrt_SEA063_M63
-Downloading nrt_SEA067_M46
-</pre></div>
-</div>
-<img alt="../_images/3d40e378b93bd446ea8542f02e725a7c490cae6bd32157aeb82287a7502effe3.png" src="../_images/3d40e378b93bd446ea8542f02e725a7c490cae6bd32157aeb82287a7502effe3.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Eastern Gotland&#39;</span><span class="p">,</span><span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2023-09-01&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00, 61.35it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M24
-</pre></div>
-</div>
-<img alt="../_images/a567923538d28b5c61661e5b8fd0a7f2f427088127f04b4ba40b5696a009f5d6.png" src="../_images/a567923538d28b5c61661e5b8fd0a7f2f427088127f04b4ba40b5696a009f5d6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1699,32 +1334,12 @@ Downloading nrt_SEA067_M46
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [00:00&lt;00:00, 62.24it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA078_M14
-</pre></div>
-</div>
-<img alt="../_images/b5dbfe1e71ebd6b7f78123490f333f471825d5532c4ec1acb1447249b495f2b5.png" src="../_images/b5dbfe1e71ebd6b7f78123490f333f471825d5532c4ec1acb1447249b495f2b5.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Kattegat&#39;</span><span class="p">,</span> <span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2023-09-01&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3/3 [00:00&lt;00:00, 86.63it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M83
-Downloading nrt_SEA044_M84
-Downloading nrt_SEA044_M85
-</pre></div>
-</div>
-<img alt="../_images/e2e4dee5108989b4f89608c8f5722bfe741f6aec6e2a93086c3a9e1fe25697ee.png" src="../_images/e2e4dee5108989b4f89608c8f5722bfe741f6aec6e2a93086c3a9e1fe25697ee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1733,18 +1348,6 @@ Downloading nrt_SEA044_M85
 <span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Western Gotland&#39;</span><span class="p">,</span><span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-07-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2023-09-01&#39;</span><span class="p">,</span> <span class="n">delayed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/1 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found delayed_SEA078_M14 in voto_erddap_data_cache. Loading from disk
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1/1 [01:19&lt;00:00, 79.06s/it]
-</pre></div>
-</div>
-<img alt="../_images/7a8554adb934da7a7275050cb8bdf80d7fdc43f6491036ce05872f0455fb3955.png" src="../_images/7a8554adb934da7a7275050cb8bdf80d7fdc43f6491036ce05872f0455fb3955.png" />
 </div>
 </div>
 </section>
@@ -1756,96 +1359,6 @@ Downloading nrt_SEA044_M85
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                       | 0/19 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M15
-Downloading nrt_SEA045_M74
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|███████████▋                                                                                                   | 2/19 [00:00&lt;00:04,  3.62it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA045_M75
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 16%|█████████████████▌                                                                                             | 3/19 [00:00&lt;00:05,  2.94it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA045_M79
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 21%|███████████████████████▎                                                                                       | 4/19 [00:01&lt;00:05,  2.54it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M55
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 26%|█████████████████████████████▏                                                                                 | 5/19 [00:01&lt;00:05,  2.49it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M60
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 32%|███████████████████████████████████                                                                            | 6/19 [00:02&lt;00:05,  2.42it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M62
-Downloading nrt_SEA063_M63
-Downloading nrt_SEA063_M65
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 47%|████████████████████████████████████████████████████▌                                                          | 9/19 [00:02&lt;00:02,  3.82it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M67
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 53%|█████████████████████████████████████████████████████████▉                                                    | 10/19 [00:03&lt;00:02,  3.45it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA063_M69
-Downloading nrt_SEA067_M41
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 63%|█████████████████████████████████████████████████████████████████████▍                                        | 12/19 [00:03&lt;00:01,  3.76it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M42
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 68%|███████████████████████████████████████████████████████████████████████████▎                                  | 13/19 [00:04&lt;00:01,  3.20it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M44
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 74%|█████████████████████████████████████████████████████████████████████████████████                             | 14/19 [00:04&lt;00:01,  2.92it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA067_M46
-Downloading nrt_SEA067_M51
-Downloading nrt_SEA077_M18
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|██████████████████████████████████████████████████████████████████████████████████████████████████▍           | 17/19 [00:05&lt;00:00,  4.00it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA056_M64
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 95%|████████████████████████████████████████████████████████████████████████████████████████████████████████▏     | 18/19 [00:05&lt;00:00,  3.44it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA056_M66
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 19/19 [00:05&lt;00:00,  3.18it/s]
-</pre></div>
-</div>
-<img alt="../_images/0b8a9ded0db46f1158e7f43ab5cfa3fbfe295d4dd4ff7a295f605a320ec4dec1.png" src="../_images/0b8a9ded0db46f1158e7f43ab5cfa3fbfe295d4dd4ff7a295f605a320ec4dec1.png" />
-</div>
 </div>
 <section id="id1">
 <h3>Info<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
@@ -1856,154 +1369,12 @@ Downloading nrt_SEA077_M18
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/9 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA076_M16
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 11%|████████████▍                                                                                                   | 1/9 [00:03&lt;00:31,  4.00s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA079_M12
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 22%|████████████████████████▉                                                                                       | 2/9 [00:05&lt;00:16,  2.29s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA079_M14
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 33%|█████████████████████████████████████▎                                                                          | 3/9 [00:05&lt;00:09,  1.65s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA079_M16
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|█████████████████████████████████████████████████▊                                                              | 4/9 [00:06&lt;00:06,  1.34s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M21
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████████████████████████████████████▏                                                 | 5/9 [00:07&lt;00:04,  1.14s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M22
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 67%|██████████████████████████████████████████████████████████████████████████▋                                     | 6/9 [00:08&lt;00:03,  1.07s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M24
-Downloading nrt_SEA077_M25
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 89%|███████████████████████████████████████████████████████████████████████████████████████████████████▌            | 8/9 [00:09&lt;00:00,  1.33it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA077_M28
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:10&lt;00:00,  1.15s/it]
-</pre></div>
-</div>
-<img alt="../_images/779f211c0c8466f450ea914cb6bb54f66ec7854abd04049dc08d371fefacc0f5.png" src="../_images/779f211c0c8466f450ea914cb6bb54f66ec7854abd04049dc08d371fefacc0f5.png" />
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plot_sel_data</span><span class="p">(</span><span class="n">basin</span><span class="o">=</span><span class="s1">&#39;Skagerrak&#39;</span><span class="p">,</span><span class="n">date_start</span><span class="o">=</span><span class="s1">&#39;2023-01-01&#39;</span><span class="p">,</span> <span class="n">date_end</span><span class="o">=</span><span class="s1">&#39;2024-01-01&#39;</span><span class="p">,</span><span class="n">rectangle</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                       | 0/16 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M19
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6%|██████▉                                                                                                        | 1/16 [00:00&lt;00:07,  2.02it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M21
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 12%|█████████████▉                                                                                                 | 2/16 [00:00&lt;00:06,  2.23it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M22
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 19%|████████████████████▊                                                                                          | 3/16 [00:01&lt;00:05,  2.31it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA069_M23
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 25%|███████████████████████████▊                                                                                   | 4/16 [00:01&lt;00:05,  2.28it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA055_M54
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 31%|██████████████████████████████████▋                                                                            | 5/16 [00:02&lt;00:04,  2.25it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA055_M56
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 38%|█████████████████████████████████████████▋                                                                     | 6/16 [00:02&lt;00:04,  2.28it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M72
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 44%|████████████████████████████████████████████████▌                                                              | 7/16 [00:03&lt;00:03,  2.31it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M75
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|███████████████████████████████████████████████████████▌                                                       | 8/16 [00:03&lt;00:03,  2.32it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M77
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 56%|██████████████████████████████████████████████████████████████▍                                                | 9/16 [00:03&lt;00:03,  2.29it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M78
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 62%|████████████████████████████████████████████████████████████████████▊                                         | 10/16 [00:04&lt;00:02,  2.16it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M79
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 69%|███████████████████████████████████████████████████████████████████████████▋                                  | 11/16 [00:04&lt;00:02,  2.15it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M81
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 75%|██████████████████████████████████████████████████████████████████████████████████▌                           | 12/16 [00:05&lt;00:01,  2.13it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Downloading nrt_SEA044_M83
-Downloading nrt_SEA044_M84
-Downloading nrt_SEA044_M85
-Downloading nrt_SEA044_M86
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████| 16/16 [00:05&lt;00:00,  2.67it/s]
-</pre></div>
-</div>
-<img alt="../_images/af63684da35f5da1bde312dc5574fbb3ca6363ae851008c96ec0ca497340d69e.png" src="../_images/af63684da35f5da1bde312dc5574fbb3ca6363ae851008c96ec0ca497340d69e.png" />
 </div>
 </div>
 </section>
@@ -2015,23 +1386,6 @@ Downloading nrt_SEA044_M86
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># SEA070 with pumped SeaBird CTD</span>
 <span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;delayed_SEA070_M15&#39;</span><span class="p">,</span> <span class="s1">&#39;delayed_SEA070_M15&#39;</span><span class="p">]</span>
 <span class="n">ds_delayed</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">download_glider_dataset</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">nrt_only</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  0%|                                                                                                                        | 0/2 [00:00&lt;?, ?it/s]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found delayed_SEA070_M15 in voto_erddap_data_cache. Loading from disk
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 50%|████████████████████████████████████████████████████████                                                        | 1/2 [00:27&lt;00:27, 27.70s/it]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Found delayed_SEA070_M15 in voto_erddap_data_cache. Loading from disk
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:29&lt;00:00, 14.66s/it]
 </pre></div>
 </div>
 </div>
@@ -2075,16 +1429,6 @@ Downloading nrt_SEA044_M86
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;),
- Text(0, 0.5, &#39;Depth (m)&#39;)]
-</pre></div>
-</div>
-<img alt="../_images/30a6514e3a4e822a9fe91e37ac50ef53de3094adc71e35f5443c00871aea7c97.png" src="../_images/30a6514e3a4e822a9fe91e37ac50ef53de3094adc71e35f5443c00871aea7c97.png" />
-</div>
 </div>
 </section>
 <section id="this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">
@@ -2100,6 +1444,16 @@ Downloading nrt_SEA044_M86
 <li></li>
 </ul>
 </section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="your-turn">
+<h1>Your turn<a class="headerlink" href="#your-turn" title="Permalink to this heading">#</a></h1>
+<p>Create a new notebook to work with just one of these datasets.</p>
+<ol class="arabic simple">
+<li><p>Pick a dataset, and copy the code from this notebook into your new notebook to load the data.</p></li>
+<li><p>Repeat some of the basic plots.</p></li>
+<li><p>Explore how to make a section plot from the glider data for a specific variable only.</p></li>
+<li><p>Can you make another plot type?  Maybe a T-S plot, or a T-S plot coloured by oxygen (or chlorophyll fluorescence).  Or a profile plot.</p></li>
+</ol>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2132,6 +1486,24 @@ Downloading nrt_SEA044_M86
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="exercise-ctd-align.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Exercise 6 - CTD Alignment</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../assignment/assignment-1.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Assignments</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -2174,6 +1546,7 @@ Downloading nrt_SEA044_M86
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#this-is-all-raw-data-and-many-adjustments-have-to-be-applied-and-various-issues-soruces-should-be-considered">This is all raw data and many adjustments have to be applied and various issues soruces should be considered</a></li>
 </ul>
 </li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#your-turn">Your turn</a></li>
 </ul>
 
   </nav></div>
