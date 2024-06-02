@@ -18,7 +18,7 @@
 | 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) <span style="color:red">A1: due 7 June</span> |
 | 7 |  [Sensors](../topics/sensors.md) | Assignment 1 (CTD processing [Ex6](../exercise/exercise-ctd-align.ipynb)) |
 | 8 | ~~Cruise anatomy~~ | Assignment 1 |
-| 9 | Cruise anatomy + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
+| 9 | [Sampling & Uncertainty](../topics/sampling_uncertainty.md) + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
 | 10 | AMOC methods 2 (Simon) | Assignment 2 |
 | 11 | Sampling & Uncertainty | Assignment 2 |
 | 12 | Good Scientific Practice  | Assignment 2 |
