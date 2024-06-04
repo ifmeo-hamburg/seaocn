@@ -596,110 +596,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">14</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> <span class="n">fnames</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">ctd_nc</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">14</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">latstn</span><span class="p">[</span><span class="n">qdo</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">LATITUDE</span>
-<span class="g g-Whitespace">     </span><span class="mi">17</span>     <span class="n">lonstn</span><span class="p">[</span><span class="n">qdo</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">LONGITUDE</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/api.py:541,</span> in <span class="ni">open_dataset</span><span class="nt">(filename_or_obj, engine, chunks, cache, decode_cf, mask_and_scale, decode_times, decode_timedelta, use_cftime, concat_characters, decode_coords, drop_variables, inline_array, backend_kwargs, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">529</span> <span class="n">decoders</span> <span class="o">=</span> <span class="n">_resolve_decoders_kwargs</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">530</span>     <span class="n">decode_cf</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">531</span>     <span class="n">open_backend_dataset_parameters</span><span class="o">=</span><span class="n">backend</span><span class="o">.</span><span class="n">open_dataset_parameters</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">537</span>     <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">538</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">540</span> <span class="n">overwrite_encoded_chunks</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;overwrite_encoded_chunks&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-<span class="ne">--&gt; </span><span class="mi">541</span> <span class="n">backend_ds</span> <span class="o">=</span> <span class="n">backend</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">542</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">543</span>     <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">544</span>     <span class="o">**</span><span class="n">decoders</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">545</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">546</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">547</span> <span class="n">ds</span> <span class="o">=</span> <span class="n">_dataset_from_backend_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">548</span>     <span class="n">backend_ds</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">549</span>     <span class="n">filename_or_obj</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">557</span>     <span class="o">**</span><span class="n">kwargs</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">558</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">559</span> <span class="k">return</span> <span class="n">ds</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:592,</span> in <span class="ni">NetCDF4BackendEntrypoint.open_dataset</span><span class="nt">(self, filename_or_obj, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta, group, mode, format, clobber, diskless, persist, lock, autoclose)</span>
-<span class="g g-Whitespace">    </span><span class="mi">590</span> <span class="n">store_entrypoint</span> <span class="o">=</span> <span class="n">StoreBackendEntrypoint</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">591</span> <span class="k">with</span> <span class="n">close_on_error</span><span class="p">(</span><span class="n">store</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">592</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">store_entrypoint</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">593</span>         <span class="n">store</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">594</span>         <span class="n">mask_and_scale</span><span class="o">=</span><span class="n">mask_and_scale</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">595</span>         <span class="n">decode_times</span><span class="o">=</span><span class="n">decode_times</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">596</span>         <span class="n">concat_characters</span><span class="o">=</span><span class="n">concat_characters</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">597</span>         <span class="n">decode_coords</span><span class="o">=</span><span class="n">decode_coords</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">598</span>         <span class="n">drop_variables</span><span class="o">=</span><span class="n">drop_variables</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">599</span>         <span class="n">use_cftime</span><span class="o">=</span><span class="n">use_cftime</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">600</span>         <span class="n">decode_timedelta</span><span class="o">=</span><span class="n">decode_timedelta</span><span class="p">,</span>
-<span class="g g-Whitespace">    </span><span class="mi">601</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">602</span> <span class="k">return</span> <span class="n">ds</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/store.py:32,</span> in <span class="ni">StoreBackendEntrypoint.open_dataset</span><span class="nt">(self, store, mask_and_scale, decode_times, concat_characters, decode_coords, drop_variables, use_cftime, decode_timedelta)</span>
-<span class="g g-Whitespace">     </span><span class="mi">20</span> <span class="k">def</span> <span class="nf">open_dataset</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">21</span>     <span class="bp">self</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">22</span>     <span class="n">store</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">30</span>     <span class="n">decode_timedelta</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="p">):</span>
-<span class="ne">---&gt; </span><span class="mi">32</span>     <span class="nb">vars</span><span class="p">,</span> <span class="n">attrs</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">33</span>     <span class="n">encoding</span> <span class="o">=</span> <span class="n">store</span><span class="o">.</span><span class="n">get_encoding</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">35</span>     <span class="nb">vars</span><span class="p">,</span> <span class="n">attrs</span><span class="p">,</span> <span class="n">coord_names</span> <span class="o">=</span> <span class="n">conventions</span><span class="o">.</span><span class="n">decode_cf_variables</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">36</span>         <span class="nb">vars</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span>         <span class="n">attrs</span><span class="p">,</span>
-   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">44</span>         <span class="n">decode_timedelta</span><span class="o">=</span><span class="n">decode_timedelta</span><span class="p">,</span>
-<span class="g g-Whitespace">     </span><span class="mi">45</span>     <span class="p">)</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/common.py:128,</span> in <span class="ni">AbstractDataStore.load</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="k">def</span> <span class="nf">load</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">107</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">108</span><span class="sd">     This loads the variables and attributes simultaneously.</span>
-<span class="g g-Whitespace">    </span><span class="mi">109</span><span class="sd">     A centralized loading function makes it easier to create</span>
-<span class="sd">   (...)</span>
-<span class="g g-Whitespace">    </span><span class="mi">125</span><span class="sd">     are requested, so care should be taken to make sure its fast.</span>
-<span class="g g-Whitespace">    </span><span class="mi">126</span><span class="sd">     &quot;&quot;&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">127</span>     <span class="n">variables</span> <span class="o">=</span> <span class="n">FrozenDict</span><span class="p">(</span>
-<span class="nn">--&gt; 128         (_decode_variable_name(k), v) for k, v</span> in <span class="ni">self.get_variables().items</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="n">attributes</span> <span class="o">=</span> <span class="n">FrozenDict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_attrs</span><span class="p">())</span>
-<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">return</span> <span class="n">variables</span><span class="p">,</span> <span class="n">attributes</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:423,</span> in <span class="ni">NetCDF4DataStore.get_variables</span><span class="nt">(self)</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span> <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ne">--&gt; </span><span class="mi">423</span>     <span class="k">return</span> <span class="n">FrozenDict</span><span class="p">(</span>
-<span class="nn">    424         (k, self.open_store_variable(k, v)) for k, v</span> in <span class="ni">self.ds.variables.items</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="p">)</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/core/utils.py:469,</span> in <span class="ni">FrozenDict</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">468</span> <span class="k">def</span> <span class="nf">FrozenDict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Frozen</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">469</span>     <span class="k">return</span> <span class="n">Frozen</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:424,</span> in <span class="ni">&lt;genexpr&gt;</span><span class="nt">(.0)</span>
-<span class="g g-Whitespace">    </span><span class="mi">422</span> <span class="k">def</span> <span class="nf">get_variables</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="g g-Whitespace">    </span><span class="mi">423</span>     <span class="k">return</span> <span class="n">FrozenDict</span><span class="p">(</span>
-<span class="nn">--&gt; 424         (k, self.open_store_variable(k, v)) for k, v</span> in <span class="ni">self.ds.variables.items</span><span class="nt">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">425</span>     <span class="p">)</span>
-
-<span class="nn">File ~/micromamba/envs/seaocn_env/lib/python3.8/site-packages/xarray/backends/netCDF4_.py:400,</span> in <span class="ni">NetCDF4DataStore.open_store_variable</span><span class="nt">(self, name, var)</span>
-<span class="g g-Whitespace">    </span><span class="mi">398</span> <span class="c1"># netCDF4 specific encoding; save _FillValue for later</span>
-<span class="g g-Whitespace">    </span><span class="mi">399</span> <span class="n">encoding</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ne">--&gt; </span><span class="mi">400</span> <span class="n">filters</span> <span class="o">=</span> <span class="n">var</span><span class="o">.</span><span class="n">filters</span><span class="p">()</span>
-<span class="g g-Whitespace">    </span><span class="mi">401</span> <span class="k">if</span> <span class="n">filters</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">402</span>     <span class="n">encoding</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">filters</span><span class="p">)</span>
-
-<span class="ne">KeyboardInterrupt</span>: 
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -720,6 +616,20 @@ document.write(`
 <span class="c1">#        allctd = xr.concat([allctd, ds], &quot;castnum&quot;, fill_value=np.nan)</span>
            
     <span class="n">qdo</span><span class="o">+=</span><span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="n">ctd_nc</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">ii</span><span class="p">)</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">latstn</span><span class="p">[</span><span class="n">qdo</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">LATITUDE</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">lonstn</span><span class="p">[</span><span class="n">qdo</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">LONGITUDE</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">tmp1</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">fromisoformat</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">datetime</span><span class="p">)</span>
+
+<span class="ne">IndexError</span>: index 110 is out of bounds for axis 0 with size 110
 </pre></div>
 </div>
 </div>
