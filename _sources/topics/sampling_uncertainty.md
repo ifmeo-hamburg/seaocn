@@ -21,3 +21,12 @@ Note: This exercise is more advanced, showing how data can be dynamically loaded
 <!--*Please try to catch up on the exercises.*  From week 5/6 you will have an assignment in python.  It will build on the python and methods you've been developing so far, but will require you to creatively combine what you've learned to make progress.
 -->
 
+```{admonition} Preparation for next week
+Next week, we will discuss the project MerMEED: Mechanisms responsible for mesoscale eddy energy dissipation.  
+
+Optional: You may read/skim one or another document related to the project either before next week or after.
+- Paper using microstructure, CTD and ADCP (and, for the 2022 paper, altimetry): {cite:t}`Evans-etal-2020` or {cite:t}`Evans-etal-2022` 
+- Paper using gliders, looking at internal waves and ray tracing: {cite:t}`FernandezCastro-etal-2020`
+- Cruise report: WS16336, WS17305 or WS18066
+- Cruise proposal will be on the Moodle
+```

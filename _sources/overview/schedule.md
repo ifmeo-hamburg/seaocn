@@ -19,7 +19,7 @@
 | 7 |  [Sensors](../topics/sensors.md) | Assignment 1 (CTD processing [Ex6](../exercise/exercise-ctd-align.ipynb)) |
 | 8 | ~~Cruise anatomy~~ | Assignment 1 |
 | 9 | [Sampling & Uncertainty](../topics/sampling_uncertainty.md) + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
-| 10 | TBD (Eleanor - on Zoom!) | Assignment 2 |
+| 10 | [Case Study 2](../topics/case_study2.md) (Eleanor - on Zoom!) | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
 | 11 | Good Scientific Practice | Assignment 2 |
 | 12 | Sampling & Uncertainty  | Assignment 2 |
 | 13 | Field Operations | Student presentations |
