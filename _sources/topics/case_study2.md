@@ -9,12 +9,12 @@ PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/409848/mod
 
 Today we'll go through the ideas of Seagoing Oceanography with a 2nd case study (MerMEED - Mechanisms Responsible for Mesoscale Eddy Dissipation).
 
-Likely also assigning the group assignment (to be due in 2 weeks) - to come up with elements (the work timetable) of a cruise proposal.
+<!--Likely also assigning the group assignment (to be due in 2 weeks) - to come up with elements (the work timetable) of a cruise proposal.-->
 
-```{admonition} For 2 weeks from now
+```{admonition} For next week
 We will talk about "good scientific practice", sometimes also called "scientific integrity" or "research ethics". 
 
-Recommended: Read snippets of {cite:t}`DFG-code-2022`, especially guidelines 12-14.  The whole thing is only 28 pages long.  
+Recommended: Read snippets of {cite:t}`DFG-code-2022`, especially guidelines 12-14.  The whole thing is only 28 pages long.  Ideally this will be a discussion.
 
 
 Additionally or alternatively, find a statement on good scientific practice from a funding agency in another country or at UHH, or see the resources below:
