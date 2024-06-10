@@ -25,5 +25,5 @@ Additionally or alternatively, find a statement on good scientific practice from
 - UHH's Research Integrity office [here](https://www.uni-hamburg.de/en/forschung/wissenschaftliche-integritaet.html) and [bylaws (German only)](https://www.uni-hamburg.de/en/forschung/wissenschaftliche-integritaet/gute-wissenschaftliche-praxis/satzung.html); also [training offers](https://www.uni-hamburg.de/en/forschung/wissenschaftliche-integritaet/gute-wissenschaftliche-praxis/weiterbildung-netzwerke.html).
 - Helmholtz [Dealing with research software: Recommendations for best practices](https://gfzpublic.gfz-potsdam.de/rest/items/item_3951898_4/component/file_3953903/content#:~:text=Research%20software%20development%20is%20an,research%20results%20verifiable%20and%20reproducible.)
 
-We will specifically discuss authorship, documentation and the role of research software in reproducible science.
+We will specifically discuss authorship, documentation, [FAIR](https://en.wikipedia.org/wiki/FAIR_data) data, [Ocean Best Practices](https://www.oceanbestpractices.org), and the role of research software in reproducible science.  Some of these are generic topics for science; others we'll look at the specific application for seagoing/observational science.
 ```
