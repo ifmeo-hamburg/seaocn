@@ -1,4 +1,4 @@
-# Assignments
+# Assignment 1
 
 <span style="color:red">~~Due 3 June~~ Due 7 June (Friday) </span>
 
@@ -7,10 +7,10 @@ For SuSe24, you will have a choice of assignments.  Half the class will work on 
 **Assignment 1:** You *must* turn in working code in a repository, along with the generated figures and a report.  The code should only need to be adjusted by specifying a different path for the input datasets.  Your report should include a section for *future work*.
 
 ```{margin} Moodle link
-Assignment 1 [here](../assignment/assignment-1.md) \
+Assignment 2 [here](../assignment/assignment-2.md) \
 Moodle submit link [here](https://lernen.min.uni-hamburg.de/mod/assign/view.php?id=185854)\
 Github classroom submit [here](https://classroom.github.com/a/vQe5xdL1)\
-*Added 6 May*
+*Added 17 June*
 ```
 ::::{grid}
 :gutter: 3

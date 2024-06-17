@@ -48,7 +48,7 @@ parts:
 #    sections:
 #    - file: assignment/assignment-1-moored
 #    - file: assignment/assignment-1-profile
-#  - file: assignment/assignment-2
+  - file: assignment/assignment-2
 #    sections:
 #    - file: assignment/assignment-2-geostrophy
 #    - file: assignment/assignment-2-toyo
