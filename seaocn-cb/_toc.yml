@@ -19,9 +19,10 @@ parts:
   - file: topics/equations_v_data
   - file: topics/amoc_methods
   - file: topics/experiment_design
-#  - file: topics/sampling_uncertainty
+  - file: topics/sensors
+  - file: topics/sampling_uncertainty
+  - file: topics/case_study2
 #  - file: topics/cruise_anatomy
-#  - file: topics/sensors
 #  - file: topics/unidentified
 #  - file: topics/good_scientific_practice
 #  - file: topics/field_operations
@@ -37,7 +38,8 @@ parts:
   - file: exercise/exercise-map 
   - file: exercise/exercise-geostrophy
   - file: exercise/exercise-optimal-demo
-#  - file: exercise/exercise-glider-demo
+  - file: exercise/exercise-ctd-align
+  - file: exercise/exercise-glider-demo
 #  - file: exercise/exercise-hydro
 
 - caption: Assignments

@@ -15,15 +15,15 @@
 | 3 | [Instruments & Platforms](../topics/instruments_platforms.md) | Maps [Ex3](../exercise/exercise-map.ipynb) |
 | 4 | [Equations v Data](../topics/equations_v_data.md) | Sections + Transport [Ex4](../exercise/exercise-geostrophy.ipynb) |
 | 5 | [AMOC methods](../topics/amoc_methods.md) | Optimal interpolation [Ex5](../exercise/exercise-optimal-demo.ipynb) |
-| 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) |
-| 7 |  Sensors | Assignment 1 |
-| 8 | Cruise anatomy | Assignment 1 |
-| 9 | Sampling & Uncertainty | CTD processing |
-| 10 | Topic (TBD) | Assignment 2 |
+| 6 | [Experiment Design](../topics/experiment_design.md) | [Assignment 1](../assignment/assignment-1.md) <span style="color:red">A1: due 7 June</span> |
+| 7 |  [Sensors](../topics/sensors.md) | Assignment 1 (CTD processing [Ex6](../exercise/exercise-ctd-align.ipynb)) |
+| 8 | ~~Cruise anatomy~~ | Assignment 1 |
+| 9 | [Sampling & Uncertainty](../topics/sampling_uncertainty.md) + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
+| 10 | [Case Study 2](../topics/case_study2.md) (Eleanor - on Zoom!) | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
 | 11 | Good Scientific Practice | Assignment 2 |
-| 12 | Field Operations  | Assignment 2 |
-| 13 | Topic (TBD) | Student presentations |
-| 14 | Topic (TBD) | Student presentations |
+| 12 | Topic TBD  | Assignment 2 |
+| 13 | Field Operations | Assignment 2 |
+| 14 | Cruise anatomy  | ~ |
 ```
 
 
@@ -35,17 +35,17 @@ Week 5, 8 and 10 may have deviations from the planned schedule.  This will be an
 2. 9 April  
 3. 16 April  
 4. 23 April  
-5. 30 April - possible deviation (no deviation)
+5. 30 April - ~~possible deviation~~ (no deviation)
 6. 7 May  
 7. 14 May  
 - 21 May - No class: Pfingsten
-8. 28 May - possible deviation (2nd week, Seepraktikum).  Eleanor not available - alternate instructor.
-9. 4 June - 
-10. 11 June - possible deviation.  Eleanor/Emelie not available - alternate instructor.
+8. 28 May -  Deviation (2nd week, Seepraktikum).  Eleanor not available - no alternate instructor.
+9. 4 June - ~~possible deviation~~.  Emelie not available / Eleanor at exercises.
+10. 11 June - Deviation.  Eleanor/Emelie not available - Eleanor on Zoom.
 11. 18 June  
 12. 25 June 
 13. 2 July
-14. 9 July
+14. 9 July - possible deviation.  Eleanor not available.
 
 
 <!--
