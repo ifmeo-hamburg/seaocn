@@ -1,0 +1,720 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Load RSK data &#8212; seaocn</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/myfile.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'exercise/assignment-read-rbr';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="seaocn - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="seaocn - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    MSc Seagoing Oceanography
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Overview</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../overview/catalog-listing.html">Course catalog listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/syllabus.html">Syllabus (SuSe24)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/schedule.html">Schedule (SuSe24)</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../topics/course_overview.html">1. Course overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/scientific_basis.html">2. Scientific basis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/equations_v_data.html">4. Equations v data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/amoc_methods.html">5. AMOC Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/experiment_design.html">6. Experiment design</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sensors.html">7. Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/sampling_uncertainty.html">8. Sampling &amp; Uncertainty</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/case_study2.html">9. Case Study 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="exercise-git.html">Exercise 0a - Git</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-python.html">Exercise 0b - Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-cnv.html">Exercise 1 - Profile data</a></li>
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-tseries.html">Exercise 2a  Time series</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-filter.html">Exercise 2b  Filtering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-map.html">Exercise 3 - Exploring map projections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-geostrophy.html">Exercise 4 -  Slopes &amp; Integrals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-optimal-demo.html">Exercise 5 (demo) - Optimal interpolation</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="exercise-ctd-align.html">Exercise 6 - CTD Alignment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="exercise-glider-demo.html">Exercise 7 (demo) - Gliders in the Baltic</a></li>
+
+
+
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Assignments</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../assignment/assignment-1.html">Assignment 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assignment/assignment-2.html">Assignment 2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Resources</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../resource/books.html">Books + Reading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../resource/git.html">Git for sharing &amp; versioning</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/python.html">Python</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../resource/glossary.html">Glossary</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../build-the-book/getting-started.html">Setting up a jupyter book</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/jupyter-book.html">Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/github-pages.html">Prepare the git repositories</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/use-of-tokens.html">Use of tokens</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../build-the-book/regenerating-book.html">Regenerating the book after changes</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ifmeo-hamburg/seaocn/issues/new?title=Issue%20on%20page%20%2Fexercise/assignment-read-rbr.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/exercise/assignment-read-rbr.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Load RSK data</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="load-rsk-data">
+<h1>Load RSK data<a class="headerlink" href="#load-rsk-data" title="Permalink to this heading">#</a></h1>
+<p><strong>Aim:</strong> To see a different platform in action, collecting CTD (and other data). The example dataset chosen here also has some “issues”, so you can also see whether you can find a way to plot the data to display the issue.</p>
+<!--**Learning outcomes:** Using what you've learned so far, you will apply this knowledge to a new dataset that you haven't previously encountered.  You will be able to apply your knowledge of sensor response, ocean-knowing-measurements, and python to articulate (and quantify) a possible issue with a dataset.  You will also see an example of how data can be loaded from the internet directly into python.-->
+<p><strong>Data:</strong> You will work with data from <a class="reference external" href="https://voiceoftheocean.org">Voice of the Ocean (VOTO)</a> collected in the Baltic Sea.</p>
+<p><strong>Directions:</strong> Run the python code step by step, and use it to download some data, make some starter plots, and then add some additional plots at the end yourself.</p>
+<!--**Measure of success:** You will have created a python notebook, a netCDF file (*not* added to the git repository) and the 5 figures exported as `*.png` format into your folder; these will be "commited" and "pushed" to the shared repository, and viewable by everyone.  Additionally, copy your 2 best figures to the `shared_figures/` folder for discussion.  -->
+<hr><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">style</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.patches</span> <span class="k">as</span> <span class="nn">patches</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">from</span> <span class="nn">cmocean</span> <span class="kn">import</span> <span class="n">cm</span> <span class="k">as</span> <span class="n">cmo</span>
+<span class="kn">from</span> <span class="nn">pyrsktools</span> <span class="kn">import</span> <span class="n">RSK</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># RSK file</span>
+<span class="n">datapath</span>   <span class="o">=</span> <span class="s1">&#39;/Users/eddifying/Dropbox/Public/uhh-teaching/SeagoingOceanography/rbr-mc-wb2/newset/&#39;</span>
+<span class="n">rbr_file</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/moored_record/203219_20230226_2004.rsk&quot;</span> <span class="c1">#203219_20230304_2318.rsk</span>
+<span class="n">use_file</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/moored_record/wb2_16_2020_5768.use&quot;</span>
+
+<span class="n">ctd_path</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span><span class="s2">&quot;ctd_casts/&quot;</span>
+
+
+<span class="n">rbr_cal_file</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/caldip_cast/203219_20230304_2318.rsk&quot;</span>
+<span class="n">rbr_cal_txtfile</span> <span class="o">=</span> <span class="n">datapath</span> <span class="o">+</span> <span class="s2">&quot;/caldip_cast/cast41_203219.txt&quot;</span>
+
+<span class="n">units</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span><span class="s2">&quot;[°C]&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">:</span><span class="s2">&quot;[mS/cm]&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">:</span><span class="s2">&quot;[dbar]&quot;</span><span class="p">,</span> <span class="s2">&quot;CT&quot;</span><span class="p">:</span><span class="s2">&quot;[°C]&quot;</span><span class="p">,</span> <span class="s2">&quot;SA&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">}</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;temperature&quot;</span><span class="p">:</span><span class="s2">&quot;Temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">:</span><span class="s2">&quot;Conductivity&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">:</span><span class="s2">&quot;Pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;CT&quot;</span><span class="p">:</span><span class="s2">&quot;Conservative Temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;SA&quot;</span><span class="p">:</span><span class="s2">&quot;Absolute Salinity&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">create_ctd_cast_time</span><span class="p">(</span><span class="n">ds</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Creates a new &#39;datetime&#39; variable in a CTD cast dataset (ds) based on &#39;data_time_origin&#39; and &#39;time&#39; variables.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        ds (xarray.Dataset): The CTD cast dataset. Must contain &#39;data_time_origin&#39; and &#39;time&#39; variables.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        xarray.Dataset: The modified CTD cast dataset with a new &#39;datetime&#39; variable.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">attrs</span><span class="p">[</span><span class="s2">&quot;data_time_origin&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int32&#39;</span><span class="p">)</span>
+    <span class="n">start_time_str</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">start_time</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;data_time_origin:&quot;</span><span class="p">,</span> <span class="n">start_time_str</span><span class="p">)</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">start_datetime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">start_time_str</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1"> %H:%M:%S&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[:])):</span>
+        <span class="n">time</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">start_datetime</span> <span class="o">+</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timedelta</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="mi">0</span><span class="p">]))</span>
+
+    <span class="n">ds</span><span class="p">[</span><span class="s2">&quot;datetime&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;nrows1&quot;</span><span class="p">,</span> <span class="n">time</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load ship data</span>
+<span class="n">cruise</span> <span class="o">=</span> <span class="s2">&quot;en697&quot;</span><span class="c1">#&quot;dy129&quot;</span>
+<span class="n">cast</span> <span class="o">=</span> <span class="s2">&quot;041&quot;</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">ctd_path</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;ctd_</span><span class="si">{</span><span class="n">cruise</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">cast</span><span class="si">}</span><span class="s2">_24hz.nc&quot;</span><span class="p">)</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">create_ctd_cast_time</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">set_coords</span><span class="p">(</span><span class="s1">&#39;datetime&#39;</span><span class="p">)</span>
+
+<span class="c1"># Save to netcdf</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ctd_</span><span class="si">{</span><span class="n">cruise</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">cast</span><span class="si">}</span><span class="s2">_24hz.nc&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>data_time_origin: 2023-3-4 20:53:15
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load RBR data</span>
+<span class="n">df_rbr_cal</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">rbr_cal_txtfile</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">],</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">delim_whitespace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_rbr_cal</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_rbr_cal</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">]])</span>
+<span class="n">df_rbr_cal</span> <span class="o">=</span> <span class="n">df_rbr_cal</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">df_rbr_cal</span> <span class="o">=</span> <span class="n">df_rbr_cal</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;hour&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ds_rbr_cal</span> <span class="o">=</span> <span class="n">df_rbr_cal</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+
+<span class="c1"># Save to netcdf</span>
+<span class="n">ds_rbr_cal</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;cast41_203219_RBR.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load deployed RBR</span>
+<span class="c1">#rsk = RSK(rbr_cal_file) # rbr_file rbr_cali_file</span>
+<span class="c1">#rsk.open()</span>
+
+<span class="n">rsk</span> <span class="o">=</span> <span class="n">RSK</span><span class="p">(</span><span class="n">rbr_file</span><span class="p">)</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+
+<span class="c1">#rsk.dbInfo</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">readdata</span><span class="p">()</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">deriveseapressure</span><span class="p">()</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">derivesalinity</span><span class="p">()</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">deriveSA</span><span class="p">()</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">derivetheta</span><span class="p">()</span>
+<span class="c1">#rsk.derivetemperature()</span>
+
+<span class="n">rsk</span><span class="o">.</span><span class="n">computeprofiles</span><span class="p">()</span>
+<span class="n">rsk</span><span class="o">.</span><span class="n">printchannels</span><span class="p">()</span>
+
+<span class="n">rsk</span><span class="o">.</span><span class="n">RSK2CSV</span><span class="p">(</span><span class="n">channels</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;sea_pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;potential_temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">,</span> <span class="s2">&quot;salinity&quot;</span><span class="p">,</span> <span class="s2">&quot;absolute_salinity&quot;</span><span class="p">],</span> <span class="n">profiles</span><span class="o">=</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="c1"># Convert to pandas</span>
+<span class="n">col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;sea_pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;potential_temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">,</span> <span class="s2">&quot;salinity&quot;</span><span class="p">,</span><span class="s2">&quot;absolute_salinity&quot;</span><span class="p">,</span> <span class="s2">&quot;cast_direction&quot;</span><span class="p">]</span>
+
+<span class="n">rbr_raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;203219_20230226_2004_profile0.csv&quot;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="n">col_names</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span> <span class="c1">#./data/</span>
+
+<span class="n">rbr_raw</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">rbr_raw</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
+<span class="n">rbr_raw</span> <span class="o">=</span> <span class="n">rbr_raw</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;time&quot;</span><span class="p">)</span>
+<span class="n">rbr_raw</span> <span class="o">=</span> <span class="n">rbr_raw</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;cast_direction&quot;</span><span class="p">,</span> <span class="s2">&quot;potential_temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;salinity&quot;</span><span class="p">,</span> <span class="s2">&quot;absolute_salinity&quot;</span><span class="p">,</span><span class="s2">&quot;sea_pressure&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Convert to xarray</span>
+<span class="n">ds_rbr_raw</span> <span class="o">=</span> <span class="n">rbr_raw</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+<span class="c1"># Save to netcdf</span>
+<span class="n">ds_rbr_raw</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;rbr_203219_20230226_2004.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ruskin profile and cast annotations will be deleted as they might conflict with the new profiles detected
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model:           RBRconcerto³
+Serial ID:       203219
+Sampling period: 60.0 second
+Channels:        index                 name                  unit
+                 _____     ____________________________    ________
+                 0         conductivity                    mS/cm
+                 1         temperature                     °C
+                 2         pressure                        dbar
+                 3         sea_pressure                    dbar
+                 4         salinity                        PSU
+                 5         absolute_salinity               g/kg
+                 6         potential_temperature           °C
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Wrote: ./203219_20230226_2004_profile0.csv
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/t1/z5bp59k95119nw35yqv699t40000gn/T/ipykernel_8870/4257807661.py:23: DtypeWarning: Columns (4,6,7) have mixed types. Specify dtype option on import or set low_memory=False.
+  rbr_raw = pd.read_csv(&quot;203219_20230226_2004_profile0.csv&quot;, names=col_names, skiprows=12) #./data/
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load microCAT data</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">use_file</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+  <span class="c1"># Read the entire content into a string</span>
+  <span class="n">data_string</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()[:</span><span class="mi">11</span><span class="p">]</span>
+
+<span class="n">data_string</span>
+
+<span class="n">use_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">use_file</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">use_data</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;conductivity&quot;</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">]</span>
+<span class="n">df_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">var</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">vars</span><span class="p">):</span>
+    <span class="n">df_dict</span><span class="p">[</span><span class="n">var</span><span class="p">]</span> <span class="o">=</span> <span class="n">use_data</span><span class="p">[:,</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">cat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_dict</span><span class="p">)</span>
+<span class="n">cat</span>
+<span class="n">cat</span><span class="p">[</span><span class="s2">&quot;time&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">cat</span><span class="p">[[</span><span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">]])</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">,</span> <span class="s2">&quot;day&quot;</span><span class="p">,</span> <span class="s2">&quot;hour&quot;</span><span class="p">])</span>
+
+<span class="c1"># Convert to xarray</span>
+<span class="n">ds_cat</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">to_xarray</span><span class="p">()</span>
+
+<span class="c1"># Save to netcdf</span>
+<span class="n">ds_cat</span><span class="o">.</span><span class="n">to_netcdf</span><span class="p">(</span><span class="s1">&#39;mcat_wb2_16_2020_5768.nc&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "conda-root-py"
+        },
+        kernelOptions: {
+            name: "conda-root-py",
+            path: "./exercise"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'conda-root-py'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Eleanor Frajka-Williams
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
