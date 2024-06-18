@@ -20,7 +20,7 @@
 | 8 | ~~Cruise anatomy~~ | Assignment 1 |
 | 9 | [Sampling & Uncertainty](../topics/sampling_uncertainty.md) + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
 | 10 | [Case Study 2](../topics/case_study2.md) (Eleanor - on Zoom!) | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
-| 11 | Good Scientific Practice | Assignment 2 |
+| 11 | Good Scientific Practice | [Assignment 2](../assignment/assignment-2.md) |
 | 12 | Topic TBD  | Assignment 2 |
 | 13 | Field Operations | Assignment 2 |
 | 14 | Cruise anatomy  | ~ |
@@ -40,9 +40,9 @@ Week 5, 8 and 10 may have deviations from the planned schedule.  This will be an
 7. 14 May  
 - 21 May - No class: Pfingsten
 8. 28 May -  Deviation (2nd week, Seepraktikum).  Eleanor not available - no alternate instructor.
-9. 4 June - ~~possible deviation~~.  Emelie not available / Eleanor at exercises.
-10. 11 June - Deviation.  Eleanor/Emelie not available - Eleanor on Zoom.
-11. 18 June  
+9. 4 June - Deviation. Emelie not available / Eleanor at exercises.
+10. 11 June - Deviation.  Emelie not available / Eleanor on Zoom.
+11. 18 June - Deviation.  Emelie not available /  Eleanor at exercises. 
 12. 25 June 
 13. 2 July
 14. 9 July - possible deviation.  Eleanor not available.
