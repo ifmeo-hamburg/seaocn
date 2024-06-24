@@ -1,16 +1,13 @@
-```{admonition} Preparation (for next week)
-```
 
 
 
-# Cruise anatomy
+# Good research practice 
 
 ```{margin} Moodle link
-PDF of slides [here]() \  
+PDF of slides [here](https://lernen.min.uni-hamburg.de/pluginfile.php/413742/mod_resource/content/1/2024-lecture-good_research_practice-seaocn.pdf) \  
 *Added 24 June*
 ```
-
-Short presentation on cruises and anatomy of a cruise, followed by small group work: cruise proposal planning templates and scheduling.
+Discussion of the DFG's code of conduct for safeguarding good research practice.  In small groups (of 2 and 3 students), we went through the guidelines and highlighted salient points, anything unusual, and how they apply to seagoing science.
 
 <!--
 
@@ -22,10 +19,15 @@ Advanced processing [here](https://lernen.min.uni-hamburg.de/pluginfile.php/4098
 ```
 -->
 
-```{admonition} Lab topic - Experimenting with CTD alignment
-Note: This exercise is optional.  [Exercise 6](../exercise/exercise-ctd-align.ipynb).
+```{margin} Moodle link
+Assignment 2 [here](../assignment/assignment-2.md) \
+Moodle submit link [here](https://lernen.min.uni-hamburg.de/mod/assign/view.php?id=185857)\
+Github classroom submit [here](https://classroom.github.com/a/qA71rAyL)\
+*Added 24 Jun*
+```
 
-*Recommended for people going to sea in the near future, who will be working with CTD data.*
+```{admonition} Assignment
+Introduction to [assignment 2](../assignment/assignment-2.md).
 ```
 <!--*Please try to catch up on the exercises.*  From week 5/6 you will have an assignment in python.  It will build on the python and methods you've been developing so far, but will require you to creatively combine what you've learned to make progress.
 -->

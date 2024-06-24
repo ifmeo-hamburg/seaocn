@@ -71,7 +71,7 @@ Unless otherwise specified, assignments are due at **23:59**.  The first assignm
 
 2. One **group assignment** to produce the core elements of a cruise proposal.
 
-3. Participation and in-class assignments.  During the course, you will be asked to present work from a previous week's practical exercise.  
+3. Participation and in-class assignments.  ~~During the course, you will be asked to present work from a previous week's practical exercise.  ~~
 
 ## Grading procedures
 

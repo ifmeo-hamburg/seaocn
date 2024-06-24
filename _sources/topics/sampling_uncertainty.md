@@ -25,8 +25,12 @@ Note: This exercise is more advanced, showing how data can be dynamically loaded
 Next week, we will discuss the project MerMEED: Mechanisms responsible for mesoscale eddy energy dissipation.  
 
 Optional: You may read/skim one or another document related to the project either before next week or after.
-- Paper using microstructure, CTD and ADCP (and, for the 2022 paper, altimetry): {cite:t}`Evans-etal-2020` or {cite:t}`Evans-etal-2022` 
+
+- Paper using microstructure, CTD and ADCP (and, for the 2022 paper, altimetry): {cite:t}`Evans-etal-2020` or  {cite:t}`Evans-etal-2022` 
+
 - Paper using gliders, looking at internal waves and ray tracing: {cite:t}`FernandezCastro-etal-2020`
-- Cruise report: WS16336, WS17305 or WS18066
-- Cruise proposal will be on the Moodle
+
+- Cruise report examples: WS16336, WS17305 {cite:p}`ws17305` or WS18066
+
+- Cruise proposal will be on the Moodle: [here](https://lernen.min.uni-hamburg.de/pluginfile.php/413743/mod_resource/content/1/2015-01-mermeed_SME828_updated.pdf)
 ```

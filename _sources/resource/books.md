@@ -1,6 +1,5 @@
 # Books + Reading
 
-More to be added.
 
 ## Recommended books
 
@@ -15,4 +14,6 @@ References used in this coursebook.
 ```{bibliography}
 ```
 
-<hr>
+
+
+

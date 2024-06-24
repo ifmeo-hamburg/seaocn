@@ -17,6 +17,9 @@ You have two options for formatting:
 
 If you submit a python notebook, you must include text sections between code blocks to provide explanations of the work.
 
+<span style="color:red">Update 24 June: Preferred separate `*.pdf`</span>
+
+
 ## Contents
 
 So the *content* requirements remain the same.  You should have sections for
@@ -39,4 +42,7 @@ Your repository for the assignment will also be graded. It is due 7 days after t
 - [for assignment 2](https://classroom.github.com/a/qA71rAyL).
 
 
-For Lab 0, the github assignment is [here](https://classroom.github.com/a/KTXT6t0e).
+# Grading
+
+See the [sample grading rubric](https://lernen.min.uni-hamburg.de/pluginfile.php/413751/mod_resource/content/1/grading-rubric-seaocn.pdf) to see how your work will be evaluated.
+<!--For Lab 0, the github assignment is [here](https://classroom.github.com/a/KTXT6t0e).-->

@@ -20,8 +20,8 @@
 | 8 | ~~Cruise anatomy~~ | Assignment 1 |
 | 9 | [Sampling & Uncertainty](../topics/sampling_uncertainty.md) + Gunnar Voet | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
 | 10 | [Case Study 2](../topics/case_study2.md) (Eleanor - on Zoom!) | Glider demo [Ex7](../exercise/exercise-glider-demo.ipynb) |
-| 11 | Good Scientific Practice | [Assignment 2](../assignment/assignment-2.md) |
-| 12 | Topic TBD  | Assignment 2 |
+| 11 | [Good Scientific Practice](../topics/good_scientific_practice.md) | [Assignment 2](../assignment/assignment-2.md) |
+| 12 | [Cruise anatomy](../topics/cruise_anatomy.md)  | Assignment 2 |
 | 13 | Field Operations | Assignment 2 |
 | 14 | Cruise anatomy  | ~ |
 ```

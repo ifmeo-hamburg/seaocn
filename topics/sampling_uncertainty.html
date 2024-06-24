@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>8. Sampling &amp; Uncertainty &#8212; seaocn</title>
   
@@ -179,13 +179,15 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="course_overview.html">1. Course overview</a></li>
 <li class="toctree-l1"><a class="reference internal" href="scientific_basis.html">2. Scientific basis</a></li>
-<li class="toctree-l1"><a class="reference internal" href="instruments_platforms.html">3. Instruments and platforms (<em>change week</em>)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instruments_platforms.html">3. Instruments and platforms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="equations_v_data.html">4. Equations v data</a></li>
 <li class="toctree-l1"><a class="reference internal" href="amoc_methods.html">5. AMOC Methods</a></li>
 <li class="toctree-l1"><a class="reference internal" href="experiment_design.html">6. Experiment design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sensors.html">7. Sensors</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">8. Sampling &amp; Uncertainty</a></li>
 <li class="toctree-l1"><a class="reference internal" href="case_study2.html">9. Case Study 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="good_scientific_practice.html">10. Good research practice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cruise_anatomy.html">11. Cruise anatomy</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Exercises</span></p>
 <ul class="nav bd-sidenav">
@@ -437,7 +439,7 @@ document.write(`
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p>If you need to <em>do</em> uncertainty analysis, please see <span id="id1">Coleman and Steele Jr [<a class="reference internal" href="../resource/books.html#id9" title="Hugh W. Coleman and W. Glenn Steele Jr. Experimentation and Uncertainty Analysis for Engineers. John Wiley &amp; Sons Inc, New York, 2nd edition, 1999.">1999</a>]</span> chapters 2 “Statistical Considerations in Measurement Uncertainties”, chapter 3 “Planning an Experiment: General Uncertainty Analysis” and maybe chapter 4 “Designing an Experiment: Detailed Uncertainty Analysis”.</p>
-<p>Or, for a straightforward description of practical error handling for oceanography, see <span id="id2">Emery and Thomson [<a class="reference internal" href="../resource/books.html#id11" title="William J. Emery and Richard E. Thomson. Data Analysis Methods in Physical Oceanography. Elsevier, Elsevier, 2nd edition, 2004. URL: https://www.sciencedirect.com/book/9780123877826/data-analysis-methods-in-physical-oceanography.">2004</a>]</span>, chapter 3 “Statistical Methods and Error Handling”.</p>
+<p>Or, for a straightforward description of practical error handling for oceanography, see <span id="id2">Emery and Thomson [<a class="reference internal" href="../resource/books.html#id12" title="William J. Emery and Richard E. Thomson. Data Analysis Methods in Physical Oceanography. Elsevier, Boston, 2nd edition, 2004. URL: https://www.sciencedirect.com/book/9780123877826/data-analysis-methods-in-physical-oceanography.">2004</a>]</span>, chapter 3 “Statistical Methods and Error Handling”.</p>
 </div>
 <div class="admonition-lab-topic-working-with-glider-data admonition">
 <p class="admonition-title">Lab topic - Working with glider data</p>
@@ -450,10 +452,10 @@ document.write(`
 <p>Next week, we will discuss the project MerMEED: Mechanisms responsible for mesoscale eddy energy dissipation.</p>
 <p>Optional: You may read/skim one or another document related to the project either before next week or after.</p>
 <ul class="simple">
-<li><p>Paper using microstructure, CTD and ADCP (and, for the 2022 paper, altimetry): <span id="id3"></span> or <span id="id4"></span></p></li>
-<li><p>Paper using gliders, looking at internal waves and ray tracing: <span id="id5"></span></p></li>
-<li><p>Cruise report: WS16336, WS17305 or WS18066</p></li>
-<li><p>Cruise proposal will be on the Moodle</p></li>
+<li><p>Paper using microstructure, CTD and ADCP (and, for the 2022 paper, altimetry): <span id="id3">Evans <em>et al.</em> [<a class="reference internal" href="../resource/books.html#id16" title="D. Gwyn Evans, Eleanor Frajka-Williams, Alberto C. Naveira Garabato, Kurt L. Polzin, and Alexander Forryan. Mesoscale eddy dissipation by a &quot;zoo&quot; of submesoscale processes at a western boundary. Journal of Geophysical Research, 125(11):e2020JC016246, 2020. doi:10.1029/2020jc016246.">2020</a>]</span> or  <span id="id4">Evans <em>et al.</em> [<a class="reference internal" href="../resource/books.html#id17" title="D. Gwyn Evans, Eleanor Frajka-Williams, and Alberto C. Naveira Garabato. Dissipation of mesoscale eddies at a western boundary via a direct energy cascade. Sci. Rep, 2022. doi:10.1038/s41598-022-05002-7.">2022</a>]</span></p></li>
+<li><p>Paper using gliders, looking at internal waves and ray tracing: <span id="id5">Fernandez-Castro <em>et al.</em> [<a class="reference internal" href="../resource/books.html#id18" title="Bieito Fernandez-Castro, Dafydd Gwyn Evans, Eleanor Frajka-Williams, Clement Vic, and Alberto C. Naveira-Garabato. Breaking of internal waves and turbulent dissipation in an anticyclonic mode water eddy. Journal of Physical Oceanography, 50(7):1893–1914, 2020. doi:10.1175/jpo-d-19-0168.1.">2020</a>]</span></p></li>
+<li><p>Cruise report examples: WS16336, WS17305 <span id="id6">[<a class="reference internal" href="../resource/books.html#id14" title="Eleanor Frajka-Williams. RV Walton Smith cruise WS17305: MerMEED microstructure cruise report, 31 Oct - 10 Nov 2017. Technical Report 50, National Oceanography Centre, 2018. URL: https://www.bodc.ac.uk/resources/inventories/cruise_inventory/reports/waltonsmith_ws17305.pdf.">Frajka-Williams, 2018</a>]</span> or WS18066</p></li>
+<li><p>Cruise proposal will be on the Moodle: <a class="reference external" href="https://lernen.min.uni-hamburg.de/pluginfile.php/413743/mod_resource/content/1/2015-01-mermeed_SME828_updated.pdf">here</a></p></li>
 </ul>
 </div>
 </section>

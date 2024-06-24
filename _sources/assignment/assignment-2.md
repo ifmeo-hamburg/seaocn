@@ -2,16 +2,20 @@
 
 <span style="color:red">Due 3 July (Wednesday)</span>
 
+**See general feedback on assignment 1 [here](../assignment/assignment-1-feedback.md)**
+
 Half the class will work on one problem, half on the other.  However the work is **individual** - *not group*.  You may discuss approaches with others; you may share code for loading datasets; you should decide your own analyses (can be in discussion) and write the code for the analysis yourself.
 
 **Assignment 2:** You must turn in working code in a repository, along with the generated figures and a report.  The code should only need to be adjusted by specifying a different path for the input datasets.  Your report should include a section for future work.
 
 ```{margin} Moodle link
-Assignment 1 [here](../assignment/assignment-1.md) \
+Assignment 2 [here](../assignment/assignment-2.md) \
 Moodle submit link [here](https://lernen.min.uni-hamburg.de/mod/assign/view.php?id=185857)\
 Github classroom submit [here](https://classroom.github.com/a/qA71rAyL)\
 *Added 17 June*
 ```
+
+
 ::::{grid}
 :gutter: 3
 

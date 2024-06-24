@@ -3,7 +3,7 @@
 **Was due** This is the week when you need to prepare a slide with a figure which uses observations and equations together.  These should be added to the `shared_paper/` folder in the gitlab. 
 ```
 
-# Instruments and platforms (*change week*)
+# Instruments and platforms 
 
 ```{margin} Moodle link
 PDF of slides [here](https://lernen.min.uni-hamburg.de/mod/resource/view.php?id=185190)\ 
