@@ -84,11 +84,11 @@ Unless otherwise specified, assignments are due at **23:59**.  The first assignm
   - Weight
 * - In-class and participation
   - 10%
-* - Group assignment: Cruise planning
+* - [Group assignment: Cruise planning](../assignment/assignment-group.md)
   - ~~10%~~ 5%
-* - Assignment 1: Python
+* - [Assignment 1: Python](../assignment/assignment-1.md)
   - 40%
-* - Assignment 2: Python
+* - [Assignment 2: Python](../assignment/assignment-2.md)
   - ~~40%~~ 45%
 * - **Total**
   - 100%
@@ -113,5 +113,5 @@ If you realise you are not understanding things as well as you could, or are fin
 - **For clarifications on the assessment:** Please ask the instructor during office hours, or post questions on the course forum (if you can do so without giving away the solution).  For questions and clarifications on formative problems, you may confer with your peers, course assistant, instructor and on the forum.
 - **Errors/typos:** For these and other issues that may be useful for the whole class to be aware of, please use the forum.
 
-Is this course taking too much of your time?  It is timetabled as taking 124 hours of your time outside of class meeting times.  This is about 9 hours per week.  If on average you are spending significantly more than this, please let me know via e-mail.  Sometimes it is hard to judge the difficulty of the course, and your message can let me know when there is a problem.
+Is this course taking too much of your time?  It is timetabled as taking 124 hours of your time outside of class meeting times (based on a 6-month semester).  This is about ~~9~~ 4.5 hours per week during the 14 weeks of the semester.  If on average you are spending significantly more than this, please let me know via e-mail.  Sometimes it is hard to judge the difficulty of the course, and your message can let me know when there is a problem.
 

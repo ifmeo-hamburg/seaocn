@@ -16,15 +16,18 @@ Code ranged from long notebooks with minimal structure to code being highly func
 
 For assignment 2:
 
-- At a minimum, for those of you working in python notebooks, use markdown text blocks between code cells with some explanation of the following sections.  Include some comment to explain each function.  Try to put multiply-used code into functions for reuse.
+- At a minimum, for those of you working in python notebooks, use markdown text blocks between code cells with some explanation of the following sections.  Include some comment to explain each function.  
+
+- We did not teach about commenting and documenting your code in class, so the bar is low.  Please see external resources, example [here](https://realpython.com/documenting-python-code/).
+
+- Try to put multiply-used code into functions for reuse.  If you haven't used functions before, for assignment 2, please try to write at least one function.  See examples [here (external)](https://www.programiz.com/python-programming/function).  
 
 
 ## Report
 
-Reports were all generally good, though some suffered a bit from being a blend between scientific findings and code documentation.  Also for this reason, you are recommended to submit your report separately as a `*.pdf` and not as your `*.ipynb`.
+Reports were all generally good, though some suffered a bit from being a blend between scientific findings and code documentation.  Also for this reason, **for assignment 2** please submit your report separately as a `*.pdf` and not as your `*.ipynb`.
 
 Note that your report can and should be brief (concise), but should give a good overview of the work you carried out.   It should not normally refer heavily to the individual coding elements (i.e., does not need to refer to functions used or variables loaded) but should instead focus on the content / what you found from the data.  Several reports were a blend between scientific findings and code documentation.  
-
 
 Please do proofread your report.  Spelling mistakes detract from the quality of the work.
 
@@ -36,6 +39,6 @@ A comment on what set apart the very good/exceptional from the solid standard:
 
 - Methods: Justify choices and with enough information for me to see that the reasoning was clear to the author.  This included choices about binning and about reference levels.
 
-- Results: The best examples used their key 1--3 figures to demonstrate a quantitative result, rather than only plotting the data.  Plotting the data well is a solid and necessary start; quantifying what you want the reader to see is necessary to get the highest marks.  Also, explaining in written form what the main results figures show is important; don't simply let the figures speak for themselves.
+- Results: The best examples used their key 1--3 figures to demonstrate a quantitative result, rather than only plotting the data (i.e., a derived quantity, not just time series).  The choice of derived quantity is important--what calculation will demonstrate your result most clearly?  Plotting the data well is a solid and necessary start; quantifying what you want the reader to see is necessary to get the highest marks.  Also, explaining in written form what the main results figures show is important; don't simply let the figures speak for themselves.  
 
 - Conclusions: Draw conclusions.  Don't leave the reader to draw their own.  Be bold and make a claim. (As long as it was backed up by evidence in the results section that you can point at.)
