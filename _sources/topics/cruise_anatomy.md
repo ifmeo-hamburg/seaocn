@@ -20,12 +20,12 @@ Basic processing [here](https://lernen.min.uni-hamburg.de/pluginfile.php/409849/
 Advanced processing [here](https://lernen.min.uni-hamburg.de/pluginfile.php/409849/mod_folder/content/0/2017-reference-Module12_AdvancedDataProcessing-seaocn.pdf?forcedownload=1) \ 
 *Added 13 May*
 ```
+
+
+```{admonition} Assignment
+Continue working on [assignment 2](../assignment/assignment-2.md).
+```
 -->
 
-```{admonition} Lab topic - Experimenting with CTD alignment
-Note: This exercise is optional.  [Exercise 6](../exercise/exercise-ctd-align.ipynb).
-
-*Recommended for people going to sea in the near future, who will be working with CTD data.*
-```
 <!--*Please try to catch up on the exercises.*  From week 5/6 you will have an assignment in python.  It will build on the python and methods you've been developing so far, but will require you to creatively combine what you've learned to make progress.
 -->

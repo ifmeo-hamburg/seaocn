@@ -1,6 +1,6 @@
 # Assignment 2
 
-<span style="color:red">Due 3 July (Wednesday)</span>
+<span style="color:red">Due ~~3~~ 31 July (Wednesday)</span>
 
 **See general feedback on assignment 1 [here](../assignment/assignment-1-feedback.md)**
 

@@ -85,11 +85,11 @@ Unless otherwise specified, assignments are due at **23:59**.  The first assignm
 * - In-class and participation
   - 10%
 * - Group assignment: Cruise planning
-  - 10%
+  - ~~10%~~ 5%
 * - Assignment 1: Python
   - 40%
 * - Assignment 2: Python
-  - 40%
+  - ~~40%~~ 45%
 * - **Total**
   - 100%
 ```
